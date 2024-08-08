@@ -139,6 +139,8 @@ nav a {
 }
 .pricing-cards {
   display: flex;
+  width: 100%;
+  overflow-x: auto;
   justify-content: space-around;
 }
 .pricing-card {
