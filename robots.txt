@@ -1,0 +1,18 @@
+# Robots.txt para Rosiv POS
+
+# Permitir el acceso a todos los robots de búsqueda
+User-agent: *
+
+# Permitir el acceso a todas las carpetas y archivos
+Disallow:
+
+# Opcional: Si deseas bloquear ciertos directorios o archivos, puedes hacerlo así
+# Disallow: /private/
+# Disallow: /temp/
+
+# Opcional: Permitir el acceso a ciertos robots de búsqueda específicos
+# User-agent: Googlebot
+# Allow: /
+
+# Especificar la ubicación del sitemap
+
