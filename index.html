@@ -5,68 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Rosiv POS - Sistema POS revolucionario para restaurantes. Facturación electrónica vía WhatsApp, gestión offline y todo lo que necesitas para modernizar tu negocio."
+      content="Rosiv POS - Sistema POS revolucionario para restaurantes con facturación electrónica vía WhatsApp, funcionamiento offline y cumplimiento DIAN. Prueba gratis 7 días."
     />
     <meta name="robots" content="index, follow" />
     <meta
       name="keywords"
-      content="sistema POS, facturación WhatsApp, software restaurantes, POS offline, facturación electrónica, Rosiv POS"
+      content="sistema POS Colombia, facturación WhatsApp, software restaurantes, POS offline, facturación electrónica DIAN, Rosiv POS, punto de venta"
     />
     <meta name="author" content="Rosiv POS" />
+    <meta name="language" content="es-CO" />
+    <meta name="geo.region" content="CO" />
+    <meta name="geo.country" content="Colombia" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>
-      Rosiv POS - El Futuro de los Sistemas POS para Restaurantes
+      Rosiv POS - Sistema POS para Restaurantes con WhatsApp | Prueba Gratis
     </title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <!-- <link rel="canonical" href="https://www.tusitio.com/" />
-    <meta property="og:title" content="Rosiv POS - Potencia tu Restaurante con Tecnología Inteligente" />
-    <meta property="og:description" content="Rosiv POS es un software POS para restaurantes que mejora la gestión de pedidos, la facturación electrónica y permite operar sin conexión a Internet." />
-    <meta property="og:image" content="https://www.tusitio.com/imagen-de-portada.jpg" />
-    <meta property="og:url" content="https://www.tusitio.com/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Rosiv POS - Potencia tu Restaurante con Tecnología Inteligente" />
-    <meta name="twitter:description" content="Rosiv POS es un software POS para restaurantes que mejora la gestión de pedidos, la facturación electrónica y permite operar sin conexión a Internet." />
-    <meta name="twitter:image" content="https://www.tusitio.com/imagen-de-portada.jpg" /> -->
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rosivhub.com/" />
+    <meta property="og:title" content="Rosiv POS - Sistema POS para Restaurantes con WhatsApp" />
+    <meta property="og:description" content="Sistema POS revolucionario con facturación electrónica vía WhatsApp, funcionamiento offline y cumplimiento DIAN. Prueba gratis 7 días." />
+    <meta property="og:image" content="https://rosivhub.com/og-image.jpg" />
+    <meta property="og:site_name" content="Rosiv POS" />
+    <meta property="og:locale" content="es_CO" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://rosivhub.com/" />
+    <meta property="twitter:title" content="Rosiv POS - Sistema POS para Restaurantes con WhatsApp" />
+    <meta property="twitter:description" content="Sistema POS revolucionario con facturación electrónica vía WhatsApp, funcionamiento offline y cumplimiento DIAN. Prueba gratis 7 días." />
+    <meta property="twitter:image" content="https://rosivhub.com/og-image.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rosivhub.com/" />
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-LD28XS2ZPG"
     ></script>
   </head>
   <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#features" class="skip-link">Saltar al contenido principal</a>
+    
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Navegación principal">
       <div class="nav-container">
         <div class="nav-logo">
-          <span class="logo-icon">🚀</span>
+          <span class="logo-icon" role="img" aria-label="Cohete">🚀</span>
           <span class="logo-text">Rosiv<span class="logo-accent">POS</span></span>
         </div>
-        <div class="nav-menu" id="nav-menu">
-          <a href="#features" class="nav-link">Características</a>
-          <a href="#pricing" class="nav-link">Precios</a>
-          <a href="#download" class="nav-link">Descargar</a>
-          <button class="nav-cta">Empezar Gratis</button>
+        <div class="nav-menu" id="nav-menu" role="menu">
+          <a href="#features" class="nav-link" role="menuitem">Características</a>
+          <a href="#pricing" class="nav-link" role="menuitem">Precios</a>
+          <a href="#download" class="nav-link" role="menuitem">Descargar</a>
+          <button class="nav-cta" aria-label="Empezar prueba gratuita">Empezar Gratis</button>
         </div>
-        <div class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú de navegación" aria-expanded="false">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
-        </div>
+        </button>
       </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" role="banner">
       <div class="hero-container">
         <div class="hero-content">
           <div class="hero-badge">
-            <span>🎉 Facturación por WhatsApp ya disponible</span>
+            <span role="img" aria-label="Celebración">🎉</span>
+            <span>Facturación por WhatsApp ya disponible</span>
           </div>
           <h1 class="hero-title">
             El <span class="gradient-text">Futuro</span> de los<br>
@@ -77,16 +100,16 @@
             vía WhatsApp y todo lo que necesitas para modernizar tu negocio.
           </p>
           <div class="hero-buttons">
-            <button class="btn-primary" data-action="download">
-              <i class="fas fa-download"></i>
+            <button class="btn-primary" data-action="download" aria-label="Descargar prueba gratuita de Rosiv POS">
+              <i class="fas fa-download" aria-hidden="true"></i>
               Prueba Gratis
             </button>
-            <button class="btn-secondary">
-              <i class="fab fa-whatsapp"></i>
+            <button class="btn-secondary" aria-label="Ver demostración en WhatsApp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
               Ver Demo
             </button>
           </div>
-          <div class="hero-stats">
+          <div class="hero-stats" role="region" aria-label="Estadísticas de la plataforma">
             <div class="stat">
               <span class="stat-number">76.000+</span>
               <span class="stat-label">Ventas Realizadas</span>
@@ -101,17 +124,17 @@
             </div>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="floating-card card-1">
-            <i class="fas fa-receipt"></i>
+        <div class="hero-visual" role="img" aria-label="Demostración visual del sistema POS">
+          <div class="floating-card card-1" aria-label="Factura número 001">
+            <i class="fas fa-receipt" aria-hidden="true"></i>
             <span>Factura #001</span>
           </div>
-          <div class="floating-card card-2">
-            <i class="fab fa-whatsapp"></i>
+          <div class="floating-card card-2" aria-label="WhatsApp listo para usar">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
             <span>WhatsApp Ready</span>
           </div>
-          <div class="floating-card card-3">
-            <i class="fas fa-wifi-slash"></i>
+          <div class="floating-card card-3" aria-label="Modo offline disponible">
+            <i class="fas fa-wifi-slash" aria-hidden="true"></i>
             <span>Offline Mode</span>
           </div>
           <div class="hero-mockup">
@@ -125,11 +148,11 @@
               </div>
               <div class="mockup-content">
                 <div class="mockup-item">
-                  <span>🍕 Pizza Margherita</span>
+                  <span><span role="img" aria-label="Pizza">🍕</span> Pizza Margherita</span>
                   <span>$25.000</span>
                 </div>
                 <div class="mockup-item">
-                  <span>🥤 Coca Cola</span>
+                  <span><span role="img" aria-label="Bebida">🥤</span> Coca Cola</span>
                   <span>$5.000</span>
                 </div>
                 <div class="mockup-total">
@@ -143,18 +166,18 @@
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="features">
+    <section id="features" class="features" role="main">
       <div class="container">
-        <div class="section-header">
+        <header class="section-header">
           <h2 class="section-title">¿Por qué elegir <span class="gradient-text">Rosiv POS</span>?</h2>
           <p class="section-subtitle">
             Diseñado especialmente para restaurantes modernos que buscan eficiencia y crecimiento
           </p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fab fa-whatsapp"></i>
+        </header>
+        <div class="features-grid" role="list">
+          <article class="feature-card" role="listitem">
+            <div class="feature-icon" role="img" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
             </div>
             <h3>Facturación por WhatsApp</h3>
             <p>
@@ -162,171 +185,270 @@
               Tus clientes reciben su factura al instante en su chat.
             </p>
             <div class="feature-badge">Exclusivo</div>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-wifi-slash"></i>
+          </article>
+          <article class="feature-card" role="listitem">
+            <div class="feature-icon" role="img" aria-label="Funcionamiento offline">
+              <i class="fas fa-wifi-slash" aria-hidden="true"></i>
             </div>
             <h3>Funciona Offline</h3>
             <p>
               No dependas de internet. Rosiv POS funciona completamente 
               offline y sincroniza cuando tengas conexión.
             </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-bolt"></i>
+          </article>
+          <article class="feature-card" role="listitem">
+            <div class="feature-icon" role="img" aria-label="Velocidad ultra rápida">
+              <i class="fas fa-bolt" aria-hidden="true"></i>
             </div>
             <h3>Ultra Rápido</h3>
             <p>
               Procesa órdenes en segundos. Interfaz optimizada para 
               la velocidad que tu restaurante necesita.
             </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-file-invoice-dollar"></i>
+          </article>
+          <article class="feature-card" role="listitem">
+            <div class="feature-icon" role="img" aria-label="Facturación electrónica">
+              <i class="fas fa-file-invoice-dollar" aria-hidden="true"></i>
             </div>
             <h3>Facturación Electrónica</h3>
             <p>
               Cumple con todas las normativas DIAN. Facturas electrónicas 
               automáticas y reportes listos para contabilidad.
             </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-chart-line"></i>
+          </article>
+          <article class="feature-card" role="listitem">
+            <div class="feature-icon" role="img" aria-label="Analytics inteligente">
+              <i class="fas fa-chart-line" aria-hidden="true"></i>
             </div>
             <h3>Analytics Inteligente</h3>
             <p>
               Dashboards en tiempo real con insights sobre ventas, 
               productos más vendidos y tendencias de tu negocio.
             </p>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-shield-alt"></i>
+          </article>
+          <article class="feature-card" role="listitem">
+            <div class="feature-icon" role="img" aria-label="Seguridad total">
+              <i class="fas fa-shield-alt" aria-hidden="true"></i>
             </div>
             <h3>100% Seguro</h3>
             <p>
               Cifrado de extremo a extremo. Tus datos y los de tus 
               clientes están protegidos con los más altos estándares.
             </p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
+    <section id="pricing" class="pricing" role="region" aria-labelledby="pricing-title">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Planes que se adaptan a tu <span class="gradient-text">crecimiento</span></h2>
+        <header class="section-header">
+          <h2 id="pricing-title" class="section-title">Planes que se adaptan a tu <span class="gradient-text">crecimiento</span></h2>
           <p class="section-subtitle">
             Empieza gratis y escala cuando tu negocio crezca
           </p>
+        </header>
+        
+        <!-- Pricing Toggle -->
+        <div class="pricing-toggle" role="group" aria-labelledby="billing-toggle">
+          <span class="toggle-label" id="billing-toggle">Mensual</span>
+          <label class="toggle-switch" for="pricing-toggle">
+            <input type="checkbox" id="pricing-toggle" aria-describedby="billing-toggle discount-info">
+            <span class="slider" aria-hidden="true"></span>
+            <span class="sr-only">Cambiar a facturación anual</span>
+          </label>
+          <span class="toggle-label">Anual <span class="discount-badge" id="discount-info">-20%</span></span>
         </div>
-        <div class="pricing-grid">
-          <div class="pricing-card free">
-            <div class="pricing-header">
+        
+        <!-- Pricing Grid -->
+        <div class="pricing-grid" role="list" aria-label="Planes de precios disponibles">
+          <article class="pricing-card free" role="listitem">
+            <header class="pricing-header">
               <h3>Plan Gratis</h3>
-              <div class="price">
+              <div class="price" role="img" aria-label="Precio: gratis para siempre">
                 <span class="currency">$</span>
                 <span class="amount">0</span>
                 <span class="period">/siempre</span>
               </div>
               <p class="pricing-desc">Perfecto para empezar tu negocio</p>
-            </div>
-            <div class="pricing-features">
-              <div class="feature-item">
-                <i class="fas fa-check"></i>
-                <span>Gestión completa de pedidos</span>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-check"></i>
-                <span>Inventario básico</span>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-check"></i>
+            </header>
+            <ul class="pricing-features" role="list">
+              <li class="feature-item">
+                <i class="fas fa-check" aria-hidden="true"></i>
+                <span>Hasta 50 órdenes/mes</span>
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-check" aria-hidden="true"></i>
+                <span>Gestión básica de inventario</span>
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-check" aria-hidden="true"></i>
                 <span>Reportes básicos</span>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-check"></i>
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-check" aria-hidden="true"></i>
                 <span>Funciona offline</span>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-check"></i>
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-check" aria-hidden="true"></i>
                 <span>Soporte por email</span>
-              </div>
-            </div>
-            <button class="pricing-btn btn-outline" data-action="download">
+              </li>
+              <li class="feature-item disabled">
+                <i class="fas fa-times" aria-hidden="true"></i>
+                <span>Sin facturación electrónica</span>
+              </li>
+              <li class="feature-item disabled">
+                <i class="fas fa-times" aria-hidden="true"></i>
+                <span>Sin WhatsApp Business</span>
+              </li>
+            </ul>
+            <button class="pricing-btn btn-outline" data-action="download" aria-label="Empezar con el plan gratuito">
+              <i class="fas fa-download" aria-hidden="true"></i>
               Empezar Gratis
             </button>
-          </div>
+            <div class="pricing-note">No requiere tarjeta de crédito</div>
+          </article>
 
-          <div class="pricing-card pro">
-            <div class="pricing-badge">Más Popular</div>
-            <div class="pricing-header">
+          <article class="pricing-card pro featured" role="listitem">
+            <div class="pricing-badge" aria-label="Plan más popular">
+              <i class="fas fa-crown" aria-hidden="true"></i>
+              Más Popular
+            </div>
+            <header class="pricing-header">
               <h3>Plan Pro</h3>
-              <div class="price">
+              <div class="price" role="img" aria-label="Precio: $35.000 pesos mensuales o $28.000 anuales">
                 <span class="currency">$</span>
-                <span class="amount">35.000</span>
-                <span class="period">/mes</span>
+                <span class="amount monthly">35.000</span>
+                <span class="amount yearly hidden">28.000</span>
+                <span class="period monthly">/mes</span>
+                <span class="period yearly hidden">/mes</span>
               </div>
               <p class="pricing-desc">Para restaurantes en crecimiento</p>
-            </div>
-            <div class="pricing-features">
-              <div class="feature-item">
-                <i class="fas fa-check"></i>
+            </header>
+            <ul class="pricing-features" role="list">
+              <li class="feature-item">
+                <i class="fas fa-check" aria-hidden="true"></i>
                 <span>Todo del Plan Gratis</span>
-              </div>
-              <div class="feature-item featured">
-                <i class="fab fa-whatsapp"></i>
-                <span>Facturación por WhatsApp</span>
-              </div>
-              <div class="feature-item featured">
-                <i class="fas fa-file-invoice-dollar"></i>
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-infinity" aria-hidden="true"></i>
+                <span>Órdenes ilimitadas</span>
+              </li>
+              <li class="feature-item featured">
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                <span>Integración WhatsApp Business</span>
+              </li>
+              <li class="feature-item featured">
+                <i class="fas fa-file-invoice-dollar" aria-hidden="true"></i>
                 <span>Facturación electrónica DIAN</span>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-check"></i>
-                <span>Reportes avanzados</span>
-              </div>
-              <div class="feature-item">
-                <i class="fas fa-check"></i>
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                <span>Analytics avanzados</span>
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-users" aria-hidden="true"></i>
+                <span>Múltiples usuarios</span>
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-headset" aria-hidden="true"></i>
                 <span>Soporte prioritario 24/7</span>
-              </div>
-            </div>
-            <button class="pricing-btn btn-primary">
+              </li>
+            </ul>
+            <button class="pricing-btn btn-primary" aria-label="Empezar prueba gratuita del plan pro">
+              <i class="fas fa-rocket" aria-hidden="true"></i>
               Empezar Prueba Gratis
             </button>
             <div class="pricing-trial">7 días gratis, cancela cuando quieras</div>
-          </div>
+            <div class="pricing-savings yearly hidden" role="alert" aria-live="polite">
+              <i class="fas fa-piggy-bank" aria-hidden="true"></i>
+              Ahorras $84.000 al año
+            </div>
+          </article>
+
+          <article class="pricing-card enterprise" role="listitem">
+            <header class="pricing-header">
+              <h3>Plan Empresa</h3>
+              <div class="price" role="img" aria-label="Precio personalizado">
+                <span class="amount">Personalizado</span>
+              </div>
+              <p class="pricing-desc">Para cadenas y franquicias</p>
+            </header>
+            <ul class="pricing-features" role="list">
+              <li class="feature-item">
+                <i class="fas fa-check" aria-hidden="true"></i>
+                <span>Todo del Plan Pro</span>
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-building" aria-hidden="true"></i>
+                <span>Múltiples ubicaciones</span>
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-cogs" aria-hidden="true"></i>
+                <span>API personalizada</span>
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                <span>Seguridad empresarial</span>
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                <span>Capacitación dedicada</span>
+              </li>
+              <li class="feature-item">
+                <i class="fas fa-user-tie" aria-hidden="true"></i>
+                <span>Gerente de cuenta</span>
+              </li>
+            </ul>
+            <button class="pricing-btn btn-outline" aria-label="Contactar equipo de ventas para plan empresa">
+              <i class="fas fa-phone" aria-hidden="true"></i>
+              Contactar Ventas
+            </button>
+            <div class="pricing-note">Implementación personalizada</div>
+          </article>
         </div>
+        
+        <!-- Pricing FAQ -->
+        <section class="pricing-faq" role="region" aria-labelledby="faq-title">
+          <h3 id="faq-title" class="sr-only">Preguntas frecuentes sobre precios</h3>
+          <article class="faq-item" tabindex="0">
+            <h4><i class="fas fa-question-circle" aria-hidden="true"></i> ¿Puedo cambiar de plan en cualquier momento?</h4>
+            <p>Sí, puedes actualizar o degradar tu plan cuando quieras. Los cambios se aplican inmediatamente.</p>
+          </article>
+          <article class="faq-item" tabindex="0">
+            <h4><i class="fas fa-credit-card" aria-hidden="true"></i> ¿Qué métodos de pago aceptan?</h4>
+            <p>Aceptamos todas las tarjetas de crédito/débito, PSE y transferencias bancarias.</p>
+          </article>
+          <article class="faq-item" tabindex="0">
+            <h4><i class="fas fa-shield-alt" aria-hidden="true"></i> ¿Mis datos están seguros?</h4>
+            <p>Absolutamente. Usamos encriptación de grado bancario y cumplimos con todas las normativas de seguridad.</p>
+          </article>
+        </section>
       </div>
     </section>
 
     <!-- Download Section -->
-    <section id="download" class="download-section">
+    <section id="download" class="download-section" role="region" aria-labelledby="download-title">
       <div class="container">
         <div class="download-content">
-          <h2>¿Listo para revolucionar tu restaurante?</h2>
+          <h2 id="download-title">¿Listo para revolucionar tu restaurante?</h2>
           <p>
             Únete a cientos de restaurantes que ya están usando Rosiv POS para 
             crecer su negocio. Descarga gratis y empieza hoy mismo.
           </p>
           <div class="download-buttons">
-            <button class="btn-primary large" data-action="download">
-              <i class="fas fa-download"></i>
+            <button class="btn-primary large" data-action="download" aria-label="Descargar Rosiv POS gratis">
+              <i class="fas fa-download" aria-hidden="true"></i>
               Descargar Gratis
             </button>
-            <div class="download-info">
-              <div class="info-item">
-                <i class="fas fa-check-circle"></i>
+            <div class="download-info" role="list" aria-label="Beneficios de la descarga">
+              <div class="info-item" role="listitem">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
                 <span>Sin tarjeta de crédito</span>
               </div>
-              <div class="info-item">
-                <i class="fas fa-check-circle"></i>
+              <div class="info-item" role="listitem">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
                 <span>Configuración en 5 minutos</span>
               </div>
             </div>
@@ -336,27 +458,27 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
       <div class="container">
         <div class="footer-content">
           <div class="footer-logo">
-            <span class="logo-icon">🚀</span>
+            <span class="logo-icon" role="img" aria-label="Cohete">🚀</span>
             <span class="logo-text">Rosiv<span class="logo-accent">POS</span></span>
           </div>
-          <div class="footer-links">
+          <nav class="footer-links" role="navigation" aria-label="Enlaces del pie de página">
             <a href="#features">Características</a>
             <a href="#pricing">Precios</a>
             <a href="ws/privacy-policy.html">Política de Privacidad</a>
-          </div>
-          <div class="footer-social">
-            <a href="#" aria-label="WhatsApp">
-              <i class="fab fa-whatsapp"></i>
+          </nav>
+          <div class="footer-social" role="list" aria-label="Redes sociales">
+            <a href="#" aria-label="Contacto por WhatsApp" role="listitem">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
             </a>
-            <a href="#" aria-label="Instagram">
-              <i class="fab fa-instagram"></i>
+            <a href="#" aria-label="Síguenos en Instagram" role="listitem">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
             </a>
-            <a href="#" aria-label="LinkedIn">
-              <i class="fab fa-linkedin"></i>
+            <a href="#" aria-label="Conecta en LinkedIn" role="listitem">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
             </a>
           </div>
         </div>

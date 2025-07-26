@@ -4,9 +4,16 @@
 User-agent: *
 
 # Permitir el acceso a todas las carpetas y archivos
-Disallow:
+Allow: /
+
+# Sitemap location
+Sitemap: https://rosivhub.com/sitemap.xml
+
+# Crawl delay (optional, in seconds)
+Crawl-delay: 1
 
 # Opcional: Si deseas bloquear ciertos directorios o archivos, puedes hacerlo así
+# Disallow: /admin/
 # Disallow: /private/
 # Disallow: /temp/
 
