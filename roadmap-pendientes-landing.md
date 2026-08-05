@@ -144,6 +144,72 @@ y LinkedIn se quitaron porque apuntaban a `href="#"` (enlaces muertos).
 
 ---
 
+## 9. SEO / visibilidad en buscadores e IAs (ChatGPT, Perplexity, Gemini)
+
+**Estado actual:** el sitio estaba prácticamente invisible — sin datos
+estructurados, con `og-image.jpg` roto (404), y con archivos viejos
+(`2.html`, `4.html`, `test.html`, `styles_new.css`, `styles_old.css`) del
+diseño anterior servidos en vivo en producción con un título desactualizado
+("Potencia tu Restaurante con Tecnología Inteligente"), compitiendo con la
+página real. `site:rosivhub.com` no devolvía ningún resultado en Google.
+
+**Lo que se hizo (2026-08-05):**
+
+- [x] Se eliminaron los archivos viejos huérfanos que estaban en
+      producción (`2.html`, `4.html`, `test.html`, `styles_new.css`,
+      `styles_old.css`) — eran contenido duplicado/desactualizado que
+      confundía a los buscadores.
+- [x] Se creó `og-image.jpg` (1200x630, antes daba 404) a partir del
+      isotipo de marca, para que los links compartidos en WhatsApp,
+      redes y buscadores muestren una vista previa correcta.
+- [x] Se agregaron datos estructurados (`application/ld+json`) de tipo
+      `Organization`, `SoftwareApplication` y `FAQPage` en `index.html`,
+      para que Google y las IAs puedan entender y citar con precisión
+      qué es Rosiv, sus planes y las preguntas frecuentes.
+- [x] Se reescribió el `<title>` y `meta description` para incluir
+      palabras clave reales de búsqueda ("sistema POS Colombia",
+      "facturación electrónica DIAN", "tenderos", "pymes") en vez de
+      solo el eslogan de marca.
+- [x] Se agregaron las palabras "tenderos, restaurantes familiares y
+      peluquerías" (la audiencia real del brief) al hero y a Features,
+      para calzar con búsquedas específicas de esos negocios.
+- [x] Se actualizó `robots.txt` para permitir explícitamente a los
+      rastreadores de IA (GPTBot, ClaudeBot, PerplexityBot,
+      Google-Extended, etc.), no solo a los buscadores tradicionales.
+- [x] Se creó `llms.txt` en la raíz — un resumen del producto pensado
+      para que los asistentes de IA lo lean directamente al responder
+      preguntas sobre Rosiv.
+- [x] Se limpió `sitemap.xml` (los links con `#ancla` no son páginas
+      indexables reales; se dejaron solo la home y la política de
+      privacidad) y se actualizaron las fechas.
+- [x] Se agregó `preconnect` para las fuentes y Font Awesome (mejora
+      velocidad de carga, que también es señal de ranking).
+
+**Lo que falta y requiere una acción tuya (no la puedo hacer yo):**
+
+- [ ] **Google Search Console**: registrar `rosivhub.com`, verificar
+      propiedad y enviar el sitemap (`https://rosivhub.com/sitemap.xml`)
+      para pedirle a Google que indexe el sitio ahora. Sin esto, puede
+      tardar semanas en aparecer solo.
+- [ ] **Bing Webmaster Tools**: lo mismo, para aparecer en Bing/Copilot.
+- [ ] **Google Business Profile**: crear un perfil de negocio (aparece
+      en Google Maps y en el panel lateral cuando alguien busca "POS
+      Colombia" o similar) — requiere una cuenta de Google del negocio.
+- [ ] **Backlinks reales**: pedir que directorios de software
+      colombianos (ComparaSoftware, SoftwareSuggest, Capterra, etc.) y
+      medios locales enlacen a rosivhub.com — los enlaces externos son
+      la señal más fuerte para posicionar contra competidores ya
+      establecidos (Alegra, Aliaddo, SandigoPOS, POS Colombia).
+- [ ] **Contenido**: un blog corto (2-4 posts) respondiendo preguntas
+      reales como "cómo facturar electrónicamente si tengo una tienda
+      de barrio" ayuda mucho más a aparecer en ChatGPT/Perplexity que
+      la landing sola, porque esos motores citan contenido informativo,
+      no solo páginas de venta.
+- [ ] Confirmar que `og-image.jpg` (ya generado) se ve bien al compartir
+      el link real en WhatsApp/Twitter una vez esté desplegado.
+
+---
+
 ## Nota sobre el mensaje general de la landing
 
 La landing vende la visión completa (POS + facturación por WhatsApp +
