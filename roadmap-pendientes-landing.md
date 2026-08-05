@@ -59,11 +59,36 @@ Aparecen en:
 
 ---
 
-## 3. Datos de contacto reales
+## 3. Acceso al sistema (registro / login)
 
-**Estado actual:** todos los botones de WhatsApp usan el número de ejemplo
-`https://wa.me/573000000000` (nav, hero, los 3 planes de precios, CTA final
-y footer — son ~8 apariciones).
+**Estado actual:** ✅ resuelto (2026-08-05). El sistema real ya está en
+`https://web.rosivhub.com` — ahí la gente se registra, entra y lo prueba.
+Los botones principales de "Empieza gratis" / "Probar 7 días gratis" en el
+nav, el hero, y los planes Gratis y Pro ahora llevan directo a ese link
+(antes todos apuntaban a WhatsApp). WhatsApp se dejó como canal secundario
+("¿Prefieres hablar antes?") en el CTA final, y como único canal para
+"Hablar con ventas" (plan Empresa) y el ícono del footer.
+
+**Aún pendiente:**
+
+- [ ] Todavía no hay link de descarga para desktop ni para la app mobile.
+      Por ahora la landing no promete descarga — solo dirige al sistema web
+      (`web.rosivhub.com`). Cuando existan esos links:
+  - Agregar botones o una sección de "Descarga la app" (desktop/mobile) en
+    el hero o en el CTA final, sin quitar el acceso web.
+  - Revisar si conviene distinguir "Prueba desde tu navegador" vs
+    "Descarga la app" como dos caminos distintos.
+- [ ] Confirmar si `https://web.rosivhub.com` es la URL correcta para TODOS
+      los CTAs, o si el registro de nuevos usuarios debería vivir en una
+      ruta distinta (ej. `/signup`) en vez de la raíz del dominio.
+
+---
+
+## 4. Datos de contacto reales
+
+**Estado actual:** los botones de WhatsApp que quedan (Plan Empresa, CTA
+final secundario, footer) usan el número de ejemplo
+`https://wa.me/573000000000`.
 
 - [ ] Reemplazar `573000000000` por el número real en todo `index.html`
       (buscar ese texto para encontrarlas todas).
@@ -71,7 +96,7 @@ y footer — son ~8 apariciones).
 
 ---
 
-## 4. Prueba social real
+## 5. Prueba social real
 
 **Estado actual:** no se agregaron testimonios. El brief recomienda
 testimonios cortos con nombre, tipo de negocio y ciudad (o un video corto),
@@ -85,7 +110,7 @@ pero no existían casos reales para usar, así que no se inventó ninguno.
 
 ---
 
-## 5. Redes sociales del footer
+## 6. Redes sociales del footer
 
 **Estado actual:** se dejó solo el ícono de WhatsApp en el footer. Instagram
 y LinkedIn se quitaron porque apuntaban a `href="#"` (enlaces muertos).
@@ -95,7 +120,7 @@ y LinkedIn se quitaron porque apuntaban a `href="#"` (enlaces muertos).
 
 ---
 
-## 6. Identidad de marca
+## 7. Identidad de marca
 
 - [x] Colores oficiales (`#5F1BBF`) y tipografía Aristotelica Display +
       Inter ya aplicados en `styles.css` (2026-08-05).
@@ -105,10 +130,13 @@ y LinkedIn se quitaron porque apuntaban a `href="#"` (enlaces muertos).
 
 ---
 
-## 7. Otros pendientes técnicos
+## 8. Otros pendientes técnicos
 
-- [ ] Confirmar que `favicon.ico` y `apple-touch-icon.png` (referenciados en
-      `<head>`) existen en el servidor de producción — no están en este repo.
+- [x] Favicon generado y enlazado (`favicon-16x16.png`, `favicon-32x32.png`,
+      `apple-touch-icon.png`, `icon-192x192.png`, `icon-512x512.png`), a partir
+      de `assets/brand/ROSIV LOGO REDES SOCIALES 2.png` (isotipo a bordes
+      rectos, sin redondeo — ideal para que iOS/Android apliquen su propia
+      máscara) (2026-08-05).
 - [ ] Confirmar que `og-image.jpg` (usado para compartir en redes) existe.
 - [ ] El toggle de precio mensual/anual se quitó de la sección de Precios
       porque no tenía lógica funcional detrás. Si en el futuro se define un
