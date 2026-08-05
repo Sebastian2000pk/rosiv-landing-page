@@ -251,7 +251,7 @@ body {
 .nav-logo .logo-text,
 .footer-logo .logo-text {
   display: inline-block;
-  transform: translateY(0.28em);
+  transform: translateY(0.22em);
 }
 
 .logo-icon {
@@ -1179,6 +1179,21 @@ body {
 .btn-primary.large:hover {
   transform: translateY(-3px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.download-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--white);
+  opacity: 0.9;
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.download-whatsapp-link:hover {
+  opacity: 1;
 }
 
 .download-info {
