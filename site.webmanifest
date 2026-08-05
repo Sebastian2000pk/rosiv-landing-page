@@ -1,11 +1,11 @@
 {
-  "name": "Rosiv POS - Sistema POS para Restaurantes",
-  "short_name": "Rosiv POS",
-  "description": "Sistema POS revolucionario para restaurantes con facturación electrónica vía WhatsApp, funcionamiento offline y cumplimiento DIAN.",
+  "name": "Rosiv - El sistema para el negocio que nunca tuvo un sistema",
+  "short_name": "Rosiv",
+  "description": "Vende, cobra y controla tu inventario desde el celular, con o sin internet. Factura electrónica DIAN, envío por WhatsApp muy pronto.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#7c3aed",
+  "theme_color": "#5f1bbf",
   "orientation": "portrait-primary",
   "icons": [
     {

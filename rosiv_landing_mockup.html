@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Rosiv — Mockup Landing Page</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple:#5F1BBF;
+    --purple-dark:#4A1499;
+    --black:#111111;
+    --white:#FFFFFF;
+    --gray-bg:#F7F6F9;
+    --gray-text:#5B5763;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Inter',sans-serif;color:var(--black);background:var(--white);}
+  h1,h2,h3,.display{font-family:'Baloo 2',sans-serif;font-weight:700;margin:0;}
+  .note{background:#FFF3CF;color:#5B4A00;font-size:12px;padding:6px 14px;text-align:center;font-family:'Inter',sans-serif;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0;}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;width:100%;}
+  header img{height:34px;}
+  nav a{margin:0 18px;color:var(--black);text-decoration:none;font-size:15px;font-weight:500;}
+  .btn{display:inline-block;padding:12px 26px;border-radius:100px;font-weight:600;text-decoration:none;font-size:15px;}
+  .btn-primary{background:var(--purple);color:#fff;}
+  .btn-ghost{border:1.5px solid var(--black);color:var(--black);}
+  .btn-white{background:#fff;color:var(--purple);}
+  .btn-wsp{background:#25D366;color:#fff;}
+  section{padding:70px 0;}
+  .hero{background:var(--gray-bg);padding:80px 0 60px;position:relative;overflow:hidden;}
+  .hero .wrap{display:flex;align-items:center;gap:60px;}
+  .hero-copy{flex:1;}
+  .badge{display:inline-block;background:#EAE0FA;color:var(--purple);font-size:13px;font-weight:600;padding:6px 16px;border-radius:100px;margin-bottom:20px;}
+  .hero h1{font-size:46px;line-height:1.15;margin-bottom:20px;}
+  .hero h1 span{color:var(--purple);}
+  .hero p{font-size:18px;color:var(--gray-text);margin-bottom:30px;line-height:1.5;max-width:480px;}
+  .cta-row{display:flex;gap:14px;margin-bottom:34px;flex-wrap:wrap;}
+  .trust{display:flex;gap:36px;flex-wrap:wrap;}
+  .trust div{font-size:13px;color:var(--gray-text);}
+  .trust b{display:block;font-size:22px;color:var(--black);font-family:'Baloo 2';}
+  .hero-visual{flex:1;display:flex;justify-content:center;position:relative;}
+  .phone{width:270px;background:var(--black);border-radius:36px;padding:14px;box-shadow:0 30px 60px rgba(0,0,0,0.15);}
+  .phone-screen{background:#fff;border-radius:24px;overflow:hidden;}
+  .phone-topbar{background:var(--purple);color:#fff;padding:16px;font-size:14px;font-weight:600;display:flex;align-items:center;gap:8px;}
+  .phone-body{padding:16px;}
+  .chat-bubble{background:#F1F0F5;border-radius:14px;padding:10px 14px;font-size:13px;margin-bottom:10px;max-width:80%;}
+  .chat-bubble.me{background:#DCF8C6;margin-left:auto;}
+  .invoice-card{border:1px solid #eee;border-radius:12px;padding:12px;font-size:12px;margin-top:14px;}
+  .invoice-card .total{font-weight:700;font-size:15px;color:var(--purple);margin-top:6px;}
+  .glyph-bg{position:absolute;opacity:0.06;width:520px;right:-140px;top:-80px;}
+  .section-label{color:var(--purple);font-weight:600;font-size:14px;letter-spacing:0.5px;text-transform:uppercase;margin-bottom:10px;display:block;}
+  .section-title{font-size:32px;max-width:640px;margin-bottom:14px;}
+  .section-sub{color:var(--gray-text);font-size:16px;max-width:560px;margin-bottom:40px;line-height:1.5;}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .step{background:var(--gray-bg);border-radius:20px;padding:28px;}
+  .step-num{width:38px;height:38px;border-radius:50%;background:var(--purple);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:16px;font-family:'Baloo 2';}
+  .step h3{font-size:19px;margin-bottom:8px;}
+  .step p{font-size:14px;color:var(--gray-text);line-height:1.5;margin:0;}
+  .agents{background:var(--black);color:#fff;}
+  .agents .section-title,.agents .section-label{color:#fff;}
+  .agents .section-sub{color:#c9c5d1;}
+  .agent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .agent-card{background:#1c1a20;border-radius:20px;padding:26px;border:1px solid #2c2933;}
+  .agent-avatar{width:52px;height:52px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-weight:700;font-family:'Baloo 2';margin-bottom:16px;}
+  .agent-card h3{font-size:18px;margin-bottom:4px;color:#fff;}
+  .agent-role{color:#B79DE8;font-size:13px;font-weight:600;margin-bottom:10px;display:block;}
+  .agent-card p{font-size:13.5px;color:#c9c5d1;line-height:1.5;margin:0;}
+  .features{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .feature-card{border:1px solid #eee;border-radius:20px;padding:28px;}
+  .feature-card h3{font-size:19px;margin-bottom:8px;}
+  .feature-card p{font-size:14px;color:var(--gray-text);line-height:1.5;margin:0;}
+  .pricing{background:var(--gray-bg);}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .plan{background:#fff;border-radius:20px;padding:30px;border:1px solid #eee;}
+  .plan.featured{border:2px solid var(--purple);position:relative;}
+  .plan.featured .flag{position:absolute;top:-14px;left:26px;background:var(--purple);color:#fff;font-size:12px;font-weight:600;padding:4px 14px;border-radius:100px;}
+  .plan h3{font-size:18px;margin-bottom:6px;}
+  .plan .price{font-family:'Baloo 2';font-size:34px;margin-bottom:16px;}
+  .plan .price span{font-size:14px;color:var(--gray-text);font-family:'Inter';}
+  .plan ul{padding:0;list-style:none;margin:0 0 22px;}
+  .plan li{font-size:13.5px;color:var(--gray-text);padding:6px 0;border-bottom:1px solid #f1f1f1;}
+  .final-cta{background:var(--purple);color:#fff;text-align:center;border-radius:28px;margin:0 32px;padding:60px 40px;}
+  .final-cta h2{color:#fff;font-size:30px;margin-bottom:14px;}
+  .final-cta p{color:#e6d9fa;margin-bottom:26px;font-size:16px;}
+  footer{background:var(--black);color:#c9c5d1;padding:50px 0 24px;margin-top:40px;}
+  footer img{height:30px;margin-bottom:14px;}
+  .foot-cols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;padding-bottom:30px;border-bottom:1px solid #2c2933;}
+  .foot-col h4{color:#fff;font-size:14px;margin-bottom:12px;}
+  .foot-col a{display:block;color:#c9c5d1;text-decoration:none;font-size:13.5px;margin-bottom:8px;}
+  .foot-bottom{padding-top:20px;font-size:12.5px;display:flex;justify-content:space-between;}
+</style>
+</head>
+<body>
+<div class="note">MOCKUP visual de referencia — no funcional. Tipografía de titulares sustituida por Baloo 2 (aproximación libre a Aristotelica Display Trial).</div>
+
+<header>
+  <div class="wrap">
+    <img src="logo-header.png" alt="Rosiv">
+    <nav>
+      <a href="#">Cómo funciona</a>
+      <a href="#">Empleados IA</a>
+      <a href="#">Precios</a>
+      <a href="#">Historias</a>
+    </nav>
+    <a class="btn btn-primary" href="#">Empieza gratis</a>
+  </div>
+</header>
+
+<section class="hero">
+  <img class="glyph-bg" src="logo-glyph.png" alt="">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="badge">Nuevo · Empleados virtuales con IA</span>
+      <h1>El sistema operativo<br>para el negocio que <span>nunca tuvo<br>un sistema</span></h1>
+      <p>Vende, factura y crece con empleados virtuales que trabajan por ti — todo desde tu celular, sin curva de aprendizaje y sin necesitar internet.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#">Empieza gratis →</a>
+        <a class="btn btn-ghost" href="#">Ver cómo funciona</a>
+      </div>
+      <div class="trust">
+        <div><b>76,000+</b>ventas procesadas</div>
+        <div><b>100%</b>funciona offline</div>
+        <div><b>DIAN</b>facturación legal</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-topbar">💬 WhatsApp · Rosiv</div>
+          <div class="phone-body">
+            <div class="chat-bubble">Hola 👋 soy Mía, tu cajera virtual. ¿Cerramos la venta de hoy?</div>
+            <div class="chat-bubble me">Sí, 2 pizzas y una gaseosa</div>
+            <div class="chat-bubble">Listo, aquí tu factura electrónica ✅</div>
+            <div class="invoice-card">
+              Factura #0231<br>
+              Pizza Margherita — $25.000<br>
+              Coca Cola — $5.000
+              <div class="total">Total: $30.000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="section-label">Cómo funciona</span>
+    <h2 class="section-title">Tres pasos. Cero complicaciones.</h2>
+    <p class="section-sub">Diseñado para negocios que nunca han usado un sistema — no para expertos en tecnología.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Regístrate en 3 minutos</h3>
+        <p>Cuéntale a Rosiv sobre tu negocio por voz o WhatsApp. Sin formularios largos, sin manuales.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Activa tu equipo virtual</h3>
+        <p>Elige qué empleados de IA necesitas: cajera, cobrador, encargado de inventario.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Vende y crece tranquilo</h3>
+        <p>Rosiv factura, controla tu inventario y te avisa todo por WhatsApp — con o sin internet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="agents">
+  <div class="wrap">
+    <span class="section-label">Empleados virtuales</span>
+    <h2 class="section-title">Conoce a tu nuevo equipo</h2>
+    <p class="section-sub">No son chatbots genéricos: son agentes de IA que trabajan dentro de tu negocio, todos los días.</p>
+    <div class="agent-grid">
+      <div class="agent-card">
+        <div class="agent-avatar">M</div>
+        <h3>Mía</h3>
+        <span class="agent-role">Cajera virtual</span>
+        <p>Cobra, factura por WhatsApp y cierra la venta sin que tengas que tocar el celular.</p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-avatar">L</div>
+        <h3>Leo</h3>
+        <span class="agent-role">Encargado de inventario</span>
+        <p>Avisa cuando algo se está agotando y actualiza tu stock automáticamente con cada venta.</p>
+      </div>
+      <div class="agent-card">
+        <div class="agent-avatar">S</div>
+        <h3>Sofía</h3>
+        <span class="agent-role">Cobradora virtual</span>
+        <p>Recuerda pagos pendientes y hace seguimiento a tus clientes por WhatsApp, sin que suene incómodo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="section-label">Por qué Rosiv</span>
+    <h2 class="section-title">Hecho para el negocio real, no para el manual de usuario</h2>
+    <div class="features">
+      <div class="feature-card">
+        <h3>Funciona sin internet</h3>
+        <p>Sigue vendiendo aunque se caiga la conexión. Todo se sincroniza solo cuando vuelve la señal.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Factura desde WhatsApp</h3>
+        <p>Tus clientes reciben su factura electrónica al instante, en el chat que ya usan todos los días.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Cumple con la ley</h3>
+        <p>Facturación electrónica alineada con la DIAN, sin que tengas que entender de normativas.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Crece contigo</h3>
+        <p>Empieza gratis con lo básico y suma empleados virtuales solo cuando tu negocio lo necesite.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="wrap">
+    <span class="section-label">Precios</span>
+    <h2 class="section-title">Empieza gratis. Crece cuando quieras.</h2>
+    <div class="plans">
+      <div class="plan">
+        <h3>Gratis</h3>
+        <div class="price">$0<span> /siempre</span></div>
+        <ul>
+          <li>Ventas ilimitadas</li>
+          <li>Inventario básico</li>
+          <li>Funciona offline</li>
+          <li>1 empleado virtual básico</li>
+        </ul>
+        <a class="btn btn-ghost" style="width:100%;text-align:center;display:block;" href="#">Empezar gratis</a>
+      </div>
+      <div class="plan featured">
+        <span class="flag">Más popular</span>
+        <h3>Pro</h3>
+        <div class="price">$28.000<span> /mes</span></div>
+        <ul>
+          <li>Todo lo del plan Gratis</li>
+          <li>Facturación electrónica DIAN</li>
+          <li>Equipo completo de empleados virtuales</li>
+          <li>Soporte prioritario 24/7</li>
+        </ul>
+        <a class="btn btn-primary" style="width:100%;text-align:center;display:block;" href="#">Probar 7 días gratis</a>
+      </div>
+      <div class="plan">
+        <h3>Empresa</h3>
+        <div class="price">A medida</div>
+        <ul>
+          <li>Múltiples sedes</li>
+          <li>Empleados virtuales personalizados</li>
+          <li>Gerente de cuenta dedicado</li>
+        </ul>
+        <a class="btn btn-ghost" style="width:100%;text-align:center;display:block;" href="#">Hablar con ventas</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="final-cta">
+    <h2>Digitaliza tu negocio sin complicarte</h2>
+    <p>Empieza gratis hoy — sin tarjeta de crédito, sin curva de aprendizaje.</p>
+    <a class="btn btn-wsp" href="#">💬 Empieza por WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="logo-footer.png" alt="Rosiv">
+    <div class="foot-cols">
+      <div class="foot-col">
+        <h4>Producto</h4>
+        <a href="#">Cómo funciona</a>
+        <a href="#">Empleados virtuales</a>
+        <a href="#">Precios</a>
+      </div>
+      <div class="foot-col">
+        <h4>Empresa</h4>
+        <a href="#">Sobre Rosiv</a>
+        <a href="#">Historias de clientes</a>
+        <a href="#">Contacto</a>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos de uso</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Rosiv. Todos los derechos reservados.</span>
+      <span>Colombia 🇨🇴 · hecho para Latinoamérica</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
