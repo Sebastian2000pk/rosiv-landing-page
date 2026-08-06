@@ -690,23 +690,26 @@ body {
 
 /* Pricing Grid */
 .pricing-carousel {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  position: relative;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .pricing-grid {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: 0.5rem 0.25rem 1rem;
-  flex: 1 1 auto;
+  padding-block: 0.75rem 1rem;
+  padding-inline: 1rem;
+  /* Mismo valor que el padding-inline: garantiza que, sin importar qué
+     tarjeta quede encuadrada (incluidas la primera y la última), siempre
+     quede el mismo respiro visible a los lados. */
+  scroll-padding-inline: 1rem;
+  width: 100%;
 }
 
 .pricing-grid::-webkit-scrollbar {
@@ -722,13 +725,20 @@ body {
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  flex: 0 0 min(340px, 82vw);
+  /* Porcentaje sobre el ancho real del grid (no vw), así el mismo cálculo
+     funciona igual de bien en móvil y en tablet sin reglas aparte. */
+  flex: 0 0 min(360px, 88%);
   min-width: 0;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
 }
 
+/* Flechas flotantes: van encima del carrusel (position: absolute), no
+   como hermanos en el flex — así nunca le quitan ancho al grid ni
+   provocan que las tarjetas se recorten. */
 .carousel-arrow {
-  flex: 0 0 auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -739,13 +749,23 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
   transition: all 0.2s ease;
+  z-index: 5;
+}
+
+.carousel-arrow.prev {
+  left: 0.25rem;
+}
+
+.carousel-arrow.next {
+  right: 0.25rem;
 }
 
 .carousel-arrow:hover {
   background: var(--purple-50);
   border-color: var(--primary-purple);
+  box-shadow: var(--shadow-lg);
 }
 
 .carousel-dots {
