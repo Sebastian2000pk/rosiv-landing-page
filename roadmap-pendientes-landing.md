@@ -184,6 +184,17 @@ página real. `site:rosivhub.com` no devolvía ningún resultado en Google.
       privacidad) y se actualizaron las fechas.
 - [x] Se agregó `preconnect` para las fuentes y Font Awesome (mejora
       velocidad de carga, que también es señal de ranking).
+- [x] (2026-08-07) Se corrigió el favicon que Google no mostraba en los
+      resultados de búsqueda (aparecía un ícono genérico en vez del de
+      Rosiv). La causa: Google exige que el favicon sea de al menos
+      48x48px y cuadrado, y solo teníamos enlazados 16x16 y 32x32. Se
+      generaron `favicon-48x48.png` y `favicon-96x96.png` y se
+      enlazaron con `<link rel="icon">`. Importante: Google actualiza
+      su caché de favicons en su propio calendario de rastreo, así que
+      el cambio puede tardar días o semanas en verse reflejado en los
+      resultados — no es instantáneo. Cuando exista Google Search
+      Console (ver pendiente abajo), se puede pedir una re-indexación
+      manual de la home para acelerarlo.
 
 **Lo que falta y requiere una acción tuya (no la puedo hacer yo):**
 
