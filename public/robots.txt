@@ -45,4 +45,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://rosivhub.com/sitemap.xml
+Sitemap: https://rosivhub.com/sitemap-index.xml

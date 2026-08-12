@@ -1,0 +1,68 @@
+---
+import Layout from "./Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  pubDate: Date;
+  keywords?: string;
+}
+
+const { title, description, path, pubDate, keywords } = Astro.props;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    datePublished: pubDate.toISOString(),
+    author: {
+      "@type": "Organization",
+      name: "Rosiv",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Rosiv",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://rosivhub.com/icon-512x512.png",
+      },
+    },
+    mainEntityOfPage: new URL(path, Astro.site).toString(),
+  },
+];
+
+const dateFormatted = pubDate.toLocaleDateString("es-CO", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Layout
+  title={`${title} | Blog Rosiv`}
+  description={description}
+  path={path}
+  type="article"
+  keywords={keywords}
+  jsonLd={jsonLd}
+>
+  <Navbar />
+  <article class="blog-post">
+    <div class="blog-post-container">
+      <a href="/blog" class="blog-post-back">&larr; Volver al blog</a>
+      <header class="blog-post-header">
+        <p class="blog-post-date">{dateFormatted}</p>
+        <h1 class="blog-post-title">{title}</h1>
+      </header>
+      <div class="blog-post-content">
+        <slot />
+      </div>
+    </div>
+  </article>
+  <Footer />
+</Layout>

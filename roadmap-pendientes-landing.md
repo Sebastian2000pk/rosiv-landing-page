@@ -199,9 +199,10 @@ página real. `site:rosivhub.com` no devolvía ningún resultado en Google.
 **Lo que falta y requiere una acción tuya (no la puedo hacer yo):**
 
 - [ ] **Google Search Console**: registrar `rosivhub.com`, verificar
-      propiedad y enviar el sitemap (`https://rosivhub.com/sitemap.xml`)
-      para pedirle a Google que indexe el sitio ahora. Sin esto, puede
-      tardar semanas en aparecer solo.
+      propiedad y enviar el sitemap
+      (`https://rosivhub.com/sitemap-index.xml`) para pedirle a Google
+      que indexe el sitio ahora. Sin esto, puede tardar semanas en
+      aparecer solo.
 - [ ] **Bing Webmaster Tools**: lo mismo, para aparecer en Bing/Copilot.
 - [ ] **Google Business Profile**: crear un perfil de negocio (aparece
       en Google Maps y en el panel lateral cuando alguien busca "POS
@@ -211,11 +212,14 @@ página real. `site:rosivhub.com` no devolvía ningún resultado en Google.
       medios locales enlacen a rosivhub.com — los enlaces externos son
       la señal más fuerte para posicionar contra competidores ya
       establecidos (Alegra, Aliaddo, SandigoPOS, POS Colombia).
-- [ ] **Contenido**: un blog corto (2-4 posts) respondiendo preguntas
-      reales como "cómo facturar electrónicamente si tengo una tienda
-      de barrio" ayuda mucho más a aparecer en ChatGPT/Perplexity que
-      la landing sola, porque esos motores citan contenido informativo,
-      no solo páginas de venta.
+- [x] **Contenido**: (2026-08-12) Se migró todo el sitio a Astro y se
+      publicó un blog con 4 posts iniciales en `/blog` respondiendo
+      preguntas reales ("cómo facturar electrónicamente si tienes una
+      tienda de barrio", "qué es un POS", "facturación DIAN para
+      restaurantes", "POS offline") — cada uno con su propio JSON-LD
+      `Article` y entrada en el sitemap automático. Sigue habiendo
+      espacio para sumar más posts según qué preguntas traigan tráfico
+      real.
 - [ ] Confirmar que `og-image.jpg` (ya generado) se ve bien al compartir
       el link real en WhatsApp/Twitter una vez esté desplegado.
 
