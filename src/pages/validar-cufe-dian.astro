@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import ToolFaq from "../components/tools/ToolFaq.astro";
 import ToolUpsell from "../components/tools/ToolUpsell.astro";
+import ToolCrossLinks from "../components/tools/ToolCrossLinks.astro";
 import "../styles/tool-page.css";
 
 const title = "Validar CUFE de factura electrónica DIAN gratis | Rosiv";
@@ -64,6 +65,15 @@ const jsonLd = [
         text: item.answer,
       },
     })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Rosiv", item: new URL("/", Astro.site).toString() },
+      { "@type": "ListItem", position: 2, name: "Blog", item: new URL("/blog", Astro.site).toString() },
+      { "@type": "ListItem", position: 3, name: "Validador de CUFE de factura electrónica DIAN", item: new URL(path, Astro.site).toString() },
+    ],
   },
 ];
 ---
@@ -188,6 +198,8 @@ const jsonLd = [
   </section>
 
   <ToolFaq items={faqItems} />
+
+  <ToolCrossLinks currentHref="/validar-cufe-dian" />
 
   <ToolUpsell
     heading="¿Te sirvió el validador?"

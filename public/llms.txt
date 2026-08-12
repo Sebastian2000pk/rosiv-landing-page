@@ -46,11 +46,28 @@ peluquerías en Colombia: https://rosivhub.com/blog
   registro, el dígito de verificación (DV) de un NIT o cédula colombiana
   usando el algoritmo oficial de la DIAN (módulo 11).
   https://rosivhub.com/calcular-digito-verificacion-nit
+- Calculadora de Impoconsumo (8%) vs IVA (19%) para restaurantes: calcula el
+  impuesto y el total a cobrar con las dos tarifas al mismo tiempo, y explica
+  cuál le corresponde a un restaurante según su caso.
+  https://rosivhub.com/calcular-impoconsumo-iva-restaurante
+- Test "¿Debo facturar electrónicamente?": responde 3 preguntas sobre
+  régimen tributario, ingresos anuales y si un cliente ya pidió factura
+  electrónica, y dice si el negocio ya está obligado a facturar
+  electrónicamente ante la DIAN en Colombia.
+  https://rosivhub.com/debo-facturar-electronicamente
+- Validador de CUFE de factura electrónica: verifica si el CUFE (Código
+  Único de Factura Electrónica) de una factura colombiana tiene el formato
+  correcto (96 caracteres alfanuméricos) y enlaza al catálogo oficial de la
+  DIAN para confirmar que el documento existe.
+  https://rosivhub.com/validar-cufe-dian
 
 ## Enlaces
 
 - Sitio: https://rosivhub.com/
 - Blog: https://rosivhub.com/blog
 - Calculadora dígito de verificación NIT: https://rosivhub.com/calcular-digito-verificacion-nit
+- Calculadora Impoconsumo vs IVA restaurantes: https://rosivhub.com/calcular-impoconsumo-iva-restaurante
+- Test obligación factura electrónica: https://rosivhub.com/debo-facturar-electronicamente
+- Validador de CUFE DIAN: https://rosivhub.com/validar-cufe-dian
 - Probar / registrarse: https://web.rosivhub.com
 - Política de privacidad: https://rosivhub.com/ws/privacy-policy.html

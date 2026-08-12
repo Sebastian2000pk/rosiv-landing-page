@@ -1,0 +1,99 @@
+---
+interface ToolLink {
+  href: string;
+  icon: string;
+  label: string;
+}
+
+interface Props {
+  currentHref: string;
+}
+
+const ALL_TOOLS: ToolLink[] = [
+  { href: "/calcular-digito-verificacion-nit", icon: "fas fa-calculator", label: "Dígito de verificación del NIT" },
+  { href: "/calcular-impoconsumo-iva-restaurante", icon: "fas fa-scale-balanced", label: "Impoconsumo vs IVA en restaurantes" },
+  { href: "/debo-facturar-electronicamente", icon: "fas fa-list-check", label: "¿Debo facturar electrónicamente?" },
+  { href: "/validar-cufe-dian", icon: "fas fa-shield-halved", label: "Validar CUFE de factura electrónica" },
+];
+
+const { currentHref } = Astro.props;
+const otherTools = ALL_TOOLS.filter((tool) => tool.href !== currentHref);
+---
+
+<section class="tool-crosslinks">
+  <div class="container tool-explain-inner">
+    <p class="tool-crosslinks-label">Otras herramientas gratis de Rosiv</p>
+    <div class="tool-crosslinks-grid">
+      {
+        otherTools.map((tool) => (
+          <a class="tool-crosslinks-item" href={tool.href}>
+            <i class={tool.icon} aria-hidden="true" />
+            <span>{tool.label}</span>
+            <i class="fas fa-arrow-right tool-crosslinks-arrow" aria-hidden="true" />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .tool-crosslinks {
+    padding: 56px 0;
+    background: var(--white);
+  }
+
+  .tool-crosslinks-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gray-400);
+    margin-bottom: 1.1rem;
+    text-align: center;
+  }
+
+  .tool-crosslinks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.85rem;
+  }
+
+  .tool-crosslinks-item {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.9rem 1.1rem;
+    background: var(--purple-50);
+    border: 1px solid var(--purple-100);
+    border-radius: var(--radius-lg);
+    color: var(--brand-black);
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .tool-crosslinks-item:hover,
+  .tool-crosslinks-item:focus-visible {
+    border-color: var(--primary-purple);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .tool-crosslinks-item > i:first-child {
+    color: var(--primary-purple);
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  .tool-crosslinks-item span {
+    flex: 1;
+  }
+
+  .tool-crosslinks-arrow {
+    color: var(--gray-300);
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+</style>
