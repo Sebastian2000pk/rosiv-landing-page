@@ -160,7 +160,7 @@ const jsonLd = [
         <!-- Panel 2: checklist de siguientes pasos -->
         <div class="dv-side-panel dv-panel-checklist" data-panel="checklist" hidden>
           <div class="dv-checklist-card">
-            <h3>Ya tienes tu DV. Esto es lo que sigue:</h3>
+            <p class="dv-panel-heading">Ya tienes tu DV. Esto es lo que sigue:</p>
             <ul class="dv-checklist">
               <li class="done">
                 <i class="fas fa-check-circle" aria-hidden="true"></i>
@@ -189,7 +189,7 @@ const jsonLd = [
         <div class="dv-side-panel dv-panel-fact" data-panel="fact" hidden>
           <div class="dv-fact-card">
             <i class="fas fa-lightbulb" aria-hidden="true"></i>
-            <h3>¿Sabías esto?</h3>
+            <p class="dv-panel-heading">¿Sabías esto?</p>
             <p>
               Muchos tenderos y restaurantes familiares pierden tiempo cada
               semana sacando cuentas a mano antes de poder facturar.
@@ -525,8 +525,9 @@ const jsonLd = [
     padding: 1.75rem;
   }
 
-  .dv-checklist-card h3 {
+  .dv-checklist-card .dv-panel-heading {
     font-family: var(--font-display);
+    font-weight: 700;
     font-size: 1.1rem;
     color: var(--brand-black);
     margin-bottom: 1.1rem;
@@ -579,8 +580,9 @@ const jsonLd = [
     margin-bottom: 0.75rem;
   }
 
-  .dv-fact-card h3 {
+  .dv-fact-card .dv-panel-heading {
     font-family: var(--font-display);
+    font-weight: 700;
     font-size: 1.15rem;
     color: var(--brand-black);
     margin-bottom: 0.75rem;
