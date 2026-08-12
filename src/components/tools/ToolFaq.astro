@@ -1,0 +1,26 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: FaqItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<section class="tool-faq">
+  <div class="container tool-explain-inner">
+    <h2>Preguntas frecuentes</h2>
+    {
+      items.map((item) => (
+        <details class="tool-faq-item">
+          <summary>{item.question}</summary>
+          <p>{item.answer}</p>
+        </details>
+      ))
+    }
+  </div>
+</section>

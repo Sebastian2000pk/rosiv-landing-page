@@ -7,6 +7,37 @@ import Footer from "../../components/Footer.astro";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+const tools = [
+  {
+    href: "/calcular-digito-verificacion-nit",
+    title: "Calculadora de dígito de verificación del NIT",
+    description:
+      "Escribe tu NIT o cédula y obtén el dígito de verificación al instante, con la fórmula oficial de la DIAN.",
+    cta: "Calcular ahora",
+  },
+  {
+    href: "/calcular-impoconsumo-iva-restaurante",
+    title: "Calculadora de Impoconsumo vs IVA para restaurantes",
+    description:
+      "Descubre si tu restaurante debe cobrar impoconsumo del 8% o IVA del 19%, y calcula el total al instante.",
+    cta: "Calcular ahora",
+  },
+  {
+    href: "/debo-facturar-electronicamente",
+    title: "¿Debo facturar electrónicamente?",
+    description:
+      "Responde 3 preguntas y descubre si tu negocio ya está obligado a facturar electrónicamente ante la DIAN.",
+    cta: "Hacer el test",
+  },
+  {
+    href: "/validar-cufe-dian",
+    title: "Validar CUFE de factura electrónica",
+    description:
+      "Verifica si el CUFE de una factura tiene el formato correcto y consúltalo en el catálogo oficial de la DIAN.",
+    cta: "Validar ahora",
+  },
+];
 ---
 
 <Layout
@@ -26,18 +57,19 @@ const posts = (await getCollection("blog")).sort(
         </p>
       </header>
       <div class="blog-grid">
-        <a class="blog-card blog-card-tool" href="/calcular-digito-verificacion-nit">
-          <span class="blog-card-tool-badge">
-            <i class="fas fa-calculator" aria-hidden="true"></i>
-            Herramienta gratis
-          </span>
-          <h3>Calculadora de dígito de verificación del NIT</h3>
-          <p>
-            Escribe tu NIT o cédula y obtén el dígito de verificación al
-            instante, con la fórmula oficial de la DIAN.
-          </p>
-          <span class="blog-card-cta blog-card-tool-cta">Calcular ahora &rarr;</span>
-        </a>
+        {
+          tools.map((tool) => (
+            <a class="blog-card blog-card-tool" href={tool.href}>
+              <span class="blog-card-tool-badge">
+                <i class="fas fa-calculator" aria-hidden="true" />
+                Herramienta gratis
+              </span>
+              <h3>{tool.title}</h3>
+              <p>{tool.description}</p>
+              <span class="blog-card-cta blog-card-tool-cta">{tool.cta} &rarr;</span>
+            </a>
+          ))
+        }
         {
           posts.map((post) => (
             <a class="blog-card" href={`/blog/${post.id}`}>

@@ -1,0 +1,45 @@
+---
+interface Feature {
+  icon: string;
+  label: string;
+}
+
+interface Props {
+  heading: string;
+  body: string;
+  features: Feature[];
+}
+
+const { heading, body, features } = Astro.props;
+---
+
+<section class="tool-upsell">
+  <div class="container tool-upsell-inner">
+    <h2>{heading}</h2>
+    <p>{body}</p>
+    <div class="tool-upsell-features" role="list">
+      {
+        features.map((feature) => (
+          <div class="tool-upsell-feature" role="listitem">
+            <i class={feature.icon} aria-hidden="true" />
+            <span>{feature.label}</span>
+          </div>
+        ))
+      }
+    </div>
+    <a
+      class="btn-primary tool-upsell-cta"
+      href="https://web.rosivhub.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Empieza gratis con Rosiv"
+    >
+      <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i>
+      Empieza gratis con Rosiv
+    </a>
+    <p class="tool-upsell-note">
+      Hecho para tenderos, restaurantes familiares y peluquerías en Colombia.
+      Sin manuales, sin cursos.
+    </p>
+  </div>
+</section>

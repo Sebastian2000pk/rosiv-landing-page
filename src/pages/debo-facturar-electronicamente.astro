@@ -1,0 +1,481 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ToolSidePanel from "../components/tools/ToolSidePanel.astro";
+import ToolFaq from "../components/tools/ToolFaq.astro";
+import ToolUpsell from "../components/tools/ToolUpsell.astro";
+import "../styles/tool-page.css";
+
+const title = "¿Debo facturar electrónicamente? Test rápido DIAN 2026 | Rosiv";
+const description =
+  "Responde 3 preguntas y descubre al instante si tu negocio está obligado a facturar electrónicamente ante la DIAN en 2026. Gratis, sin registrarte.";
+const path = "/debo-facturar-electronicamente";
+
+const faqItems = [
+  {
+    question: "¿Quién está obligado a facturar electrónicamente en Colombia en 2026?",
+    answer:
+      "Están obligados los responsables de IVA, los responsables del impuesto al consumo, quienes pertenecen al Régimen Simple de Tributación sin importar sus ingresos, y las personas naturales comerciantes que superen los 3.500 UVT de ingresos brutos anuales. También aplica a quienes ya venían facturando electrónicamente por decisión propia o de un cliente.",
+  },
+  {
+    question: "¿Un negocio pequeño con pocas ventas debe facturar electrónicamente?",
+    answer:
+      "Depende de su régimen tributario, no solo del tamaño. Si el negocio está inscrito en el Régimen Simple o es responsable de IVA, debe facturar electrónicamente sin importar cuánto venda. Si es una persona natural no responsable de IVA con ingresos bajos, puede que todavía no esté obligada, pero conviene revisarlo cada año porque los topes y reglas cambian.",
+  },
+  {
+    question: "¿Qué pasa si estoy obligado a facturar electrónicamente y no lo hago?",
+    answer:
+      "La DIAN puede imponer sanciones y desconocer los costos y gastos que no estén soportados con factura electrónica válida. Además, muchos clientes empresariales ya no aceptan facturas que no sean electrónicas, lo que puede hacerte perder ventas.",
+  },
+  {
+    question: "¿La factura POS reemplaza a la factura electrónica?",
+    answer:
+      "No completamente. El documento equivalente POS solo se puede usar hasta cierto monto por transacción (definido en UVT); por encima de ese valor, o si el cliente lo solicita, debes expedir factura electrónica. La DIAN ha venido restringiendo cada vez más el uso del POS como sustituto de la factura electrónica.",
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Test: ¿Debo facturar electrónicamente?",
+    url: new URL(path, Astro.site).toString(),
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "COP",
+    },
+    description,
+    publisher: {
+      "@type": "Organization",
+      name: "Rosiv",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  },
+];
+---
+
+<Layout title={title} description={description} path={path} keywords="debo facturar electrónicamente, obligados factura electrónica DIAN, factura electrónica 2026 Colombia, régimen simple facturación" jsonLd={jsonLd}>
+  <Navbar />
+
+  <section class="tool-hero qz-hero">
+    <div class="container tool-hero-grid tool-hero-grid--single">
+      <div class="tool-hero-main">
+        <span class="status-tag live tool-hero-badge">
+          <i class="fas fa-list-check" aria-hidden="true"></i>
+          Respuesta en 3 preguntas
+        </span>
+        <h1 class="tool-hero-title">
+          ¿Ya debes facturar electrónicamente?
+        </h1>
+        <p class="tool-hero-subtitle">
+          3 preguntas cortas y te decimos si te toca, sin leerte la norma
+          completa.
+        </p>
+
+        <div class="tool-card qz-card" role="group" aria-label="Test de obligación de facturación electrónica">
+          <div id="qz-questions">
+            <div class="qz-step active" data-step="1">
+              <p class="qz-step-label">Pregunta 1 de 3</p>
+              <h2 class="qz-question">¿A qué régimen tributario pertenece tu negocio?</h2>
+              <div class="qz-options">
+                <button type="button" class="qz-option" data-q="1" data-value="simple">Régimen Simple de Tributación</button>
+                <button type="button" class="qz-option" data-q="1" data-value="responsable-iva">Régimen ordinario, responsable de IVA</button>
+                <button type="button" class="qz-option" data-q="1" data-value="no-responsable">Persona natural, no responsable de IVA</button>
+                <button type="button" class="qz-option" data-q="1" data-value="no-se">No estoy seguro</button>
+              </div>
+            </div>
+
+            <div class="qz-step" data-step="2">
+              <p class="qz-step-label">Pregunta 2 de 3</p>
+              <h2 class="qz-question">¿Cuánto vendió tu negocio el año pasado, aproximadamente?</h2>
+              <div class="qz-options">
+                <button type="button" class="qz-option" data-q="2" data-value="alto">Más de $180.000.000 al año</button>
+                <button type="button" class="qz-option" data-q="2" data-value="bajo">Menos de $180.000.000 al año</button>
+                <button type="button" class="qz-option" data-q="2" data-value="no-se">No estoy seguro</button>
+              </div>
+            </div>
+
+            <div class="qz-step" data-step="3">
+              <p class="qz-step-label">Pregunta 3 de 3</p>
+              <h2 class="qz-question">¿Algún cliente o proveedor ya te ha pedido factura electrónica?</h2>
+              <div class="qz-options">
+                <button type="button" class="qz-option" data-q="3" data-value="si">Sí, ya me la han pedido</button>
+                <button type="button" class="qz-option" data-q="3" data-value="no">No, todavía no</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="qz-result" class="qz-result" role="status" aria-live="polite">
+            <div id="qz-result-icon" class="qz-result-icon">
+              <i class="fas fa-file-invoice" aria-hidden="true"></i>
+            </div>
+            <h2 id="qz-result-title" class="qz-result-title">—</h2>
+            <p id="qz-result-text" class="qz-result-text">—</p>
+            <button type="button" id="qz-restart" class="qz-restart-btn">
+              <i class="fas fa-rotate-left" aria-hidden="true"></i>
+              Volver a empezar
+            </button>
+          </div>
+
+          <div class="qz-progress" aria-hidden="true">
+            <span class="qz-dot active" data-dot="1"></span>
+            <span class="qz-dot" data-dot="2"></span>
+            <span class="qz-dot" data-dot="3"></span>
+          </div>
+        </div>
+
+        <ToolSidePanel
+          inline
+          eyebrow="Si estás obligado"
+          heading="Esto es lo que necesitas para facturar bien:"
+          items={[
+            { label: "Saber que estás obligado", done: true },
+            { label: "Software autorizado" },
+            { label: "Sistema de ventas conectado" },
+            { label: "Resolución vigente" },
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-explain">
+    <div class="container tool-explain-inner">
+      <h2>Quién está obligado a facturar electrónicamente en Colombia</h2>
+      <p>
+        La obligación de facturar electrónicamente no depende solo del
+        tamaño del negocio, sino principalmente de tu
+        <strong>régimen tributario</strong>. Si estás inscrito en el
+        Régimen Simple de Tributación, estás obligado sin importar cuánto
+        vendas. Si eres responsable de IVA o de impuesto al consumo, también
+        aplica para ti.
+      </p>
+      <p>
+        Si eres persona natural comerciante y no eres responsable de IVA, la
+        obligación depende de tus ingresos brutos anuales: el umbral de
+        referencia son <strong>3.500 UVT</strong>. Este valor cambia cada
+        año porque la UVT se actualiza, así que conviene revisarlo cada
+        enero.
+      </p>
+
+      <h3>La factura POS no siempre es suficiente</h3>
+      <p>
+        Muchos negocios pequeños usan el documento equivalente POS pensando
+        que los exime de facturar electrónicamente. La realidad es que el
+        POS solo se puede usar hasta cierto monto por venta, y la DIAN ha
+        venido restringiendo su uso cada vez más. Si tu negocio ya está
+        obligado a facturar electrónicamente por régimen, el POS no
+        reemplaza esa obligación para ventas que superen el límite.
+      </p>
+
+      <h3>Qué hacer si el test te dice que ya estás obligado</h3>
+      <ul class="tool-list">
+        <li>Confirma tu situación puntual con tu contador antes de tomar decisiones.</li>
+        <li>Solicita tu resolución de facturación electrónica ante la DIAN si aún no la tienes.</li>
+        <li>Elige un sistema de facturación autorizado que se conecte con tus ventas del día a día.</li>
+        <li>Empieza a facturar electrónicamente cuanto antes: entre más esperes, más facturas quedan sin soporte válido.</li>
+      </ul>
+    </div>
+  </section>
+
+  <ToolFaq items={faqItems} />
+
+  <ToolUpsell
+    heading="¿Ya sabes que te toca facturar electrónicamente?"
+    body="No necesitas volverte experto en normas DIAN. Rosiv genera tu factura electrónica automáticamente desde el mismo sistema donde cobras, con la resolución y el software ya autorizados."
+    features={[
+      { icon: "fas fa-file-invoice-dollar", label: "Factura electrónica DIAN incluida" },
+      { icon: "fas fa-wifi-slash", label: "Funciona con o sin internet" },
+      { icon: "fas fa-bolt", label: "Cobra en segundos desde el celular" },
+    ]}
+  />
+
+  <Footer />
+</Layout>
+
+<script>
+  type Answers = { q1?: string; q2?: string; q3?: string };
+  const answers: Answers = {};
+  let currentStep = 1;
+
+  const steps = document.querySelectorAll<HTMLElement>(".qz-step");
+  const dots = document.querySelectorAll<HTMLElement>(".qz-dot");
+  const questionsWrap = document.getElementById("qz-questions") as HTMLElement;
+  const resultBox = document.getElementById("qz-result") as HTMLElement;
+  const resultIcon = document.getElementById("qz-result-icon") as HTMLElement;
+  const resultTitle = document.getElementById("qz-result-title") as HTMLElement;
+  const resultText = document.getElementById("qz-result-text") as HTMLElement;
+  const restartBtn = document.getElementById("qz-restart") as HTMLButtonElement;
+  const progressBar = document.querySelector(".qz-progress") as HTMLElement;
+
+  function goToStep(step: number) {
+    currentStep = step;
+    steps.forEach((s) => s.classList.toggle("active", Number(s.dataset.step) === step));
+    dots.forEach((d) => d.classList.toggle("active", Number(d.dataset.dot) === step));
+  }
+
+  function evaluate(): { title: string; text: string; obligated: boolean } {
+    const { q1, q2, q3 } = answers;
+
+    if (q1 === "simple") {
+      return {
+        title: "Sí, estás obligado a facturar electrónicamente",
+        text: "Al pertenecer al Régimen Simple de Tributación, debes facturar electrónicamente sin importar cuánto vendas al año.",
+        obligated: true,
+      };
+    }
+
+    if (q1 === "responsable-iva") {
+      return {
+        title: "Sí, estás obligado a facturar electrónicamente",
+        text: "Al ser responsable de IVA, la DIAN te exige expedir factura electrónica en tus ventas gravadas.",
+        obligated: true,
+      };
+    }
+
+    if (q3 === "si") {
+      return {
+        title: "Es muy probable que ya estés obligado",
+        text: "Si un cliente o proveedor ya te pidió factura electrónica, generalmente es porque tu operación lo exige. Confírmalo con tu contador para estar seguro.",
+        obligated: true,
+      };
+    }
+
+    if (q2 === "alto") {
+      return {
+        title: "Es muy probable que ya estés obligado",
+        text: "Superar los 3.500 UVT de ingresos brutos anuales como persona natural comerciante te pone dentro del grupo obligado a facturar electrónicamente.",
+        obligated: true,
+      };
+    }
+
+    if (q1 === "no-se" || q2 === "no-se") {
+      return {
+        title: "No estamos seguros con la información que diste",
+        text: "Con datos más precisos sobre tu régimen tributario e ingresos anuales podemos darte una respuesta más clara. Te recomendamos confirmarlo con tu contador o en el portal de la DIAN.",
+        obligated: false,
+      };
+    }
+
+    return {
+      title: "Por ahora no estarías obligado",
+      text: "Con lo que nos cuentas, no entrarías todavía en los grupos obligados a facturar electrónicamente. Aun así, revísalo cada año: los topes de ingresos cambian y tu situación también puede cambiar.",
+      obligated: false,
+    };
+  }
+
+  function showResult() {
+    questionsWrap.classList.add("hidden");
+    progressBar.classList.add("hidden");
+    resultBox.classList.add("visible");
+
+    const { title, text, obligated } = evaluate();
+    resultTitle.textContent = title;
+    resultText.textContent = text;
+    resultIcon.classList.toggle("obligated", obligated);
+    resultIcon.innerHTML = obligated
+      ? '<i class="fas fa-triangle-exclamation" aria-hidden="true"></i>'
+      : '<i class="fas fa-circle-check" aria-hidden="true"></i>';
+  }
+
+  document.querySelectorAll<HTMLButtonElement>(".qz-option").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const q = btn.dataset.q;
+      const value = btn.dataset.value;
+      if (q === "1") answers.q1 = value;
+      if (q === "2") answers.q2 = value;
+      if (q === "3") answers.q3 = value;
+
+      if (currentStep < 3) {
+        goToStep(currentStep + 1);
+      } else {
+        showResult();
+      }
+    });
+  });
+
+  restartBtn?.addEventListener("click", () => {
+    answers.q1 = undefined;
+    answers.q2 = undefined;
+    answers.q3 = undefined;
+    resultBox.classList.remove("visible");
+    questionsWrap.classList.remove("hidden");
+    progressBar.classList.remove("hidden");
+    goToStep(1);
+  });
+</script>
+
+<style>
+  .qz-card {
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem 1.75rem;
+  }
+
+  .qz-step {
+    display: none;
+  }
+
+  .qz-step.active {
+    display: block;
+    animation: qz-fade-in 0.35s ease;
+  }
+
+  @keyframes qz-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .qz-step-label {
+    color: var(--primary-purple);
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.6rem;
+  }
+
+  .qz-question {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--brand-black);
+    margin-bottom: 0.9rem;
+    line-height: 1.3;
+  }
+
+  .qz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .qz-option {
+    text-align: left;
+    background: var(--gray-50);
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    padding: 0.6rem 0.9rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .qz-option:hover {
+    border-color: var(--primary-purple);
+    background: var(--purple-50);
+    color: var(--brand-black);
+  }
+
+  .qz-progress {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.1rem;
+  }
+
+  .qz-progress.hidden {
+    display: none;
+  }
+
+  .qz-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gray-200);
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .qz-dot.active {
+    background: var(--primary-purple);
+    transform: scale(1.3);
+  }
+
+  #qz-questions.hidden {
+    display: none;
+  }
+
+  .qz-result {
+    display: none;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .qz-result.visible {
+    display: block;
+    animation: qz-fade-in 0.4s ease;
+  }
+
+  .qz-result-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--purple-50);
+    color: var(--primary-purple);
+    font-size: 1.75rem;
+  }
+
+  .qz-result-icon.obligated {
+    background: #fef3c7;
+    color: #b45309;
+  }
+
+  .qz-result-title {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--brand-black);
+    margin-bottom: 0.75rem;
+    line-height: 1.35;
+  }
+
+  .qz-result-text {
+    color: var(--gray-600);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  .qz-restart-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gray-100);
+    color: var(--gray-700);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 0.7rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .qz-restart-btn:hover {
+    background: var(--gray-200);
+  }
+</style>

@@ -1,0 +1,525 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ToolFaq from "../components/tools/ToolFaq.astro";
+import ToolUpsell from "../components/tools/ToolUpsell.astro";
+import "../styles/tool-page.css";
+
+const title = "Validar CUFE de factura electrónica DIAN gratis | Rosiv";
+const description =
+  "Verifica si el CUFE de una factura electrónica tiene el formato correcto y consúltala directamente en el catálogo oficial de la DIAN. Gratis, sin registrarte.";
+const path = "/validar-cufe-dian";
+
+const faqItems = [
+  {
+    question: "¿Qué es el CUFE de una factura electrónica?",
+    answer:
+      "El CUFE (Código Único de Factura Electrónica) es un código alfanumérico de 96 caracteres que la DIAN asocia a cada factura electrónica válida en Colombia. Sirve para confirmar que la factura fue reportada y autenticada ante la DIAN.",
+  },
+  {
+    question: "¿Dónde encuentro el CUFE de una factura?",
+    answer:
+      "El CUFE aparece impreso en la representación gráfica (PDF) de la factura electrónica, generalmente cerca del código QR o en la parte inferior del documento. También puedes obtenerlo escaneando el código QR con la cámara de tu celular.",
+  },
+  {
+    question: "¿Cómo sé si una factura electrónica es válida ante la DIAN?",
+    answer:
+      "Una factura es válida cuando su CUFE tiene el formato correcto (96 caracteres alfanuméricos) y al consultarlo en el catálogo oficial de la DIAN aparece registrado. Si el CUFE no existe en el catálogo, la factura podría estar mal generada o no haber sido reportada.",
+  },
+  {
+    question: "¿El CUFE es lo mismo que el CUDE?",
+    answer:
+      "No. El CUFE identifica facturas electrónicas de venta, mientras que el CUDE (Código Único de Documento Electrónico) identifica otros documentos electrónicos como notas crédito, notas débito o nómina electrónica. Ambos cumplen una función similar de trazabilidad, pero para tipos de documento distintos.",
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Validador de CUFE de factura electrónica DIAN",
+    url: new URL(path, Astro.site).toString(),
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "COP",
+    },
+    description,
+    publisher: {
+      "@type": "Organization",
+      name: "Rosiv",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  },
+];
+---
+
+<Layout title={title} description={description} path={path} keywords="validar CUFE, CUFE DIAN, consultar factura electrónica DIAN, qué es el CUFE, verificar factura electrónica Colombia" jsonLd={jsonLd}>
+  <Navbar />
+
+  <section class="tool-hero cf-hero">
+    <div class="container tool-hero-grid tool-hero-grid--single">
+      <div class="tool-hero-main">
+        <span class="status-tag live tool-hero-badge">
+          <i class="fas fa-shield-halved" aria-hidden="true"></i>
+          Se valida en tu navegador, no sale de aquí
+        </span>
+        <h1 class="tool-hero-title">
+          ¿Es válido el CUFE de esa factura electrónica?
+        </h1>
+        <p class="tool-hero-subtitle">
+          Pega el código y confirma si tiene el formato correcto antes de
+          consultarlo en el catálogo oficial de la DIAN.
+        </p>
+
+        <div class="cf-console" role="group" aria-labelledby="cf-calc-label">
+          <div class="cf-console-topbar">
+            <span class="cf-console-dot"></span>
+            <span class="cf-console-dot"></span>
+            <span class="cf-console-dot"></span>
+            <label id="cf-calc-label" for="cf-input" class="cf-console-label">
+              CUFE · 96 caracteres
+            </label>
+          </div>
+
+          <textarea
+            id="cf-input"
+            class="cf-input"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Pega aquí el código CUFE..."
+            aria-describedby="cf-error"
+            rows="2"
+          ></textarea>
+          <p id="cf-error" class="cf-error" role="alert"></p>
+
+          <div id="cf-result" class="cf-result">
+            <span id="cf-result-icon" class="cf-result-icon">
+              <i class="far fa-circle" aria-hidden="true"></i>
+            </span>
+            <div class="cf-result-copy">
+              <span id="cf-result-title" class="cf-result-title">Esperando un CUFE...</span>
+              <p id="cf-result-detail" class="cf-result-detail"></p>
+            </div>
+          </div>
+
+          <a
+            id="cf-dian-link"
+            class="cf-dian-btn"
+            href="https://catalogo-vpfe.dian.gov.co/User/SearchDocument"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-disabled="true"
+          >
+            <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
+            Consultar este CUFE en la DIAN
+          </a>
+
+          <div class="cf-console-footer">
+            <span class="cf-console-footer-label">
+              <i class="fas fa-terminal" aria-hidden="true"></i>
+              Después de validar
+            </span>
+            <ul class="cf-console-steps">
+              <li class="done"><i class="fas fa-check-circle" aria-hidden="true"></i>Formato verificado</li>
+              <li><i class="far fa-circle" aria-hidden="true"></i>Confirmar en el portal DIAN</li>
+              <li><i class="far fa-circle" aria-hidden="true"></i>Guardar como soporte</li>
+              <li><i class="far fa-circle" aria-hidden="true"></i>Facturar tú mismo sin errores</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-explain">
+    <div class="container tool-explain-inner">
+      <h2>¿Qué es el CUFE y por qué deberías validarlo?</h2>
+      <p>
+        El <strong>CUFE (Código Único de Factura Electrónica)</strong> es un
+        código de 96 caracteres que la DIAN genera y asocia a cada factura
+        electrónica válida en Colombia. Funciona como una huella digital: si
+        alguien altera un solo dato de la factura, el CUFE ya no coincide.
+      </p>
+      <p>
+        Validar el CUFE te sirve tanto si <strong>emites</strong> facturas
+        (para confirmar que salieron bien generadas) como si las
+        <strong>recibes</strong> (para confirmar que el proveedor sí las
+        reportó ante la DIAN y que puedes usarlas como soporte de costos y
+        gastos).
+      </p>
+
+      <h3>Dónde encontrar el CUFE en una factura</h3>
+      <p>
+        El CUFE suele aparecer impreso cerca del código QR en la
+        representación gráfica (PDF) de la factura, o codificado dentro del
+        mismo QR. Si tienes la factura en papel o en pantalla, basta con
+        escanear el QR con la cámara del celular para obtener el código
+        completo.
+      </p>
+
+      <h3>Qué revisa esta herramienta</h3>
+      <ul class="tool-list">
+        <li>Que el CUFE tenga el largo y formato correcto (96 caracteres alfanuméricos).</li>
+        <li>Que no tenga espacios ni caracteres inválidos por errores al copiarlo.</li>
+        <li>Te lleva directo al catálogo oficial de la DIAN para confirmar que el documento existe y está registrado.</li>
+      </ul>
+      <p>
+        Esta herramienta valida el <strong>formato</strong> del código
+        localmente en tu navegador. La confirmación final de que la factura
+        existe y está vigente siempre se hace en el
+        <a href="https://catalogo-vpfe.dian.gov.co/User/SearchDocument" target="_blank" rel="noopener noreferrer">catálogo oficial de la DIAN</a>.
+      </p>
+    </div>
+  </section>
+
+  <ToolFaq items={faqItems} />
+
+  <ToolUpsell
+    heading="¿Te sirvió el validador?"
+    body="Esto es solo para revisar facturas que ya existen. Lo siguiente es que tú generes las tuyas sin pensar en códigos ni formatos: Rosiv crea el CUFE automáticamente en cada venta y lo reporta a la DIAN por ti."
+    features={[
+      { icon: "fas fa-file-invoice-dollar", label: "Factura electrónica DIAN incluida" },
+      { icon: "fas fa-wifi-slash", label: "Funciona con o sin internet" },
+      { icon: "fas fa-bolt", label: "Cobra en segundos desde el celular" },
+    ]}
+  />
+
+  <Footer />
+</Layout>
+
+<script>
+  const CUFE_LENGTH = 96;
+  const HEX_REGEX = /^[a-fA-F0-9]+$/;
+
+  const input = document.getElementById("cf-input") as HTMLTextAreaElement;
+  const errorEl = document.getElementById("cf-error") as HTMLElement;
+  const resultBox = document.getElementById("cf-result") as HTMLElement;
+  const resultIcon = document.getElementById("cf-result-icon") as HTMLElement;
+  const resultTitle = document.getElementById("cf-result-title") as HTMLElement;
+  const resultDetail = document.getElementById("cf-result-detail") as HTMLElement;
+  const dianLink = document.getElementById("cf-dian-link") as HTMLAnchorElement;
+
+  function setState(state: "idle" | "valid" | "invalid", title: string, detail: string) {
+    resultBox.classList.remove("idle", "valid", "invalid");
+    resultBox.classList.add(state);
+
+    const icons: Record<string, string> = {
+      idle: '<i class="far fa-circle" aria-hidden="true"></i>',
+      valid: '<i class="fas fa-circle-check" aria-hidden="true"></i>',
+      invalid: '<i class="fas fa-circle-exclamation" aria-hidden="true"></i>',
+    };
+    resultIcon.innerHTML = icons[state];
+    resultTitle.textContent = title;
+    resultDetail.textContent = detail;
+  }
+
+  function validate(raw: string) {
+    const clean = raw.trim();
+    errorEl.textContent = "";
+
+    if (!clean) {
+      setState("idle", "Esperando un CUFE...", "");
+      dianLink.classList.remove("enabled");
+      dianLink.href = "https://catalogo-vpfe.dian.gov.co/User/SearchDocument";
+      return;
+    }
+
+    const hasSpaces = /\s/.test(clean);
+    const bodyOnly = clean.replace(/\s/g, "");
+
+    if (bodyOnly.length !== CUFE_LENGTH) {
+      setState(
+        "invalid",
+        "El formato no parece correcto",
+        `Un CUFE válido tiene ${CUFE_LENGTH} caracteres. El texto que pegaste tiene ${bodyOnly.length}${hasSpaces ? " (sin contar espacios)" : ""}. Revisa que lo hayas copiado completo.`
+      );
+      dianLink.classList.remove("enabled");
+      dianLink.href = "https://catalogo-vpfe.dian.gov.co/User/SearchDocument";
+      return;
+    }
+
+    if (!HEX_REGEX.test(bodyOnly)) {
+      setState(
+        "invalid",
+        "Contiene caracteres inválidos",
+        "Un CUFE solo debe tener letras (a-f) y números (0-9). Revisa que no se hayan colado símbolos o letras fuera de ese rango al copiarlo."
+      );
+      dianLink.classList.remove("enabled");
+      dianLink.href = "https://catalogo-vpfe.dian.gov.co/User/SearchDocument";
+      return;
+    }
+
+    setState(
+      "valid",
+      "El formato es correcto",
+      "Este CUFE tiene el largo y los caracteres esperados. Confírmalo en el catálogo oficial de la DIAN para saber si el documento está registrado."
+    );
+    dianLink.classList.add("enabled");
+    dianLink.href = `https://catalogo-vpfe.dian.gov.co/User/SearchDocument?DocumentKey=${bodyOnly}`;
+  }
+
+  input?.addEventListener("input", () => validate(input.value));
+  validate("");
+</script>
+
+<style>
+  .cf-hero {
+    padding-bottom: 32px;
+  }
+
+  .cf-hero .tool-hero-subtitle {
+    margin-bottom: 1.1rem;
+  }
+
+  .cf-console {
+    background: #1a1523;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    padding: 1rem;
+    text-align: left;
+  }
+
+  .cf-console-topbar {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.65rem;
+    padding: 0 0.15rem;
+  }
+
+  .cf-console-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgb(255 255 255 / 0.15);
+  }
+
+  .cf-console-label {
+    margin-left: 0.6rem;
+    font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: 0.75rem;
+    color: rgb(255 255 255 / 0.45);
+    letter-spacing: 0.02em;
+  }
+
+  .cf-input {
+    width: 100%;
+    font-size: 0.92rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgb(255 255 255 / 0.12);
+    border-radius: var(--radius-lg);
+    font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+    color: #e9e4f5;
+    background: rgb(255 255 255 / 0.05);
+    resize: vertical;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .cf-input::placeholder {
+    color: rgb(255 255 255 / 0.3);
+  }
+
+  .cf-input:focus {
+    outline: none;
+    border-color: var(--light-purple);
+    box-shadow: 0 0 0 4px rgba(141, 86, 230, 0.2);
+  }
+
+  .cf-error {
+    color: #ff8a80;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    min-height: 1.2em;
+  }
+
+  .cf-result {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    margin-top: 0.75rem;
+    padding: 0.8rem 0.9rem;
+    border-radius: var(--radius-lg);
+    background: rgb(255 255 255 / 0.05);
+    border: 1px solid rgb(255 255 255 / 0.1);
+    transition: background 0.25s ease, border-color 0.25s ease;
+  }
+
+  .cf-result.valid {
+    background: rgba(23, 163, 74, 0.14);
+    border-color: rgba(23, 163, 74, 0.35);
+  }
+
+  .cf-result.invalid {
+    background: rgba(217, 45, 32, 0.14);
+    border-color: rgba(217, 45, 32, 0.35);
+  }
+
+  .cf-result-icon {
+    font-size: 1.1rem;
+    color: rgb(255 255 255 / 0.35);
+    display: flex;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+  }
+
+  .cf-result.valid .cf-result-icon {
+    color: #4ade80;
+  }
+
+  .cf-result.invalid .cf-result-icon {
+    color: #ff8a80;
+  }
+
+  .cf-result-copy {
+    min-width: 0;
+  }
+
+  .cf-result-title {
+    display: block;
+    font-weight: 700;
+    color: #f5f2fb;
+    font-size: 0.95rem;
+  }
+
+  .cf-result-detail {
+    margin-top: 0.4rem;
+    margin-bottom: 0;
+    color: rgb(255 255 255 / 0.55);
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .cf-dian-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 0.7rem 1.25rem;
+    background: rgb(255 255 255 / 0.06);
+    color: rgb(255 255 255 / 0.35);
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: none;
+    border-radius: var(--radius-lg);
+    pointer-events: none;
+    transition: all 0.2s ease;
+  }
+
+  .cf-dian-btn.enabled {
+    background: var(--gradient-primary);
+    color: var(--white);
+    box-shadow: var(--shadow-purple);
+    pointer-events: auto;
+  }
+
+  .cf-dian-btn.enabled:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .cf-console-footer {
+    margin-top: 0.85rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed rgb(255 255 255 / 0.12);
+  }
+
+  .cf-console-footer-label {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--light-purple);
+    margin-bottom: 0.55rem;
+  }
+
+  .cf-console-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.55rem 1rem;
+  }
+
+  .cf-console-steps li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    color: rgb(255 255 255 / 0.4);
+  }
+
+  .cf-console-steps li i {
+    font-size: 0.85rem;
+    color: rgb(255 255 255 / 0.2);
+    flex-shrink: 0;
+  }
+
+  .cf-console-steps li.done {
+    color: #e9e4f5;
+    font-weight: 600;
+  }
+
+  .cf-console-steps li.done i {
+    color: #4ade80;
+  }
+
+  @media (max-width: 640px) {
+    .cf-hero {
+      padding-bottom: 24px;
+    }
+
+    .cf-input {
+      font-size: 0.85rem;
+      padding: 0.7rem 0.85rem;
+    }
+
+    .cf-console-steps {
+      gap: 0.4rem 0.6rem;
+    }
+
+    .cf-console-steps li {
+      font-size: 0.76rem;
+    }
+
+    .cf-console-footer {
+      margin-top: 0.6rem;
+      padding-top: 0.55rem;
+    }
+
+    .cf-result {
+      margin-top: 0.55rem;
+      padding: 0.65rem 0.75rem;
+    }
+
+    .cf-dian-btn {
+      margin-top: 0.55rem;
+      padding: 0.6rem 1.1rem;
+    }
+  }
+
+  @media (max-width: 340px) {
+    .cf-console-steps {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

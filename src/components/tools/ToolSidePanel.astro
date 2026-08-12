@@ -1,0 +1,53 @@
+---
+interface ChecklistItem {
+  label: string;
+  done?: boolean;
+}
+
+interface Props {
+  eyebrow: string;
+  heading: string;
+  items: ChecklistItem[];
+  inline?: boolean;
+}
+
+const { eyebrow, heading, items, inline = false } = Astro.props;
+---
+
+{
+  inline ? (
+    <div class="tool-checklist-inline" aria-label="Sobre Rosiv">
+      <span class="status-tag soon">{eyebrow}</span>
+      <p class="tool-panel-heading">{heading}</p>
+      <ul class="tool-checklist">
+        {items.map((item) => (
+          <li class={item.done ? "done" : ""}>
+            <i class={item.done ? "fas fa-check-circle" : "far fa-circle"} aria-hidden="true" />
+            {item.label}
+          </li>
+        ))}
+      </ul>
+    </div>
+  ) : (
+    <aside class="tool-side" aria-label="Sobre Rosiv">
+      <div class="tool-side-panel">
+        <div class="tool-checklist-card">
+          <span class="status-tag soon">{eyebrow}</span>
+          <p class="tool-panel-heading">{heading}</p>
+          <ul class="tool-checklist">
+            {items.map((item) => (
+              <li class={item.done ? "done" : ""}>
+                <i class={item.done ? "fas fa-check-circle" : "far fa-circle"} aria-hidden="true" />
+                {item.label}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <a href="https://web.rosivhub.com" target="_blank" rel="noopener noreferrer" class="tool-side-next">
+          <i class="fas fa-arrow-right-to-bracket" aria-hidden="true" />
+          Sigue con el siguiente paso en Rosiv
+        </a>
+      </div>
+    </aside>
+  )
+}
