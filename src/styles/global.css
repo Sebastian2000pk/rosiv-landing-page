@@ -1028,8 +1028,10 @@ body {
 
 .pricing-capacity {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem;
+  column-gap: 0.5rem;
+  row-gap: 0.15rem;
   padding: 0.5rem 0;
   margin-bottom: 0.75rem;
   border-top: 1px dashed var(--gray-200);
@@ -1056,6 +1058,12 @@ body {
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--gray-600);
+}
+
+.capacity-hint {
+  flex-basis: 100%;
+  font-size: 0.75rem;
+  color: var(--gray-500);
 }
 
 .pricing-footnote {
