@@ -87,16 +87,20 @@
   border: 0;
 }
 
-/* Enhanced focus styles for better accessibility */
+/* Enhanced focus styles for better accessibility (keyboard navigation only) */
 *:focus {
+  outline: none;
+}
+
+*:focus-visible {
   outline: 2px solid var(--primary-purple);
   outline-offset: 2px;
 }
 
-button:focus, 
-a:focus, 
-input:focus, 
-[tabindex]:focus {
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
   outline: 2px solid var(--primary-purple);
   outline-offset: 2px;
   box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
@@ -246,6 +250,8 @@ body {
   font-size: 1.5rem;
   line-height: 1;
   z-index: 1001;
+  color: inherit;
+  text-decoration: none;
 }
 
 .nav-logo .logo-text,
@@ -1905,16 +1911,16 @@ body {
 }
 
 /* Focus styles for accessibility */
-.btn-primary:focus,
-.btn-secondary:focus,
-.pricing-btn:focus,
-.nav-cta:focus {
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.pricing-btn:focus-visible,
+.nav-cta:focus-visible {
   outline: 2px solid var(--primary-purple);
   outline-offset: 2px;
 }
 
 /* Hamburger menu focus styles */
-.hamburger:focus {
+.hamburger:focus-visible {
   outline: 2px solid var(--primary-purple);
   outline-offset: 2px;
 }
