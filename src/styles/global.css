@@ -1994,6 +1994,45 @@ html {
   font-weight: 600;
 }
 
+.blog-card-tool {
+  background: var(--gradient-primary);
+  border: 1px solid transparent;
+}
+
+.blog-card-tool:hover,
+.blog-card-tool:focus-visible {
+  border-color: transparent;
+  box-shadow: var(--shadow-purple);
+}
+
+.blog-card-tool-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  align-self: flex-start;
+  background: rgb(255 255 255 / 0.15);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-md);
+}
+
+.blog-card-tool h3,
+.blog-card-tool p {
+  color: var(--white);
+}
+
+.blog-card-tool p {
+  opacity: 0.9;
+}
+
+.blog-card-tool-cta {
+  color: var(--white);
+}
+
 .blog-post {
   padding: var(--section-padding);
 }

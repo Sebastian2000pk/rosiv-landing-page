@@ -1,0 +1,851 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "Calculadora de dígito de verificación del NIT (DV) | Rosiv";
+const description =
+  "Calcula gratis el dígito de verificación (DV) de tu NIT o cédula con el algoritmo oficial de la DIAN. Resultado al instante, sin registrarte.";
+const path = "/calcular-digito-verificacion-nit";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Calculadora de dígito de verificación del NIT",
+    url: new URL(path, Astro.site).toString(),
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "COP",
+    },
+    description,
+    publisher: {
+      "@type": "Organization",
+      name: "Rosiv",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "¿Qué es el dígito de verificación del NIT?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Es un número adicional (del 0 al 9) que la DIAN calcula a partir de tu NIT o cédula usando una fórmula matemática. Sirve para confirmar que el número está bien escrito, sin errores de digitación, antes de usarlo en facturas o trámites.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿El dígito de verificación cambia con el tiempo?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. El dígito de verificación de un mismo NIT o cédula siempre da el mismo resultado, porque sale de una fórmula fija sobre esos números. Si te da distinto cada vez, revisa que estés escribiendo el número base correctamente.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Puedo calcular el DV de una cédula o solo de un NIT?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Puedes calcularlo para cualquiera de los dos. La DIAN usa la misma fórmula tanto para el NIT de una empresa como para la cédula de una persona natural registrada en el RUT.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Por qué me rechazan la factura electrónica por el dígito de verificación?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Casi siempre es porque el DV no corresponde al NIT ingresado, por un error de digitación al escribirlo. Verifica el número exacto que aparece en el RUT y vuelve a calcular el dígito para confirmarlo.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} path={path} keywords="dígito de verificación NIT, calcular DV NIT, dígito de verificación DIAN, calculadora NIT Colombia" jsonLd={jsonLd}>
+  <Navbar />
+
+  <section class="dv-hero">
+    <div class="container dv-hero-grid">
+      <div class="dv-hero-main">
+        <h1 class="dv-hero-title">
+          ¿Te está frenando el dígito de verificación del NIT?
+        </h1>
+        <p class="dv-hero-subtitle">
+          Escribe el NIT o la cédula y te damos el dígito al instante, con
+          la fórmula oficial de la DIAN. Gratis, sin registrarte y sin
+          esperar a nadie.
+        </p>
+
+        <div class="dv-calculator" role="group" aria-labelledby="dv-calc-label">
+          <label id="dv-calc-label" for="dv-input" class="dv-label">
+            NIT o cédula, sin puntos ni guiones
+          </label>
+          <div class="dv-calc-row">
+            <input
+              id="dv-input"
+              class="dv-input"
+              type="text"
+              inputmode="numeric"
+              autocomplete="off"
+              placeholder="Ej: 900123456"
+              aria-describedby="dv-error"
+            />
+            <div class="dv-result" aria-live="polite">
+              <span class="dv-result-label">DV</span>
+              <span id="dv-output" class="dv-result-value">–</span>
+            </div>
+          </div>
+          <p id="dv-error" class="dv-error" role="alert"></p>
+          <p id="dv-full" class="dv-full" aria-live="polite"></p>
+        </div>
+
+        <div class="dv-benefits" role="list">
+          <div class="dv-benefit" role="listitem">
+            <i class="fas fa-bolt" aria-hidden="true"></i>
+            <span>Resultado en segundos</span>
+          </div>
+          <div class="dv-benefit" role="listitem">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <span>Fórmula oficial DIAN</span>
+          </div>
+          <div class="dv-benefit" role="listitem">
+            <i class="fas fa-gift" aria-hidden="true"></i>
+            <span>100% gratis</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="dv-side" aria-label="Sobre Rosiv">
+        <!-- Panel 1: mockup de factura, se completa con el DV calculado -->
+        <div class="dv-side-panel dv-panel-invoice" data-panel="invoice" hidden>
+          <div class="dv-invoice-card">
+            <div class="dv-invoice-header">
+              <i class="fas fa-receipt" aria-hidden="true"></i>
+              <span>Factura electrónica</span>
+            </div>
+            <div class="dv-invoice-nit">
+              NIT: <strong id="dv-invoice-nit">900123456-8</strong>
+            </div>
+            <div class="dv-invoice-store">Tienda La Esquina</div>
+            <div class="dv-invoice-line">
+              <span>🍕 Pizza Margherita</span>
+              <span>$25.000</span>
+            </div>
+            <div class="dv-invoice-line">
+              <span>🥤 Coca Cola</span>
+              <span>$5.000</span>
+            </div>
+            <div class="dv-invoice-total">
+              <span>Total</span>
+              <span>$30.000</span>
+            </div>
+            <div class="dv-invoice-status">
+              <i class="fas fa-check-circle" aria-hidden="true"></i>
+              Enviada a la DIAN
+            </div>
+          </div>
+          <p class="dv-side-caption">
+            Así se ve una factura electrónica generada con Rosiv — con tu
+            NIT y DV ya calculados de una.
+          </p>
+        </div>
+
+        <!-- Panel 2: checklist de siguientes pasos -->
+        <div class="dv-side-panel dv-panel-checklist" data-panel="checklist" hidden>
+          <div class="dv-checklist-card">
+            <p class="dv-panel-heading">Ya tienes tu DV. Esto es lo que sigue:</p>
+            <ul class="dv-checklist">
+              <li class="done">
+                <i class="fas fa-check-circle" aria-hidden="true"></i>
+                Dígito de verificación
+              </li>
+              <li>
+                <i class="far fa-circle" aria-hidden="true"></i>
+                Software autorizado por la DIAN
+              </li>
+              <li>
+                <i class="far fa-circle" aria-hidden="true"></i>
+                Sistema de ventas conectado
+              </li>
+              <li>
+                <i class="far fa-circle" aria-hidden="true"></i>
+                Resolución de facturación vigente
+              </li>
+            </ul>
+          </div>
+          <p class="dv-side-caption">
+            Rosiv resuelve los tres pasos que faltan desde un mismo lugar.
+          </p>
+        </div>
+
+        <!-- Panel 3: dato curioso -->
+        <div class="dv-side-panel dv-panel-fact" data-panel="fact" hidden>
+          <div class="dv-fact-card">
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+            <p class="dv-panel-heading">¿Sabías esto?</p>
+            <p>
+              Muchos tenderos y restaurantes familiares pierden tiempo cada
+              semana sacando cuentas a mano antes de poder facturar.
+            </p>
+          </div>
+          <p class="dv-side-caption">
+            Sigue bajando para ver cómo se resuelve esto ↓
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="dv-explain">
+    <div class="container dv-explain-inner">
+      <h2>¿Qué es el dígito de verificación y por qué importa?</h2>
+      <p>
+        El dígito de verificación (DV) es un número extra que la DIAN le
+        agrega a tu NIT o cédula para confirmar que no tiene errores. Va
+        separado por un guion al final: si tu NIT base es
+        <strong>900123456</strong>, el número completo sería
+        <strong>900123456-8</strong>.
+      </p>
+      <p>
+        No es un número que tú eliges ni que cambia con el tiempo: sale de
+        una fórmula matemática fija aplicada sobre tu NIT o cédula. Por eso,
+        si al facturar te lo piden y no lo tienes a la mano, siempre lo
+        puedes recalcular — nunca lo tienes que "inventar" ni adivinar.
+      </p>
+      <p>
+        Se usa principalmente para <strong>facturación electrónica</strong>:
+        si el DV no coincide con el NIT, la DIAN rechaza el documento. Un
+        error de un solo dígito puede parar tu facturación del día.
+      </p>
+
+      <h3>¿Cómo se calcula manualmente?</h3>
+      <p>
+        La DIAN usa una fórmula llamada módulo 11. En resumen: cada número
+        de tu NIT se multiplica por un peso fijo, se suman todos los
+        resultados, esa suma se divide entre 11 y el residuo define tu
+        dígito de verificación. Es un cálculo simple, pero fácil de
+        equivocarse a mano — por eso existe esta calculadora.
+      </p>
+
+      <h3>Cuándo te vas a topar con el DV en el día a día de tu negocio</h3>
+      <ul class="dv-list">
+        <li>Al registrar o actualizar tu RUT ante la DIAN.</li>
+        <li>Al configurar tu sistema de facturación electrónica por primera vez.</li>
+        <li>Cuando un proveedor o cliente te pide tu NIT completo con el DV.</li>
+        <li>Cuando una factura te queda rechazada y necesitas confirmar que el número esté bien.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="dv-faq">
+    <div class="container dv-explain-inner">
+      <h2>Preguntas frecuentes</h2>
+      <details class="dv-faq-item">
+        <summary>¿Qué es el dígito de verificación del NIT?</summary>
+        <p>
+          Es un número adicional (del 0 al 9) que la DIAN calcula a partir de
+          tu NIT o cédula usando una fórmula matemática. Sirve para
+          confirmar que el número está bien escrito, sin errores de
+          digitación, antes de usarlo en facturas o trámites.
+        </p>
+      </details>
+      <details class="dv-faq-item">
+        <summary>¿El dígito de verificación cambia con el tiempo?</summary>
+        <p>
+          No. El dígito de verificación de un mismo NIT o cédula siempre da
+          el mismo resultado, porque sale de una fórmula fija sobre esos
+          números. Si te da distinto cada vez, revisa que estés escribiendo
+          el número base correctamente.
+        </p>
+      </details>
+      <details class="dv-faq-item">
+        <summary>¿Puedo calcular el DV de una cédula o solo de un NIT?</summary>
+        <p>
+          Puedes calcularlo para cualquiera de los dos. La DIAN usa la misma
+          fórmula tanto para el NIT de una empresa como para la cédula de
+          una persona natural registrada en el RUT.
+        </p>
+      </details>
+      <details class="dv-faq-item">
+        <summary>¿Por qué me rechazan la factura electrónica por el dígito de verificación?</summary>
+        <p>
+          Casi siempre es porque el DV no corresponde al NIT ingresado, por
+          un error de digitación al escribirlo. Verifica el número exacto
+          que aparece en el RUT y vuelve a calcular el dígito para
+          confirmarlo.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <section class="dv-upsell">
+    <div class="container dv-upsell-inner">
+      <h2>¿Te sirvió la calculadora?</h2>
+      <p>
+        Esto es solo un dolor de cabeza menos. El siguiente es facturar
+        cada venta sin pensarlo. Rosiv genera tu factura electrónica DIAN
+        automáticamente desde el mismo sistema donde cobras — sin volver a
+        calcular nada a mano.
+      </p>
+      <div class="dv-upsell-features" role="list">
+        <div class="dv-upsell-feature" role="listitem">
+          <i class="fas fa-file-invoice-dollar" aria-hidden="true"></i>
+          <span>Factura electrónica DIAN incluida</span>
+        </div>
+        <div class="dv-upsell-feature" role="listitem">
+          <i class="fas fa-wifi-slash" aria-hidden="true"></i>
+          <span>Funciona con o sin internet</span>
+        </div>
+        <div class="dv-upsell-feature" role="listitem">
+          <i class="fas fa-bolt" aria-hidden="true"></i>
+          <span>Cobra en segundos desde el celular</span>
+        </div>
+      </div>
+      <a
+        class="btn-primary dv-upsell-cta"
+        href="https://web.rosivhub.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Empieza gratis con Rosiv"
+      >
+        <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i>
+        Empieza gratis con Rosiv
+      </a>
+      <p class="dv-upsell-note">
+        Hecho para tenderos, restaurantes familiares y peluquerías en
+        Colombia. Sin manuales, sin cursos.
+      </p>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  const WEIGHTS = [3, 7, 13, 17, 19, 23, 29, 37, 41, 43, 47, 53, 59, 67, 71];
+
+  function calculateDV(rawValue: string): number {
+    const digits = rawValue.split("").reverse().map(Number);
+    let sum = 0;
+    for (let i = 0; i < digits.length; i++) {
+      sum += digits[i] * WEIGHTS[i];
+    }
+    const remainder = sum % 11;
+    if (remainder === 0 || remainder === 1) return remainder;
+    return 11 - remainder;
+  }
+
+  const input = document.getElementById("dv-input") as HTMLInputElement;
+  const output = document.getElementById("dv-output") as HTMLElement;
+  const errorEl = document.getElementById("dv-error") as HTMLElement;
+  const fullEl = document.getElementById("dv-full") as HTMLElement;
+  const invoiceNit = document.getElementById("dv-invoice-nit") as HTMLElement;
+
+  input?.addEventListener("input", () => {
+    const clean = input.value.replace(/\D/g, "");
+    if (clean !== input.value) {
+      input.value = clean;
+    }
+
+    errorEl.textContent = "";
+
+    if (!clean) {
+      output.textContent = "–";
+      fullEl.textContent = "";
+      return;
+    }
+
+    if (clean.length > 15) {
+      errorEl.textContent = "Ese número es demasiado largo para un NIT o cédula.";
+      output.textContent = "–";
+      fullEl.textContent = "";
+      return;
+    }
+
+    const dv = calculateDV(clean);
+    output.textContent = String(dv);
+    fullEl.textContent = `Número completo: ${clean}-${dv}`;
+    if (invoiceNit) invoiceNit.textContent = `${clean}-${dv}`;
+  });
+
+  // Panel lateral: se elige uno al azar entre factura / checklist / dato curioso
+  const panels = document.querySelectorAll<HTMLElement>(".dv-side-panel");
+  if (panels.length > 0) {
+    const chosen = panels[Math.floor(Math.random() * panels.length)];
+    chosen.hidden = false;
+  }
+</script>
+
+<style>
+  .dv-hero {
+    padding: 140px 0 80px;
+    background: var(--purple-50);
+  }
+
+  .dv-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 3rem;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .dv-hero-main {
+    text-align: center;
+  }
+
+  .dv-hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--brand-black);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .dv-hero-subtitle {
+    color: var(--gray-600);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+  }
+
+  .dv-calculator {
+    background: var(--white);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    padding: 2rem;
+    text-align: left;
+  }
+
+  .dv-side {
+    display: flex;
+    justify-content: center;
+  }
+
+  .dv-side-panel {
+    max-width: 340px;
+    animation: dv-fade-in 0.4s ease;
+  }
+
+  @keyframes dv-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .dv-side-caption {
+    text-align: center;
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-top: 1rem;
+  }
+
+  /* Panel: mockup de factura */
+  .dv-invoice-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    padding: 1.5rem;
+    transform: rotate(1.5deg);
+  }
+
+  .dv-invoice-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary-purple);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-bottom: 1px dashed var(--gray-200);
+    padding-bottom: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .dv-invoice-nit {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    margin-bottom: 0.25rem;
+  }
+
+  .dv-invoice-store {
+    font-weight: 700;
+    color: var(--brand-black);
+    margin-bottom: 1rem;
+  }
+
+  .dv-invoice-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--gray-700);
+    padding: 0.35rem 0;
+  }
+
+  .dv-invoice-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    color: var(--brand-black);
+    border-top: 1px dashed var(--gray-200);
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+  }
+
+  .dv-invoice-status {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #17a34a;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 1rem;
+  }
+
+  /* Panel: checklist */
+  .dv-checklist-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    padding: 1.75rem;
+  }
+
+  .dv-checklist-card .dv-panel-heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--brand-black);
+    margin-bottom: 1.1rem;
+    line-height: 1.4;
+  }
+
+  .dv-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+
+  .dv-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--gray-500);
+    font-size: 0.95rem;
+  }
+
+  .dv-checklist li.done {
+    color: var(--brand-black);
+    font-weight: 600;
+  }
+
+  .dv-checklist li.done i {
+    color: #17a34a;
+  }
+
+  .dv-checklist li i {
+    color: var(--gray-300);
+    font-size: 1rem;
+  }
+
+  /* Panel: dato curioso */
+  .dv-fact-card {
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    padding: 1.75rem;
+    text-align: center;
+  }
+
+  .dv-fact-card i {
+    font-size: 1.75rem;
+    color: var(--primary-purple);
+    margin-bottom: 0.75rem;
+  }
+
+  .dv-fact-card .dv-panel-heading {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--brand-black);
+    margin-bottom: 0.75rem;
+  }
+
+  .dv-fact-card p {
+    color: var(--gray-600);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 900px) {
+    .dv-hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .dv-side {
+      margin-top: 1rem;
+    }
+  }
+
+  .dv-label {
+    display: block;
+    font-weight: 600;
+    color: var(--gray-700);
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .dv-calc-row {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .dv-input {
+    flex: 1;
+    min-width: 0;
+    font-size: 1.5rem;
+    padding: 0.9rem 1.1rem;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    font-family: var(--font-primary);
+    color: var(--brand-black);
+    transition: border-color 0.2s ease;
+  }
+
+  .dv-input:focus {
+    outline: none;
+    border-color: var(--primary-purple);
+  }
+
+  .dv-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+    color: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 0.5rem 1.5rem;
+    min-width: 90px;
+  }
+
+  .dv-result-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.85;
+  }
+
+  .dv-result-value {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .dv-error {
+    color: #d92d20;
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+    min-height: 1.2em;
+  }
+
+  .dv-full {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    margin-top: 0.75rem;
+    min-height: 1.2em;
+  }
+
+  .dv-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+
+  .dv-benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gray-700);
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  .dv-benefit i {
+    color: var(--primary-purple);
+  }
+
+  .dv-explain,
+  .dv-faq {
+    padding: 80px 0;
+  }
+
+  .dv-faq {
+    background: var(--gray-50);
+  }
+
+  .dv-explain-inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .dv-explain h2,
+  .dv-faq h2 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    color: var(--brand-black);
+    margin-bottom: 1.25rem;
+  }
+
+  .dv-explain h3 {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    color: var(--brand-black);
+    margin: 2rem 0 0.75rem;
+  }
+
+  .dv-explain p {
+    color: var(--gray-700);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .dv-list {
+    color: var(--gray-700);
+    line-height: 1.8;
+    padding-left: 1.25rem;
+  }
+
+  .dv-list li {
+    margin-bottom: 0.4rem;
+  }
+
+  .dv-faq-item {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .dv-faq-item summary {
+    font-weight: 600;
+    color: var(--brand-black);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .dv-faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .dv-faq-item summary::after {
+    content: "+";
+    float: right;
+    color: var(--primary-purple);
+    font-size: 1.25rem;
+  }
+
+  .dv-faq-item[open] summary::after {
+    content: "\2212";
+  }
+
+  .dv-faq-item p {
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-top: 0.75rem;
+  }
+
+  .dv-upsell {
+    padding: 90px 0;
+    background: var(--gradient-primary);
+    text-align: center;
+  }
+
+  .dv-upsell-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .dv-upsell h2 {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+  }
+
+  .dv-upsell p {
+    color: var(--purple-100);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  .dv-upsell-features {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  .dv-upsell-feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 0.95rem;
+    background: rgb(255 255 255 / 0.1);
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-md);
+  }
+
+  .dv-upsell-cta {
+    background: var(--white);
+    color: var(--primary-purple);
+    display: inline-flex;
+  }
+
+  .dv-upsell-cta:hover {
+    background: var(--purple-50);
+  }
+
+  .dv-upsell-note {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    color: var(--purple-100);
+  }
+
+  @media (max-width: 640px) {
+    .dv-calc-row {
+      flex-direction: column;
+    }
+
+    .dv-result {
+      flex-direction: row;
+      gap: 0.75rem;
+      padding: 0.75rem 1.5rem;
+    }
+  }
+</style>
