@@ -6,7 +6,8 @@
     <header class="section-header">
       <h2 id="pricing-title" class="section-title">Empieza gratis. Crece cuando quieras.</h2>
       <p class="section-subtitle">
-        Un plan gratuito real, sin letra pequeña, y un plan pago que crece con tu negocio
+        Un plan gratuito real, sin letra pequeña. Y en todos los planes pagos, las mismas
+        funciones completas — solo cambia cuánta capacidad de uso necesitas.
       </p>
     </header>
 
@@ -17,14 +18,14 @@
       </button>
       <div class="pricing-grid" id="pricing-track" role="list" aria-label="Planes de precios disponibles">
       <article class="pricing-card free" role="listitem">
+        <div class="pricing-icon"><i class="fas fa-store" aria-hidden="true"></i></div>
         <header class="pricing-header">
-          <h3>Plan Gratis</h3>
+          <h3>Gratis</h3>
           <div class="price" role="img" aria-label="Precio: gratis para siempre">
-            <span class="currency">$</span>
             <span class="amount">0</span>
             <span class="period">/siempre</span>
           </div>
-          <p class="pricing-desc">Perfecto para empezar tu negocio</p>
+          <p class="pricing-desc">Tu punto de venta, sin condiciones</p>
         </header>
         <ul class="pricing-features" role="list">
           <li class="feature-item">
@@ -33,27 +34,19 @@
           </li>
           <li class="feature-item">
             <i class="fas fa-check" aria-hidden="true"></i>
-            <span>Gestión básica de inventario</span>
+            <span>Inventario y historial de ventas</span>
           </li>
           <li class="feature-item">
             <i class="fas fa-check" aria-hidden="true"></i>
-            <span>Reportes básicos</span>
+            <span>Órdenes para mesas y domicilio</span>
           </li>
           <li class="feature-item">
             <i class="fas fa-check" aria-hidden="true"></i>
-            <span>Funciona offline</span>
+            <span>Funciona offline, sincroniza después</span>
           </li>
           <li class="feature-item">
             <i class="fas fa-check" aria-hidden="true"></i>
-            <span>Soporte por WhatsApp</span>
-          </li>
-          <li class="feature-item disabled">
-            <i class="fas fa-times" aria-hidden="true"></i>
-            <span>Sin factura electrónica DIAN</span>
-          </li>
-          <li class="feature-item disabled">
-            <i class="fas fa-times" aria-hidden="true"></i>
-            <span>Sin envío automático por WhatsApp</span>
+            <span>Factura electrónica DIAN (uso manual)</span>
           </li>
         </ul>
         <a
@@ -63,106 +56,156 @@
           rel="noopener noreferrer"
           aria-label="Empezar con el plan gratuito, regístrate en Rosiv"
         >
-          <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i>
           Empezar gratis
         </a>
-        <div class="pricing-note">No requiere tarjeta de crédito</div>
+        <div class="pricing-note">Sin tarjeta de crédito</div>
       </article>
 
-      <article class="pricing-card pro featured" role="listitem">
-        <div class="pricing-badge" aria-label="Plan más popular">
-          <i class="fas fa-crown" aria-hidden="true"></i>
-          Más Popular
-        </div>
+      <article class="pricing-card pro" role="listitem">
+        <div class="pricing-icon"><i class="fas fa-seedling" aria-hidden="true"></i></div>
         <header class="pricing-header">
-          <h3>Plan Pro</h3>
-          <div class="price" role="img" aria-label="Precio: entre 28.000 y 35.000 pesos mensuales">
-            <span class="currency">$</span>
-            <span class="amount">28.000 - 35.000</span>
+          <h3>Starter</h3>
+          <div class="price" role="img" aria-label="Precio: 21.300 pesos mensuales, IVA incluido">
+            <span class="amount">21.300</span>
             <span class="period">/mes</span>
           </div>
-          <p class="pricing-desc">Para negocios en crecimiento</p>
+          <p class="pricing-desc">Para arrancar con todo desbloqueado</p>
         </header>
         <ul class="pricing-features" role="list">
           <li class="feature-item">
             <i class="fas fa-check" aria-hidden="true"></i>
-            <span>Todo del Plan Gratis</span>
+            <span>Todo del plan Gratis</span>
           </li>
-          <li class="feature-item featured">
+          <li class="feature-item">
             <i class="fas fa-file-invoice-dollar" aria-hidden="true"></i>
-            <span>Factura electrónica DIAN</span>
+            <span>Factura electrónica DIAN automática</span>
           </li>
-          <li class="feature-item featured">
-            <i class="fab fa-whatsapp" aria-hidden="true"></i>
-            <span>Envío por WhatsApp (muy pronto)</span>
+          <li class="feature-item">
+            <i class="fas fa-robot" aria-hidden="true"></i>
+            <span>Empleado virtual con y sin IA</span>
           </li>
           <li class="feature-item">
             <i class="fas fa-chart-line" aria-hidden="true"></i>
-            <span>Reportes avanzados</span>
+            <span>Reportes e inventario avanzado</span>
           </li>
           <li class="feature-item">
-            <i class="fas fa-users" aria-hidden="true"></i>
-            <span>Varios usuarios de tu equipo</span>
-          </li>
-          <li class="feature-item">
-            <i class="fas fa-headset" aria-hidden="true"></i>
-            <span>Soporte prioritario por WhatsApp</span>
-          </li>
-          <li class="feature-item">
-            <i class="fas fa-star" aria-hidden="true"></i>
-            <span>Acceso anticipado a los empleados virtuales</span>
+            <i class="fas fa-bolt" aria-hidden="true"></i>
+            <span>Sincronización instantánea</span>
           </li>
         </ul>
+        <div class="pricing-capacity" aria-label="Capacidad base">
+          <div class="capacity-bars">
+            <span class="bar filled"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <span class="capacity-label">Capacidad base</span>
+        </div>
+        <a
+          class="pricing-btn btn-outline"
+          href="https://web.rosivhub.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Elegir el plan Starter en Rosiv"
+        >
+          Elegir Starter
+        </a>
+      </article>
+
+      <article class="pricing-card growth featured" role="listitem">
+        <div class="pricing-badge" aria-label="Plan más popular">
+          <i class="fas fa-crown" aria-hidden="true"></i>
+          Más Popular
+        </div>
+        <div class="pricing-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+        <header class="pricing-header">
+          <h3>Growth</h3>
+          <div class="price" role="img" aria-label="Precio: 71.300 pesos mensuales, IVA incluido">
+            <span class="amount">71.300</span>
+            <span class="period">/mes</span>
+          </div>
+          <p class="pricing-desc">Para negocios que ya se mueven</p>
+        </header>
+        <p class="pricing-same">Todo lo de Starter, con más capacidad</p>
+        <div class="pricing-capacity" aria-label="Capacidad: aproximadamente 5 veces la de Starter">
+          <div class="capacity-bars">
+            <span class="bar filled"></span>
+            <span class="bar filled"></span>
+            <span class="bar"></span>
+          </div>
+          <span class="capacity-label">~5x la capacidad de Starter</span>
+        </div>
         <a
           class="pricing-btn btn-primary"
           href="https://web.rosivhub.com"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Empezar prueba gratuita del plan Pro, regístrate en Rosiv"
+          aria-label="Elegir el plan Growth en Rosiv"
         >
-          <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i>
-          Probar 7 días gratis
+          Elegir Growth
         </a>
-        <div class="pricing-trial">Cancela cuando quieras, sin contratos forzosos</div>
       </article>
 
-      <article class="pricing-card enterprise" role="listitem">
+      <!--
+      <article class="pricing-card scale" role="listitem">
+        <div class="pricing-icon"><i class="fas fa-rocket" aria-hidden="true"></i></div>
         <header class="pricing-header">
-          <h3>Plan Empresa</h3>
-          <div class="price" role="img" aria-label="Precio personalizado">
-            <span class="amount">A medida</span>
+          <h3>Scale</h3>
+          <div class="price" role="img" aria-label="Precio: 178.400 pesos mensuales, IVA incluido">
+            <span class="amount">178.400</span>
+            <span class="period">/mes</span>
           </div>
-          <p class="pricing-desc">Para varias sedes o franquicias</p>
+          <p class="pricing-desc">Para negocios de alto volumen</p>
         </header>
-        <ul class="pricing-features" role="list">
-          <li class="feature-item">
-            <i class="fas fa-check" aria-hidden="true"></i>
-            <span>Todo del Plan Pro</span>
-          </li>
-          <li class="feature-item">
-            <i class="fas fa-building" aria-hidden="true"></i>
-            <span>Varias sedes o locales</span>
-          </li>
-          <li class="feature-item">
-            <i class="fas fa-plug" aria-hidden="true"></i>
-            <span>Integraciones a medida</span>
-          </li>
-          <li class="feature-item">
-            <i class="fas fa-user-tie" aria-hidden="true"></i>
-            <span>Acompañamiento dedicado</span>
-          </li>
-        </ul>
+        <p class="pricing-same">Todo lo de Growth, con más capacidad</p>
+        <div class="pricing-capacity" aria-label="Capacidad: aproximadamente 18 veces la de Starter">
+          <div class="capacity-bars">
+            <span class="bar filled"></span>
+            <span class="bar filled"></span>
+            <span class="bar filled"></span>
+          </div>
+          <span class="capacity-label">~18x la capacidad de Starter</span>
+        </div>
         <a
           class="pricing-btn btn-outline"
-          href="https://wa.me/573000000000"
+          href="https://web.rosivhub.com"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Hablar con ventas por WhatsApp"
+          aria-label="Elegir el plan Scale en Rosiv"
         >
-          <i class="fab fa-whatsapp" aria-hidden="true"></i>
-          Hablar con ventas
+          Elegir Scale
         </a>
-        <div class="pricing-note">Implementación acompañada</div>
+      </article>
+      -->
+
+      <article class="pricing-card scale" role="listitem">
+        <div class="pricing-icon"><i class="fas fa-rocket" aria-hidden="true"></i></div>
+        <header class="pricing-header">
+          <h3>Elite</h3>
+          <div class="price" role="img" aria-label="Precio: 416.400 pesos mensuales, IVA incluido">
+            <span class="amount">416.400</span>
+            <span class="period">/mes</span>
+          </div>
+          <p class="pricing-desc">Para negocios de alto volumen</p>
+        </header>
+        <p class="pricing-same">Todo lo de Growth, con máxima capacidad</p>
+        <div class="pricing-capacity" aria-label="Capacidad: aproximadamente 51 veces la de Starter">
+          <div class="capacity-bars">
+            <span class="bar filled"></span>
+            <span class="bar filled"></span>
+            <span class="bar filled"></span>
+          </div>
+          <span class="capacity-label">~51x la capacidad de Starter</span>
+        </div>
+        <a
+          class="pricing-btn btn-outline"
+          href="https://web.rosivhub.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Elegir el plan Elite en Rosiv"
+        >
+          Elegir Elite
+        </a>
       </article>
       </div>
       <button class="carousel-arrow next" id="pricing-next" aria-label="Ver plan siguiente">
@@ -171,8 +214,22 @@
     </div>
     <div class="carousel-dots" id="pricing-dots" role="tablist" aria-label="Selecciona un plan">
       <button class="carousel-dot active" data-index="0" role="tab" aria-selected="true" aria-label="Ver Plan Gratis"></button>
-      <button class="carousel-dot" data-index="1" role="tab" aria-selected="false" aria-label="Ver Plan Pro"></button>
-      <button class="carousel-dot" data-index="2" role="tab" aria-selected="false" aria-label="Ver Plan Empresa"></button>
+      <button class="carousel-dot" data-index="1" role="tab" aria-selected="false" aria-label="Ver Plan Starter"></button>
+      <button class="carousel-dot" data-index="2" role="tab" aria-selected="false" aria-label="Ver Plan Growth"></button>
+      <button class="carousel-dot" data-index="3" role="tab" aria-selected="false" aria-label="Ver Plan Elite"></button>
     </div>
+
+    <p class="pricing-footnote">
+      <i class="fas fa-shield-heart" aria-hidden="true"></i>
+      Te avisamos antes de llegar al límite de tu capacidad, para que subas de plan cuando
+      quieras — sin compra de créditos ni sorpresas.
+    </p>
+
+    <p class="pricing-cta-enterprise">
+      ¿Tienes varias sedes o necesitas algo a medida?
+      <a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">
+        Habla con ventas <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </p>
   </div>
 </section>
