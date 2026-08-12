@@ -231,5 +231,60 @@
         Habla con ventas <i class="fas fa-arrow-right" aria-hidden="true"></i>
       </a>
     </p>
+
+    <!-- Simulador de capacidad -->
+    <section class="capacity-sim" aria-labelledby="capacity-sim-title">
+      <header class="capacity-sim-header">
+        <span class="capacity-sim-eyebrow">
+          <i class="fas fa-gauge-high" aria-hidden="true"></i>
+          Ponle a prueba tu plan
+        </span>
+        <h3 id="capacity-sim-title">¿Cuánto te alcanza?</h3>
+        <p>Mueve los controles y descubre qué tanto se llena tu tanque de capacidad cada mes</p>
+      </header>
+
+      <div class="capacity-sim-body">
+        <div class="capacity-sim-controls">
+          <div class="sim-control">
+            <label for="sim-invoices">
+              <i class="fas fa-file-invoice-dollar" aria-hidden="true"></i>
+              Facturas electrónicas al mes
+              <span class="sim-value" id="sim-invoices-value">0</span>
+            </label>
+            <input type="range" id="sim-invoices" min="0" max="999" step="1" value="0" />
+          </div>
+
+          <div class="sim-control">
+            <label for="sim-ia">
+              <i class="fas fa-robot" aria-hidden="true"></i>
+              Tareas de tu empleado IA al mes
+              <span class="sim-value" id="sim-ia-value">0</span>
+            </label>
+            <input type="range" id="sim-ia" min="0" max="999" step="1" value="0" />
+          </div>
+        </div>
+
+        <div class="capacity-sim-result">
+          <div class="sim-tank" role="img" aria-label="Medidor de capacidad usada">
+            <div class="sim-tank-fill" id="sim-tank-fill"></div>
+            <div class="sim-tank-face" id="sim-tank-face">
+              <i class="fas fa-battery-empty" aria-hidden="true"></i>
+            </div>
+          </div>
+          <p class="sim-plan-label">Te alcanza con</p>
+          <p class="sim-plan-name" id="sim-plan-name">Gratis</p>
+          <p class="sim-message" id="sim-message">Mueve los controles para empezar a llenar el tanque 👆</p>
+          <a
+            class="pricing-btn btn-primary sim-cta"
+            id="sim-cta"
+            href="https://web.rosivhub.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver este plan
+          </a>
+        </div>
+      </div>
+    </section>
   </div>
 </section>
