@@ -241,7 +241,6 @@ body {
 .nav-logo .logo-text,
 .footer-logo .logo-text {
   display: inline-block;
-  transform: translateY(0.22em);
 }
 
 .logo-icon {
