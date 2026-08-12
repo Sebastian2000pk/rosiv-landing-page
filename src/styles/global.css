@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: "Aristotelica Display";
-  src: url("assets/fonts/AristotelicaDisplayDemiBold.ttf") format("truetype");
+  src: url("/assets/fonts/AristotelicaDisplayDemiBold.ttf") format("truetype");
   font-weight: 600 800;
   font-style: normal;
   font-display: swap;
@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: "Aristotelica Display";
-  src: url("assets/fonts/AristotelicaDisplayExtraLight.ttf") format("truetype");
+  src: url("/assets/fonts/AristotelicaDisplayExtraLight.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -1929,13 +1929,136 @@ html {
   .feature-card:hover {
     transform: none;
   }
-  
+
   .pricing-card:hover {
     transform: none;
   }
-  
+
   .btn-primary:hover,
   .btn-secondary:hover {
     transform: none;
   }
+}
+
+/* ==========================================================================
+   Blog
+   ========================================================================== */
+
+.blog-section {
+  padding: var(--section-padding);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 2rem;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg, 1rem);
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-card:hover,
+.blog-card:focus-visible {
+  border-color: var(--primary-purple);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-purple);
+}
+
+.blog-card-date {
+  color: var(--gray-500);
+  font-size: 0.875rem;
+}
+
+.blog-card h3 {
+  color: var(--brand-black);
+  font-family: var(--font-display);
+}
+
+.blog-card p {
+  color: var(--gray-600);
+}
+
+.blog-card-cta {
+  margin-top: auto;
+  color: var(--primary-purple);
+  font-weight: 600;
+}
+
+.blog-post {
+  padding: var(--section-padding);
+}
+
+.blog-post-container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.blog-post-header {
+  margin-bottom: 2.5rem;
+}
+
+.blog-post-date {
+  color: var(--gray-500);
+  font-size: 0.9rem;
+}
+
+.blog-post-title {
+  font-family: var(--font-display);
+  color: var(--brand-black);
+  margin-top: 0.5rem;
+}
+
+.blog-post-content {
+  color: var(--gray-700);
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+.blog-post-content h2 {
+  font-family: var(--font-display);
+  color: var(--brand-black);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.blog-post-content h3 {
+  color: var(--brand-black);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-post-content p {
+  margin-bottom: 1.25rem;
+}
+
+.blog-post-content ul,
+.blog-post-content ol {
+  margin: 0 0 1.25rem 1.5rem;
+}
+
+.blog-post-content li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-post-content a {
+  color: var(--primary-purple);
+}
+
+.blog-post-back {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--primary-purple);
+  font-weight: 600;
+  text-decoration: none;
 }

@@ -1,0 +1,133 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import Empathy from "../components/Empathy.astro";
+import Steps from "../components/Steps.astro";
+import Features from "../components/Features.astro";
+import AgentsSection from "../components/AgentsSection.astro";
+import Pricing from "../components/Pricing.astro";
+import FaqSection from "../components/FaqSection.astro";
+import DownloadSection from "../components/DownloadSection.astro";
+import Footer from "../components/Footer.astro";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Rosiv",
+    url: "https://rosivhub.com/",
+    logo: "https://rosivhub.com/icon-512x512.png",
+    description:
+      "Rosiv es el sistema de punto de venta (POS) para tenderos, restaurantes familiares y peluquerías en Colombia, con facturación electrónica DIAN.",
+    areaServed: {
+      "@type": "Country",
+      name: "Colombia",
+    },
+    sameAs: [],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Rosiv",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web, Android, iOS",
+    url: "https://rosivhub.com/",
+    description:
+      "Sistema POS para vender, cobrar y controlar inventario desde el celular, con o sin internet. Incluye facturación electrónica DIAN. Pensado para tenderos, restaurantes familiares y peluquerías en Colombia.",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Plan Gratis",
+        price: "0",
+        priceCurrency: "COP",
+        category: "Free",
+      },
+      {
+        "@type": "Offer",
+        name: "Plan Pro",
+        price: "28000",
+        priceCurrency: "COP",
+        category: "Subscription",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "¿Necesito saber de tecnología para usar Rosiv?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "No. Rosiv está pensado para que cualquier persona lo use desde el primer día, sin cursos ni manuales.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Funciona si no tengo internet todo el tiempo?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Sí. Rosiv sigue vendiendo sin conexión y sincroniza todo automáticamente cuando vuelve la señal.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Ya puedo facturar por WhatsApp?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Estamos terminando esa integración y la activaremos muy pronto. Mientras tanto, ya puedes generar tu factura electrónica DIAN desde Rosiv.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Qué pasa si quiero cancelar?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Cancelas cuando quieras, sin contratos forzosos ni penalidades.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Mis datos y los de mis clientes están seguros?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Sí, protegemos la información de tu negocio y la de tus clientes con buenas prácticas de seguridad.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "¿Qué métodos de pago aceptan?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Tarjetas de crédito o débito, PSE y transferencia bancaria.",
+        },
+      },
+    ],
+  },
+];
+---
+
+<Layout
+  title="Rosiv - Sistema POS y Facturación DIAN para Tenderos y Pymes en Colombia"
+  description="Rosiv es el sistema POS para tenderos, restaurantes familiares y peluquerías en Colombia. Vende, cobra y controla tu inventario desde el celular, con o sin internet. Factura electrónica DIAN incluida."
+  path="/"
+  keywords="sistema POS Colombia, POS para tenderos, POS para restaurantes, POS para peluquerías, facturación electrónica DIAN, software para pymes, punto de venta offline, facturar por WhatsApp"
+  jsonLd={jsonLd}
+>
+  <a href="#features" class="skip-link">Saltar al contenido principal</a>
+
+  <Navbar />
+  <Hero />
+  <Empathy />
+  <Steps />
+  <Features />
+  <AgentsSection />
+  <Pricing />
+  <FaqSection />
+  <DownloadSection />
+  <Footer />
+
+  <script is:inline src="/main.js"></script>
+</Layout>
