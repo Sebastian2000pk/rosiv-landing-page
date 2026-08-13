@@ -101,11 +101,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const IA_POINT_COST = 2.5; // promedio entre tarea simple (1 punto) y compleja (3-5 puntos)
 
     const plans = [
-      { name: "Gratis", capacity: 0, icon: "fa-store" },
-      { name: "Starter", capacity: 70, icon: "fa-seedling" },
-      { name: "Growth", capacity: 380, icon: "fa-chart-line" },
-      { name: "Elite", capacity: 3600, icon: "fa-rocket" },
+      { name: "Gratis", key: "free", capacity: 0, icon: "fa-store" },
+      { name: "Starter", key: "pro", capacity: 70, icon: "fa-seedling" },
+      { name: "Growth", key: "growth", capacity: 380, icon: "fa-chart-line" },
+      { name: "Elite", key: "scale", capacity: 3600, icon: "fa-rocket" },
     ];
+    const PLAN_KEYS = plans.map((plan) => `sim-plan-${plan.key}`);
 
     // El slider va de 0 a 999 repartido por tramos, uno por plan de pago, cada
     // uno con su propia proporción del recorrido (no puntos): Starter 25%,
@@ -172,6 +173,12 @@ document.addEventListener("DOMContentLoaded", () => {
       tankFill.classList.remove("sim-tank-warn", "sim-tank-over");
       tankFace.classList.remove("sim-tank-face-light");
 
+      const planKey = plan ? `sim-plan-${plan.key}` : "sim-plan-scale";
+      tankFill.classList.remove(...PLAN_KEYS);
+      tankFill.classList.add(planKey);
+      cta.classList.remove(...PLAN_KEYS);
+      cta.classList.add(planKey);
+
       if (!plan) {
         tankFill.classList.add("sim-tank-over");
         tankFace.classList.add("sim-tank-face-light");
@@ -183,6 +190,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       planName.textContent = plan ? plan.name : "A medida";
+      planName.classList.remove(...PLAN_KEYS);
+      planName.classList.add(planKey);
       message.textContent = messageFor(points, plan);
       tankFace.innerHTML = `<i class="fas ${plan ? plan.icon : "fa-infinity"}" aria-hidden="true"></i>`;
 

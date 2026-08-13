@@ -1264,8 +1264,24 @@ body {
   border-radius: 0 0 40px 40px;
 }
 
+.sim-tank-fill.sim-plan-free {
+  background: linear-gradient(135deg, var(--gray-400) 0%, var(--gray-500) 100%);
+}
+
+.sim-tank-fill.sim-plan-pro {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+}
+
+.sim-tank-fill.sim-plan-growth {
+  background: var(--gradient-primary);
+}
+
+.sim-tank-fill.sim-plan-scale {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+}
+
 .sim-tank-fill.sim-tank-warn {
-  background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
 }
 
 .sim-tank-fill.sim-tank-over {
@@ -1305,6 +1321,22 @@ body {
   transition: color 0.3s ease;
 }
 
+.sim-plan-name.sim-plan-free {
+  color: var(--gray-500);
+}
+
+.sim-plan-name.sim-plan-pro {
+  color: #0284c7;
+}
+
+.sim-plan-name.sim-plan-growth {
+  color: var(--primary-purple);
+}
+
+.sim-plan-name.sim-plan-scale {
+  color: #ea580c;
+}
+
 .sim-message {
   color: var(--gray-600);
   font-size: 0.85rem;
@@ -1318,6 +1350,22 @@ body {
 
 .sim-cta {
   max-width: 220px;
+}
+
+.sim-cta.sim-plan-free {
+  background: linear-gradient(135deg, var(--gray-400) 0%, var(--gray-500) 100%);
+}
+
+.sim-cta.sim-plan-pro {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+}
+
+.sim-cta.sim-plan-growth {
+  background: var(--gradient-primary);
+}
+
+.sim-cta.sim-plan-scale {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
 }
 
 /* Pricing FAQ */
