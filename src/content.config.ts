@@ -7,7 +7,16 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.date(),
+    updatedDate: z.date().optional(),
     keywords: z.string().optional(),
+    faq: z
+      .array(
+        z.object({
+          question: z.string(),
+          answer: z.string(),
+        })
+      )
+      .optional(),
   }),
 });
 

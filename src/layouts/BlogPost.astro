@@ -3,15 +3,23 @@ import Layout from "./Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
 interface Props {
   title: string;
   description: string;
   path: string;
   pubDate: Date;
+  updatedDate?: Date;
   keywords?: string;
+  faq?: FaqItem[];
 }
 
-const { title, description, path, pubDate, keywords } = Astro.props;
+const { title, description, path, pubDate, updatedDate, keywords, faq = [] } =
+  Astro.props;
 
 const jsonLd = [
   {
@@ -20,9 +28,13 @@ const jsonLd = [
     headline: title,
     description,
     datePublished: pubDate.toISOString(),
+    dateModified: (updatedDate ?? pubDate).toISOString(),
+    inLanguage: "es-CO",
+    articleSection: "Facturación electrónica y punto de venta en Colombia",
     author: {
       "@type": "Organization",
       name: "Rosiv",
+      url: "https://rosivhub.com",
     },
     publisher: {
       "@type": "Organization",
@@ -34,6 +46,22 @@ const jsonLd = [
     },
     mainEntityOfPage: new URL(path, Astro.site).toString(),
   },
+  ...(faq.length > 0
+    ? [
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        },
+      ]
+    : []),
 ];
 
 const dateFormatted = pubDate.toLocaleDateString("es-CO", {
@@ -62,6 +90,19 @@ const dateFormatted = pubDate.toLocaleDateString("es-CO", {
       <div class="blog-post-content">
         <slot />
       </div>
+      {
+        faq.length > 0 && (
+          <section class="blog-post-faq" aria-labelledby="faq-heading">
+            <h2 id="faq-heading">Preguntas frecuentes</h2>
+            {faq.map((item) => (
+              <details class="blog-post-faq-item">
+                <summary>{item.question}</summary>
+                <p>{item.answer}</p>
+              </details>
+            ))}
+          </section>
+        )
+      }
     </div>
   </article>
   <Footer />

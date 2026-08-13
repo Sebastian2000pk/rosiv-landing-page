@@ -105,7 +105,7 @@ pero no existían casos reales para usar, así que no se inventó ninguno.
 - [ ] Cuando haya 2-3 clientes dispuestos a dar su testimonio, agregar una
       sección "Lo que dicen los negocios que ya usan Rosiv" con nombre real,
       tipo de negocio y ciudad.
-- [ ] Confirmar antes de cada actualización que la cifra "76.000+ ventas
+- [ ] Confirmar antes de cada actualización que la cifra "420.000+ ventas
       procesadas" (usada en el hero) sigue siendo correcta.
 
 ---

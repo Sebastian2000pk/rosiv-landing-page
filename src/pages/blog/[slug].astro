@@ -19,7 +19,9 @@ const { Content } = await render(post);
   description={post.data.description}
   path={`/blog/${post.id}`}
   pubDate={post.data.pubDate}
+  updatedDate={post.data.updatedDate}
   keywords={post.data.keywords}
+  faq={post.data.faq}
 >
   <Content />
 </BlogPost>

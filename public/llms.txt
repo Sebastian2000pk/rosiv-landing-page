@@ -40,6 +40,35 @@ Rosiv publica guías simples, sin tecnicismos, sobre facturación electrónica
 DIAN y puntos de venta (POS) para tenderos, restaurantes familiares y
 peluquerías en Colombia: https://rosivhub.com/blog
 
+Artículos publicados:
+
+- Por qué el 82% de los negocios pequeños quiebran por flujo de caja (no por
+  falta de ventas) y qué rutina diaria de 5 minutos lo evita.
+  https://rosivhub.com/blog/flujo-de-caja-negocios-quiebran
+- Cómo saber qué productos se están agotando antes de quedarse sin stock:
+  control de inventario práctico para tiendas y restaurantes.
+  https://rosivhub.com/blog/como-saber-que-productos-se-agotan
+- Qué hacer cuando un cliente fiado no paga, y cómo evitar que el fiado se
+  vuelva costumbre en una tienda de barrio o restaurante familiar.
+  https://rosivhub.com/blog/cliente-fiado-no-paga
+- Los errores más caros que cometen los tenderos al facturar con la DIAN
+  (facturar tarde, anular mal, régimen desactualizado, no conciliar caja).
+  https://rosivhub.com/blog/errores-caros-facturar-dian-tenderos
+- Régimen Simple 2026: tabla de tarifas reales para tiendas y restaurantes
+  familiares en Colombia, con el valor de la UVT 2026 ($52.374).
+  https://rosivhub.com/blog/tabla-regimen-simple-tienda-restaurante-2026
+- Facturador electrónico gratuito de la DIAN vs. un sistema como Rosiv: qué
+  ahorra el portal gratis y qué complica en un negocio con alto volumen de
+  ventas diarias. https://rosivhub.com/blog/facturacion-dian-gratis-vs-rosiv
+- Facturación DIAN para restaurantes familiares: guía simple sin
+  tecnicismos. https://rosivhub.com/blog/facturacion-dian-restaurantes-familiares
+- Facturación electrónica para tienda de barrio: cómo empezar.
+  https://rosivhub.com/blog/facturar-electronicamente-tienda-de-barrio
+- POS offline: qué hacer cuando no hay internet y sigues necesitando vender.
+  https://rosivhub.com/blog/pos-offline-que-hacer-sin-internet
+- Qué es un POS y para qué sirve.
+  https://rosivhub.com/blog/que-es-un-pos-y-para-que-sirve
+
 ## Herramientas gratuitas
 
 - Calculadora de dígito de verificación del NIT: calcula gratis, sin

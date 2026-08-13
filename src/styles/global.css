@@ -2348,3 +2348,50 @@ html {
   font-weight: 600;
   text-decoration: none;
 }
+
+.blog-post-faq {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.blog-post-faq h2 {
+  font-family: var(--font-display);
+  color: var(--brand-black);
+  margin-bottom: 1.25rem;
+}
+
+.blog-post-faq-item {
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-post-faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--brand-black);
+  list-style: none;
+}
+
+.blog-post-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.blog-post-faq-item summary::after {
+  content: "+";
+  float: right;
+  color: var(--primary-purple);
+  font-weight: 700;
+}
+
+.blog-post-faq-item[open] summary::after {
+  content: "\2212";
+}
+
+.blog-post-faq-item p {
+  color: var(--gray-700);
+  margin: 0.75rem 0 0;
+  line-height: 1.7;
+}
