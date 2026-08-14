@@ -100,12 +100,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const IA_POINT_COST = 2.5; // promedio entre tarea simple (1 punto) y compleja (3-5 puntos)
 
+    // `key` es el sufijo de las clases de color (sim-plan-*), que no siempre
+    // coincide con el nombre del plan; `slug` es el que viaja en la URL de
+    // registro, y ahí sí tiene que ser el mismo que usan las tarjetas.
     const plans = [
-      { name: "Gratis", key: "free", capacity: 0, icon: "fa-store" },
-      { name: "Starter", key: "pro", capacity: 70, icon: "fa-seedling" },
-      { name: "Growth", key: "growth", capacity: 380, icon: "fa-chart-line" },
-      { name: "Elite", key: "scale", capacity: 3600, icon: "fa-rocket" },
+      { name: "Gratis", key: "free", slug: "free", capacity: 0, icon: "fa-store" },
+      { name: "Starter", key: "pro", slug: "starter", capacity: 70, icon: "fa-seedling" },
+      { name: "Growth", key: "growth", slug: "growth", capacity: 380, icon: "fa-chart-line" },
+      { name: "Elite", key: "scale", slug: "elite", capacity: 3600, icon: "fa-rocket" },
     ];
+    const REGISTER_URL = "https://web.rosivhub.com/register-plan?plan=";
     const PLAN_KEYS = plans.map((plan) => `sim-plan-${plan.key}`);
 
     // El slider va de 0 a 999 repartido por tramos, uno por plan de pago, cada
@@ -197,10 +201,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!plan || plan.name === "Gratis") {
         cta.textContent = plan ? "Empezar gratis" : "Hablar con ventas";
-        cta.href = plan ? "https://web.rosivhub.com" : "https://wa.me/573000000000";
+        cta.href = plan ? `${REGISTER_URL}${plan.slug}` : "https://wa.me/573000000000";
       } else {
         cta.textContent = `Elegir ${plan.name}`;
-        cta.href = "https://web.rosivhub.com";
+        cta.href = `${REGISTER_URL}${plan.slug}`;
       }
     };
 
