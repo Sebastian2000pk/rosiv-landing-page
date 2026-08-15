@@ -1106,6 +1106,88 @@ body {
   white-space: nowrap;
 }
 
+/* Invitación al simulador */
+.pricing .section-header:has(+ .pricing-sim-hint) {
+  margin-bottom: 2rem;
+}
+
+.pricing-sim-hint {
+  max-width: 760px;
+  margin: 0 auto 2.5rem;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: var(--radius-xl);
+  background: var(--purple-50);
+  border: 1px dashed var(--purple-100);
+}
+
+.pricing-sim-hint-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--primary-purple);
+  font-size: 1.1rem;
+}
+
+.pricing-sim-hint-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.pricing-sim-hint-title {
+  margin: 0;
+  font-weight: 700;
+  color: var(--gray-900);
+  font-size: 1rem;
+}
+
+.pricing-sim-hint-desc {
+  margin: 0.15rem 0 0;
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.pricing-sim-hint-btn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.25rem;
+  border-radius: var(--radius-xl);
+  background: var(--primary-purple);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pricing-sim-hint-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  color: var(--white);
+}
+
+@media (max-width: 640px) {
+  .pricing-sim-hint {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .pricing-sim-hint-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* Simulador de capacidad */
 .capacity-sim {
   max-width: 900px;
