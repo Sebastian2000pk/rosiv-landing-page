@@ -1,0 +1,824 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ToolFaq from "../components/tools/ToolFaq.astro";
+import ToolCrossLinks from "../components/tools/ToolCrossLinks.astro";
+import "../styles/tool-page.css";
+
+const title = "Control de fiados: ¿quién te debe y hace cuánto? | Rosiv";
+const description =
+  "Reemplaza el cuaderno de fiados: registra a quién le fiaste, cuánto y desde cuándo. Semáforo de quién debe más y hace cuánto. Gratis.";
+const path = "/calculadora-control-de-fiados";
+
+const faqItems = [
+  {
+    question: "¿Cómo llevo el control del fiado sin usar el cuaderno?",
+    answer:
+      "Registrando cada fiado en el momento en que pasa, con el nombre del cliente, el monto y la fecha — igual que en el cuaderno, pero sin que se pierda, se moje o se llene de tachones. Esta herramienta lo hace en tu navegador y te muestra de un vistazo quién debe más y quién lleva más tiempo sin pagar.",
+  },
+  {
+    question: "¿Se guarda la información si cierro la página?",
+    answer:
+      "Sí, mientras uses el mismo navegador y dispositivo — la lista queda guardada automáticamente y la puedes abrir cada día para agregar fiados nuevos o marcar pagos. Si cambias de dispositivo o borras los datos del navegador, la lista no se transfiere.",
+  },
+  {
+    question: "¿Qué significa el semáforo de colores junto a cada cliente?",
+    answer:
+      "Verde significa que el fiado es reciente (menos de 7 días). Amarillo, que ya lleva entre 7 y 15 días sin pagarse — momento de recordarle al cliente. Rojo, que lleva más de 15 días, la señal de que ya vale la pena una conversación directa antes de que la deuda siga creciendo.",
+  },
+  {
+    question: "¿Cómo cobro el fiado sin que se sienta como una pelea con el cliente?",
+    answer:
+      "Mostrando el número en vez de decirlo de memoria. Un monto con fecha exacta, que el cliente puede ver, genera mucha menos discusión que un 'yo creo que me debes tanto' dicho de memoria. Tener el registro siempre a la mano hace que cobrar se sienta como mostrar un dato, no como una acusación.",
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Control de fiados",
+    url: new URL(path, Astro.site).toString(),
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "COP",
+    },
+    description,
+    publisher: {
+      "@type": "Organization",
+      name: "Rosiv",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Rosiv", item: new URL("/", Astro.site).toString() },
+      { "@type": "ListItem", position: 2, name: "Blog", item: new URL("/blog", Astro.site).toString() },
+      { "@type": "ListItem", position: 3, name: "Control de fiados", item: new URL(path, Astro.site).toString() },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} path={path} keywords="control de fiados, calculadora de fiado, quién me debe tienda de barrio, libreta de fiados digital" jsonLd={jsonLd}>
+  <Navbar />
+
+  <section class="fiado-app-section">
+    <div class="container fiado-app-container">
+      <header class="fiado-app-header">
+        <div class="fiado-app-header-text">
+          <h1 class="fiado-app-title">Control de fiados</h1>
+          <p class="fiado-app-subtitle">Quién te debe, cuánto y desde cuándo — de un vistazo.</p>
+        </div>
+        <p class="fiado-app-tagline">
+          <i class="fas fa-bookmark" aria-hidden="true"></i>
+          Guarda esta página: se actualiza sola cada vez que vuelvas.
+        </p>
+      </header>
+
+      <div class="fiado-app-card">
+        <div id="fiado-summary" class="fiado-summary">
+          <div class="fiado-summary-cell">
+            <span class="fiado-summary-label">Total por cobrar</span>
+            <span id="fiado-total" class="fiado-summary-value">$0</span>
+          </div>
+          <div class="fiado-summary-cell">
+            <span class="fiado-summary-label">Clientes fiados</span>
+            <span id="fiado-count" class="fiado-summary-value">0</span>
+          </div>
+          <div class="fiado-summary-cell fiado-summary-cell-alert">
+            <span class="fiado-summary-label">Necesitan cobro urgente</span>
+            <span id="fiado-urgent" class="fiado-summary-value">0</span>
+          </div>
+        </div>
+
+        <form id="fiado-form" class="fiado-form">
+          <div class="fiado-form-row">
+            <div class="fiado-form-field fiado-form-field-name">
+              <label for="fiado-name">Cliente</label>
+              <input id="fiado-name" type="text" autocomplete="off" placeholder="Ej: Don Jairo" required />
+            </div>
+            <div class="fiado-form-field fiado-form-field-amount">
+              <label for="fiado-amount">Cuánto fía</label>
+              <div class="margin-input-wrap">
+                <span class="margin-input-prefix">$</span>
+                <input id="fiado-amount" type="text" inputmode="numeric" autocomplete="off" placeholder="15.000" required />
+              </div>
+            </div>
+            <button type="submit" class="fiado-add-btn" aria-label="Agregar fiado">
+              <i class="fas fa-plus" aria-hidden="true"></i>
+              Agregar
+            </button>
+          </div>
+        </form>
+
+        <div class="fiado-list-header">
+          <span>Tus clientes fiados</span>
+          <div class="fiado-sort-tabs" role="tablist" aria-label="Ordenar lista">
+            <button type="button" class="fiado-sort-tab active" data-sort="amount">Debe más</button>
+            <button type="button" class="fiado-sort-tab" data-sort="days">Más antiguo</button>
+            <button type="button" class="fiado-sort-tab" data-sort="name">Nombre</button>
+          </div>
+        </div>
+
+        <ul id="fiado-list" class="fiado-list">
+          <li id="fiado-empty" class="fiado-empty">
+            <i class="fas fa-clipboard-list" aria-hidden="true"></i>
+            Todavía no has registrado ningún fiado. Agrega el primero arriba.
+          </li>
+        </ul>
+
+        <p class="fiado-privacy">
+          <i class="fas fa-lock" aria-hidden="true"></i>
+          Guardado solo en este navegador, no en un servidor. Marca
+          <i class="fas fa-check" aria-hidden="true"></i>
+          cuando te paguen para quitarlo de la lista.
+        </p>
+      </div>
+
+      <p class="fiado-soft-cta">
+        ¿Quieres que esta lista no se pierda si cambias de celular? <a href="https://web.rosivhub.com" target="_blank" rel="noopener noreferrer">Rosiv la guarda por ti, conectada a cada venta</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="tool-explain">
+    <div class="container tool-explain-inner">
+      <h2>El fiado no es el problema. El cuaderno sí.</h2>
+      <p>
+        En Colombia, fiarle al vecino de toda la vida o al cliente que
+        siempre paga el viernes no es un error de negocio — es parte de
+        cómo funciona una tienda de barrio o un restaurante familiar.
+        Decir que no a veces cuesta más caro socialmente que esperar la
+        plata unos días.
+      </p>
+      <p>
+        El problema real es fiar sin un registro confiable. El cuaderno
+        de atrás se moja, se llena de tachones, o simplemente nadie se
+        acuerda de anotar en plena hora pico. Y cuando eso pasa, el fiado
+        deja de ser un favor puntual y se convierte en un hueco silencioso
+        en la caja — porque cada fiado individual parece pequeño, pero
+        nadie está sumando la suma real.
+      </p>
+
+      <h3>Por qué el semáforo importa más que el monto solo</h3>
+      <p>
+        Un fiado de $50.000 de ayer no es lo mismo que uno de $50.000 de
+        hace tres semanas, aunque el monto sea igual — el segundo es una
+        señal de alerta mucho más urgente. Por eso esta herramienta no
+        solo suma cuánto te deben: te muestra quién lleva más tiempo sin
+        pagar, para que sepas a quién recordarle primero.
+      </p>
+
+      <h3>Cómo cobrar sin que se sienta como una pelea</h3>
+      <ul class="tool-list">
+        <li>Registra el fiado en el momento, no "después" — es cuando más se te olvida el monto exacto.</li>
+        <li>Muéstrale al cliente el número con fecha, en vez de decirlo de memoria — un dato no se discute tanto como un recuerdo.</li>
+        <li>Revisa la lista con la misma regularidad con la que revisas la caja, no solo cuando ya te urge la plata.</li>
+        <li>Pon un límite de fiado claro desde el principio con clientes nuevos — es más fácil decirlo el primer día que cuando ya deben mucho.</li>
+      </ul>
+    </div>
+  </section>
+
+  <ToolFaq items={faqItems} />
+
+  <ToolCrossLinks currentHref="/calculadora-control-de-fiados" />
+
+  <Footer />
+</Layout>
+
+<script>
+  interface FiadoEntry {
+    id: string;
+    name: string;
+    amount: number;
+    date: number;
+  }
+
+  type SortMode = "amount" | "days" | "name";
+
+  const STORAGE_KEY = "rosiv_fiados_demo";
+
+  const form = document.getElementById("fiado-form") as HTMLFormElement;
+  const nameInput = document.getElementById("fiado-name") as HTMLInputElement;
+  const amountInput = document.getElementById("fiado-amount") as HTMLInputElement;
+  const listEl = document.getElementById("fiado-list") as HTMLElement;
+  const emptyEl = document.getElementById("fiado-empty") as HTMLElement;
+  const totalEl = document.getElementById("fiado-total") as HTMLElement;
+  const countEl = document.getElementById("fiado-count") as HTMLElement;
+  const urgentEl = document.getElementById("fiado-urgent") as HTMLElement;
+  const sortTabs = document.querySelectorAll<HTMLButtonElement>(".fiado-sort-tab");
+
+  let sortMode: SortMode = "amount";
+
+  function formatCOP(value: number): string {
+    return "$" + Math.round(value).toLocaleString("es-CO");
+  }
+
+  function loadEntries(): FiadoEntry[] {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return seedDefaults();
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : seedDefaults();
+    } catch {
+      return seedDefaults();
+    }
+  }
+
+  function seedDefaults(): FiadoEntry[] {
+    const now = Date.now();
+    const DAY = 24 * 60 * 60 * 1000;
+    return [
+      { id: "seed-1", name: "Don Jairo", amount: 28000, date: now - 2 * DAY },
+      { id: "seed-2", name: "Doña Marlene", amount: 65000, date: now - 12 * DAY },
+      { id: "seed-3", name: "El de la esquina", amount: 15000, date: now - 20 * DAY },
+    ];
+  }
+
+  function saveEntries(entries: FiadoEntry[]) {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
+    } catch {
+      // localStorage no disponible; la lista solo dura la sesión actual.
+    }
+  }
+
+  function daysAgo(timestamp: number): number {
+    return Math.floor((Date.now() - timestamp) / (24 * 60 * 60 * 1000));
+  }
+
+  function signalFor(days: number): { cls: string; label: string } {
+    if (days < 7) return { cls: "signal-green", label: `Hace ${days === 0 ? "hoy" : days + (days === 1 ? " día" : " días")}` };
+    if (days <= 15) return { cls: "signal-yellow", label: `Hace ${days} días` };
+    return { cls: "signal-red", label: `Hace ${days} días` };
+  }
+
+  let entries = loadEntries();
+
+  sortTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      sortTabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+      sortMode = tab.dataset.sort as SortMode;
+      render();
+    });
+  });
+
+  function sortedEntries(): FiadoEntry[] {
+    const copy = [...entries];
+    if (sortMode === "amount") return copy.sort((a, b) => b.amount - a.amount);
+    if (sortMode === "days") return copy.sort((a, b) => a.date - b.date);
+    return copy.sort((a, b) => a.name.localeCompare(b.name, "es"));
+  }
+
+  function render() {
+    const ordered = sortedEntries();
+
+    listEl.querySelectorAll(".fiado-item").forEach((el) => el.remove());
+
+    if (ordered.length === 0) {
+      emptyEl.style.display = "flex";
+    } else {
+      emptyEl.style.display = "none";
+      ordered.forEach((entry) => {
+        const days = daysAgo(entry.date);
+        const signal = signalFor(days);
+        const li = document.createElement("li");
+        li.className = `fiado-item ${signal.cls}`;
+        li.innerHTML = `
+          <span class="fiado-item-dot" aria-hidden="true"></span>
+          <span class="fiado-item-name">${escapeHtml(entry.name)}</span>
+          <span class="fiado-item-days">${signal.label}</span>
+          <span class="fiado-item-amount">${formatCOP(entry.amount)}</span>
+          <button type="button" class="fiado-item-remove" aria-label="Marcar como pagado, quitar de la lista" data-id="${entry.id}">
+            <i class="fas fa-check" aria-hidden="true"></i>
+          </button>
+        `;
+        listEl.appendChild(li);
+      });
+    }
+
+    const total = entries.reduce((sum, e) => sum + e.amount, 0);
+    const urgentCount = entries.filter((e) => daysAgo(e.date) > 15).length;
+    totalEl.textContent = formatCOP(total);
+    countEl.textContent = String(entries.length);
+    urgentEl.textContent = String(urgentCount);
+    urgentEl.parentElement?.classList.toggle("has-urgent", urgentCount > 0);
+
+    listEl.querySelectorAll<HTMLButtonElement>(".fiado-item-remove").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        entries = entries.filter((e) => e.id !== btn.dataset.id);
+        saveEntries(entries);
+        render();
+      });
+    });
+  }
+
+  function escapeHtml(str: string): string {
+    const div = document.createElement("div");
+    div.textContent = str;
+    return div.innerHTML;
+  }
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const name = nameInput.value.trim();
+    const amount = parseInt(amountInput.value.replace(/\D/g, ""), 10);
+    if (!name || !amount) return;
+
+    entries.push({
+      id: `${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+      name,
+      amount,
+      date: Date.now(),
+    });
+    saveEntries(entries);
+    render();
+
+    nameInput.value = "";
+    amountInput.value = "";
+    nameInput.focus();
+  });
+
+  amountInput.addEventListener("input", () => {
+    const digits = amountInput.value.replace(/\D/g, "");
+    amountInput.value = digits ? parseInt(digits, 10).toLocaleString("es-CO") : "";
+  });
+
+  render();
+</script>
+
+<style is:global>
+  .fiado-app-section {
+    padding: 112px 0 64px;
+    background: var(--gray-50);
+    min-height: 60vh;
+  }
+
+  @media (max-width: 640px) {
+    .fiado-app-section {
+      padding: 96px 0 48px;
+    }
+  }
+
+  .fiado-app-container {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  .fiado-app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .fiado-app-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--brand-black);
+    margin-bottom: 0.3rem;
+  }
+
+  .fiado-app-subtitle {
+    color: var(--gray-600);
+    font-size: 0.95rem;
+  }
+
+  .fiado-app-tagline {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--gray-400);
+    font-size: 0.82rem;
+    margin: 0;
+  }
+
+  .fiado-app-card {
+    background: var(--white);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    border: 1px solid var(--gray-200);
+    padding: 1.75rem;
+  }
+
+  .fiado-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: var(--gray-200);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+  }
+
+  .fiado-summary-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    background: var(--purple-50);
+    padding: 0.9rem 1.1rem;
+  }
+
+  .fiado-summary-cell-alert {
+    background: var(--gray-50);
+    transition: background 0.25s ease;
+  }
+
+  .fiado-summary-cell-alert.has-urgent {
+    background: #fef3f2;
+  }
+
+  .fiado-summary-cell-alert.has-urgent .fiado-summary-value {
+    color: #c81e1e;
+  }
+
+  .fiado-summary-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gray-500);
+    font-weight: 700;
+  }
+
+  .fiado-summary-value {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--primary-purple);
+  }
+
+  .fiado-form-row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+  }
+
+  .fiado-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .fiado-form-field label {
+    font-weight: 600;
+    color: var(--gray-700);
+    font-size: 0.85rem;
+  }
+
+  .fiado-form-field-name {
+    flex: 1.4;
+    min-width: 140px;
+  }
+
+  .fiado-form-field-amount {
+    flex: 1;
+    min-width: 130px;
+  }
+
+  .fiado-form-field-name input {
+    box-sizing: border-box;
+    width: 100%;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 0.75rem 0.9rem;
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    color: var(--brand-black);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .fiado-form-field-name input:focus {
+    outline: none;
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 4px rgba(95, 27, 191, 0.12);
+  }
+
+  .margin-input-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 0 0.9rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .margin-input-wrap:focus-within {
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 4px rgba(95, 27, 191, 0.12);
+  }
+
+  .margin-input-prefix {
+    color: var(--gray-400);
+    font-weight: 700;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .margin-input-wrap input {
+    flex: 1 1 0%;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 0.75rem 0.5rem;
+    font-family: var(--font-primary);
+    color: var(--brand-black);
+    background: transparent;
+  }
+
+  .fiado-add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gradient-primary);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 0.8rem 1.25rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-purple);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .fiado-add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .fiado-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .fiado-list-header span {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gray-400);
+    font-weight: 700;
+  }
+
+  .fiado-sort-tabs {
+    display: flex;
+    gap: 0.3rem;
+  }
+
+  .fiado-sort-tab {
+    border: none;
+    background: var(--gray-100);
+    color: var(--gray-500);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .fiado-sort-tab:hover {
+    background: var(--purple-100);
+    color: var(--primary-purple);
+  }
+
+  .fiado-sort-tab.active {
+    background: var(--primary-purple);
+    color: var(--white);
+  }
+
+  .fiado-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    max-height: 420px;
+    overflow-y: auto;
+  }
+
+  .fiado-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--gray-400);
+    font-size: 0.9rem;
+    padding: 2.5rem 1rem;
+    text-align: center;
+  }
+
+  .fiado-empty i {
+    font-size: 1.5rem;
+  }
+
+  .fiado-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto auto;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.8rem 1.1rem;
+    border-radius: var(--radius-lg);
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    animation: tool-fade-in 0.3s ease;
+  }
+
+  .fiado-item-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--gray-300);
+    flex-shrink: 0;
+  }
+
+  .fiado-item.signal-green {
+    background: #ecfdf3;
+    border-color: #b7ebc6;
+  }
+
+  .fiado-item.signal-green .fiado-item-dot {
+    background: #17a34a;
+  }
+
+  .fiado-item.signal-yellow {
+    background: #fffaeb;
+    border-color: #fde8b0;
+  }
+
+  .fiado-item.signal-yellow .fiado-item-dot {
+    background: #d99a1b;
+  }
+
+  .fiado-item.signal-red {
+    background: #fef3f2;
+    border-color: #fbc7c3;
+  }
+
+  .fiado-item.signal-red .fiado-item-dot {
+    background: #d92d20;
+  }
+
+  .fiado-item-name {
+    font-weight: 600;
+    color: var(--brand-black);
+    font-size: 0.95rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .fiado-item-days {
+    font-size: 0.8rem;
+    color: var(--gray-500);
+    white-space: nowrap;
+  }
+
+  .fiado-item-amount {
+    font-weight: 700;
+    color: var(--brand-black);
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  .fiado-item-remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1.5px solid var(--gray-300);
+    background: var(--white);
+    color: var(--gray-400);
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .fiado-item-remove:hover {
+    background: #17a34a;
+    border-color: #17a34a;
+    color: var(--white);
+  }
+
+  .fiado-privacy {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+    color: var(--gray-400);
+    font-size: 0.78rem;
+    text-align: center;
+  }
+
+  .fiado-soft-cta {
+    text-align: center;
+    color: var(--gray-500);
+    font-size: 0.85rem;
+    margin-top: 1.25rem;
+  }
+
+  .fiado-soft-cta a {
+    color: var(--primary-purple);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  @media (max-width: 640px) {
+    .fiado-app-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .fiado-app-card {
+      padding: 1.25rem;
+    }
+
+    .fiado-summary {
+      grid-template-columns: 1fr;
+    }
+
+    .fiado-form-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .fiado-add-btn {
+      justify-content: center;
+    }
+
+    .fiado-list-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .fiado-item {
+      grid-template-columns: auto 1fr auto;
+      grid-template-areas:
+        "dot name remove"
+        "dot days amount";
+      row-gap: 0.2rem;
+    }
+
+    .fiado-item-dot {
+      grid-area: dot;
+    }
+
+    .fiado-item-name {
+      grid-area: name;
+      white-space: normal;
+    }
+
+    .fiado-item-days {
+      grid-area: days;
+    }
+
+    .fiado-item-amount {
+      grid-area: amount;
+      justify-self: end;
+    }
+
+    .fiado-item-remove {
+      grid-area: remove;
+    }
+  }
+</style>

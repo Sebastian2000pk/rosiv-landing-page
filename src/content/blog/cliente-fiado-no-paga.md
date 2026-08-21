@@ -43,6 +43,10 @@ Ahí es donde el fiado deja de ser un favor entre vecinos y se convierte en una 
 
 No es dejar de fiar — eso rompe la relación con el cliente y con el barrio. Es tener siempre a la mano, sin esfuerzo, la respuesta a dos preguntas: ¿quién me debe y cuánto? El día que esa respuesta está clara al instante, cobrar deja de sentirse como una acusación y empieza a sentirse como mostrarle a alguien un dato.
 
+## Empieza a llevar la cuenta ahora mismo
+
+No necesitas esperar a resolverlo todo de una vez. Puedes empezar a reemplazar el cuaderno hoy con [control de fiados](/calculadora-control-de-fiados): registras cliente, monto y fecha, y te muestra un semáforo de quién debe más y quién lleva más tiempo sin pagar — pensada para abrirla cada día, no para usarla una sola vez.
+
 ## Cómo ayuda Rosiv mientras tanto
 
 Rosiv ya registra cada venta y cada cierre de caja en el momento en que pasa, así que el dinero que sí cobraste queda claro sin cuadernos ni memoria — eso saca al fiado de la mezcla y facilita ver qué parte de tus ventas del día fue plata real y cuál quedó pendiente. El control de cuentas por cliente y fiado dedicado está en el radar de lo que viene, para llevar esto mismo hasta el último detalle.

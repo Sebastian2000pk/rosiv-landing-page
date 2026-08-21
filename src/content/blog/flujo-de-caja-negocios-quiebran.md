@@ -44,6 +44,10 @@ No hace falta ser contador. Hace falta hacer esto todos los días, a la misma ho
 
 Cinco minutos. Pero hechos todos los días, no solo cuando ya hay una alarma sonando.
 
+## La pregunta hermana: ¿cuánto necesitas vender para no perder plata?
+
+El flujo de caja te dice si el dinero está disponible cuando lo necesitas. Hay una pregunta relacionada pero distinta que también vale la pena tener siempre clara: ¿cuál es la venta mínima del día que cubre tus gastos fijos? Esa cuenta se llama punto de equilibrio, y puedes calcular la tuya en la [calculadora de punto de equilibrio](/calcular-punto-de-equilibrio) — o leer [la explicación sin tecnicismos con un ejemplo real](/blog/punto-de-equilibrio-sin-tecnicismos).
+
 ## El problema real: llevar esto en la cabeza no escala
 
 Con un negocio chico, uno puede llevar el flujo de caja de memoria un tiempo. El problema es que la memoria falla justo cuando el negocio empieza a crecer — más productos, más clientes fiando, más días entre que vendes y que realmente cobras.

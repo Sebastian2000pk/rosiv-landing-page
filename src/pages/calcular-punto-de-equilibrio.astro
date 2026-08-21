@@ -1,0 +1,568 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ToolSidePanel from "../components/tools/ToolSidePanel.astro";
+import ToolFaq from "../components/tools/ToolFaq.astro";
+import ToolUpsell from "../components/tools/ToolUpsell.astro";
+import ToolCrossLinks from "../components/tools/ToolCrossLinks.astro";
+import "../styles/tool-page.css";
+
+const title = "Calculadora de punto de equilibrio: ¿cuánto tengo que vender? | Rosiv";
+const description =
+  "Escribe tus gastos fijos y tu margen promedio. Calcula cuánto tienes que vender cada día para no perder plata y desde cuándo empiezas a ganar. Gratis.";
+const path = "/calcular-punto-de-equilibrio";
+
+const faqItems = [
+  {
+    question: "¿Qué es el punto de equilibrio de un negocio?",
+    answer:
+      "Es la cantidad de ventas que necesitas hacer en un período (día, semana o mes) para que la ganancia de esas ventas alcance a cubrir exactamente tus gastos fijos, sin ganar ni perder plata todavía. Todo lo que vendas por encima de ese punto ya es ganancia real.",
+  },
+  {
+    question: "¿Cómo calculo cuánto tengo que vender al día para no perder plata?",
+    answer:
+      "Suma tus gastos fijos del mes (arriendo, servicios, empleados, etc.), divide ese total entre tu margen de ganancia promedio para saber cuánto necesitas vender en total al mes, y luego divide ese resultado entre los días que abres al mes. Esta calculadora hace esa cuenta completa por ti.",
+  },
+  {
+    question: "¿Qué pasa si mis ventas están por debajo del punto de equilibrio?",
+    answer:
+      "Significa que ese mes no vas a alcanzar a cubrir tus gastos fijos con lo que vendiste, así que vas a terminar sacando plata de tu bolsillo o quedando debiendo, aunque el negocio haya tenido movimiento. No es necesariamente una señal de que el negocio no sirve — a veces basta con ajustar el margen o los gastos fijos.",
+  },
+  {
+    question: "¿El punto de equilibrio cambia si mi margen de ganancia cambia?",
+    answer:
+      "Sí, y es uno de los ajustes más rápidos que puedes hacer. Si subes tu margen promedio (por ejemplo, ajustando precios con la calculadora de margen), necesitas vender menos unidades o menos plata en total para llegar al mismo punto de equilibrio.",
+  },
+  {
+    question: "¿Qué cuento como gasto fijo de mi negocio?",
+    answer:
+      "Todo lo que pagas sí o sí cada mes, así vendas mucho o poco: arriendo del local, servicios públicos, nómina de empleados, cuota de préstamos, internet. No cuentes ahí el costo de los productos que vendes — ese ya está incluido en tu margen.",
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Calculadora de punto de equilibrio",
+    url: new URL(path, Astro.site).toString(),
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "COP",
+    },
+    description,
+    publisher: {
+      "@type": "Organization",
+      name: "Rosiv",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Rosiv", item: new URL("/", Astro.site).toString() },
+      { "@type": "ListItem", position: 2, name: "Blog", item: new URL("/blog", Astro.site).toString() },
+      { "@type": "ListItem", position: 3, name: "Calculadora de punto de equilibrio", item: new URL(path, Astro.site).toString() },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} path={path} keywords="calculadora punto de equilibrio, cuánto tengo que vender para no perder plata, punto de equilibrio negocio pequeño Colombia" jsonLd={jsonLd}>
+  <Navbar />
+
+  <section class="tool-hero">
+    <div class="container tool-hero-grid">
+      <div class="tool-hero-main">
+        <span class="status-tag live tool-hero-badge">
+          <i class="fas fa-flag-checkered" aria-hidden="true"></i>
+          Tu meta diaria, no tu contabilidad
+        </span>
+        <h1 class="tool-hero-title">
+          ¿Cuánto tienes que vender hoy para no perder plata?
+        </h1>
+        <p class="tool-hero-subtitle">
+          Escribe tus gastos fijos del mes y qué tanto margen dejas en
+          promedio. Te decimos cuánto necesitas vender cada día para
+          cubrir gastos — y desde ahí, todo lo que vendas ya es ganancia.
+        </p>
+
+        <div class="tool-card beq-calculator" role="group" aria-labelledby="beq-calc-label">
+          <div class="beq-fields">
+            <div class="beq-field">
+              <label for="beq-fixed">Gastos fijos del mes</label>
+              <p class="beq-field-hint">Arriendo + servicios + empleados + lo que pagas sí o sí</p>
+              <div class="margin-input-wrap">
+                <span class="margin-input-prefix">$</span>
+                <input
+                  id="beq-fixed"
+                  type="text"
+                  inputmode="numeric"
+                  autocomplete="off"
+                  value="1.800.000"
+                  aria-describedby="beq-error"
+                />
+              </div>
+            </div>
+            <div class="beq-field">
+              <label for="beq-margin">Margen promedio</label>
+              <p class="beq-field-hint">De cada $10.000 que vendes, ¿cuánto es ganancia?</p>
+              <div class="margin-input-wrap beq-margin-wrap">
+                <input
+                  id="beq-margin"
+                  type="text"
+                  inputmode="numeric"
+                  autocomplete="off"
+                  value="30"
+                  aria-describedby="beq-error"
+                />
+                <span class="margin-input-prefix beq-margin-suffix">%</span>
+              </div>
+            </div>
+            <div class="beq-field">
+              <label for="beq-days">Días que abres al mes</label>
+              <p class="beq-field-hint">Para repartir la meta entre tus días reales</p>
+              <div class="margin-input-wrap">
+                <input
+                  id="beq-days"
+                  type="text"
+                  inputmode="numeric"
+                  autocomplete="off"
+                  value="26"
+                  aria-describedby="beq-error"
+                />
+              </div>
+            </div>
+          </div>
+
+          <p id="beq-error" class="dv-error" role="alert"></p>
+
+          <div id="beq-result" class="beq-result" aria-live="polite">
+            <div class="beq-result-headline">
+              <span class="margin-result-label">Tienes que vender cada día</span>
+              <span id="beq-daily-output" class="margin-result-value beq-daily-value">$–</span>
+            </div>
+            <div class="beq-result-grid">
+              <div class="beq-result-cell">
+                <span class="beq-result-cell-label">Meta al mes</span>
+                <span id="beq-monthly-output" class="beq-result-cell-value">–</span>
+              </div>
+              <div class="beq-result-cell">
+                <span class="beq-result-cell-label">Meta a la semana</span>
+                <span id="beq-weekly-output" class="beq-result-cell-value">–</span>
+              </div>
+            </div>
+            <div id="beq-signal" class="margin-signal">
+              <i id="beq-signal-icon" class="fas fa-circle-check" aria-hidden="true"></i>
+              <span id="beq-signal-text">–</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-benefits" role="list">
+          <div class="tool-benefit" role="listitem">
+            <div class="tool-benefit-icon">
+              <i class="fas fa-bolt" aria-hidden="true"></i>
+            </div>
+            <span>Resultado en segundos</span>
+          </div>
+          <div class="tool-benefit" role="listitem">
+            <div class="tool-benefit-icon">
+              <i class="fas fa-calendar-day" aria-hidden="true"></i>
+            </div>
+            <span>Meta por día, no solo por mes</span>
+          </div>
+          <div class="tool-benefit" role="listitem">
+            <div class="tool-benefit-icon">
+              <i class="fas fa-gift" aria-hidden="true"></i>
+            </div>
+            <span>100% gratis</span>
+          </div>
+        </div>
+      </div>
+
+      <ToolSidePanel
+        eyebrow="Después del punto de equilibrio"
+        heading="Ya sabes tu meta diaria. Esto es lo que sigue:"
+        items={[
+          { label: "Meta diaria clara", done: true },
+          { label: "Saber cada día si ya la cumpliste" },
+          { label: "Ver qué te falta antes de que se acabe el día" },
+          { label: "Ajustar la meta cuando cambien tus gastos" },
+        ]}
+      />
+    </div>
+  </section>
+
+  <section class="tool-explain">
+    <div class="container tool-explain-inner">
+      <h2>Por qué "vendí bien hoy" no es suficiente pregunta</h2>
+      <p>
+        La mayoría de dueños de negocio miden el día por sensación: "hoy
+        hubo bastante gente" o "hoy estuvo flojo". El problema es que esa
+        sensación no te dice si lo que vendiste alcanzó siquiera para
+        cubrir lo que el negocio gasta sí o sí ese día, así haya vendido
+        mucho o poco: arriendo, servicios, nómina.
+      </p>
+      <p>
+        El punto de equilibrio reemplaza esa sensación por un número
+        exacto: la venta mínima del día para no perder plata. No es un
+        concepto solo para contadores — es la respuesta a la pregunta
+        que de verdad importa: <strong>¿hoy gané o estuve regalando el
+        día?</strong>
+      </p>
+
+      <h3>Cómo se calcula, sin tecnicismos</h3>
+      <p>
+        Toma tus gastos fijos del mes (lo que pagas exista o no exista
+        venta) y divídelos entre tu margen promedio, para saber cuánto
+        tienes que vender en total ese mes solo para cubrir esos gastos.
+        Reparte ese total entre los días que tu negocio abre, y tienes tu
+        meta diaria. Todo lo que vendas por encima de esa meta, ya es
+        ganancia real para ti.
+      </p>
+
+      <h3>Qué hacer con el número una vez lo tienes</h3>
+      <ul class="tool-list">
+        <li>Si un día no llegaste a la meta, no significa que el negocio esté mal — significa que ese día en particular no cubrió su parte, y otro día con más venta lo compensa.</li>
+        <li>Si casi nunca llegas a la meta, el problema no es "vender más" a secas — puede ser que tu margen esté muy bajo o que tus gastos fijos hayan subido sin que lo notaras.</li>
+        <li>Vuelve a calcular cada vez que cambie un gasto fijo (sube el arriendo, entra un empleado nuevo) — tu meta diaria cambia con eso, aunque tú sigas vendiendo igual.</li>
+        <li>Súbele al margen (con la <a href="/calcular-precio-venta-margen">calculadora de precio de venta</a>) y verás que la meta diaria baja — a veces es más fácil ajustar precio que vender más unidades.</li>
+      </ul>
+    </div>
+  </section>
+
+  <ToolFaq items={faqItems} />
+
+  <ToolCrossLinks currentHref="/calcular-punto-de-equilibrio" />
+
+  <ToolUpsell
+    heading="¿Te sirvió la calculadora?"
+    body="Calcular la meta es el primer paso. El segundo es saber, sin esperar a fin de mes, si la estás cumpliendo. Rosiv te muestra en tiempo real cuánto llevas vendido hoy, para que sepas de inmediato si ya cubriste tus gastos fijos o si todavía te falta."
+    features={[
+      { icon: "fas fa-gauge-high", label: "Ventas del día en tiempo real" },
+      { icon: "fas fa-chart-line", label: "Compara contra días anteriores" },
+      { icon: "fas fa-bolt", label: "Cobra en segundos desde el celular" },
+    ]}
+  />
+
+  <Footer />
+</Layout>
+
+<script>
+  const fixedInput = document.getElementById("beq-fixed") as HTMLInputElement;
+  const marginInput = document.getElementById("beq-margin") as HTMLInputElement;
+  const daysInput = document.getElementById("beq-days") as HTMLInputElement;
+  const errorEl = document.getElementById("beq-error") as HTMLElement;
+
+  const resultBox = document.getElementById("beq-result") as HTMLElement;
+  const dailyOutput = document.getElementById("beq-daily-output") as HTMLElement;
+  const monthlyOutput = document.getElementById("beq-monthly-output") as HTMLElement;
+  const weeklyOutput = document.getElementById("beq-weekly-output") as HTMLElement;
+  const signalBox = document.getElementById("beq-signal") as HTMLElement;
+  const signalIcon = document.getElementById("beq-signal-icon") as HTMLElement;
+  const signalText = document.getElementById("beq-signal-text") as HTMLElement;
+
+  function formatCOP(value: number): string {
+    return "$" + Math.round(value).toLocaleString("es-CO");
+  }
+
+  function parseNumber(raw: string): number {
+    const clean = raw.replace(/\D/g, "");
+    return clean ? parseInt(clean, 10) : 0;
+  }
+
+  function formatInputDisplay(el: HTMLInputElement) {
+    const digits = el.value.replace(/\D/g, "");
+    el.value = digits ? parseInt(digits, 10).toLocaleString("es-CO") : "";
+  }
+
+  function recalculate() {
+    const fixed = parseNumber(fixedInput.value);
+    const marginPct = parseNumber(marginInput.value);
+    const days = parseNumber(daysInput.value);
+    errorEl.textContent = "";
+
+    if (!fixed || !marginPct || !days) {
+      resultBox.classList.remove("has-value");
+      dailyOutput.textContent = "$–";
+      monthlyOutput.textContent = "–";
+      weeklyOutput.textContent = "–";
+      signalBox.className = "margin-signal";
+      signalText.textContent = "Completa los tres datos para ver tu meta diaria.";
+      signalIcon.className = "fas fa-circle";
+      return;
+    }
+
+    if (marginPct >= 100) {
+      errorEl.textContent = "El margen debe ser menor a 100%.";
+      resultBox.classList.remove("has-value");
+      return;
+    }
+
+    const monthlyTarget = fixed / (marginPct / 100);
+    const weeklyTarget = (monthlyTarget / days) * 7;
+    const dailyTarget = monthlyTarget / days;
+
+    dailyOutput.textContent = formatCOP(dailyTarget);
+    monthlyOutput.textContent = formatCOP(monthlyTarget);
+    weeklyOutput.textContent = formatCOP(weeklyTarget);
+
+    resultBox.classList.remove("has-value");
+    void resultBox.offsetWidth;
+    resultBox.classList.add("has-value");
+
+    signalBox.classList.remove("signal-green", "signal-yellow", "signal-red");
+    if (marginPct >= 30) {
+      signalBox.classList.add("signal-green");
+      signalIcon.className = "fas fa-circle-check";
+      signalText.textContent = "Con este margen, tu meta diaria es alcanzable con un volumen razonable de ventas.";
+    } else if (marginPct >= 15) {
+      signalBox.classList.add("signal-yellow");
+      signalIcon.className = "fas fa-triangle-exclamation";
+      signalText.textContent = "Con este margen necesitas vender bastante volumen cada día. Considera revisar tus precios.";
+    } else {
+      signalBox.classList.add("signal-red");
+      signalIcon.className = "fas fa-circle-exclamation";
+      signalText.textContent = "Este margen es muy bajo: tu meta diaria de ventas puede ser difícil de sostener.";
+    }
+  }
+
+  [fixedInput, daysInput].forEach((input) => {
+    input.addEventListener("input", () => {
+      formatInputDisplay(input);
+      recalculate();
+    });
+  });
+
+  marginInput.addEventListener("input", () => {
+    const clean = marginInput.value.replace(/\D/g, "");
+    marginInput.value = clean;
+    recalculate();
+  });
+
+  recalculate();
+</script>
+
+<style>
+  .beq-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .beq-field label {
+    display: block;
+    font-weight: 600;
+    color: var(--gray-700);
+    margin-bottom: 0.3rem;
+    font-size: 0.88rem;
+  }
+
+  .beq-field-hint {
+    font-size: 0.76rem;
+    color: var(--gray-400);
+    line-height: 1.3;
+    margin-bottom: 0.6rem;
+    min-height: 2rem;
+  }
+
+  .margin-input-wrap {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 0 0.9rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .margin-input-wrap:focus-within {
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 4px rgba(95, 27, 191, 0.12);
+  }
+
+  .margin-input-prefix {
+    color: var(--gray-400);
+    font-weight: 700;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+  }
+
+  .margin-input-wrap input {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.15rem;
+    padding: 0.75rem 0.5rem;
+    font-family: var(--font-primary);
+    color: var(--brand-black);
+    background: transparent;
+  }
+
+  .margin-result-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gray-400);
+    font-weight: 700;
+  }
+
+  .margin-result-value {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--brand-black);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .margin-signal {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.85rem 1.5rem;
+    background: var(--gray-100);
+    color: var(--gray-500);
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+
+  .margin-signal i {
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .margin-signal.signal-green {
+    background: #ecfdf3;
+    color: #15803d;
+  }
+
+  .margin-signal.signal-yellow {
+    background: #fffaeb;
+    color: #b54708;
+  }
+
+  .margin-signal.signal-red {
+    background: #fef3f2;
+    color: #c81e1e;
+  }
+
+  .beq-margin-wrap {
+    justify-content: space-between;
+  }
+
+  .beq-margin-suffix {
+    order: 2;
+  }
+
+  .beq-result {
+    margin-top: 1.5rem;
+    border-radius: var(--radius-xl);
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    overflow: hidden;
+    opacity: 0.55;
+    transform: scale(0.99);
+    transition: opacity 0.2s ease, transform 0.2s ease, background 0.25s ease, border-color 0.25s ease;
+  }
+
+  .beq-result.has-value {
+    opacity: 1;
+    transform: scale(1);
+    background: linear-gradient(180deg, var(--purple-50) 0%, var(--white) 55%);
+    border-color: var(--purple-100);
+  }
+
+  .beq-result-headline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .beq-daily-value {
+    font-size: 2.6rem;
+  }
+
+  .beq-result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--purple-100);
+    margin: 0 1.5rem;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .beq-result-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    background: var(--white);
+    padding: 0.75rem 1rem;
+  }
+
+  .beq-result-cell-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gray-400);
+    font-weight: 700;
+  }
+
+  .beq-result-cell-value {
+    font-weight: 700;
+    color: var(--brand-black);
+    font-size: 1.05rem;
+  }
+
+  .beq-result .margin-signal {
+    margin-top: 1.25rem;
+  }
+
+  @media (max-width: 640px) {
+    .beq-fields {
+      grid-template-columns: 1fr;
+    }
+
+    .beq-field-hint {
+      min-height: 0;
+    }
+
+    .beq-result-headline {
+      padding: 1.25rem 1.25rem 1rem;
+    }
+
+    .beq-daily-value {
+      font-size: 2.1rem;
+    }
+
+    .beq-result-grid {
+      grid-template-columns: 1fr;
+      margin: 0 1.25rem;
+    }
+
+    .beq-result .margin-signal {
+      margin-top: 1rem;
+    }
+  }
+</style>

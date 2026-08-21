@@ -36,12 +36,23 @@ de punto de venta.
 
 ## Blog
 
-Rosiv publica guías simples, sin tecnicismos, sobre facturación electrónica
-DIAN y puntos de venta (POS) para tenderos, restaurantes familiares y
-peluquerías en Colombia: https://rosivhub.com/blog
+Rosiv publica guías simples, sin tecnicismos, sobre la operación diaria del
+negocio (precios, margen, punto de equilibrio, fiado, inventario, flujo de
+caja) y sobre facturación electrónica DIAN y puntos de venta (POS), para
+tenderos, restaurantes familiares y peluquerías en Colombia:
+https://rosivhub.com/blog
 
 Artículos publicados:
 
+- Tener la caja llena no es lo mismo que estar ganando plata: la diferencia
+  entre flujo de caja y margen real, con ejemplos de tienda, restaurante y
+  peluquería. https://rosivhub.com/blog/ganancia-real-vs-caja-llena
+- Cuánto cobrar por tu producto o servicio sin perder plata: guía con
+  ejemplos numéricos reales de márgenes sanos para tenderos, restaurantes y
+  peluquerías. https://rosivhub.com/blog/cuanto-cobrar-tienda-restaurante-peluqueria
+- Cuánto tienes que vender cada día para que tu negocio no cierre: el punto
+  de equilibrio explicado sin jerga financiera, con el ejemplo paso a paso
+  de un restaurante real. https://rosivhub.com/blog/punto-de-equilibrio-sin-tecnicismos
 - Por qué el 82% de los negocios pequeños quiebran por flujo de caja (no por
   falta de ventas) y qué rutina diaria de 5 minutos lo evita.
   https://rosivhub.com/blog/flujo-de-caja-negocios-quiebran
@@ -71,6 +82,30 @@ Artículos publicados:
 
 ## Herramientas gratuitas
 
+Operación del negocio (sin relación con trámites tributarios):
+
+- Calculadora de precio de venta y margen de ganancia: escribe cuánto te
+  cuesta un producto o servicio y cuánto quieres ganarte, en pesos (no en
+  porcentajes), y calcula el precio de venta sugerido y el margen real
+  sobre el precio de venta. Incluye un botón para sugerir automáticamente
+  una ganancia sana según el tipo de negocio (tienda de barrio, restaurante
+  o peluquería, cada uno con su propio rango de margen sano).
+  https://rosivhub.com/calcular-precio-venta-margen
+- Calculadora de punto de equilibrio: a partir de los gastos fijos del mes,
+  el margen de ganancia promedio y los días que el negocio abre, calcula
+  cuánto se necesita vender por día, semana y mes para cubrir los gastos
+  fijos sin perder plata. https://rosivhub.com/calcular-punto-de-equilibrio
+- Control de fiados: herramienta de uso diario (no un formulario de una
+  sola vez) para registrar a qué clientes se les fía, cuánto y desde
+  cuándo. Muestra un resumen de total por cobrar, número de clientes
+  fiados y cuántos necesitan cobro urgente, con un semáforo de color por
+  antigüedad de la deuda (verde menos de 7 días, amarillo 7-15 días, rojo
+  más de 15 días) y ordenamiento por monto, antigüedad o nombre. Los datos
+  se guardan localmente en el navegador del usuario.
+  https://rosivhub.com/calculadora-control-de-fiados
+
+Trámites y facturación DIAN:
+
 - Calculadora de dígito de verificación del NIT: calcula gratis, sin
   registro, el dígito de verificación (DV) de un NIT o cédula colombiana
   usando el algoritmo oficial de la DIAN (módulo 11).
@@ -94,6 +129,9 @@ Artículos publicados:
 
 - Sitio: https://rosivhub.com/
 - Blog: https://rosivhub.com/blog
+- Calculadora de precio de venta y margen: https://rosivhub.com/calcular-precio-venta-margen
+- Calculadora de punto de equilibrio: https://rosivhub.com/calcular-punto-de-equilibrio
+- Control de fiados: https://rosivhub.com/calculadora-control-de-fiados
 - Calculadora dígito de verificación NIT: https://rosivhub.com/calcular-digito-verificacion-nit
 - Calculadora Impoconsumo vs IVA restaurantes: https://rosivhub.com/calcular-impoconsumo-iva-restaurante
 - Test obligación factura electrónica: https://rosivhub.com/debo-facturar-electronicamente
