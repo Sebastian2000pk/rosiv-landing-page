@@ -8,9 +8,9 @@ import ToolUpsell from "../components/tools/ToolUpsell.astro";
 import ToolCrossLinks from "../components/tools/ToolCrossLinks.astro";
 import "../styles/tool-page.css";
 
-const title = "Calculadora de dígito de verificación del NIT (DV) | Rosiv";
+const title = "Calculadora DV: Dígito de Verificación NIT y RUT Gratis | Rosiv";
 const description =
-  "Calcula gratis el dígito de verificación (DV) de tu NIT o cédula con el algoritmo oficial de la DIAN. Resultado al instante, sin registrarte.";
+  "Calcula el dígito de verificación (DV) de tu NIT, RUT o cédula con la fórmula oficial de la DIAN (módulo 11). Resultado al instante, sin registrarte ni instalar Excel.";
 const path = "/calcular-digito-verificacion-nit";
 
 const faqItems = [
@@ -33,6 +33,16 @@ const faqItems = [
     question: "¿Por qué me rechazan la factura electrónica por el dígito de verificación?",
     answer:
       "Casi siempre es porque el DV no corresponde al NIT ingresado, por un error de digitación al escribirlo. Verifica el número exacto que aparece en el RUT y vuelve a calcular el dígito para confirmarlo.",
+  },
+  {
+    question: "¿El DV del NIT es el mismo que el DV del RUT?",
+    answer:
+      "Sí. El RUT es el documento donde la DIAN registra tu NIT junto con su dígito de verificación — no son dos números distintos. Cuando alguien pregunta por el 'DV del RUT' se refiere exactamente al mismo dígito de verificación que corresponde al NIT que aparece en ese RUT.",
+  },
+  {
+    question: "¿Cómo calcular el dígito de verificación en Excel?",
+    answer:
+      "Se puede armar con fórmulas usando los mismos pesos del módulo 11 que usa la DIAN (3, 7, 13, 17, 19, 23, 29, 37, 41, 43, 47, 53, 59, 67, 71, aplicados de derecha a izquierda sobre cada dígito del NIT), sumando los productos y sacando el residuo al dividir entre 11. Es fácil cometer un error de fórmula o de orden de los pesos, así que si solo necesitas el resultado, esta calculadora te lo da al instante sin armar nada.",
   },
 ];
 
@@ -79,7 +89,7 @@ const jsonLd = [
 ];
 ---
 
-<Layout title={title} description={description} path={path} keywords="dígito de verificación NIT, calcular DV NIT, dígito de verificación DIAN, calculadora NIT Colombia" jsonLd={jsonLd}>
+<Layout title={title} description={description} path={path} keywords="dígito de verificación NIT, calcular DV NIT, dígito de verificación DIAN, calculadora NIT Colombia, dígito de verificación RUT, calcular dígito de verificación en Excel, calculadora dígito de verificación" jsonLd={jsonLd}>
   <Navbar />
 
   <section class="tool-hero">
@@ -90,7 +100,7 @@ const jsonLd = [
           Resultado instantáneo
         </span>
         <h1 class="tool-hero-title">
-          ¿Te está frenando el dígito de verificación del NIT?
+          Calculadora de dígito de verificación (DV) del NIT
         </h1>
         <p class="tool-hero-subtitle">
           Escribe el NIT o la cédula y te damos el dígito al instante, con
@@ -206,6 +216,26 @@ const jsonLd = [
         <li>Cuando un proveedor o cliente te pide tu NIT completo con el DV.</li>
         <li>Cuando una factura te queda rechazada y necesitas confirmar que el número esté bien.</li>
       </ul>
+
+      <h3>DV del NIT y DV del RUT: es el mismo número</h3>
+      <p>
+        No hay diferencia entre "dígito de verificación del NIT" y "dígito de
+        verificación del RUT": el RUT es el documento de la DIAN donde queda
+        registrado tu NIT junto con ese dígito. Si alguien te pide el DV de
+        tu RUT, es el mismo número que calculas aquí a partir de tu NIT o
+        cédula.
+      </p>
+
+      <h3>¿Se puede calcular en Excel?</h3>
+      <p>
+        Sí, armando una fórmula con los mismos pesos del módulo 11 que usa la
+        DIAN (3, 7, 13, 17, 19, 23, 29, 37, 41, 43, 47, 53, 59, 67, 71,
+        aplicados de derecha a izquierda), multiplicando cada dígito del NIT
+        por su peso, sumando y sacando el residuo de dividir entre 11. Es
+        fácil equivocarse en el orden de los pesos o en la fórmula del
+        residuo — si solo necesitas el número ya calculado, esta calculadora
+        te ahorra armar la hoja de cálculo.
+      </p>
     </div>
   </section>
 

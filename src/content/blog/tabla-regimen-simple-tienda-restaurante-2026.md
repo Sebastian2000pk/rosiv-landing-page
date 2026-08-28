@@ -1,6 +1,6 @@
 ---
-title: "Régimen Simple 2026: la tabla real de cuánto vas a pagar si tienes tienda o restaurante"
-description: "Tarifas y rangos del Régimen Simple de Tributación 2026 explicados para tenderos y dueños de restaurantes familiares en Colombia, sin lenguaje de contador."
+title: "Régimen Simple 2026: Tabla de Tarifas para Tienda o Restaurante"
+description: "¿Cuánto vas a pagar en 2026? Tabla con las tarifas exactas del Régimen Simple para tiendas y restaurantes, con la UVT actualizada. Explicado sin lenguaje de contador."
 pubDate: 2026-08-13
 keywords: "Régimen Simple 2026, tarifas RST tienda de barrio, Régimen Simple restaurantes Colombia"
 faq:
