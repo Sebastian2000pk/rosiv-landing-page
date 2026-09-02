@@ -1637,7 +1637,11 @@ body {
 }
 
 .footer-bottom {
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
   padding-top: 2rem;
   border-top: 1px solid var(--gray-800);
 }
@@ -1645,6 +1649,29 @@ body {
 .footer-bottom p {
   color: var(--gray-400);
   font-size: 0.875rem;
+}
+
+.footer-legal {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.footer-legal a {
+  color: var(--gray-400);
+  font-size: 0.8rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+  color: var(--white);
+}
+
+.footer-legal span {
+  color: var(--gray-700);
+  font-size: 0.8rem;
 }
 
 /* Header logo (imagen real de marca) */
@@ -2019,6 +2046,11 @@ body {
   }
   
   .footer-links {
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
     justify-content: center;
   }
 
