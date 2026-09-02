@@ -1,0 +1,279 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "Condiciones del Servicio | Rosiv";
+const description =
+  "Condiciones del Servicio de Rosiv: reglas de uso del software POS, suscripciones, pagos, cancelaciones y responsabilidades.";
+const path = "/terminos-de-servicio";
+const lastUpdated = "2 de septiembre de 2026";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Rosiv", item: new URL("/", Astro.site).toString() },
+      { "@type": "ListItem", position: 2, name: "Condiciones del Servicio", item: new URL(path, Astro.site).toString() },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} path={path} jsonLd={jsonLd}>
+  <Navbar />
+
+  <main class="legal-page">
+    <div class="container legal-inner">
+      <header class="legal-header">
+        <span class="status-tag live">
+          <i class="fas fa-file-contract" aria-hidden="true"></i>
+          Legal
+        </span>
+        <h1>Condiciones del Servicio</h1>
+        <p class="legal-subtitle">
+          Las reglas que aplican al usar el software y los servicios de
+          Rosiv.
+        </p>
+        <p class="legal-updated">Última actualización: {lastUpdated}</p>
+      </header>
+
+      <article class="legal-content">
+        <h2>1. Aceptación de las condiciones</h2>
+        <p>
+          Estas Condiciones del Servicio ("Condiciones") regulan el uso del
+          software de punto de venta (POS), sitio web y canales asociados
+          de <strong>Rosiv</strong> ("nosotros", "nuestro" o "la empresa").
+          Al registrarte, acceder o usar Rosiv aceptas quedar vinculado por
+          estas Condiciones. Si no estás de acuerdo, no debes usar el
+          servicio.
+        </p>
+
+        <h2>2. Descripción del servicio</h2>
+        <p>
+          Rosiv es un software de punto de venta (POS) para negocios como
+          tiendas, restaurantes y peluquerías, que incluye funciones de
+          ventas, inventario, control de fiados, facturación electrónica
+          DIAN y asistentes con inteligencia artificial. Podemos modificar,
+          mejorar o descontinuar funcionalidades del servicio en cualquier
+          momento, notificándote cuando el cambio sea significativo.
+        </p>
+
+        <h2>3. Registro de cuenta</h2>
+        <ul class="legal-list">
+          <li>Debes proporcionar información veraz y actualizada al registrarte.</li>
+          <li>Eres responsable de mantener la confidencialidad de tus credenciales de acceso.</li>
+          <li>Eres responsable de toda actividad que ocurra bajo tu cuenta.</li>
+          <li>Debes notificarnos de inmediato ante cualquier uso no autorizado de tu cuenta.</li>
+        </ul>
+
+        <h2>4. Planes, pagos y suscripciones</h2>
+        <ul class="legal-list">
+          <li>Algunas funciones de Rosiv requieren una suscripción paga, cuyo valor y condiciones se muestran antes de contratar.</li>
+          <li>Los pagos se procesan a través de proveedores externos de pago; Rosiv no almacena directamente los datos completos de tu tarjeta.</li>
+          <li>Las suscripciones se renuevan automáticamente según el ciclo contratado, salvo cancelación previa.</li>
+          <li>Puedes cancelar tu suscripción en cualquier momento desde tu cuenta o escribiéndonos por WhatsApp; la cancelación aplica desde el siguiente ciclo de facturación.</li>
+          <li>Salvo que la ley indique lo contrario, los pagos ya realizados no son reembolsables.</li>
+        </ul>
+
+        <h2>5. Uso aceptable</h2>
+        <p>Al usar Rosiv, te comprometes a no:</p>
+        <ul class="legal-list">
+          <li>Usar el servicio para actividades ilegales o fraudulentas.</li>
+          <li>Intentar acceder sin autorización a sistemas, cuentas o datos de otros usuarios.</li>
+          <li>Realizar ingeniería inversa, copiar o distribuir el software sin autorización.</li>
+          <li>Interferir con el funcionamiento normal de la plataforma o sobrecargar nuestra infraestructura.</li>
+          <li>Usar el servicio para enviar spam o contenido que infrinja derechos de terceros.</li>
+        </ul>
+
+        <h2>6. Tu información y contenido</h2>
+        <p>
+          Los datos que registras en Rosiv (ventas, inventario, clientes,
+          fiados) son de tu propiedad. Nos otorgas una licencia limitada
+          para almacenar y procesar esa información con el único fin de
+          prestarte el servicio. El tratamiento de datos personales se rige
+          por nuestra
+          <a href="/politica-de-privacidad">Política de Privacidad</a>.
+        </p>
+
+        <h2>7. Propiedad intelectual</h2>
+        <p>
+          El software, la marca, el diseño y los contenidos de Rosiv son
+          propiedad de la empresa o de sus licenciantes. Estas Condiciones
+          no te otorgan ningún derecho de propiedad sobre el software, solo
+          una licencia de uso limitada, no exclusiva y revocable mientras tu
+          cuenta esté activa.
+        </p>
+
+        <h2>8. Disponibilidad del servicio</h2>
+        <p>
+          Nos esforzamos por mantener Rosiv disponible de forma continua,
+          pero no garantizamos que el servicio esté libre de
+          interrupciones, errores o fallos técnicos. Rosiv incluye
+          funcionalidad offline para operaciones básicas de venta, pero
+          algunas funciones requieren conexión a internet.
+        </p>
+
+        <h2>9. Limitación de responsabilidad</h2>
+        <p>
+          Rosiv se ofrece "tal cual" y "según disponibilidad". En la medida
+          permitida por la ley, no somos responsables por daños indirectos,
+          pérdida de ingresos o de datos derivados del uso o la
+          imposibilidad de uso del servicio, salvo en los casos en que la
+          ley no permita limitar dicha responsabilidad.
+        </p>
+
+        <h2>10. Suspensión o terminación</h2>
+        <p>
+          Podemos suspender o cancelar tu acceso a Rosiv si incumples estas
+          Condiciones, si detectamos uso fraudulento o si lo exige la ley.
+          Tú puedes dejar de usar el servicio y cancelar tu cuenta en
+          cualquier momento. Al terminar la cuenta, puedes solicitar la
+          eliminación de tus datos según nuestra
+          <a href="/eliminacion-de-datos">página de Eliminación de Datos</a>.
+        </p>
+
+        <h2>11. Cambios a estas condiciones</h2>
+        <p>
+          Podemos actualizar estas Condiciones ocasionalmente. Te
+          notificaremos sobre cambios significativos por WhatsApp o
+          actualizando la fecha de "última actualización" en esta página. El
+          uso continuado del servicio después de un cambio implica tu
+          aceptación de las nuevas condiciones.
+        </p>
+
+        <h2>12. Ley aplicable</h2>
+        <p>
+          Estas Condiciones se rigen por las leyes de la República de
+          Colombia. Cualquier controversia derivada de su interpretación o
+          cumplimiento se someterá a los jueces competentes de Colombia.
+        </p>
+
+        <div class="legal-contact">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          <div>
+            <p class="legal-contact-title">¿Tienes preguntas sobre estas condiciones?</p>
+            <a href="https://wa.me/573153603192" target="_blank" rel="noopener noreferrer">
+              Escríbenos por WhatsApp
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-page {
+    padding: 7.5rem 0 5rem;
+    background: var(--gray-50, #f9fafb);
+  }
+
+  .legal-inner {
+    max-width: 780px;
+  }
+
+  .legal-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .legal-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: var(--brand-black, #111);
+    margin: 1rem 0 0.75rem;
+  }
+
+  .legal-subtitle {
+    color: var(--gray-500, #666);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 560px;
+    margin: 0 auto 0.75rem;
+  }
+
+  .legal-updated {
+    font-size: 0.85rem;
+    color: var(--gray-400, #9ca3af);
+    font-style: italic;
+  }
+
+  .legal-content {
+    background: var(--white, #fff);
+    border: 1px solid var(--purple-100, #eae0fa);
+    border-radius: 24px;
+    padding: 2.75rem;
+    box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.05));
+  }
+
+  .legal-content h2 {
+    font-family: var(--font-display);
+    color: var(--brand-black, #1a1a1a);
+    font-size: 1.3rem;
+    margin: 2.25rem 0 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--purple-100, #eae0fa);
+  }
+
+  .legal-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal-content p {
+    color: var(--gray-700, #374151);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .legal-content a {
+    color: var(--primary-purple, #5f1bbf);
+    font-weight: 600;
+  }
+
+  .legal-list {
+    margin: 0 0 1rem;
+    padding-left: 1.4rem;
+    color: var(--gray-700, #374151);
+    line-height: 1.75;
+  }
+
+  .legal-list li {
+    margin-bottom: 0.4rem;
+  }
+
+  .legal-contact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: var(--purple-50, #f5f0fd);
+    border-radius: var(--radius-md, 16px);
+  }
+
+  .legal-contact i {
+    font-size: 1.75rem;
+    color: #25d366;
+    flex-shrink: 0;
+  }
+
+  .legal-contact-title {
+    font-weight: 600;
+    color: var(--brand-black, #1a1a1a);
+    margin-bottom: 0.15rem;
+  }
+
+  @media (max-width: 640px) {
+    .legal-page {
+      padding: 6.5rem 0 3.5rem;
+    }
+
+    .legal-content {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+</style>

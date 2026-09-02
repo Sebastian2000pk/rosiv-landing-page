@@ -1,0 +1,235 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "Eliminación de Datos de Usuario | Rosiv";
+const description =
+  "Cómo solicitar la eliminación de tu cuenta y datos personales de Rosiv, incluyendo la información asociada a WhatsApp Business API.";
+const path = "/eliminacion-de-datos";
+const lastUpdated = "2 de septiembre de 2026";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Rosiv", item: new URL("/", Astro.site).toString() },
+      { "@type": "ListItem", position: 2, name: "Eliminación de Datos", item: new URL(path, Astro.site).toString() },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} path={path} jsonLd={jsonLd}>
+  <Navbar />
+
+  <main class="legal-page">
+    <div class="container legal-inner">
+      <header class="legal-header">
+        <span class="status-tag live">
+          <i class="fas fa-trash-can" aria-hidden="true"></i>
+          Privacidad
+        </span>
+        <h1>Eliminación de Datos de Usuario</h1>
+        <p class="legal-subtitle">
+          Cómo solicitar la eliminación de tu cuenta y de tu información
+          personal en Rosiv, incluyendo los datos asociados a WhatsApp.
+        </p>
+        <p class="legal-updated">Última actualización: {lastUpdated}</p>
+      </header>
+
+      <article class="legal-content">
+        <h2>1. Tu derecho a eliminar tus datos</h2>
+        <p>
+          En <strong>Rosiv</strong> respetamos tu derecho a solicitar la
+          eliminación de tu cuenta y de la información personal que hemos
+          recopilado sobre ti, tal como se describe en nuestra
+          <a href="/politica-de-privacidad">Política de Privacidad</a>.
+          Esto incluye los datos generados a través de nuestro software
+          POS, nuestro sitio web y las conversaciones por WhatsApp Business
+          API.
+        </p>
+
+        <h2>2. Cómo solicitar la eliminación de tus datos</h2>
+        <p>
+          Para solicitar la eliminación de tu cuenta y tus datos, escríbenos
+          directamente por WhatsApp al número
+          <strong>+57 315 360 3192</strong> indicando:
+        </p>
+        <ul class="legal-list">
+          <li>Tu nombre completo o el nombre de tu negocio registrado en Rosiv.</li>
+          <li>El número de teléfono o correo electrónico con el que te registraste.</li>
+          <li>Que solicitas la eliminación total de tu cuenta y tus datos personales.</li>
+        </ul>
+        <div class="legal-contact">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          <div>
+            <p class="legal-contact-title">Solicitar eliminación de datos</p>
+            <a href="https://wa.me/573153603192?text=Quiero%20solicitar%20la%20eliminaci%C3%B3n%20de%20mis%20datos%20en%20Rosiv" target="_blank" rel="noopener noreferrer">
+              Escribir a +57 315 360 3192
+            </a>
+          </div>
+        </div>
+
+        <h2>3. Qué datos eliminamos</h2>
+        <ul class="legal-list">
+          <li>Tu información de cuenta: nombre, correo electrónico y número de teléfono.</li>
+          <li>La información de tu negocio registrada en la plataforma (ventas, inventario, clientes, fiados), salvo la que estemos legalmente obligados a conservar.</li>
+          <li>El historial de conversaciones por WhatsApp Business API asociado a tu número.</li>
+          <li>Cualquier otro dato personal que nos hayas proporcionado directamente.</li>
+        </ul>
+
+        <h2>4. Excepciones legales</h2>
+        <p>
+          Podemos conservar cierta información cuando la ley colombiana lo
+          exija, por ejemplo, información contable y tributaria relacionada
+          con facturación electrónica DIAN, o datos necesarios para
+          resolver disputas, prevenir fraude o cumplir obligaciones
+          legales. En esos casos, conservamos solo la información
+          estrictamente necesaria y por el tiempo que la ley establezca.
+        </p>
+
+        <h2>5. Tiempo de procesamiento</h2>
+        <p>
+          Procesamos las solicitudes de eliminación de datos en un plazo
+          máximo de <strong>30 días calendario</strong> desde que
+          confirmamos tu identidad. Te notificaremos por WhatsApp cuando el
+          proceso haya finalizado.
+        </p>
+
+        <h2>6. Eliminación de datos de WhatsApp</h2>
+        <p>
+          Si solo deseas que eliminemos el historial de tu conversación por
+          WhatsApp sin cerrar tu cuenta de Rosiv, indícalo expresamente en
+          tu mensaje. Ten en cuenta que este proceso está sujeto además a
+          las políticas de datos de WhatsApp y Meta.
+        </p>
+
+        <div class="legal-contact">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          <div>
+            <p class="legal-contact-title">¿Tienes dudas sobre este proceso?</p>
+            <a href="https://wa.me/573153603192" target="_blank" rel="noopener noreferrer">
+              Escríbenos por WhatsApp
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-page {
+    padding: 7.5rem 0 5rem;
+    background: var(--gray-50, #f9fafb);
+  }
+
+  .legal-inner {
+    max-width: 780px;
+  }
+
+  .legal-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .legal-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: var(--brand-black, #111);
+    margin: 1rem 0 0.75rem;
+  }
+
+  .legal-subtitle {
+    color: var(--gray-500, #666);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 560px;
+    margin: 0 auto 0.75rem;
+  }
+
+  .legal-updated {
+    font-size: 0.85rem;
+    color: var(--gray-400, #9ca3af);
+    font-style: italic;
+  }
+
+  .legal-content {
+    background: var(--white, #fff);
+    border: 1px solid var(--purple-100, #eae0fa);
+    border-radius: 24px;
+    padding: 2.75rem;
+    box-shadow: var(--shadow-md, 0 4px 12px rgba(0, 0, 0, 0.05));
+  }
+
+  .legal-content h2 {
+    font-family: var(--font-display);
+    color: var(--brand-black, #1a1a1a);
+    font-size: 1.3rem;
+    margin: 2.25rem 0 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--purple-100, #eae0fa);
+  }
+
+  .legal-content h2:first-child {
+    margin-top: 0;
+  }
+
+  .legal-content p {
+    color: var(--gray-700, #374151);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .legal-content a {
+    color: var(--primary-purple, #5f1bbf);
+    font-weight: 600;
+  }
+
+  .legal-list {
+    margin: 0 0 1rem;
+    padding-left: 1.4rem;
+    color: var(--gray-700, #374151);
+    line-height: 1.75;
+  }
+
+  .legal-list li {
+    margin-bottom: 0.4rem;
+  }
+
+  .legal-contact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background: var(--purple-50, #f5f0fd);
+    border-radius: var(--radius-md, 16px);
+  }
+
+  .legal-contact i {
+    font-size: 1.75rem;
+    color: #25d366;
+    flex-shrink: 0;
+  }
+
+  .legal-contact-title {
+    font-weight: 600;
+    color: var(--brand-black, #1a1a1a);
+    margin-bottom: 0.15rem;
+  }
+
+  @media (max-width: 640px) {
+    .legal-page {
+      padding: 6.5rem 0 3.5rem;
+    }
+
+    .legal-content {
+      padding: 1.75rem 1.25rem;
+    }
+  }
+</style>

@@ -201,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!plan || plan.name === "Gratis") {
         cta.textContent = plan ? "Empezar gratis" : "Hablar con ventas";
-        cta.href = plan ? `${REGISTER_URL}${plan.slug}` : "https://wa.me/573000000000";
+        cta.href = plan ? `${REGISTER_URL}${plan.slug}` : "https://wa.me/573153603192";
       } else {
         cta.textContent = `Elegir ${plan.name}`;
         cta.href = `${REGISTER_URL}${plan.slug}`;

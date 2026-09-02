@@ -162,3 +162,5 @@ Trámites y facturación DIAN:
 - Validador de CUFE DIAN: https://rosivhub.com/validar-cufe-dian
 - Probar / registrarse: https://web.rosivhub.com
 - Política de privacidad: https://rosivhub.com/politica-de-privacidad
+- Condiciones del servicio: https://rosivhub.com/terminos-de-servicio
+- Eliminación de datos de usuario: https://rosivhub.com/eliminacion-de-datos
