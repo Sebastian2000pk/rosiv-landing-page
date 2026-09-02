@@ -8,9 +8,9 @@ import ToolUpsell from "../components/tools/ToolUpsell.astro";
 import ToolCrossLinks from "../components/tools/ToolCrossLinks.astro";
 import "../styles/tool-page.css";
 
-const title = "Calculadora DV: Dígito de Verificación NIT y RUT Gratis | Rosiv";
+const title = "Calcular DV: Dígito de Verificación DIAN al Instante";
 const description =
-  "Calcula el dígito de verificación (DV) de tu NIT, RUT o cédula con la fórmula oficial de la DIAN (módulo 11). Resultado al instante, sin registrarte ni instalar Excel.";
+  "Calcula el DV (dígito de verificación) de tu NIT o cédula con la fórmula oficial de la DIAN (módulo 11). Resultado al instante, sin registrarte ni instalar Excel.";
 const path = "/calcular-digito-verificacion-nit";
 
 const faqItems = [
@@ -100,10 +100,10 @@ const jsonLd = [
           Resultado instantáneo
         </span>
         <h1 class="tool-hero-title">
-          Calculadora de dígito de verificación (DV) del NIT
+          Calcular DV: dígito de verificación del NIT
         </h1>
         <p class="tool-hero-subtitle">
-          Escribe el NIT o la cédula y te damos el dígito al instante, con
+          Escribe el NIT o la cédula y te damos el DV al instante, con
           la fórmula oficial de la DIAN. Gratis, sin registrarte y sin
           esperar a nadie.
         </p>
@@ -238,7 +238,18 @@ const jsonLd = [
         por su peso, sumando y sacando el residuo de dividir entre 11. Es
         fácil equivocarse en el orden de los pesos o en la fórmula del
         residuo — si solo necesitas el número ya calculado, esta calculadora
-        te ahorra armar la hoja de cálculo.
+        te ahorra armar la hoja de cálculo. Si necesitas calcular el DV de
+        muchos NITs a la vez, lee la
+        <a href="/blog/digito-verificacion-excel-formula">guía paso a paso de la fórmula en Excel</a>.
+      </p>
+      <p>
+        Si tienes cédula pero no sabes cómo se relaciona con tu NIT, lee
+        <a href="/blog/calcular-nit-desde-cedula">cómo calcular tu NIT a partir de la cédula</a>.
+      </p>
+      <p>
+        Si además de facturar bien quieres dejar de anotar las ventas a mano,
+        lee <a href="/blog/que-es-un-pos-y-para-que-sirve">qué es un POS</a>
+        y qué debería tener uno pensado para tu tipo de negocio.
       </p>
     </div>
   </section>

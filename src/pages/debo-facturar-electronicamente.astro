@@ -34,6 +34,11 @@ const faqItems = [
     answer:
       "No completamente. El documento equivalente POS solo se puede usar hasta cierto monto por transacción (definido en UVT); por encima de ese valor, o si el cliente lo solicita, debes expedir factura electrónica. La DIAN ha venido restringiendo cada vez más el uso del POS como sustituto de la factura electrónica.",
   },
+  {
+    question: "¿Cuáles son los topes exactos para facturar electrónicamente?",
+    answer:
+      "Si perteneces al Régimen Simple o eres responsable de IVA o de impuesto al consumo, no hay tope: estás obligado desde el primer peso vendido. Si eres persona natural comerciante no responsable de IVA, el tope es 3.500 UVT de ingresos brutos anuales. El documento equivalente POS tiene además su propio tope por transacción, medido en UVT.",
+  },
 ];
 
 const jsonLd = [
@@ -79,7 +84,7 @@ const jsonLd = [
 ];
 ---
 
-<Layout title={title} description={description} path={path} keywords="debo facturar electrónicamente, obligados factura electrónica DIAN, factura electrónica 2026 Colombia, régimen simple facturación" jsonLd={jsonLd}>
+<Layout title={title} description={description} path={path} keywords="debo facturar electrónicamente, obligados factura electrónica DIAN, factura electrónica 2026 Colombia, régimen simple facturación, topes para facturar electrónicamente, tope UVT factura electrónica" jsonLd={jsonLd}>
   <Navbar />
 
   <section class="tool-hero qz-hero">
@@ -191,6 +196,20 @@ const jsonLd = [
         venido restringiendo su uso cada vez más. Si tu negocio ya está
         obligado a facturar electrónicamente por régimen, el POS no
         reemplaza esa obligación para ventas que superen el límite.
+      </p>
+
+      <h3>Los topes exactos para facturar electrónicamente</h3>
+      <ul class="tool-list">
+        <li><strong>Régimen Simple de Tributación:</strong> sin tope de ingresos — obligado desde el primer peso vendido.</li>
+        <li><strong>Responsable de IVA o de impuesto al consumo:</strong> sin tope de ingresos — obligado sin importar cuánto factures.</li>
+        <li><strong>Persona natural comerciante, no responsable de IVA:</strong> tope de <strong>3.500 UVT</strong> de ingresos brutos anuales. Por debajo de ese tope, generalmente no estás obligado (aunque puedes facturar electrónicamente por decisión propia).</li>
+        <li><strong>Documento equivalente POS:</strong> tiene su propio tope por transacción, definido en UVT — superarlo obliga a expedir factura electrónica aunque tu negocio use POS para el resto de ventas.</li>
+      </ul>
+      <p>
+        Estos topes se miden en UVT, no en pesos fijos, porque la UVT se
+        actualiza cada año. Si quieres el valor exacto de la UVT vigente y
+        cómo se traduce a pesos, revisa la
+        <a href="/blog/tabla-regimen-simple-tienda-restaurante-2026">tabla de tarifas del Régimen Simple 2026</a>.
       </p>
 
       <h3>Qué hacer si el test te dice que ya estás obligado</h3>

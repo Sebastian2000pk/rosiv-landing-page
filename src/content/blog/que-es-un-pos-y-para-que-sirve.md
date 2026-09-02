@@ -16,9 +16,9 @@ faq:
 
 Si tienes una tienda, un restaurante familiar o una peluquería, seguramente has escuchado la palabra "POS" — pero no siempre queda claro qué es en realidad ni por qué debería importarte.
 
-## POS significa "Point of Sale" (punto de venta)
+## ¿Qué es un POS?
 
-Un sistema POS es la herramienta que usa tu negocio para registrar ventas, cobrar y, en la mayoría de los casos, llevar control de inventario. Reemplaza la caja registradora tradicional y el cuaderno de anotaciones por un sistema digital, normalmente desde un celular, tablet o computador.
+POS significa "Point of Sale" (punto de venta). Un sistema POS es la herramienta que usa tu negocio para registrar ventas, cobrar y, en la mayoría de los casos, llevar control de inventario. Reemplaza la caja registradora tradicional y el cuaderno de anotaciones por un sistema digital, normalmente desde un celular, tablet o computador.
 
 ## ¿Qué problemas resuelve un POS?
 
@@ -56,6 +56,8 @@ Aunque la idea de fondo es la misma —registrar ventas y cobrar rápido—, lo 
 - **POS para peluquería:** necesita agendar citas o llevar servicios en vez de productos, y calcular el margen sobre el tiempo del estilista, no solo sobre insumos.
 
 Un software POS genérico, hecho para cadenas grandes, casi nunca resuelve bien estos tres casos a la vez — por eso muchos negocios pequeños terminan con un sistema que les sobra en complejidad y les falta en lo específico de su rubro.
+
+Si lo que buscas es solo el significado corto de la sigla, sin entrar en cómo elegir uno, lee [qué significa POS](/blog/que-significa-pos-punto-de-venta).
 
 ## Cómo lo resuelve Rosiv
 

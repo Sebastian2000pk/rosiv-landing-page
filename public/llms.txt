@@ -79,6 +79,30 @@ Artículos publicados:
   https://rosivhub.com/blog/pos-offline-que-hacer-sin-internet
 - Qué es un POS y para qué sirve.
   https://rosivhub.com/blog/que-es-un-pos-y-para-que-sirve
+- Qué significa POS: la sigla explicada en una frase (Point of Sale, punto
+  de venta) y la diferencia entre POS, datáfono y terminal.
+  https://rosivhub.com/blog/que-significa-pos-punto-de-venta
+- Qué es el CUFE de una factura electrónica: qué código es, dónde
+  encontrarlo en la factura, y en qué se diferencia del CUDE.
+  https://rosivhub.com/blog/que-es-el-cufe-factura-electronica
+- CUFE, CUNE y CUDE: en qué se diferencian estos tres códigos de la DIAN y
+  cuál corresponde a cada tipo de documento electrónico.
+  https://rosivhub.com/blog/diferencia-cufe-cune-cude
+- Qué es el dígito de verificación del NIT y por qué la DIAN lo pide: qué
+  es, cómo se calcula con la fórmula módulo 11, y qué hacer cuando una
+  factura se rechaza por este error.
+  https://rosivhub.com/blog/que-es-el-digito-de-verificacion-nit
+- Fórmula del dígito de verificación en Excel paso a paso: cómo armar la
+  fórmula con el módulo 11 de la DIAN, con la tabla de pesos exacta y los
+  errores más comunes al calcularla mal.
+  https://rosivhub.com/blog/digito-verificacion-excel-formula
+- Cómo calcular tu NIT a partir de la cédula: para persona natural en
+  Colombia, el NIT es el mismo número de la cédula más el dígito de
+  verificación — no un número distinto.
+  https://rosivhub.com/blog/calcular-nit-desde-cedula
+- ¿Mi negocio cobra IVA o impoconsumo?: guía según tipo de negocio (tienda,
+  restaurante, peluquería) para saber qué impuesto indirecto le corresponde.
+  https://rosivhub.com/blog/iva-o-impoconsumo-que-cobra-mi-negocio
 
 ## Herramientas gratuitas
 

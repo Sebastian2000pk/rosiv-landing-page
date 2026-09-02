@@ -7,9 +7,9 @@ import ToolUpsell from "../components/tools/ToolUpsell.astro";
 import ToolCrossLinks from "../components/tools/ToolCrossLinks.astro";
 import "../styles/tool-page.css";
 
-const title = "Validar y Consultar CUFE de Factura Electrónica DIAN | Rosiv";
+const title = "Validar y Verificar CUFE de Factura Electrónica DIAN";
 const description =
-  "Verifica el formato del CUFE de tu factura electrónica y consúltala al instante en el catálogo oficial de la DIAN. Herramienta gratis, sin registrarte.";
+  "Verifica y valida el CUFE de tu factura electrónica al instante y consúltala en el catálogo oficial de la DIAN. Herramienta gratis, sin registrarte.";
 const path = "/validar-cufe-dian";
 
 const faqItems = [
@@ -32,6 +32,11 @@ const faqItems = [
     question: "¿El CUFE es lo mismo que el CUDE?",
     answer:
       "No. El CUFE identifica facturas electrónicas de venta, mientras que el CUDE (Código Único de Documento Electrónico) identifica otros documentos electrónicos como notas crédito, notas débito o nómina electrónica. Ambos cumplen una función similar de trazabilidad, pero para tipos de documento distintos.",
+  },
+  {
+    question: "¿Validar el CUFE y verificar el CUFE es lo mismo?",
+    answer:
+      "Sí, son el mismo proceso. 'Validar' y 'verificar' se usan indistintamente para referirse a confirmar que un CUFE tiene el formato correcto y que la factura asociada está registrada en el catálogo oficial de la DIAN. Esta herramienta hace ambas cosas: valida el formato al instante y te lleva directo a verificarlo en el portal de la DIAN.",
   },
 ];
 
@@ -78,7 +83,7 @@ const jsonLd = [
 ];
 ---
 
-<Layout title={title} description={description} path={path} keywords="validar CUFE, CUFE DIAN, consultar factura electrónica DIAN, qué es el CUFE, verificar factura electrónica Colombia, consultar CUFE, verificar CUFE, validar código CUFE" jsonLd={jsonLd}>
+<Layout title={title} description={description} path={path} keywords="validar CUFE, verificar CUFE, CUFE DIAN, verificar CUFE DIAN, consultar factura electrónica DIAN, qué es el CUFE, verificar factura electrónica Colombia, consultar CUFE, validar código CUFE" jsonLd={jsonLd}>
   <Navbar />
 
   <section class="tool-hero cf-hero">
@@ -89,11 +94,11 @@ const jsonLd = [
           Se valida en tu navegador, no sale de aquí
         </span>
         <h1 class="tool-hero-title">
-          Validar y consultar el CUFE de una factura electrónica DIAN
+          Validar y verificar el CUFE de una factura electrónica DIAN
         </h1>
         <p class="tool-hero-subtitle">
           Pega el código y confirma si tiene el formato correcto antes de
-          consultarlo en el catálogo oficial de la DIAN.
+          verificarlo en el catálogo oficial de la DIAN.
         </p>
 
         <div class="cf-console" role="group" aria-labelledby="cf-calc-label">
@@ -158,7 +163,7 @@ const jsonLd = [
 
   <section class="tool-explain">
     <div class="container tool-explain-inner">
-      <h2>¿Qué es el CUFE y por qué deberías validarlo?</h2>
+      <h2>¿Qué es el CUFE y por qué deberías validarlo o verificarlo?</h2>
       <p>
         El <strong>CUFE (Código Único de Factura Electrónica)</strong> es un
         código de 96 caracteres que la DIAN genera y asocia a cada factura
@@ -182,11 +187,11 @@ const jsonLd = [
         completo.
       </p>
 
-      <h3>Qué revisa esta herramienta</h3>
+      <h3>Qué revisa esta herramienta al consultar una factura con CUFE</h3>
       <ul class="tool-list">
         <li>Que el CUFE tenga el largo y formato correcto (96 caracteres alfanuméricos).</li>
         <li>Que no tenga espacios ni caracteres inválidos por errores al copiarlo.</li>
-        <li>Te lleva directo al catálogo oficial de la DIAN para confirmar que el documento existe y está registrado.</li>
+        <li>Te lleva directo al catálogo oficial de la DIAN para consultar la factura y confirmar que el documento existe y está registrado.</li>
       </ul>
       <p>
         Esta herramienta valida el <strong>formato</strong> del código
@@ -197,6 +202,8 @@ const jsonLd = [
       <p>
         Si quieres entender a fondo qué es este código y en qué se diferencia
         del CUDE, lee la guía completa: <a href="/blog/que-es-el-cufe-factura-electronica">qué es el CUFE de una factura electrónica</a>.
+        Si además te aparece el término CUNE y no sabes si es lo mismo, lee
+        <a href="/blog/diferencia-cufe-cune-cude">CUFE, CUNE y CUDE: en qué se diferencian</a>.
       </p>
     </div>
   </section>
