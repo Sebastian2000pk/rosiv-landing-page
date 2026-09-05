@@ -2,7 +2,17 @@
 title: "Cómo facturar electrónicamente si tienes una tienda de barrio"
 description: "Guía simple para tenderos en Colombia: qué es la facturación electrónica DIAN, quién está obligado y cómo empezar a facturar desde el celular sin complicarte."
 pubDate: 2026-08-12
+updatedDate: 2026-09-05
 keywords: "facturación electrónica tienda de barrio, facturar electrónicamente Colombia, DIAN tenderos, factura electrónica pymes"
+faq:
+  - question: "¿Toda tienda de barrio está obligada a facturar electrónicamente?"
+    answer: "No todas, pero cada vez más. La obligación depende de tu régimen y de tus ingresos, y la DIAN ha ido bajando el tope. Revisa el tope vigente en UVT antes de asumir que tu tienda queda por fuera."
+  - question: "¿Puedo facturar electrónicamente solo desde el celular?"
+    answer: "Sí. Hoy existen sistemas que emiten la factura electrónica desde el celular, sin computador fijo en el mostrador ni instalaciones complicadas."
+  - question: "¿Qué hago si en mi tienda el internet se cae a cada rato?"
+    answer: "Necesitas un sistema que siga registrando la venta sin conexión y sincronice la factura cuando vuelva la señal. Con conexión inestable, esa es la diferencia entre seguir vendiendo o parar la caja."
+  - question: "¿El documento equivalente POS reemplaza a la factura electrónica?"
+    answer: "No siempre. Son documentos distintos y no sirven para lo mismo: el documento equivalente POS tiene límites, y tu cliente no lo puede usar como soporte de costos o descontables. Si te lo piden, tienes que emitir factura electrónica."
 ---
 
 Muchos tenderos en Colombia todavía creen que la facturación electrónica es solo para empresas grandes. No es así: la DIAN ha ido ampliando la obligación año tras año, y cada vez más negocios pequeños —incluidas tiendas de barrio— necesitan facturar electrónicamente.
@@ -34,6 +44,6 @@ En caso de duda, lo más seguro es empezar a facturar electrónicamente ya, en v
 
 ## ¿Cómo lo resuelve Rosiv?
 
-Rosiv es un sistema POS pensado específicamente para tenderos, restaurantes familiares y peluquerías en Colombia. Incluye facturación electrónica DIAN dentro del Plan Pro, funciona con o sin internet, y se explica solo — sin manuales ni cursos.
+Rosiv es un sistema POS pensado específicamente para tenderos, restaurantes familiares y peluquerías en Colombia. Incluye facturación electrónica DIAN dentro del plan Starter, funciona con o sin internet, y se explica solo — sin manuales ni cursos.
 
 Si tienes una tienda de barrio y necesitas empezar a facturar electrónicamente, puedes [probar Rosiv gratis](https://web.rosivhub.com) y activar la facturación DIAN cuando la necesites.

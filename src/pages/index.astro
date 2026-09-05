@@ -11,6 +11,40 @@ import FaqSection from "../components/FaqSection.astro";
 import DownloadSection from "../components/DownloadSection.astro";
 import Footer from "../components/Footer.astro";
 
+// Fuente de verdad de precios para el schema. Debe coincidir SIEMPRE con
+// src/components/Pricing.astro — si cambian los planes, se actualiza aquí.
+// Precios mensuales en COP, IVA incluido.
+const planes = [
+  { nombre: "Gratis", precio: "0" },
+  { nombre: "Starter", precio: "21300" },
+  { nombre: "Growth", precio: "71300" },
+  { nombre: "Scale", precio: "178400" },
+  { nombre: "Elite", precio: "416400" },
+];
+
+const offers = planes.map((plan) => ({
+  "@type": "Offer",
+  name: `Plan ${plan.nombre}`,
+  price: plan.precio,
+  priceCurrency: "COP",
+  category: plan.precio === "0" ? "Free" : "Subscription",
+  availability: "https://schema.org/InStock",
+  url: "https://rosivhub.com/#pricing",
+  ...(plan.precio !== "0" && {
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      price: plan.precio,
+      priceCurrency: "COP",
+      valueAddedTaxIncluded: true,
+      referenceQuantity: {
+        "@type": "QuantitativeValue",
+        value: 1,
+        unitCode: "MON",
+      },
+    },
+  }),
+}));
+
 const jsonLd = [
   {
     "@context": "https://schema.org",
@@ -24,6 +58,16 @@ const jsonLd = [
       "@type": "Country",
       name: "Colombia",
     },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      telephone: "+57-315-360-3192",
+      areaServed: "CO",
+      availableLanguage: ["Spanish"],
+    },
+    // TODO: añadir aquí las URLs de las redes sociales de Rosiv
+    // (Instagram, Facebook, LinkedIn, TikTok). sameAs vacío = los motores
+    // no pueden enlazar la marca con sus perfiles.
     sameAs: [],
   },
   {
@@ -35,22 +79,7 @@ const jsonLd = [
     url: "https://rosivhub.com/",
     description:
       "Sistema POS para vender, cobrar y controlar inventario desde el celular, con o sin internet. Incluye facturación electrónica DIAN. Pensado para tenderos, restaurantes familiares y peluquerías en Colombia.",
-    offers: [
-      {
-        "@type": "Offer",
-        name: "Plan Gratis",
-        price: "0",
-        priceCurrency: "COP",
-        category: "Free",
-      },
-      {
-        "@type": "Offer",
-        name: "Plan Pro",
-        price: "28000",
-        priceCurrency: "COP",
-        category: "Subscription",
-      },
-    ],
+    offers,
   },
   {
     "@context": "https://schema.org",

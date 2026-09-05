@@ -90,6 +90,25 @@ También revisar tras cualquier cambio de planes o precios:
 
     grep -rn "Plan Pro\|plan gratuito\|gratis" src/content/blog/ | grep -i rosiv
 
+### Precios: dos sitios que se tienen que mover juntos
+
+Los precios viven en **dos** lugares y Google los compara entre sí. Si solo se
+cambia uno, el dato estructurado contradice a la página visible:
+
+| Dónde | Qué es |
+|---|---|
+| `src/components/Pricing.astro` | Lo que ve el usuario |
+| `src/pages/index.astro` → `const planes` | Lo que lee Google (schema `SoftwareApplication`) |
+
+Al cambiar un precio o un plan, actualizar **los dos** y comprobar:
+
+    npx astro build
+    grep -o '"name":"Plan [^"]*","price":"[^"]*"' dist/index.html
+
+Los nombres de plan también aparecen en el cuerpo de los posts. Tras renombrar
+un plan, buscar el nombre viejo en `src/content/blog/` (en sept. 2026, "Plan Pro"
+seguía citado en 7 posts y en el schema con un precio que ya no existía).
+
 ## 4. Contenido evergreen (bajo mantenimiento)
 
 Estos no llevan cifras que caduquen y no requieren revisión periódica:

@@ -2,6 +2,7 @@
 title: "Sistema POS gratis en Colombia: cuáles son gratis de verdad y dónde está el cobro"
 description: "Los POS gratis en Colombia se dividen en tres tipos, y solo uno sirve a largo plazo. Qué esperar de un plan gratuito y en qué punto casi todos empiezan a cobrar."
 pubDate: 2026-09-05
+updatedDate: 2026-09-05
 keywords: "sistema pos gratis, pos gratis colombia, software pos gratis, punto de venta gratis, sistema pos gratis colombia, programa pos gratis"
 faq:
   - question: "¿Existe un sistema POS realmente gratis en Colombia?"
@@ -72,7 +73,7 @@ Antes de decidir, revisa si ya estás obligado: [topes para facturar electrónic
 
 Rosiv tiene plan gratuito real, sin límite de tiempo: registras ventas, cargas tu catálogo, controlas inventario y ves tus reportes desde el celular, sin pagar y sin tarjeta.
 
-La facturación electrónica DIAN está en el Plan Pro — y lo decimos de entrada, porque ese es el costo que existe de verdad. Cuando llegue el momento en que la necesites, no tienes que migrar nada: el mismo sistema, el mismo inventario, la factura activada.
+La facturación electrónica DIAN está en el plan Starter — y lo decimos de entrada, porque ese es el costo que existe de verdad. Cuando llegue el momento en que la necesites, no tienes que migrar nada: el mismo sistema, el mismo inventario, la factura activada.
 
 Y funciona sin internet en los dos planes, porque quedarse sin vender cuando se cae la señal no debería ser una función premium.
 

@@ -23,7 +23,11 @@ const {
   noindex = false,
 } = Astro.props;
 
-const canonicalURL = new URL(path, Astro.site);
+// El sitio se sirve en formato "directory" (/ruta/index.html), y el sitemap
+// emite las URLs con barra final. La canónica debe apuntar a esa misma forma,
+// no a /ruta (que redirige) — si no, canónica y sitemap se contradicen.
+const canonicalPath = path.endsWith("/") ? path : `${path}/`;
+const canonicalURL = new URL(canonicalPath, Astro.site);
 const imageURL = new URL(image, Astro.site);
 ---
 

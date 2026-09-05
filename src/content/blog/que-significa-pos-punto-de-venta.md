@@ -57,6 +57,6 @@ Y si ya estás comparando opciones concretas, revisa [qué debe cumplir un siste
 
 ## Cómo lo resuelve Rosiv
 
-Rosiv es un sistema POS hecho para tenderos, restaurantes familiares y peluquerías en Colombia. Vende, cobra y controla tu inventario desde el celular, con o sin internet, y con factura electrónica DIAN incluida en el Plan Pro.
+Rosiv es un sistema POS hecho para tenderos, restaurantes familiares y peluquerías en Colombia. Vende, cobra y controla tu inventario desde el celular, con o sin internet, y con factura electrónica DIAN incluida en el plan Starter.
 
 Puedes [probar Rosiv gratis](https://web.rosivhub.com) y ver cómo funciona un sistema POS pensado para tu tipo de negocio.

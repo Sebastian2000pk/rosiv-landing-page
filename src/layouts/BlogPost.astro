@@ -21,6 +21,12 @@ interface Props {
 const { title, description, path, pubDate, updatedDate, keywords, faq = [] } =
   Astro.props;
 
+// Misma forma que la canónica del Layout y que el sitemap: con barra final.
+const canonicalHref = new URL(
+  path.endsWith("/") ? path : `${path}/`,
+  Astro.site
+).toString();
+
 const jsonLd = [
   {
     "@context": "https://schema.org",
@@ -44,7 +50,7 @@ const jsonLd = [
         url: "https://rosivhub.com/icon-512x512.png",
       },
     },
-    mainEntityOfPage: new URL(path, Astro.site).toString(),
+    mainEntityOfPage: canonicalHref,
   },
   ...(faq.length > 0
     ? [
@@ -67,8 +73,8 @@ const jsonLd = [
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Rosiv", item: new URL("/", Astro.site).toString() },
-      { "@type": "ListItem", position: 2, name: "Blog", item: new URL("/blog", Astro.site).toString() },
-      { "@type": "ListItem", position: 3, name: title, item: new URL(path, Astro.site).toString() },
+      { "@type": "ListItem", position: 2, name: "Blog", item: new URL("/blog/", Astro.site).toString() },
+      { "@type": "ListItem", position: 3, name: title, item: canonicalHref },
     ],
   },
 ];

@@ -2,6 +2,7 @@
 title: "Siigo, Alegra o un POS: cuál necesita realmente un negocio pequeño"
 description: "Siigo y Alegra son software contable con módulo POS. Un POS es software de mostrador que factura. Cuál te sirve según si tu problema es la contabilidad o vender rápido en caja."
 pubDate: 2026-09-05
+updatedDate: 2026-09-05
 keywords: "siigo pos, alegra pos, siigo, alegra, siigo vs alegra, alternativa a siigo, alternativa a alegra, software pos colombia, siigo para tienda, alegra para restaurante"
 faq:
   - question: "¿Cuál es la diferencia entre Siigo, Alegra y un sistema POS?"
@@ -86,4 +87,4 @@ Rosiv es un sistema POS colombiano hecho para tenderos, restaurantes familiares 
 
 Vendes desde el celular, el inventario se descuenta solo y la factura electrónica DIAN sale de la misma venta — sin conceptos contables de por medio. Funciona sin internet: si se cae la señal sigues vendiendo, y todo se sincroniza cuando vuelve.
 
-Tiene plan gratuito real para empezar, y la facturación electrónica DIAN va incluida en el Plan Pro. Puedes [probarlo gratis](https://web.rosivhub.com) y ver si la lógica de mostrador te encaja mejor que la lógica contable.
+Tiene plan gratuito real para empezar, y la facturación electrónica DIAN va incluida en el plan Starter. Puedes [probarlo gratis](https://web.rosivhub.com) y ver si la lógica de mostrador te encaja mejor que la lógica contable.

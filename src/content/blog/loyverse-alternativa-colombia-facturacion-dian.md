@@ -2,6 +2,7 @@
 title: "Loyverse en Colombia: por qué funciona bien hasta que llega la DIAN"
 description: "Loyverse es un POS gratis muy usado, pero no emite factura electrónica DIAN en Colombia. Qué resuelve, dónde se queda corto y qué alternativa tienes si necesitas facturar."
 pubDate: 2026-09-05
+updatedDate: 2026-09-05
 keywords: "loyverse, loyverse pos, loyverse colombia, loyverse facturacion electronica, alternativa a loyverse, loyverse dian, pos gratis colombia"
 faq:
   - question: "¿Loyverse factura electrónicamente ante la DIAN en Colombia?"
@@ -75,6 +76,6 @@ Si vas a cambiar, no cambies solo por "el que factura". Estas son las tres cosas
 
 Rosiv es un sistema POS colombiano que sí emite factura electrónica válida ante la DIAN, a través de un proveedor tecnológico habilitado que ya viene integrado — no tienes que contratarlo ni configurarlo por tu cuenta. Registras la venta desde el celular, descuenta el inventario y la factura sale en el mismo paso, sin segundo sistema y sin doble digitación.
 
-Funciona sin internet: si se cae la señal, sigues vendiendo y todo se sincroniza cuando vuelve. Y tiene plan gratuito real para empezar, con la facturación electrónica DIAN incluida en el Plan Pro.
+Funciona sin internet: si se cae la señal, sigues vendiendo y todo se sincroniza cuando vuelve. Y tiene plan gratuito real para empezar, con la facturación electrónica DIAN incluida en el plan Starter.
 
 Si quieres entender primero qué debe tener un POS para tu tipo de negocio, lee [qué es un POS y cómo elegir uno](/blog/que-es-un-pos-y-para-que-sirve). Y si ya lo tienes claro, puedes [probar Rosiv gratis](https://web.rosivhub.com).
