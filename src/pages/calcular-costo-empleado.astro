@@ -1,0 +1,894 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ToolSidePanel from "../components/tools/ToolSidePanel.astro";
+import ToolFaq from "../components/tools/ToolFaq.astro";
+import ToolUpsell from "../components/tools/ToolUpsell.astro";
+import ToolCrossLinks from "../components/tools/ToolCrossLinks.astro";
+import "../styles/tool-page.css";
+
+const title = "Calculadora: Cuánto Cuesta un Empleado en Colombia 2026 | Rosiv";
+const description =
+  "Escribe el salario y te decimos cuánto te cuesta realmente ese empleado al mes y al año, con prestaciones, seguridad social y auxilio de transporte. Gratis, con datos 2026.";
+const path = "/calcular-costo-empleado";
+
+const faqItems = [
+  {
+    question: "¿Cuánto cuesta realmente un empleado que gana el salario mínimo en 2026?",
+    answer:
+      "Bastante más que los $1.750.905 del salario. Sumando el auxilio de transporte de $249.095, las prestaciones sociales (prima, cesantías, intereses y vacaciones) y los aportes del empleador, el costo total ronda los $2.715.000 al mes si la empresa está exonerada por la Ley 1607, y unos $2.952.000 si no lo está. Es decir, entre un 55% y un 69% por encima del salario base, con nivel de riesgo I.",
+  },
+  {
+    question: "¿Cuál es el salario mínimo y el auxilio de transporte en 2026?",
+    answer:
+      "El salario mínimo legal mensual vigente para 2026 es de $1.750.905, fijado por el Decreto 1469 de 2025. El auxilio de transporte es de $249.095, fijado por el Decreto 1470 de 2025, y lo reciben quienes devengan hasta 2 salarios mínimos, es decir hasta $3.501.810 al mes.",
+  },
+  {
+    question: "¿Qué es la exoneración de la Ley 1607 y cómo me afecta?",
+    answer:
+      "Es una exoneración que libera al empleador de pagar el aporte a salud (8,5%), SENA (2%) e ICBF (3%) por los trabajadores que ganen menos de 10 salarios mínimos. Aplica a personas jurídicas (SAS, Ltda, SA) y a personas naturales que tengan dos o más trabajadores. Cambia el costo total de forma importante, por eso la calculadora lo pregunta.",
+  },
+  {
+    question: "¿El auxilio de transporte entra en el cálculo de las prestaciones?",
+    answer:
+      "Sí para prima de servicios y cesantías, donde se suma al salario para calcular la base. No entra, en cambio, en la base de las vacaciones ni en la de los aportes a seguridad social. Esa diferencia es una de las confusiones más frecuentes al liquidar nómina y está aplicada en esta calculadora.",
+  },
+  {
+    question: "¿Por qué mi resultado puede variar frente al de mi contador?",
+    answer:
+      "Principalmente por la tarifa de ARL, que depende del nivel de riesgo de la actividad del negocio y va desde 0,522% hasta 6,96%. También influyen convenios colectivos, pagos no constitutivos de salario, contratos de aprendizaje o situaciones particulares del trabajador. Esta calculadora da el estimado estándar, no reemplaza la liquidación de tu contador.",
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Calculadora de costo real de un empleado",
+    url: new URL(path, Astro.site).toString(),
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Any",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "COP",
+    },
+    description,
+    publisher: {
+      "@type": "Organization",
+      name: "Rosiv",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Rosiv", item: new URL("/", Astro.site).toString() },
+      { "@type": "ListItem", position: 2, name: "Blog", item: new URL("/blog", Astro.site).toString() },
+      { "@type": "ListItem", position: 3, name: "Calculadora de costo de un empleado", item: new URL(path, Astro.site).toString() },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} path={path} keywords="cuanto cuesta un empleado en Colombia 2026, calculadora costo empleado, salario minimo 2026, costo real de un trabajador, prestaciones sociales 2026, auxilio de transporte 2026" jsonLd={jsonLd}>
+  <Navbar />
+
+  <section class="tool-hero">
+    <div class="container tool-hero-grid">
+      <div class="tool-hero-main">
+        <span class="status-tag live tool-hero-badge">
+          <i class="fas fa-user-plus" aria-hidden="true"></i>
+          Datos oficiales 2026
+        </span>
+        <h1 class="tool-hero-title">
+          ¿Cuánto cuesta realmente un empleado en Colombia?
+        </h1>
+        <p class="tool-hero-subtitle">
+          El salario no es lo que te cuesta. Escribe cuánto le vas a pagar
+          y te mostramos el costo real al mes y al año, con prestaciones,
+          seguridad social y auxilio de transporte incluidos.
+        </p>
+
+        <div class="tool-card emp-calculator" role="group" aria-labelledby="emp-calc-label">
+          <div class="emp-fields">
+            <div class="emp-field emp-field-salary">
+              <label for="emp-salary">Salario mensual del empleado</label>
+              <p class="emp-field-hint">El sueldo base que le vas a pagar, sin auxilio</p>
+              <div class="margin-input-wrap">
+                <span class="margin-input-prefix">$</span>
+                <input
+                  id="emp-salary"
+                  type="text"
+                  inputmode="numeric"
+                  autocomplete="off"
+                  value="1.750.905"
+                  aria-describedby="emp-error"
+                />
+              </div>
+              <button type="button" id="emp-min-btn" class="emp-chip">
+                Usar salario mínimo 2026
+              </button>
+            </div>
+
+            <div class="emp-field">
+              <label for="emp-risk">Nivel de riesgo (ARL)</label>
+              <p class="emp-field-hint">Según qué tan riesgosa es la labor</p>
+              <div class="emp-select-wrap">
+                <select id="emp-risk" aria-describedby="emp-error">
+                  <option value="0.522" selected>I — Tienda, oficina, peluquería</option>
+                  <option value="1.044">II — Labor manual liviana</option>
+                  <option value="2.436">III — Restaurante, cocina, bodega</option>
+                  <option value="4.350">IV — Construcción, manufactura</option>
+                  <option value="6.960">V — Alto riesgo</option>
+                </select>
+                <i class="fas fa-chevron-down emp-select-icon" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="emp-toggle-row">
+            <label class="emp-toggle" for="emp-exonerated">
+              <input type="checkbox" id="emp-exonerated" checked />
+              <span class="emp-toggle-box" aria-hidden="true">
+                <i class="fas fa-check"></i>
+              </span>
+              <span class="emp-toggle-text">
+                <strong>Mi negocio está exonerado (Ley 1607)</strong>
+                <span class="emp-toggle-hint">
+                  Aplica si eres SAS, Ltda o SA, o persona natural con 2 o más
+                  empleados, y el salario es menor a 10 mínimos. Te ahorra
+                  salud, SENA e ICBF.
+                </span>
+              </span>
+            </label>
+          </div>
+
+          <p id="emp-error" class="dv-error" role="alert"></p>
+
+          <div id="emp-result" class="emp-result" aria-live="polite">
+            <div class="emp-result-headline">
+              <span class="margin-result-label">Te cuesta cada mes</span>
+              <span id="emp-monthly-output" class="margin-result-value emp-monthly-value">$–</span>
+              <span id="emp-overhead" class="emp-overhead">–</span>
+            </div>
+
+            <div class="emp-result-grid">
+              <div class="emp-result-cell">
+                <span class="emp-result-cell-label">Costo al año</span>
+                <span id="emp-yearly-output" class="emp-result-cell-value">–</span>
+              </div>
+              <div class="emp-result-cell">
+                <span class="emp-result-cell-label">Extra sobre el salario</span>
+                <span id="emp-extra-output" class="emp-result-cell-value">–</span>
+              </div>
+            </div>
+
+            <details class="emp-breakdown">
+              <summary>
+                <i class="fas fa-list-ul" aria-hidden="true"></i>
+                Ver el desglose completo
+              </summary>
+              <table class="emp-table">
+                <tbody id="emp-breakdown-body"></tbody>
+              </table>
+            </details>
+
+            <div id="emp-signal" class="margin-signal">
+              <i id="emp-signal-icon" class="fas fa-circle-check" aria-hidden="true"></i>
+              <span id="emp-signal-text">–</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tool-benefits" role="list">
+          <div class="tool-benefit" role="listitem">
+            <div class="tool-benefit-icon">
+              <i class="fas fa-bolt" aria-hidden="true"></i>
+            </div>
+            <span>Resultado en segundos</span>
+          </div>
+          <div class="tool-benefit" role="listitem">
+            <div class="tool-benefit-icon">
+              <i class="fas fa-list-check" aria-hidden="true"></i>
+            </div>
+            <span>Desglose peso por peso</span>
+          </div>
+          <div class="tool-benefit" role="listitem">
+            <div class="tool-benefit-icon">
+              <i class="fas fa-gift" aria-hidden="true"></i>
+            </div>
+            <span>100% gratis</span>
+          </div>
+        </div>
+      </div>
+
+      <ToolSidePanel
+        eyebrow="Antes de contratar"
+        heading="Saber el costo es el primer paso. Falta lo demás:"
+        items={[
+          { label: "Costo real del empleado", done: true },
+          { label: "Saber si tus ventas lo sostienen" },
+          { label: "Ajustar precios sin perder clientes" },
+          { label: "Ver cuánto vendes de verdad cada día" },
+        ]}
+      />
+    </div>
+  </section>
+
+  <section class="tool-explain">
+    <div class="container tool-explain-inner">
+      <h2>Por qué el salario nunca es lo que te cuesta</h2>
+      <p>
+        Es el error más caro que comete un negocio pequeño al contratar por
+        primera vez: presupuestar el sueldo y nada más. Cuando llega
+        diciembre con la prima, o cuando toca liquidar cesantías, aparece
+        una cuenta que nadie tenía prevista — y sale del bolsillo del dueño.
+      </p>
+      <p>
+        Sobre el salario que le pagas al empleado, la ley te obliga a
+        asumir además las <strong>prestaciones sociales</strong> (prima,
+        cesantías, intereses sobre cesantías y vacaciones) y los
+        <strong>aportes a seguridad social</strong> que van por cuenta del
+        empleador. Sumados, no son un detalle: son la diferencia entre
+        que contratar te funcione o te ahogue.
+      </p>
+
+      <h3>Qué incluye exactamente el cálculo</h3>
+      <p>
+        Estos son los porcentajes que aplica la calculadora, con la base
+        sobre la que se liquida cada uno:
+      </p>
+      <ul class="tool-list">
+        <li><strong>Prima de servicios — 8,33%.</strong> Se liquida sobre el salario más el auxilio de transporte.</li>
+        <li><strong>Cesantías — 8,33%.</strong> También sobre salario más auxilio de transporte.</li>
+        <li><strong>Intereses sobre cesantías — 12% anual</strong> sobre el valor de las cesantías causadas.</li>
+        <li><strong>Vacaciones — 4,17%.</strong> Aquí sí solo sobre el salario: el auxilio de transporte no entra en esta base.</li>
+        <li><strong>Pensión — 12%</strong> a cargo del empleador, sobre el salario.</li>
+        <li><strong>Salud — 8,5%</strong> a cargo del empleador, salvo que apliques la exoneración de la Ley 1607.</li>
+        <li><strong>ARL — de 0,522% a 6,96%</strong> según el nivel de riesgo de la actividad. La paga el empleador al 100%.</li>
+        <li><strong>Caja de compensación — 4%</strong> sobre el salario. Este aporte se paga siempre, exonerado o no.</li>
+        <li><strong>SENA (2%) e ICBF (3%)</strong>, que también desaparecen si aplicas la exoneración.</li>
+      </ul>
+
+      <h3>La exoneración que cambia el número</h3>
+      <p>
+        La Ley 1607 de 2012 exonera a muchos empleadores de pagar salud
+        (8,5%), SENA (2%) e ICBF (3%). Aplica para personas jurídicas —
+        SAS, Ltda, SA — y para personas naturales que tengan
+        <strong>dos o más trabajadores</strong>, siempre que el empleado
+        gane menos de 10 salarios mínimos ($17.509.050 en 2026).
+      </p>
+      <p>
+        Son 13,5 puntos porcentuales de diferencia. Por eso la calculadora
+        lo pregunta en vez de asumirlo: cambia el resultado de forma
+        importante y mucha gente no sabe si le aplica.
+      </p>
+
+      <h3>Qué hacer con el número una vez lo tienes</h3>
+      <ul class="tool-list">
+        <li>Compáralo contra lo que vendes. Si contratar sube tu gasto fijo, tu meta de ventas diaria sube con él — puedes recalcularla en la <a href="/calcular-punto-de-equilibrio">calculadora de punto de equilibrio</a>.</li>
+        <li>Revisa si tus precios aguantan ese costo nuevo. La <a href="/calcular-precio-venta-margen">calculadora de precio de venta y margen</a> te dice qué margen te queda realmente.</li>
+        <li>Si tienes restaurante, ojo con el nivel de riesgo: cocina normalmente clasifica más alto que una oficina, y eso mueve la tarifa de ARL.</li>
+        <li>Si tienes restaurante y estabas pensando en propinas, ten claro que la propina no reemplaza salario ni prestaciones. Lo explicamos en <a href="/blog/propina-voluntaria-restaurante-colombia">propina voluntaria en restaurantes</a>.</li>
+      </ul>
+
+      <h3>De dónde salen las cifras</h3>
+      <p>
+        El salario mínimo de 2026 ($1.750.905) lo fijó el Decreto 1469 de
+        2025, y el auxilio de transporte ($249.095) el Decreto 1470 de
+        2025. Si quieres el contexto completo de cómo estos números
+        afectan tus precios y tu margen, lo desarrollamos en
+        <a href="/blog/cuanto-cuesta-un-empleado-salario-minimo">salario mínimo 2026: cuánto cuesta realmente un empleado</a>.
+      </p>
+    </div>
+  </section>
+
+  <ToolFaq items={faqItems} />
+
+  <ToolCrossLinks currentHref="/calcular-costo-empleado" />
+
+  <ToolUpsell
+    heading="¿Te sirvió la calculadora?"
+    body="Ya sabes cuánto te cuesta el empleado. La pregunta que sigue es si tus ventas lo sostienen — y esa no se responde de memoria. Rosiv te muestra cuánto vendes realmente cada día y con qué margen, para que sepas si puedes contratar antes de comprometerte."
+    features={[
+      { icon: "fas fa-gauge-high", label: "Ventas del día en tiempo real" },
+      { icon: "fas fa-chart-line", label: "Margen real por producto" },
+      { icon: "fas fa-bolt", label: "Cobra en segundos desde el celular" },
+    ]}
+  />
+
+  <Footer />
+</Layout>
+
+<script>
+  const SMLMV_2026 = 1750905;
+  const AUX_TRANSPORTE_2026 = 249095;
+  const TOPE_AUXILIO = SMLMV_2026 * 2;
+  const TOPE_EXONERACION = SMLMV_2026 * 10;
+
+  const salaryInput = document.getElementById("emp-salary") as HTMLInputElement;
+  const riskSelect = document.getElementById("emp-risk") as HTMLSelectElement;
+  const exoneratedInput = document.getElementById("emp-exonerated") as HTMLInputElement;
+  const minBtn = document.getElementById("emp-min-btn") as HTMLButtonElement;
+  const errorEl = document.getElementById("emp-error") as HTMLElement;
+
+  const resultBox = document.getElementById("emp-result") as HTMLElement;
+  const monthlyOutput = document.getElementById("emp-monthly-output") as HTMLElement;
+  const yearlyOutput = document.getElementById("emp-yearly-output") as HTMLElement;
+  const extraOutput = document.getElementById("emp-extra-output") as HTMLElement;
+  const overheadEl = document.getElementById("emp-overhead") as HTMLElement;
+  const breakdownBody = document.getElementById("emp-breakdown-body") as HTMLElement;
+  const signalBox = document.getElementById("emp-signal") as HTMLElement;
+  const signalIcon = document.getElementById("emp-signal-icon") as HTMLElement;
+  const signalText = document.getElementById("emp-signal-text") as HTMLElement;
+
+  function formatCOP(value: number): string {
+    return "$" + Math.round(value).toLocaleString("es-CO");
+  }
+
+  function parseNumber(raw: string): number {
+    const clean = raw.replace(/\D/g, "");
+    return clean ? parseInt(clean, 10) : 0;
+  }
+
+  function formatInputDisplay(el: HTMLInputElement) {
+    const digits = el.value.replace(/\D/g, "");
+    el.value = digits ? parseInt(digits, 10).toLocaleString("es-CO") : "";
+  }
+
+  function resetResult(message: string) {
+    resultBox.classList.remove("has-value");
+    monthlyOutput.textContent = "$–";
+    yearlyOutput.textContent = "–";
+    extraOutput.textContent = "–";
+    overheadEl.textContent = "–";
+    breakdownBody.innerHTML = "";
+    signalBox.className = "margin-signal";
+    signalIcon.className = "fas fa-circle";
+    signalText.textContent = message;
+  }
+
+  function recalculate() {
+    const salary = parseNumber(salaryInput.value);
+    const riskRate = parseFloat(riskSelect.value) / 100;
+    errorEl.textContent = "";
+
+    if (!salary) {
+      resetResult("Escribe el salario para ver cuánto te cuesta en total.");
+      return;
+    }
+
+    if (salary < SMLMV_2026) {
+      errorEl.textContent =
+        "Ese salario está por debajo del mínimo legal de 2026 (" +
+        formatCOP(SMLMV_2026) +
+        ").";
+    }
+
+    // El auxilio de transporte solo aplica hasta 2 salarios mínimos.
+    const auxilio = salary <= TOPE_AUXILIO ? AUX_TRANSPORTE_2026 : 0;
+
+    // La exoneración de la Ley 1607 solo aplica bajo 10 salarios mínimos.
+    const exonerated = exoneratedInput.checked && salary < TOPE_EXONERACION;
+
+    // Prima y cesantías se liquidan sobre salario + auxilio.
+    const basePrestaciones = salary + auxilio;
+    const prima = basePrestaciones * 0.0833;
+    const cesantias = basePrestaciones * 0.0833;
+    const interesesCesantias = cesantias * 0.12;
+
+    // Vacaciones se liquidan solo sobre el salario.
+    const vacaciones = salary * 0.0417;
+
+    // Aportes del empleador: base salarial, sin auxilio.
+    const pension = salary * 0.12;
+    const salud = exonerated ? 0 : salary * 0.085;
+    const arl = salary * riskRate;
+    const caja = salary * 0.04;
+    const sena = exonerated ? 0 : salary * 0.02;
+    const icbf = exonerated ? 0 : salary * 0.03;
+
+    const extras =
+      prima + cesantias + interesesCesantias + vacaciones +
+      pension + salud + arl + caja + sena + icbf + auxilio;
+
+    const totalMonthly = salary + extras;
+    const overheadPct = (extras / salary) * 100;
+
+    monthlyOutput.textContent = formatCOP(totalMonthly);
+    yearlyOutput.textContent = formatCOP(totalMonthly * 12);
+    extraOutput.textContent = formatCOP(extras);
+    overheadEl.textContent =
+      "Un " + overheadPct.toFixed(1).replace(".", ",") + "% más que el salario";
+
+    const rows: Array<[string, number, string]> = [
+      ["Salario base", salary, ""],
+      ["Auxilio de transporte", auxilio, auxilio ? "" : "No aplica sobre 2 mínimos"],
+      ["Prima de servicios", prima, "8,33%"],
+      ["Cesantías", cesantias, "8,33%"],
+      ["Intereses sobre cesantías", interesesCesantias, "12% de cesantías"],
+      ["Vacaciones", vacaciones, "4,17%"],
+      ["Pensión (empleador)", pension, "12%"],
+      ["Salud (empleador)", salud, exonerated ? "Exonerado" : "8,5%"],
+      ["ARL", arl, riskSelect.options[riskSelect.selectedIndex].text.split(" — ")[0]],
+      ["Caja de compensación", caja, "4%"],
+      ["SENA", sena, exonerated ? "Exonerado" : "2%"],
+      ["ICBF", icbf, exonerated ? "Exonerado" : "3%"],
+    ];
+
+    breakdownBody.innerHTML = rows
+      .map(([label, value, note]) => {
+        const muted = value === 0 ? " emp-row-muted" : "";
+        const noteHtml = note ? '<span class="emp-row-note">' + note + "</span>" : "";
+        return (
+          '<tr class="emp-row' + muted + '">' +
+          "<td>" + label + noteHtml + "</td>" +
+          "<td>" + formatCOP(value) + "</td>" +
+          "</tr>"
+        );
+      })
+      .join("") +
+      '<tr class="emp-row emp-row-total"><td>Costo total mensual</td><td>' +
+      formatCOP(totalMonthly) +
+      "</td></tr>";
+
+    resultBox.classList.remove("has-value");
+    void resultBox.offsetWidth;
+    resultBox.classList.add("has-value");
+
+    signalBox.classList.remove("signal-green", "signal-yellow", "signal-red");
+    if (exonerated) {
+      signalBox.classList.add("signal-green");
+      signalIcon.className = "fas fa-circle-check";
+      signalText.textContent =
+        "Con la exoneración te ahorras 13,5% del salario en salud, SENA e ICBF. Confirma con tu contador que sí aplicas.";
+    } else if (exoneratedInput.checked && salary >= TOPE_EXONERACION) {
+      signalBox.classList.add("signal-yellow");
+      signalIcon.className = "fas fa-triangle-exclamation";
+      signalText.textContent =
+        "Este salario supera los 10 mínimos, así que la exoneración no aplica aunque la hayas marcado.";
+    } else {
+      signalBox.classList.add("signal-yellow");
+      signalIcon.className = "fas fa-triangle-exclamation";
+      signalText.textContent =
+        "Sin exoneración pagas salud, SENA e ICBF completos. Si eres SAS o tienes 2+ empleados, revisa si te aplica.";
+    }
+  }
+
+  salaryInput.addEventListener("input", () => {
+    formatInputDisplay(salaryInput);
+    recalculate();
+  });
+
+  riskSelect.addEventListener("change", recalculate);
+  exoneratedInput.addEventListener("change", recalculate);
+
+  minBtn.addEventListener("click", () => {
+    salaryInput.value = SMLMV_2026.toLocaleString("es-CO");
+    recalculate();
+    salaryInput.focus();
+  });
+
+  recalculate();
+</script>
+
+<style>
+  .emp-fields {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 1rem;
+  }
+
+  .emp-field label {
+    display: block;
+    font-weight: 600;
+    color: var(--gray-700);
+    margin-bottom: 0.3rem;
+    font-size: 0.88rem;
+  }
+
+  .emp-field-hint {
+    font-size: 0.76rem;
+    color: var(--gray-400);
+    line-height: 1.3;
+    margin-bottom: 0.6rem;
+    min-height: 2rem;
+  }
+
+  .margin-input-wrap {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 0 0.9rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .margin-input-wrap:focus-within {
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 4px rgba(95, 27, 191, 0.12);
+  }
+
+  .margin-input-prefix {
+    color: var(--gray-400);
+    font-weight: 700;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+  }
+
+  .margin-input-wrap input {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1.15rem;
+    padding: 0.75rem 0.5rem;
+    font-family: var(--font-primary);
+    color: var(--brand-black);
+    background: transparent;
+  }
+
+  .emp-chip {
+    margin-top: 0.5rem;
+    background: var(--purple-50);
+    border: 1px solid var(--purple-100);
+    color: var(--primary-purple);
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 0.78rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .emp-chip:hover,
+  .emp-chip:focus-visible {
+    background: var(--purple-100);
+    border-color: var(--primary-purple);
+  }
+
+  .emp-select-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .emp-select-wrap select {
+    width: 100%;
+    appearance: none;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    color: var(--brand-black);
+    padding: 0.85rem 2.4rem 0.85rem 0.9rem;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .emp-select-wrap select:focus-visible {
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 4px rgba(95, 27, 191, 0.12);
+  }
+
+  .emp-select-icon {
+    position: absolute;
+    right: 1rem;
+    color: var(--gray-400);
+    font-size: 0.8rem;
+    pointer-events: none;
+  }
+
+  .emp-toggle-row {
+    margin-top: 1.1rem;
+  }
+
+  .emp-toggle {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.9rem 1rem;
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .emp-toggle:hover {
+    border-color: var(--purple-100);
+  }
+
+  .emp-toggle input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .emp-toggle-box {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    border: 2px solid var(--gray-300);
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+
+  .emp-toggle-box i {
+    font-size: 0.7rem;
+    color: var(--white);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .emp-toggle input:checked + .emp-toggle-box {
+    background: var(--primary-purple);
+    border-color: var(--primary-purple);
+  }
+
+  .emp-toggle input:checked + .emp-toggle-box i {
+    opacity: 1;
+  }
+
+  .emp-toggle input:focus-visible + .emp-toggle-box {
+    box-shadow: 0 0 0 4px rgba(95, 27, 191, 0.18);
+  }
+
+  .emp-toggle-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .emp-toggle-text strong {
+    font-size: 0.9rem;
+    color: var(--brand-black);
+  }
+
+  .emp-toggle-hint {
+    font-size: 0.78rem;
+    color: var(--gray-500);
+    line-height: 1.4;
+  }
+
+  .margin-result-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gray-400);
+    font-weight: 700;
+  }
+
+  .margin-result-value {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--brand-black);
+    line-height: 1;
+    letter-spacing: -0.01em;
+  }
+
+  .margin-signal {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.85rem 1.5rem;
+    background: var(--gray-100);
+    color: var(--gray-500);
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+
+  .margin-signal i {
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .margin-signal.signal-green {
+    background: #ecfdf3;
+    color: #15803d;
+  }
+
+  .margin-signal.signal-yellow {
+    background: #fffaeb;
+    color: #b54708;
+  }
+
+  .margin-signal.signal-red {
+    background: #fef3f2;
+    color: #c81e1e;
+  }
+
+  .emp-result {
+    margin-top: 1.5rem;
+    border-radius: var(--radius-xl);
+    background: var(--gray-50);
+    border: 1px solid var(--gray-200);
+    overflow: hidden;
+    opacity: 0.55;
+    transform: scale(0.99);
+    transition: opacity 0.2s ease, transform 0.2s ease, background 0.25s ease, border-color 0.25s ease;
+  }
+
+  .emp-result.has-value {
+    opacity: 1;
+    transform: scale(1);
+    background: linear-gradient(180deg, var(--purple-50) 0%, var(--white) 55%);
+    border-color: var(--purple-100);
+  }
+
+  .emp-result-headline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1.5rem 1.5rem 1rem;
+  }
+
+  .emp-monthly-value {
+    font-size: 2.6rem;
+  }
+
+  .emp-overhead {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary-purple);
+  }
+
+  .emp-result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--purple-100);
+    margin: 0 1.5rem;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .emp-result-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    background: var(--white);
+    padding: 0.75rem 1rem;
+  }
+
+  .emp-result-cell-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gray-400);
+    font-weight: 700;
+  }
+
+  .emp-result-cell-value {
+    font-weight: 700;
+    color: var(--brand-black);
+    font-size: 1.05rem;
+  }
+
+  .emp-breakdown {
+    margin: 1.25rem 1.5rem 0;
+  }
+
+  .emp-breakdown summary {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-purple);
+    cursor: pointer;
+    padding: 0.5rem 0;
+    list-style: none;
+  }
+
+  .emp-breakdown summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .emp-breakdown summary i {
+    font-size: 0.8rem;
+  }
+
+  .emp-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.5rem;
+    font-size: 0.88rem;
+  }
+
+  .emp-table td {
+    padding: 0.55rem 0.25rem;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-700);
+  }
+
+  .emp-table td:last-child {
+    text-align: right;
+    font-weight: 600;
+    color: var(--brand-black);
+    white-space: nowrap;
+  }
+
+  .emp-row-note {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--gray-400);
+    font-weight: 500;
+  }
+
+  .emp-row-muted td {
+    color: var(--gray-400);
+  }
+
+  .emp-row-muted td:last-child {
+    color: var(--gray-400);
+  }
+
+  .emp-row-total td {
+    border-bottom: none;
+    border-top: 2px solid var(--purple-100);
+    font-weight: 700;
+    color: var(--brand-black);
+    padding-top: 0.7rem;
+  }
+
+  .emp-result .margin-signal {
+    margin-top: 1.25rem;
+  }
+
+  @media (max-width: 640px) {
+    .emp-fields {
+      grid-template-columns: 1fr;
+    }
+
+    .emp-field-hint {
+      min-height: 0;
+    }
+
+    .emp-result-headline {
+      padding: 1.25rem 1.25rem 1rem;
+    }
+
+    .emp-monthly-value {
+      font-size: 2.1rem;
+    }
+
+    .emp-result-grid {
+      grid-template-columns: 1fr;
+      margin: 0 1.25rem;
+    }
+
+    .emp-breakdown {
+      margin: 1.25rem 1.25rem 0;
+    }
+
+    .emp-result .margin-signal {
+      margin-top: 1rem;
+    }
+  }
+</style>
