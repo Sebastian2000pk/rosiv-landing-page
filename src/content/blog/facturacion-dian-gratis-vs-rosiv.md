@@ -2,6 +2,7 @@
 title: "El portal gratis de la DIAN para facturar: lo que no te cuentan hasta que ya lo estás usando"
 description: "Comparación honesta entre el facturador gratuito de la DIAN y un sistema como Rosiv: qué te ahorra el portal gratis, qué te complica, y cuándo cada uno tiene sentido."
 pubDate: 2026-08-13
+updatedDate: 2026-09-05
 keywords: "facturador gratis DIAN, factura electrónica gratis DIAN vs sistema POS, facturación electrónica gratuita Colombia"
 faq:
   - question: "¿El facturador gratuito de la DIAN sirve para una tienda o restaurante?"
@@ -53,3 +54,7 @@ Cuando facturar es una tarea que se repite decenas de veces al día, y cuando ad
 Rosiv genera la factura electrónica DIAN desde el mismo punto de venta donde ya estás cobrando: con catálogo de productos, descuento automático de inventario y reportes de venta en un solo lugar, con o sin internet.
 
 Si ya sientes que facturar te está quitando más tiempo del que debería, puedes [empezar gratis con Rosiv](https://web.rosivhub.com) y comparar tú mismo cuánto tiempo te ahorra en un día normal de ventas.
+
+---
+
+Si lo que estás evaluando es más amplio que el portal de la DIAN, mira [qué esperar de un sistema POS gratis en Colombia](/blog/sistema-pos-gratis-colombia-que-esperar): los tres modelos de "gratis" que existen y en cuál de ellos empieza el cobro.

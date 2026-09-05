@@ -2,7 +2,8 @@
 title: "Qué es un Sistema POS y Cómo Elegir uno para tu Negocio"
 description: "Qué es un sistema POS (punto de venta), qué problemas resuelve y qué debe tener un software POS pensado para tiendas, restaurantes y peluquerías en Colombia. Con ejemplos reales."
 pubDate: 2026-08-12
-keywords: "qué es un POS, punto de venta Colombia, sistema POS para pymes, POS para peluquerías, software POS, POS para tienda, POS para restaurante, POS offline"
+updatedDate: 2026-09-05
+keywords: "qué es un POS, que es un sistema pos, que es sistema pos, sistema pos punto de venta, sistema pos para negocio, sistema pos para restaurantes, sistemas pos, punto de venta Colombia, sistema POS para pymes, POS para peluquerías, software POS, POS para tienda, POS offline"
 faq:
   - question: "¿Qué significa POS en un negocio?"
     answer: "POS son las siglas de 'Point of Sale' (punto de venta): el sistema que usa un negocio para registrar ventas, cobrar y, en la mayoría de los casos, controlar inventario, reemplazando la caja registradora o el cuaderno de anotaciones."
@@ -58,6 +59,15 @@ Aunque la idea de fondo es la misma —registrar ventas y cobrar rápido—, lo 
 Un software POS genérico, hecho para cadenas grandes, casi nunca resuelve bien estos tres casos a la vez — por eso muchos negocios pequeños terminan con un sistema que les sobra en complejidad y les falta en lo específico de su rubro.
 
 Si lo que buscas es solo el significado corto de la sigla, sin entrar en cómo elegir uno, lee [qué significa POS](/blog/que-significa-pos-punto-de-venta).
+
+## Si ya sabes qué es y estás eligiendo
+
+Estas guías atacan las decisiones concretas que vienen después:
+
+- [Sistema POS en Colombia: qué debe cumplir aquí](/blog/sistema-pos-colombia-como-elegir) — habilitación DIAN, impoconsumo y los requisitos que no aplican en otros países.
+- [Sistema POS gratis: cuáles son gratis de verdad](/blog/sistema-pos-gratis-colombia-que-esperar) — los tres tipos de "gratis" y dónde está el cobro real.
+- [Siigo, Alegra o un POS](/blog/siigo-alegra-pos-comparacion-negocio-pequeno) — cuál necesitas según si tu problema es contable o de mostrador.
+- [Loyverse en Colombia](/blog/loyverse-alternativa-colombia-facturacion-dian) — por qué el POS gratis más popular no factura ante la DIAN.
 
 ## Cómo lo resuelve Rosiv
 

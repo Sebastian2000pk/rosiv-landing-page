@@ -56,3 +56,7 @@ Para muchos tenderos y restaurantes familiares en zonas con conexión inestable,
 Rosiv funciona al 100% sin internet: puedes vender, cobrar y controlar tu inventario aunque no tengas señal, y todo se sincroniza automáticamente en cuanto la conexión vuelve. Además, incluye facturación electrónica DIAN para cuando la necesites.
 
 Si te preocupa depender de una conexión inestable, puedes [probar Rosiv gratis](https://web.rosivhub.com) y comprobar cómo funciona offline desde el primer día.
+
+---
+
+Si todavía estás eligiendo sistema, el modo offline debería ser uno de tus filtros principales. Los demás están en [qué debe cumplir un sistema POS en Colombia](/blog/sistema-pos-colombia-como-elegir).
