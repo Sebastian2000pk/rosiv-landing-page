@@ -6,3 +6,6 @@ dist/
 npm-debug.log*
 pnpm-debug.log*
 .DS_Store
+
+# Exports de Google Search Console
+*-Performance-on-Search-*.zip
