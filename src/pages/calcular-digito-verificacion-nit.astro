@@ -8,9 +8,9 @@ import ToolUpsell from "../components/tools/ToolUpsell.astro";
 import ToolCrossLinks from "../components/tools/ToolCrossLinks.astro";
 import "../styles/tool-page.css";
 
-const title = "Calcular DV: Dígito de Verificación DIAN al Instante";
+const title = "Calculadora de Dígito de Verificación (DV) del NIT, RUT y Cédula";
 const description =
-  "Calcula el DV (dígito de verificación) de tu NIT o cédula con la fórmula oficial de la DIAN (módulo 11). Resultado al instante, sin registrarte ni instalar Excel.";
+  "Calcula el DV (dígito de verificación) de un NIT, RUT o cédula con la fórmula oficial de la DIAN (módulo 11). Resultado al instante, gratis y sin registro.";
 const path = "/calcular-digito-verificacion-nit";
 
 const faqItems = [
@@ -184,9 +184,8 @@ const jsonLd = [
       <p>
         El dígito de verificación (DV) es un número extra que la DIAN le
         agrega a tu NIT o cédula para confirmar que no tiene errores. Va
-        separado por un guion al final: si tu NIT base es
-        <strong>900123456</strong>, el número completo sería
-        <strong>900123456-8</strong>.
+        separado por un guion al final: si tu NIT base es <strong>900123456</strong>,
+        el número completo sería <strong>900123456-8</strong>.
       </p>
       <p>
         No es un número que tú eliges ni que cambia con el tiempo: sale de
@@ -217,8 +216,8 @@ const jsonLd = [
         <li>Cuando una factura te queda rechazada y necesitas confirmar que el número esté bien.</li>
       </ul>
       <p>
-        Si quieres entender a fondo qué es este número y por qué existe, lee
-        la guía completa: <a href="/blog/que-es-el-digito-de-verificacion-nit">qué es el dígito de verificación del NIT</a>.
+        Si quieres entender a fondo qué es este número y por qué existe, lee la
+        guía completa: <a href="/blog/que-es-el-digito-de-verificacion-nit">qué es el dígito de verificación del NIT</a>.
       </p>
 
       <h3>DV del NIT y DV del RUT: es el mismo número</h3>
@@ -239,17 +238,14 @@ const jsonLd = [
         fácil equivocarse en el orden de los pesos o en la fórmula del
         residuo — si solo necesitas el número ya calculado, esta calculadora
         te ahorra armar la hoja de cálculo. Si necesitas calcular el DV de
-        muchos NITs a la vez, lee la
-        <a href="/blog/digito-verificacion-excel-formula">guía paso a paso de la fórmula en Excel</a>.
+        muchos NITs a la vez, lee la <a href="/blog/digito-verificacion-excel-formula">guía paso a paso de la fórmula en Excel</a>.
       </p>
       <p>
-        Si tienes cédula pero no sabes cómo se relaciona con tu NIT, lee
-        <a href="/blog/calcular-nit-desde-cedula">cómo calcular tu NIT a partir de la cédula</a>.
+        Si tienes cédula pero no sabes cómo se relaciona con tu NIT, lee <a href="/blog/calcular-nit-desde-cedula">cómo calcular tu NIT a partir de la cédula</a>.
       </p>
       <p>
         Si además de facturar bien quieres dejar de anotar las ventas a mano,
-        lee <a href="/blog/que-es-un-pos-y-para-que-sirve">qué es un POS</a>
-        y qué debería tener uno pensado para tu tipo de negocio.
+        lee <a href="/blog/que-es-un-pos-y-para-que-sirve">qué es un POS</a> y qué debería tener uno pensado para tu tipo de negocio.
       </p>
     </div>
   </section>
