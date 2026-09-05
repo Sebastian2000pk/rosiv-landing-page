@@ -2428,6 +2428,10 @@ html {
   font-size: 0.9rem;
 }
 
+.blog-post-date-original {
+  opacity: 0.75;
+}
+
 .blog-post-title {
   font-family: var(--font-display);
   color: var(--brand-black);
@@ -2468,6 +2472,72 @@ html {
 
 .blog-post-content a {
   color: var(--primary-purple);
+}
+
+.blog-post-content strong {
+  color: var(--brand-black);
+  font-weight: 700;
+}
+
+.blog-post-content hr {
+  border: none;
+  border-top: 1px solid var(--gray-200);
+  margin: 2.5rem 0 1.5rem;
+}
+
+.blog-post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  background: var(--white);
+  margin: 0 0 1.75rem;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.blog-post-content thead th {
+  background: var(--purple-50);
+  color: var(--brand-black);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--purple-100);
+}
+
+.blog-post-content tbody td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--gray-200);
+  color: var(--gray-700);
+  vertical-align: top;
+}
+
+.blog-post-content tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.blog-post-content tbody tr:nth-child(even) td {
+  background: var(--gray-50);
+}
+
+/* La primera columna es la etiqueta de la fila: se destaca */
+.blog-post-content tbody td:first-child {
+  font-weight: 600;
+  color: var(--brand-black);
+}
+
+@media (max-width: 640px) {
+  .blog-post-content table {
+    font-size: 0.88rem;
+  }
+
+  .blog-post-content thead th,
+  .blog-post-content tbody td {
+    padding: 0.7rem 0.8rem;
+  }
 }
 
 .blog-post-back {

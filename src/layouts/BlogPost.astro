@@ -73,12 +73,16 @@ const jsonLd = [
   },
 ];
 
-const dateFormatted = pubDate.toLocaleDateString("es-CO", {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-  timeZone: "UTC",
-});
+const formatDate = (date: Date) =>
+  date.toLocaleDateString("es-CO", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+
+const dateFormatted = formatDate(pubDate);
+const updatedFormatted = updatedDate ? formatDate(updatedDate) : null;
 ---
 
 <Layout
@@ -94,7 +98,16 @@ const dateFormatted = pubDate.toLocaleDateString("es-CO", {
     <div class="blog-post-container">
       <a href="/blog" class="blog-post-back">&larr; Volver al blog</a>
       <header class="blog-post-header">
-        <p class="blog-post-date">{dateFormatted}</p>
+        <p class="blog-post-date">
+          {updatedFormatted ? (
+            <>
+              <time datetime={updatedDate!.toISOString()}>Actualizado el {updatedFormatted}</time>
+              <span class="blog-post-date-original"> · Publicado el {dateFormatted}</span>
+            </>
+          ) : (
+            <time datetime={pubDate.toISOString()}>{dateFormatted}</time>
+          )}
+        </p>
         <h1 class="blog-post-title">{title}</h1>
       </header>
       <div class="blog-post-content">

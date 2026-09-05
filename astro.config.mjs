@@ -6,7 +6,9 @@ export default defineConfig({
   integrations: [
     sitemap({
       customPages: ["https://rosivhub.com/ws/privacy-policy.html"],
-      filter: (page) => page !== "https://rosivhub.com/gracias/",
+      // Fuera del sitemap: /gracias y las páginas-redirect de slugs viejos.
+      filter: (page) =>
+        page !== "https://rosivhub.com/gracias/" && !/-2026(-|\/)/.test(page),
     }),
   ],
 });
