@@ -49,7 +49,7 @@ Hay tres caminos, y los tres producen facturas igual de válidas:
 - **Un proveedor tecnológico**, que suele venir integrado en un sistema de ventas. La factura sale de la misma venta. Pregunta si el certificado de firma digital está incluido o si lo tienes que adquirir aparte.
 - **Software propio**, que en la práctica solo usan empresas grandes.
 
-Si estás comparando, revisa [la facturación gratuita de la DIAN frente a un POS con facturación](/blog/facturacion-dian-gratis-vs-rosiv/).
+Si estás comparando, revisa [qué incluye un POS gratis y en qué se diferencia del facturador gratuito de la DIAN](/pos-gratis-colombia/).
 
 ### 3. Regístrate y habilítate en el portal de la DIAN
 

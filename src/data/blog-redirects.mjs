@@ -27,4 +27,14 @@ export const BLOG_REDIRECTS = {
   // El post competía con la landing comercial por "pos gratis colombia" y no
   // tenía impresiones propias: la landing absorbió su contenido (oct. 2026).
   "sistema-pos-gratis-colombia-que-esperar": "/pos-gratis-colombia",
+
+  // Poda de posts flojos o duplicados (oct. 2026): su contenido útil pasó al
+  // destino. Ver MANTENIMIENTO-SEO.md §7.
+  "errores-caros-facturar-dian-tenderos": "/blog/facturar-electronicamente-tienda-de-barrio",
+  "facturacion-dian-restaurantes-familiares": "/blog/facturar-electronicamente-tienda-de-barrio",
+  "pos-offline-que-hacer-sin-internet": "/blog/facturar-sin-internet-contingencia-dian",
+  "ganancia-real-vs-caja-llena": "/blog/flujo-de-caja-negocios-quiebran",
+  "punto-de-equilibrio-sin-tecnicismos": "/calcular-punto-de-equilibrio",
+  "facturacion-dian-gratis-vs-rosiv": "/pos-gratis-colombia",
+  "manejar-tu-negocio-desde-el-celular-sucursal-virtual": "/",
 };

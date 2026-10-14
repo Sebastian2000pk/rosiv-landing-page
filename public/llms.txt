@@ -48,17 +48,12 @@ https://rosivhub.com/blog/
 
 Artículos publicados:
 
-- Tener la caja llena no es lo mismo que estar ganando plata: la diferencia
-  entre flujo de caja y margen real, con ejemplos de tienda, restaurante y
-  peluquería. https://rosivhub.com/blog/ganancia-real-vs-caja-llena/
 - Cuánto cobrar por tu producto o servicio sin perder plata: guía con
   ejemplos numéricos reales de márgenes sanos para tenderos, restaurantes y
   peluquerías. https://rosivhub.com/blog/cuanto-cobrar-tienda-restaurante-peluqueria/
-- Cuánto tienes que vender cada día para que tu negocio no cierre: el punto
-  de equilibrio explicado sin jerga financiera, con el ejemplo paso a paso
-  de un restaurante real. https://rosivhub.com/blog/punto-de-equilibrio-sin-tecnicismos/
-- Por qué el 82% de los negocios pequeños quiebran por flujo de caja (no por
-  falta de ventas) y qué rutina diaria de 5 minutos lo evita.
+- Flujo de caja para negocios pequeños: por qué la caja llena no es
+  ganancia, la diferencia entre flujo de caja y margen, y una rutina diaria
+  corta para no quedarse sin plata.
   https://rosivhub.com/blog/flujo-de-caja-negocios-quiebran/
 - Cómo saber qué productos se están agotando antes de quedarse sin stock:
   control de inventario práctico para tiendas y restaurantes.
@@ -66,21 +61,17 @@ Artículos publicados:
 - Qué hacer cuando un cliente fiado no paga, y cómo evitar que el fiado se
   vuelva costumbre en una tienda de barrio o restaurante familiar.
   https://rosivhub.com/blog/cliente-fiado-no-paga/
-- Los errores más caros que cometen los tenderos al facturar con la DIAN
-  (facturar tarde, anular mal, régimen desactualizado, no conciliar caja).
-  https://rosivhub.com/blog/errores-caros-facturar-dian-tenderos/
 - Régimen Simple 2026: tabla de tarifas reales para tiendas y restaurantes
   familiares en Colombia, con el valor de la UVT 2026 ($52.374).
   https://rosivhub.com/blog/tabla-regimen-simple-tienda-restaurante/
-- Facturador electrónico gratuito de la DIAN vs. un sistema como Rosiv: qué
-  ahorra el portal gratis y qué complica en un negocio con alto volumen de
-  ventas diarias. https://rosivhub.com/blog/facturacion-dian-gratis-vs-rosiv/
-- Facturación DIAN para restaurantes familiares: guía simple sin
-  tecnicismos. https://rosivhub.com/blog/facturacion-dian-restaurantes-familiares/
-- Facturación electrónica para tienda de barrio: cómo empezar.
+- Cómo empezar a facturar electrónicamente en una tienda, restaurante o
+  peluquería: quién está obligado, los pasos ante la DIAN (RUT,
+  habilitación, numeración) y los errores más comunes.
   https://rosivhub.com/blog/facturar-electronicamente-tienda-de-barrio/
-- POS offline: qué hacer cuando no hay internet y sigues necesitando vender.
-  https://rosivhub.com/blog/pos-offline-que-hacer-sin-internet/
+- Se cayó el internet: qué es un POS offline, la diferencia entre registrar
+  la venta (no depende de la DIAN) y expedir la factura electrónica
+  (validación previa), y qué prevé la DIAN con la factura de contingencia.
+  https://rosivhub.com/blog/facturar-sin-internet-contingencia-dian/
 - Qué es un POS: significado de la sigla (Point of Sale, punto de venta),
   qué es un sistema POS, la diferencia entre POS, datáfono, terminal y caja
   registradora, y para qué le sirve a un negocio pequeño.

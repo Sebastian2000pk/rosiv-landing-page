@@ -48,7 +48,7 @@ Para un negocio con contador, área administrativa y necesidad de estados financ
 
 Esto se subestima siempre. En una oficina con fibra, la conexión no es tema. En una tienda de barrio, en una plaza de mercado o en un restaurante donde el router se reinicia solo, sí lo es: si el sistema no responde sin conexión, no puedes cobrar.
 
-La DIAN contempla esta situación: existe la [facturación en contingencia](/blog/facturar-sin-internet-contingencia-dian/), que permite seguir vendiendo sin conexión y transmitir después. Pero para aprovecharla, tu software tiene que estar construido para funcionar offline; no basta con que la norma lo permita. Lo explicamos en [qué hacer cuando el POS se queda sin internet](/blog/pos-offline-que-hacer-sin-internet/).
+Seguir vendiendo sin conexión depende del software, no de la DIAN: registrar la venta y cobrar no necesitan internet si el sistema está hecho para eso. La factura electrónica sí necesita la validación de la DIAN, y para cuando no puedes facturar electrónicamente la norma prevé la factura de contingencia. Lo explicamos, con la prueba del modo avión para revisar cualquier sistema, en [qué hacer cuando se cae el internet y tienes que facturar](/blog/facturar-sin-internet-contingencia-dian/).
 
 Varios sistemas, contables o de mostrador, anuncian hoy algún modo sin conexión, y lo que incluye cambia de uno a otro y de plan a plan. Antes de elegir cualquiera, pregúntale al proveedor qué sigue funcionando sin internet (vender, facturar, descontar inventario), cómo se envían después las facturas a la DIAN, y pruébalo en la demo desconectando el equipo. Si en tu negocio la respuesta a "¿qué pasa cuando no hay señal?" es "se para todo", ese es tu criterio principal, por encima del precio.
 

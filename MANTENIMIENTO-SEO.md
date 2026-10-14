@@ -14,6 +14,7 @@ las cifras y el título visible, y listo.
 | Post | Qué actualizar |
 |---|---|
 | `topes-para-facturar-electronicamente.md` | Valor UVT, tope en pesos (3.500 UVT), promedio mensual, año en título/slug/keywords |
+| `src/pages/debo-facturar-electronicamente.astro` | El test muestra 3.500 UVT en pesos del año anterior y del año en curso: correr los dos años (p. ej. 2025/2026 → 2026/2027) |
 | `tabla-regimen-simple-tienda-restaurante.md` | Valor UVT, toda la tabla de rangos en pesos, nº de resolución DIAN, año |
 | `calendario-tributario-tienda-restaurante.md` | Todas las fechas de vencimiento del nuevo calendario |
 | `cuanto-cuesta-un-empleado-salario-minimo.md` | Salario mínimo, auxilio de transporte, cálculo de carga prestacional |
@@ -61,7 +62,11 @@ sin cifras a propósito — mantenerlo así.
 **Revisar ~cada 6 meses** que sigan siendo ciertas las afirmaciones estructurales:
 
 - Que Loyverse no está habilitado como facturador electrónico ante la DIAN.
-- Que Siigo y Alegra no operan sin conexión.
+- Qué ofrecen sin conexión Siigo y Alegra. En oct. 2026 se verificó que Siigo anuncia
+  en Colombia un POS que vende sin internet y sincroniza después, así que el sitio ya
+  **no** dice que "se detienen sin conexión". Alegra lo anuncia en otros países; para
+  Colombia no estaba confirmado. No volver a afirmar nada sobre el modo offline de un
+  competidor sin una fuente actual.
 
 Si alguno lanza modo offline o habilitación DIAN, hay que corregir el post. Es la
 clase de afirmación verificable sobre la que se juzga la publicidad comparativa.
@@ -155,6 +160,18 @@ ninguna por encima de la posición 30):
 | POS | — | `/blog/que-es-un-pos-y-para-que-sirve` | `que-significa-pos-punto-de-venta` |
 | CUFE | `/validar-cufe-dian` (incluye "cómo saber si una factura es real") | `/blog/que-es-el-cufe-factura-electronica` (incluye CUDE y CUNE) | `diferencia-cufe-cune-cude`, `verificar-si-una-factura-es-real-dian` |
 | POS gratis | `/pos-gratis-colombia` (landing comercial) | — | `sistema-pos-gratis-colombia-que-esperar` |
+
+Poda de la misma fecha (posts flojos, con plantilla repetida o que duplicaban otra
+página; su contenido útil pasó al destino):
+
+| Retirado | Destino |
+|---|---|
+| `errores-caros-facturar-dian-tenderos`, `facturacion-dian-restaurantes-familiares` | `/blog/facturar-electronicamente-tienda-de-barrio` (ahora "Cómo empezar a facturar electrónicamente en tu negocio") |
+| `pos-offline-que-hacer-sin-internet` | `/blog/facturar-sin-internet-contingencia-dian` |
+| `ganancia-real-vs-caja-llena` | `/blog/flujo-de-caja-negocios-quiebran` |
+| `punto-de-equilibrio-sin-tecnicismos` | `/calcular-punto-de-equilibrio` (el ejemplo pasó a la herramienta) |
+| `facturacion-dian-gratis-vs-rosiv` | `/pos-gratis-colombia` |
+| `manejar-tu-negocio-desde-el-celular-sucursal-virtual` | `/` ("sucursal virtual" es una búsqueda de banca) |
 
 `calcular-nit-desde-cedula` se quedó aparte: es otra intención ("cuál es mi NIT si soy
 persona natural") y rankeaba bien por su cuenta. `sistema-pos-colombia-como-elegir` es
