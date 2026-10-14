@@ -16,7 +16,7 @@ las cifras y el título visible, y listo.
 | `topes-para-facturar-electronicamente.md` | Valor UVT, tope en pesos (3.500 UVT), promedio mensual, año en título/slug/keywords |
 | `src/pages/debo-facturar-electronicamente.astro` | El test muestra 3.500 UVT en pesos del año anterior y del año en curso: correr los dos años (p. ej. 2025/2026 → 2026/2027) |
 | `tabla-regimen-simple-tienda-restaurante.md` | Valor UVT, toda la tabla de rangos en pesos, nº de resolución DIAN, año |
-| `calendario-tributario-tienda-restaurante.md` | Todas las fechas de vencimiento del nuevo calendario |
+| `calendario-tributario-tienda-restaurante.md` | Todas las fechas de vencimiento del nuevo calendario, el número del decreto de plazos que lo rige y cualquier plazo especial vigente (en 2026, el Decreto 1226 por el sismo) |
 | `cuanto-cuesta-un-empleado-salario-minimo.md` | Salario mínimo, auxilio de transporte, cálculo de carga prestacional |
 
 **Cómo actualizarlos — importante para el SEO:**
