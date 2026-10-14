@@ -1,20 +1,20 @@
 ---
-title: "El 82% de los negocios pequeños no quiebran por falta de ventas. Quiebran por esto"
-description: "El flujo de caja, no las ventas bajas, es la causa número uno de cierre en negocios pequeños. Por qué pasa y qué rutina diaria de 5 minutos lo evita."
+title: "Flujo de caja para negocios pequeños: por qué la caja llena no es ganancia"
+description: "Por qué un negocio que vende bien puede quedarse sin plata: la diferencia entre ventas, caja y ganancia real, y la rutina diaria de 5 minutos para no llevarse sorpresas."
 pubDate: 2026-08-13
-keywords: "flujo de caja negocio pequeño, por qué quiebran las tiendas, control de caja tienda de barrio"
+updatedDate: 2026-10-14
+keywords: "flujo de caja negocio pequeño, por qué quiebran las tiendas, control de caja tienda de barrio, diferencia entre caja y ganancia, cómo saber si mi negocio está ganando plata"
 faq:
   - question: "¿Por qué un negocio que vende bien puede quedarse sin plata?"
     answer: "Porque vender no es lo mismo que tener el dinero disponible. Parte de esas ventas queda fiada o convertida en inventario, y si los pagos a proveedores o arriendo llegan antes de que ese dinero se cobre, el negocio se queda corto en caja aunque en el papel sea rentable."
-  - question: "¿Cuál es la causa número uno de que quiebren los negocios pequeños?"
-    answer: "El flujo de caja mal manejado, no la falta de ventas. Según estudios como el de U.S. Bank, cerca del 82% de los cierres de negocios pequeños se deben a problemas de flujo de caja, es decir, a no saber cuánto dinero hay realmente disponible en cada momento."
+  - question: "¿Cuál es la diferencia entre flujo de caja y margen de ganancia?"
+    answer: "El flujo de caja es cuánto efectivo entra y sale de tu negocio en un período. El margen es cuánto te queda de ganancia por cada venta, después de restar lo que te costó. Puedes mover mucho efectivo y tener un margen bajo: la caja se ve llena, pero casi todo ese dinero ya tiene destino (reponer inventario, pagar arriendo)."
   - question: "¿Cómo puedo controlar el flujo de caja de mi tienda sin ser contador?"
-    answer: "Con una rutina diaria de 5 minutos: cerrar la caja cada día separando efectivo, transferencias y fiado; comparar contra el día anterior; revisar qué pagos vencen esa semana; y tener siempre a la mano un solo número de cuánto tienes disponible de verdad."
+    answer: "Con una rutina diaria de 5 minutos: cerrar la caja cada día separando efectivo, transferencias y fiado; comparar contra el día anterior; revisar qué pagos vencen esa semana; y tener siempre a la mano un solo número de cuánto tienes disponible."
 ---
+Un negocio puede tener clientes todo el día, buen producto y precios razonables, y aun así un martes cualquiera no tener con qué pagarle al proveedor. No porque no haya plata en el negocio, sino porque esa plata no está donde se necesita cuando se necesita.
 
-Un tendero que conozco vendía bien. La gente entraba, compraba, el trago de las cinco de la tarde nunca faltaba. Y aun así, un martes cualquiera no tuvo con qué pagarle al proveedor de gaseosas. No porque no hubiera plata en el negocio — porque no sabía dónde estaba esa plata.
-
-Eso es un problema de flujo de caja, y según la estadística que cita el U.S. Bank Study (y que se repite en estudios similares en Latinoamérica), es la causa del **82% de los cierres de negocios pequeños**. No la falta de clientes. No la mala receta ni el mal producto. La plata que entra y sale sin que nadie la esté mirando de verdad.
+Eso es un problema de flujo de caja. No es falta de clientes ni mal producto: es la plata que entra y sale sin que nadie la esté mirando con orden.
 
 ## Vender bien y estar quebrado al mismo tiempo
 
@@ -26,6 +26,18 @@ Esto suena contradictorio, pero es lo más normal del mundo en una tienda o un r
 - Y el arriendo, la luz y el proveedor no esperan a que el fiado se pague.
 
 En el papel el negocio es rentable. En la caja registradora, el viernes, no hay para pagar nómina. Ese desfase — plata que "existe" pero no está disponible cuando se necesita — es el flujo de caja fallando, no el negocio.
+
+## Caja llena tampoco significa ganancia
+
+Hay una segunda confusión, pariente de la primera: creer que hay ganancia porque hay efectivo. La caja te dice cuánto entró, no cuánto de eso es tuyo. Si compras algo en $10.000 y lo vendes en $11.000, la caja sube $11.000, pero tu ganancia fue $1.000; el resto ya tiene dueño: la próxima reposición.
+
+Se ve distinto en cada tipo de negocio:
+
+- **Tienda de barrio:** mueves mucho efectivo en gaseosas, snacks y aseo, pero con márgenes bajos gran parte de ese efectivo es la plata del siguiente pedido al proveedor.
+- **Restaurante familiar:** un plato de $18.000 se siente como buena venta, pero si ingredientes, gas y desperdicio se comen $13.000, lo que queda es mucho menos de lo que sugiere la caja. Lo explicamos en [cómo calcular el costo real de un plato](/blog/costo-real-de-un-plato-food-cost/).
+- **Peluquería:** el insumo de un corte es barato y el servicio parece casi todo ganancia, hasta que cuentas tu tiempo, el arriendo y los equipos.
+
+Para separar las dos cosas no necesitas contabilidad completa: basta saber, para tus productos o servicios principales, cuánto te cuestan y cuánto cobras. Puedes hacer esa resta en la [calculadora de precio de venta y margen](/calcular-precio-venta-margen/).
 
 ## Por qué nadie lo ve venir
 
@@ -46,7 +58,7 @@ Cinco minutos. Pero hechos todos los días, no solo cuando ya hay una alarma son
 
 ## La pregunta hermana: ¿cuánto necesitas vender para no perder plata?
 
-El flujo de caja te dice si el dinero está disponible cuando lo necesitas. Hay una pregunta relacionada pero distinta que también vale la pena tener siempre clara: ¿cuál es la venta mínima del día que cubre tus gastos fijos? Esa cuenta se llama punto de equilibrio, y puedes calcular la tuya en la [calculadora de punto de equilibrio](/calcular-punto-de-equilibrio/) — o leer [la explicación sin tecnicismos con un ejemplo real](/blog/punto-de-equilibrio-sin-tecnicismos/).
+El flujo de caja te dice si el dinero está disponible cuando lo necesitas. Hay una pregunta relacionada pero distinta que también vale la pena tener siempre clara: ¿cuál es la venta mínima del día que cubre tus gastos fijos? Esa cuenta se llama punto de equilibrio, y puedes calcular la tuya, con un ejemplo paso a paso, en la [calculadora de punto de equilibrio](/calcular-punto-de-equilibrio/).
 
 ## El problema real: llevar esto en la cabeza no escala
 
@@ -54,6 +66,6 @@ Con un negocio chico, uno puede llevar el flujo de caja de memoria un tiempo. El
 
 ## Cómo lo resuelve Rosiv
 
-Rosiv registra cada venta y cada pago en el momento en que pasan, y te muestra el reporte de caja del día sin que tengas que armarlo tú a mano al cerrar. Ves de un vistazo cuánto tienes disponible de verdad, no solo cuánto vendiste.
+Rosiv registra cada venta en el momento en que pasa y te da el reporte del día sin armarlo a mano al cerrar. El cierre de caja de cinco minutos se vuelve revisar un número, no sumar cuadernos.
 
-Si te ha pasado eso de vender bien y aun así quedarte corto a fin de semana, puedes [empezar gratis con Rosiv](https://web.rosivhub.com) y tener ese número claro desde el primer cierre de caja.
+Si quieres probarlo en tu próximo cierre, [crea tu cuenta gratis](https://web.rosivhub.com).

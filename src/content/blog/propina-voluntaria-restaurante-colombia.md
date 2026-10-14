@@ -2,6 +2,7 @@
 title: "Propina voluntaria en Colombia: qué dice la ley y cómo cobrarla bien"
 description: "Cómo funciona la propina del 10% en restaurantes en Colombia según la Ley 1935 de 2018: si es obligatoria, cómo se pregunta, cómo se reparte y qué multa arriesgas si lo haces mal."
 pubDate: 2026-09-05
+updatedDate: 2026-10-14
 keywords: "propina voluntaria Colombia, ley 1935 propinas, propina 10% restaurante, es obligatoria la propina en Colombia, cómo se reparte la propina restaurante"
 faq:
   - question: "¿Es obligatoria la propina en Colombia?"
@@ -9,7 +10,7 @@ faq:
   - question: "¿Cuánto es la propina en un restaurante en Colombia?"
     answer: "Cuando el establecimiento la sugiere, la propina no puede superar el 10% del valor del servicio. Ese 10% es un tope máximo sugerido, no un mínimo ni una obligación: el cliente puede dar menos, más si así lo quiere, o no dar nada."
   - question: "¿Tengo que preguntarle al cliente si quiere dejar propina?"
-    answer: "Sí. La ley exige que quien atiende le pregunte al cliente si desea que la propina voluntaria se incluya en la factura o documento equivalente, o que indique el valor que quiere dejar. Incluirla directamente sin preguntar es la falla más común y la más sancionada."
+    answer: "Sí. La ley exige que quien atiende le pregunte al cliente si desea que la propina voluntaria se incluya en la factura o documento equivalente, o que indique el valor que quiere dejar. Incluirla directamente sin preguntar va en contra de lo que exige la norma."
   - question: "¿Cómo se debe repartir la propina entre los empleados?"
     answer: "Según el artículo 5 de la Ley 1935 de 2018, el dinero recogido por propinas debe repartirse entre todos los trabajadores que participan en la atención al cliente, no solo entre los meseros. Además, la propina no puede usarse para pagar el salario corriente del trabajador."
   - question: "¿La propina es parte del salario del mesero?"
@@ -33,11 +34,11 @@ Cuando el establecimiento la sugiere, la propina no puede pasar del 10% del valo
 **3. Hay que preguntar. No es opcional preguntar.**
 Quien atiende debe preguntarle al cliente si quiere que la propina se incluya en la factura, o cuánto quiere dejar. Meterla directo y esperar a ver si el cliente reclama es exactamente lo que la ley busca evitar.
 
-## El error que comete casi todo el mundo
+## El error más fácil de evitar
 
 Incluir el 10% en la cuenta sin preguntar, y esperar a que el cliente diga algo si no está de acuerdo.
 
-Eso invierte la carga: convierte un pago voluntario en algo que el cliente tiene que pedir que le quiten. Es la queja más común ante la SIC en este tema, y es la más fácil de evitar — con una pregunta de cinco segundos antes de imprimir la cuenta.
+Eso invierte la carga: convierte un pago voluntario en algo que el cliente tiene que pedir que le quiten. Es justo lo que la ley busca evitar, y se evita con una pregunta de cinco segundos antes de imprimir la cuenta.
 
 Además, en la práctica es peor negocio de lo que parece. El cliente que se siente cobrado a la fuerza no reclama: simplemente no vuelve.
 
@@ -64,9 +65,7 @@ Llevarla como una línea aparte desde el momento del cobro resuelve los dos.
 
 ## Cómo lo resuelve Rosiv
 
-En Rosiv la propina se maneja como una línea separada del consumo: se pregunta, se agrega si el cliente acepta, se quita sin rehacer la cuenta, y queda registrada aparte de tus ventas — para que al cierre sepas exactamente cuánto se recogió y cuánto hay que repartir.
-
-Puedes [empezar gratis con Rosiv](https://web.rosivhub.com).
+Rosiv maneja cuentas por mesa: abres la mesa, agregas lo que piden y cobras lo consumido, con la factura electrónica DIAN desde el plan Starter. Con la cuenta clara en pantalla, preguntar por la propina antes de cerrar es un paso más del cobro. Mira [cómo funciona en un restaurante](/pos-para-restaurantes/).
 
 ---
 

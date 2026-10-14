@@ -2,6 +2,7 @@
 title: "Vender domicilios por WhatsApp sin pagar comisión a las apps"
 description: "Cómo manejar los domicilios de tu restaurante por WhatsApp sin perder el 25% en comisiones, sin que se te crucen los pedidos y sin dejar de facturar lo que vendes."
 pubDate: 2026-09-05
+updatedDate: 2026-10-14
 keywords: "vender domicilios por WhatsApp, domicilios sin comisión Colombia, restaurante domicilios propios, pedidos por WhatsApp restaurante, alternativa a Rappi restaurante"
 faq:
   - question: "¿Cuánto cobran de comisión las apps de domicilios en Colombia?"
@@ -16,7 +17,7 @@ faq:
 
 Casi todo restaurante que vende domicilios en Colombia pasa por la misma cuenta mental: *"si la app se lleva el 25%, ¿realmente estoy ganando algo con ese pedido?"*
 
-La respuesta corta es que depende de quién sea el cliente. Y ahí está la decisión que vale plata.
+Depende de quién sea el cliente. Y ahí está la decisión que vale plata.
 
 ## La comisión no es cara ni barata: depende de qué te trae
 
@@ -59,6 +60,6 @@ Eso es lo que te está costando no tener un canal propio. Para la mayoría de re
 
 ## Cómo lo resuelve Rosiv
 
-Rosiv registra el pedido de domicilio como una venta más: con cliente, dirección y estado, junto a las mesas del local, cobrado y facturado electrónicamente ante la DIAN desde el mismo lugar. Y la toma de pedidos directo por WhatsApp está en integración final, para que el pedido entre al sistema sin que nadie lo transcriba.
+En Rosiv las órdenes de domicilio se registran como una venta más, junto a las mesas del local, y se cobran y facturan electrónicamente desde el mismo lugar (factura DIAN desde el plan Starter). Tomar pedidos directo desde WhatsApp es una función que viene próximamente; mientras tanto, el pedido se pasa a Rosiv apenas se confirma en el chat.
 
-Mira [cómo maneja Rosiv mesas y domicilios en un restaurante](/pos-para-restaurantes/) y deja de pagar comisión por los clientes que ya eran tuyos.
+Mira [cómo maneja Rosiv mesas y domicilios](/pos-para-restaurantes/) y empieza por los clientes que ya eran tuyos.
