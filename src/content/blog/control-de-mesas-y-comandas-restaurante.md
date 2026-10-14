@@ -56,4 +56,4 @@ Si tu sistema no maneja cuentas abiertas por mesa, vas a terminar haciendo lo mi
 
 Rosiv maneja cuentas por mesa desde el celular: abres la mesa, vas agregando lo que piden durante toda la comida, y al cerrar cobras exactamente lo que se consumió — con la factura electrónica DIAN generada desde ahí mismo, sin volver a digitar nada. Y sigue funcionando aunque se caiga el internet, que es justo cuando no te puedes dar el lujo de parar.
 
-Puedes [empezar gratis con Rosiv](https://web.rosivhub.com) y probarlo en el próximo servicio.
+Mira [cómo funciona Rosiv en un restaurante](/pos-para-restaurantes/) y pruébalo gratis en el próximo servicio.

@@ -61,4 +61,4 @@ Eso es lo que te está costando no tener un canal propio. Para la mayoría de re
 
 Rosiv registra el pedido de domicilio como una venta más: con cliente, dirección y estado, junto a las mesas del local, cobrado y facturado electrónicamente ante la DIAN desde el mismo lugar. Y la toma de pedidos directo por WhatsApp está en integración final, para que el pedido entre al sistema sin que nadie lo transcriba.
 
-Puedes [empezar gratis con Rosiv](https://web.rosivhub.com) y dejar de pagar comisión por los clientes que ya eran tuyos.
+Mira [cómo maneja Rosiv mesas y domicilios en un restaurante](/pos-para-restaurantes/) y deja de pagar comisión por los clientes que ya eran tuyos.

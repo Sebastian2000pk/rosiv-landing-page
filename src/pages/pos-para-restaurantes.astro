@@ -1,0 +1,260 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ToolFaq from "../components/tools/ToolFaq.astro";
+import "../styles/tool-page.css";
+import "../styles/landing.css";
+
+// Landing comercial para "pos / software pos para restaurantes".
+// Solo afirma funciones confirmadas en Pricing.astro ("Órdenes para mesas y
+// domicilio") y lo que comparten todos los planes. Precios: ver
+// MANTENIMIENTO-SEO.md.
+const title = "POS para restaurantes con mesas y factura DIAN | Rosiv";
+const description =
+  "Sistema POS para restaurantes en Colombia: cuentas por mesa, domicilios y factura electrónica DIAN desde el celular, aunque se caiga el internet. Plan gratis.";
+const path = "/pos-para-restaurantes/";
+
+const REGISTRO_GRATIS = "https://web.rosivhub.com/register-plan?plan=free";
+const WHATSAPP = "https://wa.me/573153603192";
+
+const faqItems = [
+  {
+    question: "¿Puedo llevar varias mesas abiertas al mismo tiempo?",
+    answer:
+      "Sí. Cada mesa tiene su propia cuenta abierta: vas agregando lo que piden durante la comida y, al cerrar, cobras exactamente lo que se consumió en esa mesa.",
+  },
+  {
+    question: "¿Sirve también para domicilios?",
+    answer:
+      "Sí. Los pedidos de domicilio se registran como órdenes junto a las mesas del local, en el mismo sistema, así al cierre del día ves todo lo que vendiste por los dos lados.",
+  },
+  {
+    question: "¿El plan gratis incluye mesas y domicilios?",
+    answer:
+      "Sí. El plan gratis incluye ventas ilimitadas, órdenes para mesas y domicilio, inventario e historial de ventas, y funciona sin internet. La factura electrónica DIAN está desde el plan Starter.",
+  },
+  {
+    question: "¿Qué pasa si se cae el internet en plena hora del almuerzo?",
+    answer:
+      "Sigues tomando pedidos y cobrando. Rosiv guarda las ventas en el dispositivo mientras no hay señal y las sincroniza cuando vuelve la conexión.",
+  },
+  {
+    question: "¿Puedo facturar electrónicamente desde Rosiv?",
+    answer:
+      "Sí, desde el plan Starter: la factura electrónica DIAN sale al cerrar la cuenta, sin pasar los datos a otro sistema. Rosiv la emite a través de un proveedor tecnológico habilitado que ya viene integrado.",
+  },
+  {
+    question: "¿Tengo que comprar tablets o equipos especiales?",
+    answer:
+      "No para empezar. Rosiv funciona en el navegador del celular que ya tienes, y también en una tablet o un computador si prefieres una pantalla más grande en la caja.",
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Rosiv", item: new URL("/", Astro.site).toString() },
+      { "@type": "ListItem", position: 2, name: "POS para restaurantes", item: new URL(path, Astro.site).toString() },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} path={path} jsonLd={jsonLd}>
+  <Navbar />
+
+  <section class="tool-hero">
+    <div class="container tool-hero-grid tool-hero-grid--single">
+      <div class="tool-hero-main">
+        <span class="status-tag live tool-hero-badge">
+          <i class="fas fa-utensils" aria-hidden="true"></i>
+          Mesas y domicilios incluidos en el plan gratis
+        </span>
+        <h1 class="tool-hero-title">
+          Sistema POS para restaurantes: mesas, domicilios y factura
+          electrónica desde el celular
+        </h1>
+        <p class="tool-hero-subtitle">
+          Rosiv es un POS hecho para restaurantes familiares en Colombia.
+          Abres la mesa, vas agregando lo que piden y al final cobras lo que se
+          consumió, con la factura electrónica DIAN saliendo de la misma
+          cuenta. Los domicilios van en el mismo sistema, y si se cae el
+          internet sigues atendiendo.
+        </p>
+        <div class="ld-actions">
+          <a class="btn-primary" href={REGISTRO_GRATIS} target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i>
+            Empezar gratis
+          </a>
+          <a class="ld-whatsapp" href={WHATSAPP} target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            Quiero que me ayuden a configurarlo
+          </a>
+        </div>
+        <p class="ld-note">Sin tarjeta de crédito · Desde el celular o una tablet</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-explain">
+    <div class="container tool-explain-inner">
+      <h2>Lo que cambia en el servicio</h2>
+      <p>
+        En un restaurante pequeño los problemas aparecen en la hora del
+        almuerzo: la comanda que se perdió, la mesa que se cobró de menos, el
+        domicilio que nadie anotó y la caja que al cierre no cuadra. Esto es
+        lo que resuelve un POS como Rosiv:
+      </p>
+
+      <div class="ld-grid">
+        <article class="ld-card">
+          <i class="fas fa-chair" aria-hidden="true"></i>
+          <h3>Una cuenta por mesa</h3>
+          <p>Abres la mesa y vas agregando lo que piden durante la comida. Al cerrar cobras exactamente lo consumido, sin sumar a mano.</p>
+        </article>
+        <article class="ld-card">
+          <i class="fas fa-motorcycle" aria-hidden="true"></i>
+          <h3>Domicilios en el mismo sistema</h3>
+          <p>Los pedidos para llevar quedan registrados junto a las mesas del local, no en un papel aparte.</p>
+        </article>
+        <article class="ld-card">
+          <i class="fas fa-file-invoice-dollar" aria-hidden="true"></i>
+          <h3>Factura al cerrar la cuenta</h3>
+          <p>Desde el plan Starter, la factura electrónica DIAN sale de la misma cuenta de la mesa, sin volver a digitar nada.</p>
+        </article>
+        <article class="ld-card">
+          <i class="fas fa-wifi" aria-hidden="true"></i>
+          <h3>Sigues atendiendo sin señal</h3>
+          <p>Si se cae el internet en plena hora pico, sigues tomando pedidos y cobrando. Todo se sincroniza cuando vuelve la conexión.</p>
+        </article>
+        <article class="ld-card">
+          <i class="fas fa-chart-line" aria-hidden="true"></i>
+          <h3>Sabes qué platos se venden</h3>
+          <p>El historial de ventas te muestra cuánto vendiste cada día y qué se pide más, para decidir el menú con datos y no a ojo.</p>
+        </article>
+        <article class="ld-card">
+          <i class="fas fa-mobile-screen" aria-hidden="true"></i>
+          <h3>Sin comprar equipos</h3>
+          <p>Funciona en el celular que ya tienes. Si quieres, usas una tablet o un computador en la caja.</p>
+        </article>
+      </div>
+
+      <h2>¿Tu restaurante cobra impoconsumo o IVA?</h2>
+      <p>
+        Es la duda más común al empezar a facturar. En términos generales:
+      </p>
+      <ul class="tool-list">
+        <li>
+          La mayoría de los restaurantes no cobra IVA sino el
+          <strong>impuesto nacional al consumo del 8%</strong> sobre lo que
+          venden en el local y a domicilio.
+        </li>
+        <li>
+          Si el restaurante es de una <strong>persona natural</strong> con
+          ingresos por debajo del tope en UVT que fija la ley, y cumple las
+          demás condiciones, puede <strong>no ser responsable</strong> del
+          impoconsumo y no tener que cobrarlo.
+        </li>
+        <li>
+          Los restaurantes que operan <strong>bajo franquicia</strong> tienen
+          un tratamiento distinto y cobran IVA.
+        </li>
+      </ul>
+      <p>
+        Para revisar tu caso con números, usa la <a href="/calcular-impoconsumo-iva-restaurante/">calculadora de impoconsumo e IVA para restaurantes</a> y la guía de <a href="/blog/cuanto-es-el-iva-de-los-restaurantes/">cuánto es el IVA de los restaurantes</a>. Es orientación general: tu contador confirma tu caso.
+      </p>
+
+      <h3>¿Y la propina?</h3>
+      <p>
+        En Colombia la propina es voluntaria: hay que preguntarle al cliente
+        si quiere incluirla antes de cobrarla. Qué dice la ley y cómo
+        cobrarla bien está en la guía de <a href="/blog/propina-voluntaria-restaurante-colombia/">propina voluntaria en restaurantes</a>.
+      </p>
+
+      <h2>Cómo empiezas</h2>
+      <ol class="tool-list">
+        <li>
+          <strong>Te registras gratis</strong> en <a href={REGISTRO_GRATIS} target="_blank" rel="noopener noreferrer">web.rosivhub.com</a>, o nos escribes por <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">WhatsApp</a> y te ayudamos.
+        </li>
+        <li>
+          <strong>Cargas tu menú</strong> con los precios. Empieza por los
+          platos y bebidas que más salen; el resto lo agregas después.
+        </li>
+        <li>
+          <strong>Abres la primera mesa.</strong> Desde ese momento tienes el
+          historial de lo que se vende cada día.
+        </li>
+      </ol>
+
+      <h2>Cuánto cuesta</h2>
+      <div class="ld-plans">
+        <article class="ld-plan">
+          <h3>Gratis</h3>
+          <p class="ld-price">$0 <span>para siempre</span></p>
+          <ul class="tool-list">
+            <li>Órdenes para mesas y domicilio</li>
+            <li>Ventas ilimitadas e historial</li>
+            <li>Funciona sin internet</li>
+          </ul>
+        </article>
+        <article class="ld-plan ld-plan--featured">
+          <h3>Starter</h3>
+          <p class="ld-price">$21.300 <span>al mes, IVA incluido</span></p>
+          <ul class="tool-list">
+            <li>Todo lo del plan Gratis</li>
+            <li>Factura electrónica DIAN</li>
+            <li>Reportes e inventario avanzado</li>
+          </ul>
+        </article>
+      </div>
+      <p>
+        Los planes Growth y Elite tienen las mismas funciones que Starter con
+        más capacidad de uso al mes, para restaurantes con mucho movimiento.
+        Mira todos los <a href="/#pricing">planes y precios</a>, o qué incluye
+        exactamente el <a href="/pos-gratis-colombia/">POS gratis</a>.
+      </p>
+
+      <h2>Herramientas gratis para tu restaurante</h2>
+      <ul class="tool-list">
+        <li>
+          <a href="/calcular-precio-venta-margen/">Precio de venta y margen</a>:
+          a cuánto vender un plato para que te deje plata. Para hacer bien la
+          cuenta del costo, mira <a href="/blog/costo-real-de-un-plato-food-cost/">cuánto te cuesta de verdad un plato</a>.
+        </li>
+        <li>
+          <a href="/calcular-punto-de-equilibrio/">Punto de equilibrio</a>:
+          cuánto tienes que vender al día para cubrir arriendo, nómina y
+          servicios.
+        </li>
+        <li>
+          <a href="/calcular-costo-empleado/">Costo de un empleado</a>: lo que
+          de verdad te cuesta contratar a un mesero o un ayudante de cocina.
+        </li>
+      </ul>
+
+      <div class="ld-final">
+        <p>Prueba Rosiv en tu restaurante sin pagar nada y sin tarjeta de crédito.</p>
+        <a class="btn-primary" href={REGISTRO_GRATIS} target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i>
+          Empezar gratis
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <ToolFaq items={faqItems} />
+
+  <Footer />
+</Layout>

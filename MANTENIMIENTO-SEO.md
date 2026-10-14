@@ -102,7 +102,7 @@ cambia uno, el dato estructurado contradice a la página visible:
 |---|---|
 | `src/components/Pricing.astro` | Lo que ve el usuario |
 | `src/pages/index.astro` → `const planes` | Lo que lee Google (schema `SoftwareApplication`) |
-| `src/pages/pos-para-tienda-de-barrio.astro` y `pos-gratis-colombia.astro` | Landings comerciales (Gratis y Starter) |
+| `src/pages/pos-para-tienda-de-barrio.astro`, `pos-gratis-colombia.astro` y `pos-para-restaurantes.astro` | Landings comerciales (Gratis y Starter) |
 
 Al cambiar un precio o un plan, actualizar **todos** y comprobar:
 

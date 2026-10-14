@@ -3,7 +3,7 @@ title: "Facturación DIAN para restaurantes familiares: guía simple sin tecnici
 description: "Qué necesita un restaurante familiar en Colombia para facturar electrónicamente ante la DIAN, sin depender de un contador para cada venta del día a día."
 pubDate: 2026-08-12
 updatedDate: 2026-09-05
-keywords: "facturación DIAN restaurantes, factura electrónica restaurante familiar, POS para restaurantes Colombia"
+keywords: "facturación DIAN restaurantes, factura electrónica restaurante familiar"
 faq:
   - question: "¿Un restaurante familiar está obligado a facturar electrónicamente?"
     answer: "Depende de tu régimen tributario y de tus ingresos. Los responsables de IVA y de impuesto al consumo, y quienes están en el Régimen Simple, ya están obligados. Si no estás seguro, revisa los topes vigentes en UVT que fija la DIAN antes de asumir que no te aplica."
@@ -43,4 +43,4 @@ Lo más eficiente es que el mismo sistema donde tomas el pedido y cobras genere 
 
 Rosiv está pensado para restaurantes familiares en Colombia: permite tomar el pedido, cobrar y generar la factura electrónica DIAN desde el mismo sistema, en el celular, con o sin internet. La facturación por WhatsApp está en integración final para hacer aún más simple la entrega al cliente.
 
-Puedes [empezar gratis con Rosiv](https://web.rosivhub.com) y activar la facturación electrónica DIAN en el plan Starter cuando tu restaurante lo necesite.
+Mira [cómo funciona Rosiv como POS para restaurantes](/pos-para-restaurantes/): empiezas gratis y activas la facturación electrónica DIAN en el plan Starter cuando tu restaurante lo necesite.

@@ -106,6 +106,10 @@ Artículos publicados:
   inventario, factura DIAN, sin internet), si una tienda tiene que facturar
   electrónicamente y cuánto cuesta.
   https://rosivhub.com/pos-para-tienda-de-barrio/
+- POS para restaurantes: cuentas por mesa, domicilios, factura DIAN al
+  cerrar la cuenta y funcionamiento sin internet; impoconsumo o IVA y
+  cuánto cuesta.
+  https://rosivhub.com/pos-para-restaurantes/
 - POS gratis en Colombia: qué incluye el plan gratis permanente de Rosiv y
   qué no, la diferencia entre plan gratis y prueba gratis, y por qué la
   factura electrónica DIAN está en el plan Starter.
