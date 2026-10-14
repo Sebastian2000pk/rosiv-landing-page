@@ -2,6 +2,7 @@
 title: "POS offline: qué hacer cuando no hay internet y sigues necesitando vender"
 description: "Por qué el internet inestable no debería detener las ventas de tu negocio, y qué buscar en un sistema POS que funcione offline en Colombia."
 pubDate: 2026-08-12
+updatedDate: 2026-10-14
 keywords: "POS offline, punto de venta sin internet, sistema POS Colombia sin conexión, software de ventas sin conexión a internet, POS sin internet"
 faq:
   - question: "¿Qué es un POS offline?"
@@ -11,7 +12,7 @@ faq:
   - question: "¿Se pierde la información si el celular se apaga estando offline?"
     answer: "En un sistema bien hecho, no. Las ventas hechas sin conexión deben quedar guardadas localmente en el dispositivo de forma segura, de modo que si el celular se apaga o se reinicia, la información siga ahí y se sincronice cuando vuelva la señal."
   - question: "¿Puedo facturar electrónicamente a la DIAN sin internet?"
-    answer: "Puedes registrar la venta y entregarle el soporte al cliente en el momento, pero la transmisión del documento a la DIAN queda pendiente hasta que vuelva la conexión. La norma contempla la contingencia tecnológica con un plazo de hasta 48 horas desde que se restablece el servicio."
+    answer: "Puedes seguir registrando ventas y cobrando, pero la factura electrónica en Colombia tiene validación previa: solo queda expedida cuando la DIAN la valida, y sin conexión eso no ocurre en el momento. Si tu negocio tiene una falla tecnológica y el cliente necesita factura, la norma prevé la factura de contingencia (de talonario o de papel), que luego se reporta a la DIAN."
 ---
 
 Uno de los mayores miedos de tenderos, dueños de restaurantes familiares y peluquerías al digitalizar su negocio es simple: "¿Qué pasa si se va el internet?"
@@ -43,9 +44,12 @@ Antes de elegir un sistema, pregunta o prueba:
 
 ## ¿Y qué pasa con la DIAN mientras estoy sin internet?
 
-Esta es la duda que sigue siempre. La respuesta corta: puedes cobrar y entregarle el soporte al cliente en el momento — la venta no depende de que la DIAN valide en ese instante. Lo que queda pendiente es la transmisión del documento, que se completa cuando vuelve la conexión.
+Esta es la duda que sigue siempre, y la respuesta tiene dos partes:
 
-La norma contempla este escenario como contingencia tecnológica, con un plazo de hasta 48 horas desde que se restablece el servicio. Lo explicamos en detalle en [cómo seguir facturando sin internet sin incumplirle a la DIAN](/blog/facturar-sin-internet-contingencia-dian/).
+- **Vender y cobrar no dependen de la DIAN.** Con un POS que funcione offline sigues registrando ventas e inventario sin señal.
+- **La factura electrónica sí depende de la DIAN.** En Colombia tiene validación previa: solo queda expedida cuando la DIAN la valida. Si tu negocio tiene una falla tecnológica y un cliente necesita factura en ese momento, la norma prevé la factura de contingencia (de talonario o de papel), que luego se reporta a la DIAN dentro del plazo que fija la norma.
+
+Lo explicamos en detalle, con lo que conviene preparar antes de necesitarlo, en [cómo seguir facturando sin internet sin incumplirle a la DIAN](/blog/facturar-sin-internet-contingencia-dian/).
 
 ## No es un "modo secundario", es una necesidad real en Colombia
 

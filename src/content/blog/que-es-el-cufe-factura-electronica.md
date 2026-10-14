@@ -75,6 +75,6 @@ El [validador de CUFE de Rosiv](/validar-cufe-dian/) revisa el formato al instan
 
 ## Cómo lo resuelve Rosiv
 
-Validar CUFEs sirve para revisar facturas que ya existen. Cuando eres tú quien factura, Rosiv genera el CUFE de cada venta y transmite la factura a la DIAN en el momento —o apenas vuelve el internet, si estabas sin conexión—, sin que tengas que copiar ni revisar códigos.
+Validar CUFEs sirve para revisar facturas que ya existen. Cuando eres tú quien factura, Rosiv genera el CUFE y envía la factura a validación de la DIAN desde la misma venta, sin que tengas que copiar ni revisar códigos.
 
 Puedes [probar Rosiv gratis](https://web.rosivhub.com).
