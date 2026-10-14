@@ -46,4 +46,4 @@ En caso de duda, lo más seguro es empezar a facturar electrónicamente ya, en v
 
 Rosiv es un sistema POS pensado específicamente para tenderos, restaurantes familiares y peluquerías en Colombia. Incluye facturación electrónica DIAN dentro del plan Starter, funciona con o sin internet, y se explica solo — sin manuales ni cursos.
 
-Si tienes una tienda de barrio y necesitas empezar a facturar electrónicamente, puedes [probar Rosiv gratis](https://web.rosivhub.com) y activar la facturación DIAN cuando la necesites.
+Si tienes una tienda de barrio y necesitas empezar a facturar electrónicamente, mira [cómo funciona Rosiv como programa para tienda de barrio](/pos-para-tienda-de-barrio/): empiezas gratis y activas la facturación DIAN cuando la necesites.

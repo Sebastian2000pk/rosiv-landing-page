@@ -64,7 +64,7 @@ Un POS no es solo para cadenas grandes. Durante años lo fue, pero hoy existen o
 
 La idea de fondo es la misma —registrar ventas y cobrar rápido—, pero lo que necesita cada negocio cambia:
 
-- **Tienda de barrio:** descontar inventario por unidad (gaseosas, snacks, aseo) y avisar cuándo un producto de alta rotación se está agotando.
+- **Tienda de barrio:** descontar inventario por unidad (gaseosas, snacks, aseo) y avisar cuándo un producto de alta rotación se está agotando. Así funciona [un POS para tienda de barrio](/pos-para-tienda-de-barrio/).
 - **Restaurante familiar:** manejar mesas o domicilios y calcular el impoconsumo en cada cuenta.
 - **Peluquería:** llevar servicios en vez de productos y calcular el margen sobre el tiempo del estilista, no solo sobre los insumos.
 

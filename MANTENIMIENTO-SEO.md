@@ -95,15 +95,16 @@ También revisar tras cualquier cambio de planes o precios:
 
 ### Precios: dos sitios que se tienen que mover juntos
 
-Los precios viven en **dos** lugares y Google los compara entre sí. Si solo se
+Los precios viven en **tres** lugares y Google los compara entre sí. Si solo se
 cambia uno, el dato estructurado contradice a la página visible:
 
 | Dónde | Qué es |
 |---|---|
 | `src/components/Pricing.astro` | Lo que ve el usuario |
 | `src/pages/index.astro` → `const planes` | Lo que lee Google (schema `SoftwareApplication`) |
+| `src/pages/pos-para-tienda-de-barrio.astro` → sección "Cuánto cuesta" | Landing comercial (Gratis y Starter) |
 
-Al cambiar un precio o un plan, actualizar **los dos** y comprobar:
+Al cambiar un precio o un plan, actualizar **los tres** y comprobar:
 
     npx astro build
     grep -o '"name":"Plan [^"]*","price":"[^"]*"' dist/index.html

@@ -42,4 +42,4 @@ Cuando cada venta descuenta automáticamente el stock, dejas de depender de la m
 
 Rosiv descuenta el inventario automáticamente con cada venta y te muestra qué productos están bajos antes de que se conviertan en un "no hay" frente al cliente. Funciona incluso sin internet, así que el descuento de stock no se detiene aunque se caiga la señal en plena hora pico.
 
-Si estás cansado de enterarte tarde de lo que se te acabó, puedes [empezar gratis con Rosiv](https://web.rosivhub.com) y dejar que el inventario te avise a ti, en vez de enterarte por un cliente que se va con las manos vacías.
+Si estás cansado de enterarte tarde de lo que se te acabó, mira [cómo funciona Rosiv en una tienda de barrio](/pos-para-tienda-de-barrio/) y dejar que el inventario te avise a ti, en vez de enterarte por un cliente que se va con las manos vacías.

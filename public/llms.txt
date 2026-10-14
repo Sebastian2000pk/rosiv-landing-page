@@ -100,6 +100,13 @@ Artículos publicados:
   restaurante, peluquería) para saber qué impuesto indirecto le corresponde.
   https://rosivhub.com/blog/iva-o-impoconsumo-que-cobra-mi-negocio/
 
+## Páginas por tipo de negocio
+
+- POS para tienda de barrio: qué resuelve Rosiv en una tienda (ventas,
+  inventario, factura DIAN, sin internet), si una tienda tiene que facturar
+  electrónicamente y cuánto cuesta.
+  https://rosivhub.com/pos-para-tienda-de-barrio/
+
 ## Herramientas gratuitas
 
 Operación del negocio (sin relación con trámites tributarios):
