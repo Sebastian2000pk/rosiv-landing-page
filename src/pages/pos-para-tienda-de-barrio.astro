@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import ToolFaq from "../components/tools/ToolFaq.astro";
 import "../styles/tool-page.css";
+import "../styles/landing.css";
 
 // Landing comercial para "programa / software / POS para tienda de barrio".
 // Solo afirma funciones que el producto tiene hoy (ver Pricing.astro). Los
@@ -91,17 +92,17 @@ const jsonLd = [
           te queda, y cuando un cliente te pide factura electrónica la sacas
           desde la misma venta. Si se cae el internet, sigues vendiendo.
         </p>
-        <div class="tb-actions">
+        <div class="ld-actions">
           <a class="btn-primary" href={REGISTRO_GRATIS} target="_blank" rel="noopener noreferrer">
             <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i>
             Empezar gratis
           </a>
-          <a class="tb-whatsapp" href={WHATSAPP} target="_blank" rel="noopener noreferrer">
+          <a class="ld-whatsapp" href={WHATSAPP} target="_blank" rel="noopener noreferrer">
             <i class="fab fa-whatsapp" aria-hidden="true"></i>
             Prefiero que me ayuden por WhatsApp
           </a>
         </div>
-        <p class="tb-note">Sin tarjeta de crédito · Desde el celular que ya tienes</p>
+        <p class="ld-note">Sin tarjeta de crédito · Desde el celular que ya tienes</p>
       </div>
     </div>
   </section>
@@ -116,33 +117,33 @@ const jsonLd = [
         alguien anota mal. Esto es lo que resuelve un POS como Rosiv:
       </p>
 
-      <div class="tb-grid">
-        <article class="tb-card">
+      <div class="ld-grid">
+        <article class="ld-card">
           <i class="fas fa-bolt" aria-hidden="true"></i>
           <h3>Cobras rápido cuando hay fila</h3>
           <p>Buscas el producto, cobras y sigues con el siguiente cliente. Cada venta queda registrada sin escribir nada a mano.</p>
         </article>
-        <article class="tb-card">
+        <article class="ld-card">
           <i class="fas fa-boxes-stacked" aria-hidden="true"></i>
           <h3>El inventario se descuenta solo</h3>
           <p>Cada gaseosa, bolsa de arroz o jabón que vendes se resta de tu inventario. Sabes cuánto te queda sin contar el estante.</p>
         </article>
-        <article class="tb-card">
+        <article class="ld-card">
           <i class="fas fa-chart-line" aria-hidden="true"></i>
           <h3>Sabes cuánto vendiste</h3>
           <p>El historial de ventas te dice cuánto entró hoy, ayer o la semana pasada, y qué productos se mueven más.</p>
         </article>
-        <article class="tb-card">
+        <article class="ld-card">
           <i class="fas fa-wifi" aria-hidden="true"></i>
           <h3>Vendes aunque no haya señal</h3>
           <p>Si se cae el internet o se acaban los datos, Rosiv sigue registrando ventas y las sincroniza cuando vuelve la conexión.</p>
         </article>
-        <article class="tb-card">
+        <article class="ld-card">
           <i class="fas fa-file-invoice-dollar" aria-hidden="true"></i>
           <h3>Factura electrónica cuando te la piden</h3>
           <p>Desde el plan Starter, la factura electrónica DIAN sale de la misma venta. No tienes que pasar los datos a otro sistema.</p>
         </article>
-        <article class="tb-card">
+        <article class="ld-card">
           <i class="fas fa-mobile-screen" aria-hidden="true"></i>
           <h3>Sin comprar equipos</h3>
           <p>Funciona en el celular que ya usas. Si después quieres una pantalla más grande, entras desde una tablet o un computador.</p>
@@ -172,18 +173,15 @@ const jsonLd = [
         </li>
       </ul>
       <p>
-        Para salir de la duda en un minuto, haz el
-        <a href="/debo-facturar-electronicamente/">test de si debes facturar electrónicamente</a>.
-        Los montos exactos de este año están en la guía de
-        <a href="/blog/topes-para-facturar-electronicamente/">topes para facturar electrónicamente</a>.
+        Para salir de la duda en un minuto, haz el <a href="/debo-facturar-electronicamente/">test de si debes facturar electrónicamente</a>.
+        Los montos exactos de este año están en la guía de <a href="/blog/topes-para-facturar-electronicamente/">topes para facturar electrónicamente</a>.
         Es orientación general: tu contador confirma tu caso.
       </p>
 
       <h2>Cómo empiezas</h2>
       <ol class="tool-list">
         <li>
-          <strong>Te registras gratis</strong> en
-          <a href={REGISTRO_GRATIS} target="_blank" rel="noopener noreferrer">web.rosivhub.com</a>,
+          <strong>Te registras gratis</strong> en <a href={REGISTRO_GRATIS} target="_blank" rel="noopener noreferrer">web.rosivhub.com</a>,
           o nos escribes por <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">WhatsApp</a>
           y te ayudamos a hacerlo.
         </li>
@@ -199,19 +197,19 @@ const jsonLd = [
       </ol>
 
       <h2>Cuánto cuesta</h2>
-      <div class="tb-plans">
-        <article class="tb-plan">
+      <div class="ld-plans">
+        <article class="ld-plan">
           <h3>Gratis</h3>
-          <p class="tb-price">$0 <span>para siempre</span></p>
+          <p class="ld-price">$0 <span>para siempre</span></p>
           <ul class="tool-list">
             <li>Ventas ilimitadas</li>
             <li>Inventario e historial de ventas</li>
             <li>Funciona sin internet</li>
           </ul>
         </article>
-        <article class="tb-plan tb-plan--featured">
+        <article class="ld-plan ld-plan--featured">
           <h3>Starter</h3>
-          <p class="tb-price">$21.300 <span>al mes, IVA incluido</span></p>
+          <p class="ld-price">$21.300 <span>al mes, IVA incluido</span></p>
           <ul class="tool-list">
             <li>Todo lo del plan Gratis</li>
             <li>Factura electrónica DIAN</li>
@@ -241,7 +239,7 @@ const jsonLd = [
         </li>
       </ul>
 
-      <div class="tb-final">
+      <div class="ld-final">
         <p>Prueba Rosiv en tu tienda sin pagar nada y sin tarjeta de crédito.</p>
         <a class="btn-primary" href={REGISTRO_GRATIS} target="_blank" rel="noopener noreferrer">
           <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i>
@@ -255,121 +253,3 @@ const jsonLd = [
 
   <Footer />
 </Layout>
-
-<style>
-  .tb-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1rem 1.5rem;
-    margin-top: 1.75rem;
-  }
-
-  .tb-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--primary-purple);
-    font-weight: 600;
-    text-decoration: none;
-  }
-
-  .tb-whatsapp:hover {
-    text-decoration: underline;
-  }
-
-  .tb-note {
-    margin-top: 0.9rem;
-    font-size: 0.88rem;
-    color: var(--gray-500);
-  }
-
-  .tb-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 1rem;
-    margin: 1.5rem 0 2.5rem;
-  }
-
-  .tb-card {
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius-lg);
-    padding: 1.25rem;
-  }
-
-  .tb-card > i {
-    color: var(--primary-purple);
-    font-size: 1.15rem;
-  }
-
-  .tb-card h3 {
-    font-size: 1rem;
-    margin: 0.65rem 0 0.4rem;
-    color: var(--brand-black);
-  }
-
-  .tb-card p {
-    font-size: 0.92rem;
-    line-height: 1.55;
-    color: var(--gray-600);
-    margin: 0;
-  }
-
-  .tb-plans {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
-    margin: 1.25rem 0;
-  }
-
-  .tb-plan {
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius-lg);
-    padding: 1.25rem 1.5rem;
-    background: var(--white);
-  }
-
-  .tb-plan--featured {
-    border-color: var(--primary-purple);
-    background: var(--purple-50);
-  }
-
-  .tb-plan h3 {
-    margin: 0;
-    font-size: 1.05rem;
-    color: var(--brand-black);
-  }
-
-  .tb-price {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: var(--brand-black);
-    margin: 0.35rem 0 0.75rem;
-  }
-
-  .tb-price span {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--gray-500);
-  }
-
-  .tb-final {
-    margin-top: 2.5rem;
-    padding: 1.75rem;
-    border-radius: var(--radius-lg);
-    background: var(--purple-50);
-    text-align: center;
-  }
-
-  /* .tool-explain a pinta los enlaces de morado; el botón va en blanco */
-  .tb-final .btn-primary {
-    color: var(--white);
-  }
-
-  .tb-final p {
-    margin: 0 0 1rem;
-    font-weight: 600;
-    color: var(--brand-black);
-  }
-</style>

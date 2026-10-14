@@ -95,16 +95,16 @@ También revisar tras cualquier cambio de planes o precios:
 
 ### Precios: dos sitios que se tienen que mover juntos
 
-Los precios viven en **tres** lugares y Google los compara entre sí. Si solo se
+Los precios viven en **varios** lugares y Google los compara entre sí. Si solo se
 cambia uno, el dato estructurado contradice a la página visible:
 
 | Dónde | Qué es |
 |---|---|
 | `src/components/Pricing.astro` | Lo que ve el usuario |
 | `src/pages/index.astro` → `const planes` | Lo que lee Google (schema `SoftwareApplication`) |
-| `src/pages/pos-para-tienda-de-barrio.astro` → sección "Cuánto cuesta" | Landing comercial (Gratis y Starter) |
+| `src/pages/pos-para-tienda-de-barrio.astro` y `pos-gratis-colombia.astro` | Landings comerciales (Gratis y Starter) |
 
-Al cambiar un precio o un plan, actualizar **los tres** y comprobar:
+Al cambiar un precio o un plan, actualizar **todos** y comprobar:
 
     npx astro build
     grep -o '"name":"Plan [^"]*","price":"[^"]*"' dist/index.html
@@ -117,7 +117,7 @@ seguía citado en 7 posts y en el schema con un precio que ya no existía).
 
 Estos no llevan cifras que caduquen y no requieren revisión periódica:
 `que-es-un-pos-y-para-que-sirve`,
-`sistema-pos-colombia-como-elegir`, `sistema-pos-gratis-colombia-que-esperar`,
+`sistema-pos-colombia-como-elegir`,
 `loyverse-alternativa-colombia-facturacion-dian`,
 `siigo-alegra-pos-comparacion-negocio-pequeno`,
 y los de operación del negocio (fiado, food cost, punto de equilibrio, mesas).
@@ -154,6 +154,7 @@ ninguna por encima de la posición 30):
 | DV | `/calcular-digito-verificacion-nit` | `/blog/consultar-digito-de-verificacion-nit-rut` | `que-es-el-digito-de-verificacion-nit`, `digito-verificacion-excel-formula` |
 | POS | — | `/blog/que-es-un-pos-y-para-que-sirve` | `que-significa-pos-punto-de-venta` |
 | CUFE | `/validar-cufe-dian` (incluye "cómo saber si una factura es real") | `/blog/que-es-el-cufe-factura-electronica` (incluye CUDE y CUNE) | `diferencia-cufe-cune-cude`, `verificar-si-una-factura-es-real-dian` |
+| POS gratis | `/pos-gratis-colombia` (landing comercial) | — | `sistema-pos-gratis-colombia-que-esperar` |
 
 `calcular-nit-desde-cedula` se quedó aparte: es otra intención ("cuál es mi NIT si soy
 persona natural") y rankeaba bien por su cuenta. `sistema-pos-colombia-como-elegir` es

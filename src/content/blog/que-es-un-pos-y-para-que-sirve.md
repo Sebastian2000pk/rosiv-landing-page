@@ -73,7 +73,7 @@ La idea de fondo es la misma —registrar ventas y cobrar rápido—, pero lo qu
 Estas guías cubren las decisiones que vienen después:
 
 - [Sistema POS en Colombia: qué debe cumplir aquí](/blog/sistema-pos-colombia-como-elegir/) — facturación DIAN, impoconsumo y los requisitos que no aplican en otros países.
-- [Sistema POS gratis: cuáles son gratis de verdad](/blog/sistema-pos-gratis-colombia-que-esperar/) — los tres tipos de "gratis" y dónde está el cobro real.
+- [Sistema POS gratis en Colombia](/pos-gratis-colombia/) — qué incluye un plan gratis de verdad, los tres tipos de "gratis" y dónde está el cobro real.
 - [Siigo, Alegra o un POS](/blog/siigo-alegra-pos-comparacion-negocio-pequeno/) — cuál necesitas según si tu problema es contable o de mostrador.
 - [Loyverse en Colombia](/blog/loyverse-alternativa-colombia-facturacion-dian/) — por qué el POS gratis más popular no factura ante la DIAN.
 

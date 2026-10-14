@@ -1,0 +1,240 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ToolFaq from "../components/tools/ToolFaq.astro";
+import "../styles/tool-page.css";
+import "../styles/landing.css";
+
+// Landing comercial para "pos gratis colombia" / "sistema pos gratis".
+// Absorbió el post sistema-pos-gratis-colombia-que-esperar (ver
+// src/data/blog-redirects.mjs). Lo que incluye cada plan sale de
+// Pricing.astro: si cambia allá, cambia aquí — ver MANTENIMIENTO-SEO.md.
+const title = "POS gratis en Colombia, para siempre y sin tarjeta | Rosiv";
+const description =
+  "Sistema POS con plan gratis permanente: ventas ilimitadas, inventario y funciona sin internet, desde el celular. Sin tarjeta y sin fecha de vencimiento.";
+const path = "/pos-gratis-colombia/";
+
+const REGISTRO_GRATIS = "https://web.rosivhub.com/register-plan?plan=free";
+const WHATSAPP = "https://wa.me/573153603192";
+
+const faqItems = [
+  {
+    question: "¿El plan gratis de Rosiv se vence?",
+    answer:
+      "No. No es una prueba: puedes usarlo indefinidamente, con ventas ilimitadas, sin dar una tarjeta de crédito. Si un día necesitas factura electrónica, pasas al plan Starter sin migrar nada.",
+  },
+  {
+    question: "¿Existe un sistema POS realmente gratis en Colombia?",
+    answer:
+      "Sí. Hay planes gratuitos permanentes que permiten registrar ventas y llevar inventario sin costo. Lo que casi nunca es gratis es la factura electrónica DIAN, porque cada documento transmitido tiene un costo para el proveedor. Un plan gratuito honesto lo dice de entrada.",
+  },
+  {
+    question: "¿Qué diferencia hay entre un POS gratis y una prueba gratis?",
+    answer:
+      "Un plan gratuito permanente te deja operar sin límite de tiempo, con algunas funciones reservadas para los planes pagos. Una prueba gratuita te da todo por unas semanas y después te pide pagar para seguir usando el sistema, con tu inventario ya cargado adentro. Antes de cargar productos, confirma cuál de los dos te están ofreciendo.",
+  },
+  {
+    question: "¿Por qué la factura electrónica no viene en el plan gratis?",
+    answer:
+      "Porque emitir factura electrónica implica transmitir y validar cada documento ante la DIAN a través de un proveedor tecnológico habilitado, y eso cuesta por cada factura. En Rosiv está en el plan Starter, desde $21.300 al mes con IVA incluido.",
+  },
+  {
+    question: "¿El facturador gratuito de la DIAN reemplaza a un POS?",
+    answer:
+      "No. El facturador de la DIAN emite facturas válidas, pero no tiene catálogo de productos ni controla inventario, y cada factura se llena a mano. Sirve para cumplir cuando facturas pocas veces al mes, no para atender un mostrador con clientes esperando.",
+  },
+  {
+    question: "¿El plan gratis funciona sin internet?",
+    answer:
+      "Sí. Funcionar sin conexión no es una función premium en Rosiv: en el plan gratis también sigues vendiendo cuando se cae la señal, y las ventas se sincronizan cuando vuelve.",
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Rosiv", item: new URL("/", Astro.site).toString() },
+      { "@type": "ListItem", position: 2, name: "POS gratis en Colombia", item: new URL(path, Astro.site).toString() },
+    ],
+  },
+];
+---
+
+<Layout title={title} description={description} path={path} jsonLd={jsonLd}>
+  <Navbar />
+
+  <section class="tool-hero">
+    <div class="container tool-hero-grid tool-hero-grid--single">
+      <div class="tool-hero-main">
+        <span class="status-tag live tool-hero-badge">
+          <i class="fas fa-gift" aria-hidden="true"></i>
+          No es una prueba: no se vence
+        </span>
+        <h1 class="tool-hero-title">
+          Sistema POS gratis en Colombia, para siempre y sin tarjeta
+        </h1>
+        <p class="tool-hero-subtitle">
+          Con el plan gratis de Rosiv registras ventas ilimitadas, llevas tu
+          inventario y sigues vendiendo aunque se caiga el internet, desde el
+          celular. Sin fecha de vencimiento y sin dar una tarjeta. Pagas solo
+          si un día necesitas factura electrónica DIAN.
+        </p>
+        <div class="ld-actions">
+          <a class="btn-primary" href={REGISTRO_GRATIS} target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i>
+            Empezar gratis
+          </a>
+          <a class="ld-whatsapp" href={WHATSAPP} target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            Tengo dudas, prefiero escribir por WhatsApp
+          </a>
+        </div>
+        <p class="ld-note">Sin tarjeta de crédito · Ventas ilimitadas · Funciona sin internet</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tool-explain">
+    <div class="container tool-explain-inner">
+      <h2>Qué incluye gratis y qué no</h2>
+      <p>
+        Lo decimos de entrada para que no haya sorpresas en el tercer mes:
+      </p>
+      <div class="ld-plans">
+        <article class="ld-plan ld-plan--featured">
+          <h3>Gratis</h3>
+          <p class="ld-price">$0 <span>para siempre</span></p>
+          <ul class="tool-list">
+            <li>Ventas ilimitadas</li>
+            <li>Inventario e historial de ventas</li>
+            <li>Órdenes para mesas y domicilio</li>
+            <li>Funciona sin internet y sincroniza después</li>
+          </ul>
+        </article>
+        <article class="ld-plan">
+          <h3>Starter</h3>
+          <p class="ld-price">$21.300 <span>al mes, IVA incluido</span></p>
+          <ul class="tool-list">
+            <li>Todo lo del plan Gratis</li>
+            <li>Factura electrónica DIAN</li>
+            <li>Reportes e inventario avanzado</li>
+            <li>Sincronización instantánea</li>
+          </ul>
+        </article>
+      </div>
+      <p>
+        Los planes Growth y Elite tienen las mismas funciones que Starter con
+        más capacidad de uso al mes. Mira todos los <a href="/#pricing">planes y precios</a>.
+      </p>
+
+      <h2>"Gratis" puede significar tres cosas distintas</h2>
+      <p>
+        Cuando un sistema POS dice que es gratis, casi siempre es uno de estos
+        tres modelos, y solo uno sirve a largo plazo:
+      </p>
+      <div class="ld-grid">
+        <article class="ld-card">
+          <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+          <h3>Prueba gratuita</h3>
+          <p>Te dan todo el sistema por unos días o semanas. Al terminar, pagas o dejas de usarlo, con tu inventario y tus clientes ya cargados adentro.</p>
+        </article>
+        <article class="ld-card">
+          <i class="fas fa-infinity" aria-hidden="true"></i>
+          <h3>Plan gratis permanente</h3>
+          <p>Lo usas sin límite de tiempo. Algunas funciones están en los planes pagos, pero el día a día —vender e inventariar— no se bloquea. Es el modelo de Rosiv.</p>
+        </article>
+        <article class="ld-card">
+          <i class="fas fa-eye-slash" aria-hidden="true"></i>
+          <h3>Gratis con cobro escondido</h3>
+          <p>El software no cobra, pero cobra otra cosa: cada usuario extra, cada sucursal o la pasarela de pagos. Se descubre cuando ya dependes de él.</p>
+        </article>
+      </div>
+      <p>
+        <strong>La pregunta que resuelve las tres:</strong> "¿qué pasa
+        exactamente cuando se acabe el periodo gratis, si no pago nada?". Si
+        la respuesta es "sigues usándolo con estas funciones", es un plan
+        gratis de verdad.
+      </p>
+
+      <h2>Por qué la factura electrónica casi nunca es gratis</h2>
+      <p>
+        Emitir factura electrónica en Colombia no es generar un PDF. Cada
+        factura se transmite y se valida ante la DIAN a través de un proveedor
+        tecnológico habilitado, y eso tiene un costo real por documento. Por
+        eso un plan que promete factura electrónica ilimitada y gratis para
+        siempre suele tener un tope que no está en la primera pantalla, o el
+        costo trasladado a otra parte.
+      </p>
+      <p>
+        En Rosiv la factura electrónica está en el plan Starter. Vender,
+        inventariar y ver tu historial no cuesta nada; pagas cuando empiezas a
+        facturar electrónicamente, que es donde está el costo.
+      </p>
+
+      <h3>¿Y el facturador gratuito de la DIAN?</h3>
+      <p>
+        Es gratis de verdad y emite facturas válidas, pero no es un POS: no
+        tiene catálogo de productos, no controla inventario y cada factura se
+        llena a mano, campo por campo. Sirve si facturas pocas veces al mes.
+        La comparación completa está en <a href="/blog/facturacion-dian-gratis-vs-rosiv/">el portal gratis de la DIAN frente a un sistema POS</a>.
+      </p>
+
+      <h2>Cuándo te conviene pasar a un plan pago</h2>
+      <p>
+        El plan gratis te sirve mientras no tengas que facturar
+        electrónicamente. Te toca dar el paso cuando:
+      </p>
+      <ul class="tool-list">
+        <li>Quedas obligado a facturar electrónicamente. Si estás en el Régimen Simple, lo estás sin importar cuánto vendas.</li>
+        <li>Un cliente que compra para su negocio te pide factura para soportar la compra.</li>
+        <li>Quieres reportes e inventario avanzado.</li>
+      </ul>
+      <p>
+        Ese día no migras nada: es el mismo sistema, con el mismo inventario y
+        el mismo historial, y activas la factura. Para saber si ya te toca,
+        haz el <a href="/debo-facturar-electronicamente/">test de si debes facturar electrónicamente</a>
+        o revisa los <a href="/blog/topes-para-facturar-electronicamente/">topes para facturar electrónicamente</a>.
+      </p>
+
+      <h2>Para qué negocios sirve</h2>
+      <ul class="tool-list">
+        <li>
+          <strong>Tiendas de barrio:</strong> ventas rápidas, inventario por
+          unidad e historial del día. Mira cómo funciona <a href="/pos-para-tienda-de-barrio/">Rosiv como programa para tienda de barrio</a>.
+        </li>
+        <li>
+          <strong>Restaurantes familiares:</strong> el plan gratis incluye
+          órdenes para mesas y domicilio.
+        </li>
+        <li>
+          <strong>Peluquerías:</strong> registro de ventas e historial para
+          saber cuánto entró cada día.
+        </li>
+      </ul>
+
+      <div class="ld-final">
+        <p>Empieza hoy, sin tarjeta. Si no te sirve, no pagaste nada.</p>
+        <a class="btn-primary" href={REGISTRO_GRATIS} target="_blank" rel="noopener noreferrer">
+          <i class="fas fa-arrow-right-to-bracket" aria-hidden="true"></i>
+          Empezar gratis
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <ToolFaq items={faqItems} />
+
+  <Footer />
+</Layout>

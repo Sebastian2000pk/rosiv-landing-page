@@ -1,0 +1,118 @@
+/* Landings comerciales por tipo de negocio (/pos-para-*, /pos-gratis-colombia).
+   Se apoyan en tool-page.css para el hero y las secciones de texto. */
+
+.ld-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.ld-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-purple);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ld-whatsapp:hover {
+  text-decoration: underline;
+}
+
+.ld-note {
+  margin-top: 0.9rem;
+  font-size: 0.88rem;
+  color: var(--gray-500);
+}
+
+.ld-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2.5rem;
+}
+
+.ld-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.ld-card > i {
+  color: var(--primary-purple);
+  font-size: 1.15rem;
+}
+
+.ld-card h3 {
+  font-size: 1rem;
+  margin: 0.65rem 0 0.4rem;
+  color: var(--brand-black);
+}
+
+.ld-card p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--gray-600);
+  margin: 0;
+}
+
+.ld-plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.ld-plan {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.5rem;
+  background: var(--white);
+}
+
+.ld-plan--featured {
+  border-color: var(--primary-purple);
+  background: var(--purple-50);
+}
+
+.ld-plan h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--brand-black);
+}
+
+.ld-price {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--brand-black);
+  margin: 0.35rem 0 0.75rem;
+}
+
+.ld-price span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--gray-500);
+}
+
+.ld-final {
+  margin-top: 2.5rem;
+  padding: 1.75rem;
+  border-radius: var(--radius-lg);
+  background: var(--purple-50);
+  text-align: center;
+}
+
+/* .tool-explain a pinta los enlaces de morado; el botón va en blanco */
+.ld-final .btn-primary {
+  color: var(--white);
+}
+
+.ld-final p {
+  margin: 0 0 1rem;
+  font-weight: 600;
+  color: var(--brand-black);
+}

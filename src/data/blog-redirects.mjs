@@ -23,4 +23,8 @@ export const BLOG_REDIRECTS = {
   "que-is-un-pos-y-por-que-tu-negocio-lo-necesita": "/blog/que-es-un-pos-y-para-que-sirve",
   "diferencia-cufe-cune-cude": "/blog/que-es-el-cufe-factura-electronica",
   "verificar-si-una-factura-es-real-dian": "/validar-cufe-dian",
+
+  // El post competía con la landing comercial por "pos gratis colombia" y no
+  // tenía impresiones propias: la landing absorbió su contenido (oct. 2026).
+  "sistema-pos-gratis-colombia-que-esperar": "/pos-gratis-colombia",
 };
