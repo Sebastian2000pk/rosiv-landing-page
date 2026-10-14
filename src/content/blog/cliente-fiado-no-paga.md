@@ -2,6 +2,7 @@
 title: "\"Mañana te pago\": qué hacer cuando el fiado se te volvió costumbre"
 description: "El fiado es parte de la cultura de la tienda de barrio y el restaurante familiar en Colombia. Cómo cobrarlo sin pelear con el cliente y evitar que se convierta en plata perdida."
 pubDate: 2026-08-13
+updatedDate: 2026-10-14
 keywords: "cliente fiado no paga, control de fiado tienda de barrio, cómo cobrar fiado sin pelear"
 faq:
   - question: "¿Qué hago si un cliente fiado no me paga?"
@@ -20,7 +21,7 @@ El problema no es fiar. El problema es fiar sin un sistema, porque ahí es donde
 
 Un robo se nota. Una gaseosa que se rompe se nota. El fiado que se acumula, no — porque cada fiado individual parece pequeño e inofensivo. $5.000 aquí, $12.000 allá, "después me paga". El problema no es cada fiado por separado. Es la suma que nadie está sumando.
 
-Y hay un patrón que casi todo tendero conoce pero pocos lo dicen en voz alta: **el cliente que más fía es casi siempre el que menos control tiene sobre cuánto debe.** No porque quiera hacerte trampa — porque tú tampoco llevas la cuenta exacta, así que ninguno de los dos sabe realmente cuánto es.
+Y hay un patrón frecuente: **el cliente que más fía es casi siempre el que menos control tiene sobre cuánto debe.** No porque quiera hacerte trampa — porque tú tampoco llevas la cuenta exacta, así que ninguno de los dos sabe realmente cuánto es.
 
 ## El error de fiar "de memoria" o en el cuaderno de atrás
 
@@ -39,7 +40,7 @@ Ahí es donde el fiado deja de ser un favor entre vecinos y se convierte en una 
 3. **Muéstrale el número, no se lo digas de memoria.** "Debes $47.000" genera dudas si sale de tu cabeza. Un registro con fecha y detalle de cada fiado no se discute — se ve.
 4. **Cobra por costumbre, no por necesidad.** Si solo le recuerdas al cliente cuando ya te urge la plata, se siente como que estás desesperado. Si tienes una rutina fija de repaso de cuentas, se siente como algo normal del negocio.
 
-## Lo que de verdad evita que el fiado se vuelva costumbre
+## Lo que evita que el fiado se vuelva costumbre
 
 No es dejar de fiar — eso rompe la relación con el cliente y con el barrio. Es tener siempre a la mano, sin esfuerzo, la respuesta a dos preguntas: ¿quién me debe y cuánto? El día que esa respuesta está clara al instante, cobrar deja de sentirse como una acusación y empieza a sentirse como mostrarle a alguien un dato.
 
@@ -47,8 +48,8 @@ No es dejar de fiar — eso rompe la relación con el cliente y con el barrio. E
 
 No necesitas esperar a resolverlo todo de una vez. Puedes empezar a reemplazar el cuaderno hoy con [control de fiados](/calculadora-control-de-fiados/): registras cliente, monto y fecha, y te muestra un semáforo de quién debe más y quién lleva más tiempo sin pagar — pensada para abrirla cada día, no para usarla una sola vez.
 
-## Cómo ayuda Rosiv mientras tanto
+## Dónde encaja Rosiv
 
-Rosiv ya registra cada venta y cada cierre de caja en el momento en que pasa, así que el dinero que sí cobraste queda claro sin cuadernos ni memoria — eso saca al fiado de la mezcla y facilita ver qué parte de tus ventas del día fue plata real y cuál quedó pendiente. El control de cuentas por cliente y fiado dedicado está en el radar de lo que viene, para llevar esto mismo hasta el último detalle.
+Para las cuentas de fiado por cliente, usa el control de fiados de arriba. Rosiv se encarga de la otra mitad: registra cada venta en el momento, con su historial, así la plata que sí cobraste queda clara y el fiado deja de mezclarse con la caja del día.
 
-Si quieres empezar a ordenar la caja mientras tanto, puedes [empezar gratis con Rosiv](https://web.rosivhub.com) y tener ese control desde el primer cierre del día.
+Si quieres ordenar las ventas, [empieza gratis](https://web.rosivhub.com).

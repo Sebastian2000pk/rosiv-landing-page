@@ -9,7 +9,7 @@ faq:
   - question: "¿Qué es una comanda en un restaurante?"
     answer: "La comanda es el pedido que el mesero toma en la mesa y que va a la cocina para que se prepare. Tradicionalmente se escribe en un papel que se lleva físicamente a la cocina; en un sistema digital, la comanda se envía apenas se toma el pedido y queda registrada en la cuenta de la mesa automáticamente."
   - question: "¿Por qué se pierden pedidos en un restaurante?"
-    answer: "Casi siempre por la misma cadena: el mesero anota en un papel, el papel se traspapela o se moja, la cocina prepara algo distinto a lo pedido, o el plato nunca se cobra porque no quedó registrado en la cuenta. En hora pico, cuando más plata se mueve, es cuando más falla el método del papel."
+    answer: "Casi siempre por la misma cadena: el mesero anota en un papel, el papel se traspapela o se moja, la cocina prepara algo distinto a lo pedido, o el plato nunca se cobra porque no quedó registrado en la cuenta. Con el local lleno, cuando más plata se mueve, es cuando más falla el método del papel."
   - question: "¿Sirve un sistema POS para manejar mesas y comandas?"
     answer: "Sí, siempre que maneje cuentas por mesa y no solo ventas de mostrador. Un POS pensado para restaurante debe permitir abrir una mesa, ir agregando platos, dividir la cuenta si hace falta, y cerrar cobrando lo que realmente se consumió — todo sin que el mesero tenga que sumar de memoria."
 ---
@@ -33,9 +33,9 @@ Cada una de estas parece un caso aislado. La suma al mes es la que duele.
 
 El método manual tiene un problema estructural: **funciona bien cuando hay poco movimiento y se rompe exactamente cuando hay mucho.** Es decir, falla en la hora que más factura tu restaurante.
 
-En hora pico el mesero no tiene tiempo de escribir claro, la cocina no tiene tiempo de preguntar, y nadie tiene tiempo de revisar si la cuenta quedó completa. Todo el sistema depende de que tres personas distintas recuerden lo mismo, al mismo tiempo, bajo presión.
+Con el local lleno, el mesero no tiene tiempo de escribir claro, la cocina no tiene tiempo de preguntar, y nadie tiene tiempo de revisar si la cuenta quedó completa. Todo el sistema depende de que tres personas distintas recuerden lo mismo, al mismo tiempo, bajo presión.
 
-## Qué debe hacer un sistema de comandas de verdad
+## Qué debe hacer un sistema de comandas
 
 No se trata de tener una pantalla bonita. Un sistema de mesas y comandas útil para un restaurante en Colombia tiene que resolver esto:
 
@@ -54,6 +54,6 @@ Si tu sistema no maneja cuentas abiertas por mesa, vas a terminar haciendo lo mi
 
 ## Cómo lo resuelve Rosiv
 
-Rosiv maneja cuentas por mesa desde el celular: abres la mesa, vas agregando lo que piden durante toda la comida, y al cerrar cobras exactamente lo que se consumió — con la factura electrónica DIAN generada desde ahí mismo, sin volver a digitar nada. Y sigue funcionando aunque se caiga el internet, que es justo cuando no te puedes dar el lujo de parar.
+Rosiv maneja cuentas por mesa desde el celular: abres la mesa, agregas lo que piden y al cerrar cobras lo consumido, con la factura electrónica DIAN (desde el plan Starter) generada desde ahí. Sin conexión sigue funcionando y sincroniza después.
 
-Mira [cómo funciona Rosiv en un restaurante](/pos-para-restaurantes/) y pruébalo gratis en el próximo servicio.
+Mira [cómo funciona Rosiv en un restaurante](/pos-para-restaurantes/).
