@@ -219,8 +219,10 @@
 }
 
 @media (max-width: 900px) {
+  /* minmax(0, …) y no 1fr: 1fr no se achica por debajo del contenido más
+     ancho de la columna y empujaba la página unos píxeles de lado en móvil. */
   .tool-hero-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .tool-side {

@@ -258,7 +258,7 @@ const jsonLd = [
     body="Esto es solo para revisar facturas que ya existen. Lo siguiente es que tú generes las tuyas sin pensar en códigos ni formatos: Rosiv crea el CUFE automáticamente en cada venta y lo reporta a la DIAN por ti."
     features={[
       { icon: "fas fa-file-invoice-dollar", label: "Factura electrónica DIAN incluida" },
-      { icon: "fas fa-wifi-slash", label: "Funciona con o sin internet" },
+      { icon: "fas fa-plane", label: "Funciona con o sin internet" },
       { icon: "fas fa-bolt", label: "Cobra en segundos desde el celular" },
     ]}
   />
@@ -511,7 +511,7 @@ const jsonLd = [
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    color: var(--light-purple);
+    color: var(--purple-200); /* sobre la consola oscura; --light-purple daba 3.9:1 */
     margin-bottom: 0.55rem;
   }
 
