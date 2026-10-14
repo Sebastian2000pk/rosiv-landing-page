@@ -1,81 +1,74 @@
 ---
 title: "Documento equivalente POS vs factura electrónica: cuál te toca emitir"
-description: "La diferencia entre el documento equivalente electrónico del sistema POS y la factura electrónica de venta, cuándo sirve cada uno y por qué el tiquete POS tiene un límite que casi nadie conoce."
+description: "La diferencia entre el documento equivalente electrónico tiquete POS y la factura electrónica de venta, cuándo le sirve el tiquete al comprador para sus impuestos y por qué el límite de 5 UVT ya solo aplica al tiquete en papel."
 pubDate: 2026-09-05
+updatedDate: 2026-10-14
 keywords: "documento equivalente electrónico POS, tiquete POS o factura electrónica, diferencia factura electrónica y documento equivalente, documento equivalente POS DIAN, cuándo emitir factura electrónica"
 faq:
   - question: "¿Cuál es la diferencia entre el documento equivalente POS y la factura electrónica?"
-    answer: "El documento equivalente electrónico del sistema POS es el tiquete que se emite en ventas rápidas de bajo valor directamente al consumidor final. La factura electrónica de venta es el documento completo, que identifica al adquiriente y es el único que le sirve al comprador para soportar costos, deducciones o descontar IVA."
+    answer: "Los dos son documentos electrónicos que se reportan a la DIAN. El documento equivalente electrónico tiquete POS está pensado para la venta de mostrador; la factura electrónica de venta es el documento general para cualquier operación. Hoy el tiquete POS electrónico no tiene tope de valor y, si identifica al comprador con su nombre y su número de identificación, también le sirve para soportar costos, deducciones e IVA descontable."
   - question: "¿El tiquete POS sirve para descontar impuestos?"
-    answer: "No. El documento equivalente POS no da derecho a que el comprador soporte costos, deducciones ni impuestos descontables. Por eso, cuando el cliente necesita ese soporte, tiene derecho a exigir factura electrónica de venta y el negocio está obligado a expedírsela."
-  - question: "¿Puedo emitir siempre tiquete POS en mi restaurante?"
-    answer: "Solo mientras la venta esté dentro del tope permitido para el documento equivalente POS y el cliente no exija factura. Si el cliente pide factura electrónica de venta, debes emitirla, sin importar el monto. Muchos negocios pierden clientes empresariales por no poder hacerlo."
-  - question: "¿Qué pasa si emito el documento equivocado?"
-    answer: "El principal riesgo es dejar al cliente sin un soporte válido para sus impuestos y quedar expuesto a sanciones por no expedir el documento que correspondía. En la práctica también afecta las ventas: un cliente que necesita factura y no la recibe, no vuelve."
+    answer: "Depende de cuál. El documento equivalente electrónico tiquete POS sí da derecho a costos, deducciones e IVA descontable (Resolución DIAN 000165 de 2023 y Concepto DIAN 20900 de 2024), siempre que identifique al comprador: si sale a nombre de 'consumidor final', no le sirve como soporte. El tiquete POS físico, el de papel, no da ese derecho y solo se puede usar en ventas de hasta 5 UVT."
+  - question: "¿El documento equivalente POS tiene un tope de valor?"
+    answer: "El electrónico no: se puede expedir sin importar el valor de la venta. El tope de 5 UVT por venta es del tiquete POS físico (artículo 616-1 del Estatuto Tributario), que con la llegada del documento equivalente electrónico quedó como algo marginal."
+  - question: "¿Qué hago si el cliente necesita el documento para su contabilidad?"
+    answer: "Pídele su nombre o razón social y su NIT o cédula, y emite el documento a su nombre: un tiquete POS electrónico con sus datos o una factura electrónica de venta. Lo que no le sirve es un documento a nombre de 'consumidor final'. Si tienes dudas sobre cuál expedir en tu caso, confírmalo con tu contador."
 ---
 
-Hay dos documentos distintos y mucha gente los usa como si fueran lo mismo. La confusión es entendible — los dos salen del mismo sistema y al cliente le llegan por el mismo canal — pero legalmente cumplen funciones diferentes.
+Hay dos documentos que mucha gente confunde: el **documento equivalente electrónico tiquete POS** y la **factura electrónica de venta**. Los dos salen del sistema de caja y los dos se reportan a la DIAN, pero no son iguales. Y buena parte de lo que circula sobre el tiquete POS ("no sirve para descontar", "solo hasta cierto monto") se refiere al tiquete en papel de antes, no al electrónico de ahora.
 
-Entender cuál te toca emitir evita dos problemas: sanciones y clientes perdidos.
+## Primero: hay dos tiquetes POS, no uno
 
-## El documento equivalente electrónico POS
+Desde la Resolución DIAN 000165 de 2023 (modificada en 2024 y hoy compilada en la Resolución 000227 de 2025) conviven dos cosas con el mismo nombre:
 
-Es el tiquete de la caja registradora, en versión electrónica. Está pensado para el escenario más común del comercio al detal: **venta rápida, de bajo valor, a un consumidor final que no necesita soporte tributario.**
+- **El tiquete POS físico**, el de papel de la máquina registradora. Lo regula el parágrafo 2 del artículo 616-1 del Estatuto Tributario: solo sirve para ventas de hasta **5 UVT** y **no** le da al comprador derecho a costos, deducciones ni IVA descontable. Con la llegada del documento electrónico quedó como algo marginal.
+- **El documento equivalente electrónico tiquete POS**, el que expiden hoy los sistemas de caja que facturan electrónicamente. Se transmite a la DIAN, igual que la factura.
 
-El cliente que compra una gaseosa, un almuerzo o un corte de pelo normalmente no va a descontar eso de nada. Para él, el tiquete es suficiente como comprobante de la compra.
+Casi todo lo que vas a leer sobre "el límite del POS" habla del primero.
 
-**La limitación clave:** el documento equivalente POS **no le sirve al comprador para soportar costos, deducciones ni impuestos descontables.** Es un comprobante de venta, no un soporte tributario.
+## El tiquete POS electrónico: qué permite
+
+La DIAN lo aclaró en el Concepto 20900 de 2024: el documento equivalente electrónico tiquete POS **se puede expedir sin importar el valor de la venta** y **sí le da al comprador derecho a costos, deducciones e IVA descontable**.
+
+La condición práctica está en los requisitos del documento: para que le sirva al comprador como soporte, el tiquete tiene que **identificarlo con su nombre o razón social y su número de identificación**. Si sale a nombre de "consumidor final" (o con el número genérico 222222222222), no le sirve para sus impuestos.
+
+Para la venta de todos los días —la gaseosa, el almuerzo, el corte de pelo— el tiquete a consumidor final es suficiente. Con el cliente que va a usar la compra en su contabilidad, lo que cambia es que tienes que tomar sus datos.
 
 ## La factura electrónica de venta
 
-Es el documento completo. Identifica al adquiriente (nombre, NIT), detalla la operación, y es el único que le permite al comprador usar esa compra en su contabilidad y sus impuestos.
+Es el documento general: identifica al comprador, detalla la operación y vale para cualquier tipo de venta. Hay negocios que prefieren no usar el documento equivalente y facturar electrónicamente todas sus ventas; la norma lo permite.
 
-Y aquí está lo importante para tu negocio: **si el cliente exige factura electrónica de venta, estás obligado a expedirla** — sin importar que la venta sea pequeña o que normalmente emitas tiquete.
+Si tu negocio está obligado a facturar, la pregunta no es si emites o no, sino cuál de los dos documentos electrónicos usas en cada venta. Si no tienes claro si estás obligado, revisa [los topes para facturar electrónicamente](/blog/topes-para-facturar-electronicamente/).
 
-## Por qué esto se volvió un problema de ventas, no solo tributario
+## Por qué esto importa para tus ventas
 
-Piensa en estos casos, todos reales en un restaurante:
+Piensa en estos clientes de un restaurante:
 
-- La empresa de al lado pide almuerzos para el equipo y necesita factura para descontarlo.
-- Un cliente viene por trabajo y necesita el soporte para su reembolso de viáticos.
-- Un contratista independiente almuerza ahí a diario y quiere deducirlo.
+- La empresa de al lado pide almuerzos para el equipo y necesita el soporte para su contabilidad.
+- Alguien que viene por trabajo y necesita el documento para su reembolso de viáticos.
+- Un contratista independiente que almuerza ahí a diario y quiere deducirlo.
 
-Si tu sistema solo emite tiquete POS y no puedes darle factura electrónica, esos clientes no vuelven. No por mal servicio: porque el de la esquina sí se la da.
-
-**El documento equivalente no es "la versión fácil" de la factura.** Es un documento para otro tipo de venta. Y un negocio que solo puede emitir uno de los dos está limitado a la mitad de sus clientes potenciales.
+A los tres les sirve un documento a su nombre. Si tu sistema solo saca tiquetes a "consumidor final" y no te deja poner los datos del cliente, esos clientes se van a buscar a quien sí se los dé.
 
 ## Cómo decidir en la práctica
 
-La regla operativa es simple:
-
-1. **Venta rápida, consumidor final, no pide nada** → documento equivalente POS.
-2. **El cliente pide factura** → factura electrónica de venta, siempre. Sin discutir el monto.
-3. **Cliente empresarial o que va a descontar** → factura electrónica de venta, aunque no la pida explícitamente conviene ofrecerla.
-4. **Duda** → factura electrónica de venta. Nunca sobra; el tiquete sí puede faltar.
+1. **Venta rápida, el cliente no pide nada** → tiquete POS electrónico a consumidor final.
+2. **El cliente necesita el soporte para sus impuestos** → documento a su nombre: tiquete POS electrónico con sus datos o factura electrónica de venta.
+3. **Cliente empresarial frecuente** → ofrécele el documento a su nombre aunque no lo pida.
+4. **Duda sobre cuál expedir en tu caso** → pregúntale a tu contador: las reglas del documento equivalente han tenido varios ajustes desde 2023.
 
 ## Lo que debe poder hacer tu sistema
 
-Esto es lo que separa un sistema que te sirve de uno que te limita:
-
-- **Emitir los dos documentos**, no solo uno.
-- **Cambiar de uno a otro en el momento del cobro**, sin rehacer la venta. Si el cliente pide factura cuando ya ibas a cerrar, no deberías tener que empezar de cero.
-- **Capturar los datos del adquiriente rápido** cuando toca factura, sin que se vuelva un trámite de tres minutos con la fila esperando.
-- **Guardar el cliente frecuente**, para que el que siempre pide factura no tenga que dictar el NIT cada vez.
-
-Ese último punto parece menor y es el que más tiempo ahorra en un negocio con clientes empresariales recurrentes.
-
-## El error de elegir sistema por el precio del plan básico
-
-Muchos sistemas cobran la facturación electrónica de venta como un plan aparte, más caro, y dejan solo el tiquete POS en el plan de entrada. Funciona hasta el día en que llega el primer cliente que necesita factura.
-
-Vale la pena revisar eso antes de decidir, no después.
+- **Poner los datos del comprador en el momento del cobro**, sin rehacer la venta.
+- **Hacerlo rápido**, para que tomar un NIT no se vuelva un trámite con la fila esperando.
+- **Recordar al cliente frecuente**, para que no tenga que dictar sus datos cada vez.
 
 ## Cómo lo resuelve Rosiv
 
-Rosiv emite documento equivalente POS y factura electrónica DIAN desde el mismo flujo de cobro: si el cliente pide factura, capturas sus datos ahí mismo sin rehacer la venta, y los clientes frecuentes quedan guardados para la próxima. Todo desde el celular, con o sin internet.
+Rosiv emite factura electrónica válida ante la DIAN desde la misma venta, a través de un proveedor tecnológico habilitado que ya viene integrado. La facturación está incluida desde el plan Starter.
 
-Puedes [empezar gratis con Rosiv](https://web.rosivhub.com) y activar la facturación electrónica DIAN cuando la necesites.
+Puedes [empezar gratis con Rosiv](https://web.rosivhub.com) y activar la facturación electrónica cuando la necesites.
 
 ---
 
-*Este contenido es informativo y no reemplaza asesoría tributaria. Verifica la normativa vigente de la DIAN aplicable a tu régimen y actividad.*
+*Este contenido es informativo y no reemplaza asesoría tributaria. Las reglas del documento equivalente electrónico han tenido modificaciones desde 2023: confirma con tu contador o en el [normograma de la DIAN](https://normograma.dian.gov.co/) la norma vigente para tu caso.*

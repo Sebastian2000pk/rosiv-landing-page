@@ -17,12 +17,12 @@ const faqItems = [
   {
     question: "¿Quién está obligado a facturar electrónicamente en Colombia en 2026?",
     answer:
-      "Están obligados los responsables de IVA, los responsables del impuesto al consumo, quienes pertenecen al Régimen Simple de Tributación sin importar sus ingresos, y las personas naturales comerciantes que superen los 3.500 UVT de ingresos brutos anuales. También aplica a quienes ya venían facturando electrónicamente por decisión propia o de un cliente.",
+      "La regla general es que quien vende bienes o presta servicios debe facturar. Están obligados las personas jurídicas, los responsables de IVA, los responsables del impuesto al consumo y quienes pertenecen al Régimen Simple de Tributación, sin importar sus ingresos. La excepción principal son las personas naturales que cumplen todas las condiciones para ser no responsables de IVA (artículo 437 del Estatuto Tributario): ingresos brutos inferiores a 3.500 UVT en el año anterior y en el año en curso, un solo establecimiento, sin franquicias, no ser usuario aduanero, sin contratos ni consignaciones de 3.500 UVT o más, y no estar en el Régimen Simple.",
   },
   {
     question: "¿Un negocio pequeño con pocas ventas debe facturar electrónicamente?",
     answer:
-      "Depende de su régimen tributario, no solo del tamaño. Si el negocio está inscrito en el Régimen Simple o es responsable de IVA, debe facturar electrónicamente sin importar cuánto venda. Si es una persona natural no responsable de IVA con ingresos bajos, puede que todavía no esté obligada, pero conviene revisarlo cada año porque los topes y reglas cambian.",
+      "Depende de su régimen y de sus condiciones, no solo del tamaño. Si el negocio está inscrito en el Régimen Simple o es responsable de IVA o de impuesto al consumo, debe facturar electrónicamente sin importar cuánto venda. Si es una persona natural que cumple todas las condiciones para ser no responsable de IVA, por regla general no está obligada; pero basta con incumplir una, por ejemplo abrir un segundo local, para quedar obligada. Conviene revisarlo cada año, porque el valor de la UVT cambia.",
   },
   {
     question: "¿Qué pasa si estoy obligado a facturar electrónicamente y no lo hago?",
@@ -32,12 +32,12 @@ const faqItems = [
   {
     question: "¿La factura POS reemplaza a la factura electrónica?",
     answer:
-      "No completamente. El documento equivalente POS solo se puede usar hasta cierto monto por transacción (definido en UVT); por encima de ese valor, o si el cliente lo solicita, debes expedir factura electrónica. La DIAN ha venido restringiendo cada vez más el uso del POS como sustituto de la factura electrónica.",
+      "Depende de cuál POS. El documento equivalente electrónico tiquete POS es un documento electrónico válido ante la DIAN: se puede expedir sin importar el valor de la venta y, si identifica al comprador, le da derecho a costos, deducciones e IVA descontable (Resolución DIAN 000165 de 2023 y Concepto DIAN 20900 de 2024). El tiquete POS físico, el de papel, sí tiene un tope de 5 UVT por venta y no da esos derechos. Ninguno de los dos te exime de la obligación de facturar: el documento equivalente es otra forma de cumplirla. Confirma con tu contador cuál te conviene expedir.",
   },
   {
     question: "¿Cuáles son los topes exactos para facturar electrónicamente?",
     answer:
-      "Si perteneces al Régimen Simple o eres responsable de IVA o de impuesto al consumo, no hay tope: estás obligado desde el primer peso vendido. Si eres persona natural comerciante no responsable de IVA, el tope es 3.500 UVT de ingresos brutos anuales. El documento equivalente POS tiene además su propio tope por transacción, medido en UVT.",
+      "Si perteneces al Régimen Simple o eres responsable de IVA o de impuesto al consumo, no hay tope: estás obligado desde el primer peso vendido. Si eres persona natural, el tope de ingresos para ser no responsable de IVA es de 3.500 UVT, medido en el año anterior y en el año en curso: $174.296.500 en 2025 (UVT de $49.799) y $183.309.000 en 2026 (UVT de $52.374). Además del tope, tienes que cumplir las demás condiciones del artículo 437 del Estatuto Tributario.",
   },
 ];
 
@@ -108,7 +108,7 @@ const jsonLd = [
               <h2 class="qz-question">¿A qué régimen tributario pertenece tu negocio?</h2>
               <div class="qz-options">
                 <button type="button" class="qz-option" data-q="1" data-value="simple">Régimen Simple de Tributación</button>
-                <button type="button" class="qz-option" data-q="1" data-value="responsable-iva">Régimen ordinario, responsable de IVA</button>
+                <button type="button" class="qz-option" data-q="1" data-value="responsable-iva">Responsable de IVA o de impuesto al consumo, o soy una empresa (persona jurídica)</button>
                 <button type="button" class="qz-option" data-q="1" data-value="no-responsable">Persona natural, no responsable de IVA</button>
                 <button type="button" class="qz-option" data-q="1" data-value="no-se">No estoy seguro</button>
               </div>
@@ -116,20 +116,23 @@ const jsonLd = [
 
             <div class="qz-step" data-step="2">
               <p class="qz-step-label">Pregunta 2 de 3</p>
-              <h2 class="qz-question">¿Cuánto vendió tu negocio el año pasado, aproximadamente?</h2>
+              <h2 class="qz-question">¿Tus ingresos brutos pasaron de 3.500 UVT el año pasado o en lo que va de este año?</h2>
+              <p class="qz-hint">3.500 UVT son $174.296.500 en 2025 y $183.309.000 en 2026. Cuenta todo lo que vendiste, no lo que te quedó.</p>
               <div class="qz-options">
-                <button type="button" class="qz-option" data-q="2" data-value="alto">Más de $180.000.000 al año</button>
-                <button type="button" class="qz-option" data-q="2" data-value="bajo">Menos de $180.000.000 al año</button>
+                <button type="button" class="qz-option" data-q="2" data-value="alto">Sí, en 2025 o en lo que va de 2026</button>
+                <button type="button" class="qz-option" data-q="2" data-value="bajo">No, estuve por debajo en los dos años</button>
                 <button type="button" class="qz-option" data-q="2" data-value="no-se">No estoy seguro</button>
               </div>
             </div>
 
             <div class="qz-step" data-step="3">
               <p class="qz-step-label">Pregunta 3 de 3</p>
-              <h2 class="qz-question">¿Algún cliente o proveedor ya te ha pedido factura electrónica?</h2>
+              <h2 class="qz-question">¿Te aplica alguna de estas situaciones?</h2>
+              <p class="qz-hint">Más de un local o negocio, operar con franquicia o concesión, ser usuario aduanero, o haber firmado un contrato o recibido consignaciones por 3.500 UVT o más (en 2025 o en 2026).</p>
               <div class="qz-options">
-                <button type="button" class="qz-option" data-q="3" data-value="si">Sí, ya me la han pedido</button>
-                <button type="button" class="qz-option" data-q="3" data-value="no">No, todavía no</button>
+                <button type="button" class="qz-option" data-q="3" data-value="si">Sí, al menos una</button>
+                <button type="button" class="qz-option" data-q="3" data-value="no">No, ninguna</button>
+                <button type="button" class="qz-option" data-q="3" data-value="no-se">No estoy seguro</button>
               </div>
             </div>
           </div>
@@ -176,45 +179,51 @@ const jsonLd = [
         tamaño del negocio, sino principalmente de tu
         <strong>régimen tributario</strong>. Si estás inscrito en el
         Régimen Simple de Tributación, estás obligado sin importar cuánto
-        vendas. Si eres responsable de IVA o de impuesto al consumo, también
+        vendas, aunque no cobres IVA. Si eres responsable de IVA o de
+        impuesto al consumo, o si tu negocio es una persona jurídica, también
         aplica para ti.
       </p>
       <p>
-        Si eres persona natural comerciante y no eres responsable de IVA, la
-        obligación depende de tus ingresos brutos anuales: el umbral de
-        referencia son <strong>3.500 UVT</strong>. Este valor cambia cada
-        año porque la UVT se actualiza, así que conviene revisarlo cada
-        enero.
+        Si eres persona natural, por regla general no estás obligado solo si
+        cumples <strong>todas</strong> las condiciones para ser no responsable
+        de IVA: ingresos brutos inferiores a <strong>3.500 UVT</strong> en el
+        año anterior y en el año en curso, un solo local o negocio, sin
+        franquicias, no ser usuario aduanero, sin contratos ni consignaciones
+        de 3.500 UVT o más y no estar en el Régimen Simple. Las 3.500 UVT no
+        cambian; su valor en pesos sí, porque la UVT se actualiza cada enero.
       </p>
 
-      <h3>La factura POS no siempre es suficiente</h3>
+      <h3>El tiquete POS: físico o electrónico</h3>
       <p>
-        Muchos negocios pequeños usan el documento equivalente POS pensando
-        que los exime de facturar electrónicamente. La realidad es que el
-        POS solo se puede usar hasta cierto monto por venta, y la DIAN ha
-        venido restringiendo su uso cada vez más. Si tu negocio ya está
-        obligado a facturar electrónicamente por régimen, el POS no
-        reemplaza esa obligación para ventas que superen el límite.
+        El documento equivalente POS no te exime de facturar: es otra forma
+        de cumplir esa obligación. Hoy existen dos. El
+        <strong>documento equivalente electrónico tiquete POS</strong> se
+        transmite a la DIAN, se puede expedir sin importar el valor de la
+        venta y, si identifica al comprador con su nombre y su número de
+        identificación, le sirve para costos, deducciones e IVA descontable
+        (Concepto DIAN 20900 de 2024). El <strong>tiquete POS físico</strong>,
+        el de papel, solo sirve para ventas de hasta 5 UVT y no da esos
+        derechos. La diferencia completa está en <a href="/blog/documento-equivalente-pos-vs-factura-electronica/">documento equivalente POS vs. factura electrónica</a>.
       </p>
 
       <h3>Los topes exactos para facturar electrónicamente</h3>
       <ul class="tool-list">
         <li><strong>Régimen Simple de Tributación:</strong> sin tope de ingresos — obligado desde el primer peso vendido.</li>
         <li><strong>Responsable de IVA o de impuesto al consumo:</strong> sin tope de ingresos — obligado sin importar cuánto factures.</li>
-        <li><strong>Persona natural comerciante, no responsable de IVA:</strong> tope de <strong>3.500 UVT</strong> de ingresos brutos anuales. Por debajo de ese tope, generalmente no estás obligado (aunque puedes facturar electrónicamente por decisión propia).</li>
-        <li><strong>Documento equivalente POS:</strong> tiene su propio tope por transacción, definido en UVT — superarlo obliga a expedir factura electrónica aunque tu negocio use POS para el resto de ventas.</li>
+        <li><strong>Persona natural no responsable de IVA:</strong> ingresos brutos inferiores a <strong>3.500 UVT</strong> en el año anterior y en el año en curso: $174.296.500 en 2025 (UVT de $49.799) y $183.309.000 en 2026 (UVT de $52.374), además de las demás condiciones. Si las cumples todas, por regla general no estás obligado (aunque puedes facturar electrónicamente por decisión propia).</li>
+        <li><strong>Tiquete POS físico:</strong> solo para ventas de hasta 5 UVT. El documento equivalente electrónico tiquete POS no tiene ese tope.</li>
       </ul>
       <p>
         Estos topes se miden en UVT, no en pesos fijos, porque la UVT se
-        actualiza cada año. Si quieres el valor exacto de la UVT vigente y
-        cómo se traduce a pesos, revisa la <a href="/blog/tabla-regimen-simple-tienda-restaurante/">tabla de tarifas del Régimen Simple 2026</a>.
+        actualiza cada año. El detalle de cada condición está en <a href="/blog/topes-para-facturar-electronicamente/">los topes para facturar electrónicamente</a>.
       </p>
 
       <h3>Qué hacer si el test te dice que ya estás obligado</h3>
       <ul class="tool-list">
         <li>Confirma tu situación puntual con tu contador antes de tomar decisiones.</li>
-        <li>Solicita tu resolución de facturación electrónica ante la DIAN si aún no la tienes.</li>
-        <li>Elige un sistema de facturación autorizado que se conecte con tus ventas del día a día.</li>
+        <li>Revisa que tu RUT tenga el régimen y las responsabilidades correctas.</li>
+        <li>Habilítate como facturador electrónico en el portal de la DIAN y solicita la numeración autorizada. Los pasos están en <a href="/blog/facturar-electronicamente-tienda-de-barrio/">cómo empezar a facturar electrónicamente en tu negocio</a>.</li>
+        <li>Elige cómo vas a facturar: el servicio gratuito de la DIAN o un sistema con proveedor tecnológico que se conecte con tus ventas del día a día.</li>
         <li>Empieza a facturar electrónicamente cuanto antes: entre más esperes, más facturas quedan sin soporte válido.</li>
       </ul>
     </div>
@@ -226,7 +235,7 @@ const jsonLd = [
 
   <ToolUpsell
     heading="¿Ya sabes que te toca facturar electrónicamente?"
-    body="No necesitas volverte experto en normas DIAN. Rosiv genera tu factura electrónica automáticamente desde el mismo sistema donde cobras, con la resolución y el software ya autorizados."
+    body="No necesitas volverte experto en normas DIAN. Desde el plan Starter, Rosiv emite tu factura electrónica desde el mismo sistema donde cobras, a través de un proveedor tecnológico habilitado que ya viene integrado."
     features={[
       { icon: "fas fa-file-invoice-dollar", label: "Factura electrónica DIAN incluida" },
       { icon: "fas fa-plane", label: "Funciona con o sin internet" },
@@ -272,15 +281,7 @@ const jsonLd = [
     if (q1 === "responsable-iva") {
       return {
         title: "Sí, estás obligado a facturar electrónicamente",
-        text: "Al ser responsable de IVA, la DIAN te exige expedir factura electrónica en tus ventas gravadas.",
-        obligated: true,
-      };
-    }
-
-    if (q3 === "si") {
-      return {
-        title: "Es muy probable que ya estés obligado",
-        text: "Si un cliente o proveedor ya te pidió factura electrónica, generalmente es porque tu operación lo exige. Confírmalo con tu contador para estar seguro.",
+        text: "Si eres responsable de IVA o de impuesto al consumo, o tu negocio es una persona jurídica, debes expedir factura electrónica (o documento equivalente electrónico) en tus ventas, sin importar cuánto vendas.",
         obligated: true,
       };
     }
@@ -288,12 +289,20 @@ const jsonLd = [
     if (q2 === "alto") {
       return {
         title: "Es muy probable que ya estés obligado",
-        text: "Superar los 3.500 UVT de ingresos brutos anuales como persona natural comerciante te pone dentro del grupo obligado a facturar electrónicamente.",
+        text: "Si tus ingresos brutos pasaron de 3.500 UVT en el año anterior o en el año en curso, no cumples las condiciones para ser no responsable de IVA, y como responsable de IVA debes facturar electrónicamente. Confírmalo con tu contador.",
         obligated: true,
       };
     }
 
-    if (q1 === "no-se" || q2 === "no-se") {
+    if (q3 === "si") {
+      return {
+        title: "Es muy probable que ya estés obligado",
+        text: "Para ser no responsable de IVA hay que cumplir todas las condiciones a la vez. Tener más de un local, operar con franquicia, ser usuario aduanero o tener contratos o consignaciones de 3.500 UVT o más te hace responsable de IVA, y por tanto obligado a facturar, aunque vendas poco. Confírmalo con tu contador.",
+        obligated: true,
+      };
+    }
+
+    if (q1 === "no-se" || q2 === "no-se" || q3 === "no-se") {
       return {
         title: "No estamos seguros con la información que diste",
         text: "Con datos más precisos sobre tu régimen tributario e ingresos anuales podemos darte una respuesta más clara. Te recomendamos confirmarlo con tu contador o en el portal de la DIAN.",
@@ -303,7 +312,7 @@ const jsonLd = [
 
     return {
       title: "Por ahora no estarías obligado",
-      text: "Con lo que nos cuentas, no entrarías todavía en los grupos obligados a facturar electrónicamente. Aun así, revísalo cada año: los topes de ingresos cambian y tu situación también puede cambiar.",
+      text: "Con lo que nos cuentas, cumplirías las condiciones para ser no responsable de IVA y, por regla general, no estarías obligado a facturar electrónicamente. Revísalo cada año con tu contador: el valor de la UVT cambia, y tu situación también (por ejemplo, si abres otro local o te inscribes en el Régimen Simple).",
       obligated: false,
     };
   }
@@ -391,6 +400,13 @@ const jsonLd = [
     color: var(--brand-black);
     margin-bottom: 0.9rem;
     line-height: 1.3;
+  }
+
+  .qz-hint {
+    color: var(--gray-600);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: -0.4rem 0 0.9rem;
   }
 
   .qz-options {
