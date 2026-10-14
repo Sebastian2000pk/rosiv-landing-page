@@ -37,14 +37,24 @@ const jsonLd = [
     dateModified: (updatedDate ?? pubDate).toISOString(),
     inLanguage: "es-CO",
     articleSection: "Facturación electrónica y punto de venta en Colombia",
+    image: {
+      "@type": "ImageObject",
+      url: "https://rosivhub.com/og-image.jpg",
+      width: 1200,
+      height: 630,
+    },
+    // Misma entidad que el Organization de la home (src/pages/index.astro).
     author: {
       "@type": "Organization",
+      "@id": "https://rosivhub.com/#organization",
       name: "Rosiv",
-      url: "https://rosivhub.com",
+      url: "https://rosivhub.com/",
     },
     publisher: {
       "@type": "Organization",
+      "@id": "https://rosivhub.com/#organization",
       name: "Rosiv",
+      url: "https://rosivhub.com/",
       logo: {
         "@type": "ImageObject",
         url: "https://rosivhub.com/icon-512x512.png",

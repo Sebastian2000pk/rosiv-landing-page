@@ -13,6 +13,26 @@ const description =
 
 const blogURL = new URL("/blog/", Astro.site).toString();
 
+// Misma entidad que el Organization de la home (src/pages/index.astro).
+const organization = {
+  "@type": "Organization",
+  "@id": "https://rosivhub.com/#organization",
+  name: "Rosiv",
+  url: new URL("/", Astro.site).toString(),
+  logo: {
+    "@type": "ImageObject",
+    url: new URL("/icon-512x512.png", Astro.site).toString(),
+  },
+};
+
+// Todos los posts comparten la og-image (BlogPost.astro no pasa otra al Layout).
+const postImage = {
+  "@type": "ImageObject",
+  url: new URL("/og-image.jpg", Astro.site).toString(),
+  width: 1200,
+  height: 630,
+};
+
 // El índice del blog era la única página del sitio sin datos estructurados.
 const jsonLd = [
   {
@@ -22,15 +42,7 @@ const jsonLd = [
     description,
     url: blogURL,
     inLanguage: "es-CO",
-    publisher: {
-      "@type": "Organization",
-      name: "Rosiv",
-      url: new URL("/", Astro.site).toString(),
-      logo: {
-        "@type": "ImageObject",
-        url: new URL("/icon-512x512.png", Astro.site).toString(),
-      },
-    },
+    publisher: organization,
     blogPost: posts.map((post) => ({
       "@type": "BlogPosting",
       headline: post.data.title,
@@ -38,11 +50,9 @@ const jsonLd = [
       datePublished: post.data.pubDate.toISOString(),
       dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
       url: new URL(`/blog/${post.id}/`, Astro.site).toString(),
-      author: {
-        "@type": "Organization",
-        name: "Rosiv",
-        url: new URL("/", Astro.site).toString(),
-      },
+      image: postImage,
+      author: organization,
+      publisher: organization,
     })),
   },
   {
