@@ -2,7 +2,7 @@
 title: "Qué es el CUFE de una factura electrónica: CUFE, CUDE y CUNE"
 description: "Qué es el CUFE (Código Único de Factura Electrónica), quién lo genera, dónde encontrarlo en la factura y en qué se diferencia del CUDE y el CUNE de la DIAN."
 pubDate: 2026-08-29
-updatedDate: 2026-10-09
+updatedDate: 2026-10-14
 keywords: "qué es el CUFE, CUFE factura electrónica, código único de factura electrónica, CUFE CUDE diferencia, CUNE DIAN, qué es el CUDE"
 faq:
   - question: "¿El CUFE es obligatorio en todas las facturas electrónicas?"
@@ -10,7 +10,7 @@ faq:
   - question: "¿Quién genera el CUFE, la DIAN o el emisor?"
     answer: "Lo calcula el sistema de facturación de quien emite la factura, a partir de los datos del documento y una clave técnica que le asigna la DIAN. Luego la DIAN valida la factura y deja el CUFE registrado, que es lo que permite consultarlo después."
   - question: "¿Qué diferencia hay entre CUFE, CUDE y CUNE?"
-    answer: "El CUFE identifica facturas electrónicas de venta. El CUDE identifica otros documentos electrónicos, como notas crédito, notas débito, documentos soporte y el documento equivalente electrónico. El CUNE identifica los documentos de nómina electrónica."
+    answer: "El CUFE identifica facturas electrónicas de venta. El CUDE identifica otros documentos electrónicos, como notas crédito, notas débito y el documento equivalente electrónico. El CUNE identifica los documentos de nómina electrónica. El documento soporte de compras a quienes no están obligados a facturar tiene su propio código, el CUDS."
   - question: "Si tengo una tienda o restaurante, ¿cuál código me aplica?"
     answer: "Casi siempre el CUFE, porque es el de las facturas de venta. El CUDE aparece cuando corriges una factura con una nota crédito o débito, y el CUNE solo si tienes empleados y reportas nómina electrónica."
   - question: "¿Puedo usar el CUFE como soporte de un gasto o costo?"
@@ -51,13 +51,14 @@ Por eso el CUFE no se puede inventar: un PDF puede copiar el logo y el formato d
 
 ## CUFE, CUDE y CUNE: cuál es cuál
 
-Los tres cumplen la misma función —ser la huella de un documento electrónico registrado ante la DIAN—; la diferencia es **qué tipo de documento** identifica cada uno:
+Todos cumplen la misma función —ser la huella de un documento electrónico registrado ante la DIAN—; la diferencia es **qué tipo de documento** identifica cada uno:
 
 | Código | Significa | Identifica |
 |---|---|---|
 | **CUFE** | Código Único de Factura Electrónica | Facturas electrónicas de venta |
-| **CUDE** | Código Único de Documento Electrónico | Notas crédito y débito, documento soporte, documento equivalente electrónico (como el tiquete POS electrónico) |
+| **CUDE** | Código Único de Documento Electrónico | Notas crédito y débito, documento equivalente electrónico (como el tiquete POS electrónico) |
 | **CUNE** | Código Único de Nómina Electrónica | Documentos de nómina electrónica de los empleados |
+| **CUDS** | Código Único de Documento Soporte | Documento soporte de compras a personas no obligadas a facturar, y sus notas de ajuste (Resolución DIAN 000167 de 2021) |
 
 **Si tienes una tienda, un restaurante o una peluquería**, el que te importa en el día a día es el CUFE: es el de cada factura de venta. Te vas a topar con un CUDE cuando corrijas una factura con una nota crédito, y con el CUNE solo si tienes empleados y reportas nómina electrónica.
 

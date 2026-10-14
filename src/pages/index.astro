@@ -51,6 +51,7 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://rosivhub.com/#organization",
     name: "Rosiv",
     url: "https://rosivhub.com/",
     logo: "https://rosivhub.com/icon-512x512.png",
@@ -67,10 +68,9 @@ const jsonLd = [
       areaServed: "CO",
       availableLanguage: ["Spanish"],
     },
-    // TODO: añadir aquí las URLs de las redes sociales de Rosiv
-    // (Instagram, Facebook, LinkedIn, TikTok). sameAs vacío = los motores
-    // no pueden enlazar la marca con sus perfiles.
-    sameAs: [],
+    // TODO: añadir aquí `sameAs: [...]` con las URLs de las redes sociales de
+    // Rosiv (Instagram, Facebook, LinkedIn, TikTok) cuando existan. Un sameAs
+    // vacío no aporta nada a los motores, así que no se publica.
   },
   {
     "@context": "https://schema.org",
