@@ -49,7 +49,7 @@ Un plan gratuito que valga la pena debería dejarte, sin límite de tiempo:
 - **Controlar inventario** con descuento automático
 - **Ver reportes básicos**: qué vendiste, cuándo, cuánto
 
-Con eso ya resuelves el problema de "no sé cuánto vendí" y "se me agotó un producto sin darme cuenta", que es el 80% del dolor de un negocio pequeño. Si te interesa esa parte, mira [cómo saber qué productos se te agotan](/blog/como-saber-que-productos-se-agotan).
+Con eso ya resuelves el problema de "no sé cuánto vendí" y "se me agotó un producto sin darme cuenta", que es el 80% del dolor de un negocio pequeño. Si te interesa esa parte, mira [cómo saber qué productos se te agotan](/blog/como-saber-que-productos-se-agotan/).
 
 Lo que razonablemente estará en el plan pago: facturación electrónica DIAN, múltiples sucursales, múltiples usuarios con permisos.
 
@@ -59,7 +59,7 @@ Es gratis de verdad y emite facturas válidas. Pero no es un POS.
 
 No tiene catálogo de productos, no controla inventario, no maneja fiado, y **cada factura se llena a mano campo por campo**. Sirve para cumplir la obligación tributaria cuando facturas pocas veces al mes. No sirve para atender una fila.
 
-La comparación completa, con números, está en [el portal gratis de la DIAN vs. un sistema POS](/blog/facturacion-dian-gratis-vs-rosiv).
+La comparación completa, con números, está en [el portal gratis de la DIAN vs. un sistema POS](/blog/facturacion-dian-gratis-vs-rosiv/).
 
 ## La trampa de escoger solo por el precio
 
@@ -67,7 +67,7 @@ Un POS gratis que no factura electrónicamente te sirve hasta el día que estés
 
 Migrar con inventario, clientes e historial ya cargados es incómodo. Por eso conviene elegir pensando en dónde vas a estar en un año, no solo hoy.
 
-Antes de decidir, revisa si ya estás obligado: [topes para facturar electrónicamente en 2026](/blog/topes-para-facturar-electronicamente). Si estás en Régimen Simple, estás obligado sin importar cuánto vendas — y ahí "gratis sin facturación" deja de ser una opción.
+Antes de decidir, revisa si ya estás obligado: [topes para facturar electrónicamente en 2026](/blog/topes-para-facturar-electronicamente/). Si estás en Régimen Simple, estás obligado sin importar cuánto vendas — y ahí "gratis sin facturación" deja de ser una opción.
 
 ## Cómo lo resuelve Rosiv
 

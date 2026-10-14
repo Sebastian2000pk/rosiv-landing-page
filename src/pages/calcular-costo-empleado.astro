@@ -11,7 +11,7 @@ import "../styles/tool-page.css";
 const title = "Calculadora: Cuánto Cuesta un Empleado en Colombia 2026 | Rosiv";
 const description =
   "Escribe el salario y te decimos cuánto te cuesta realmente ese empleado al mes y al año, con prestaciones, seguridad social y auxilio de transporte. Gratis, con datos 2026.";
-const path = "/calcular-costo-empleado";
+const path = "/calcular-costo-empleado/";
 
 const faqItems = [
   {
@@ -77,8 +77,7 @@ const jsonLd = [
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Rosiv", item: new URL("/", Astro.site).toString() },
-      { "@type": "ListItem", position: 2, name: "Blog", item: new URL("/blog", Astro.site).toString() },
-      { "@type": "ListItem", position: 3, name: "Calculadora de costo de un empleado", item: new URL(path, Astro.site).toString() },
+      { "@type": "ListItem", position: 2, name: "Calculadora de costo de un empleado", item: new URL(path, Astro.site).toString() },
     ],
   },
 ];
@@ -280,10 +279,10 @@ const jsonLd = [
 
       <h3>Qué hacer con el número una vez lo tienes</h3>
       <ul class="tool-list">
-        <li>Compáralo contra lo que vendes. Si contratar sube tu gasto fijo, tu meta de ventas diaria sube con él — puedes recalcularla en la <a href="/calcular-punto-de-equilibrio">calculadora de punto de equilibrio</a>.</li>
-        <li>Revisa si tus precios aguantan ese costo nuevo. La <a href="/calcular-precio-venta-margen">calculadora de precio de venta y margen</a> te dice qué margen te queda realmente.</li>
+        <li>Compáralo contra lo que vendes. Si contratar sube tu gasto fijo, tu meta de ventas diaria sube con él — puedes recalcularla en la <a href="/calcular-punto-de-equilibrio/">calculadora de punto de equilibrio</a>.</li>
+        <li>Revisa si tus precios aguantan ese costo nuevo. La <a href="/calcular-precio-venta-margen/">calculadora de precio de venta y margen</a> te dice qué margen te queda realmente.</li>
         <li>Si tienes restaurante, ojo con el nivel de riesgo: cocina normalmente clasifica más alto que una oficina, y eso mueve la tarifa de ARL.</li>
-        <li>Si tienes restaurante y estabas pensando en propinas, ten claro que la propina no reemplaza salario ni prestaciones. Lo explicamos en <a href="/blog/propina-voluntaria-restaurante-colombia">propina voluntaria en restaurantes</a>.</li>
+        <li>Si tienes restaurante y estabas pensando en propinas, ten claro que la propina no reemplaza salario ni prestaciones. Lo explicamos en <a href="/blog/propina-voluntaria-restaurante-colombia/">propina voluntaria en restaurantes</a>.</li>
       </ul>
 
       <h3>De dónde salen las cifras</h3>
@@ -292,14 +291,14 @@ const jsonLd = [
         2025, y el auxilio de transporte ($249.095) el Decreto 1470 de
         2025. Si quieres el contexto completo de cómo estos números
         afectan tus precios y tu margen, lo desarrollamos en
-        <a href="/blog/cuanto-cuesta-un-empleado-salario-minimo">salario mínimo 2026: cuánto cuesta realmente un empleado</a>.
+        <a href="/blog/cuanto-cuesta-un-empleado-salario-minimo/">salario mínimo 2026: cuánto cuesta realmente un empleado</a>.
       </p>
     </div>
   </section>
 
   <ToolFaq items={faqItems} />
 
-  <ToolCrossLinks currentHref="/calcular-costo-empleado" />
+  <ToolCrossLinks currentHref="/calcular-costo-empleado/" />
 
   <ToolUpsell
     heading="¿Te sirvió la calculadora?"

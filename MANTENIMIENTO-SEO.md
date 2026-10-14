@@ -36,12 +36,15 @@ No hay que tocar URLs, redirects ni enlaces internos.
 
 ### Redirects de los slugs viejos
 
-`src/pages/blog/[...redirect].astro` mantiene vivas las 4 URLs con año que existieron
-antes (`...-2026`). GitHub Pages no soporta 301 de servidor, así que son páginas con
-`rel=canonical` + `noindex` + meta refresh — Google consolida la señal en el destino.
+La lista vive en `src/data/blog-redirects.mjs` (la usan la página
+`src/pages/blog/[...redirect].astro` y el filtro del sitemap). Incluye las 4 URLs con
+año que existieron antes (`...-2026`) y las de la consolidación de clusters (sección 7).
+
+GitHub Pages no soporta 301 de servidor, así que son páginas con `rel=canonical` + meta refresh instantáneo (sin `noindex`) — Google lo trata como redirect permanente y consolida la señal en el destino.
 
 Se pueden borrar cuando Search Console deje de reportar tráfico a esas URLs (~6 meses).
-No hay que añadir entradas nuevas: los slugs actuales ya no cambian.
+Para retirar un post: borrar el `.md`, añadir `slug-viejo → destino` a ese archivo y
+arreglar los enlaces internos (`grep -rn slug-viejo src public`).
 
 ## 2. Menciones a productos de la competencia
 
@@ -112,7 +115,7 @@ seguía citado en 7 posts y en el schema con un precio que ya no existía).
 ## 4. Contenido evergreen (bajo mantenimiento)
 
 Estos no llevan cifras que caduquen y no requieren revisión periódica:
-`que-es-un-pos-y-para-que-sirve`, `que-significa-pos-punto-de-venta`,
+`que-es-un-pos-y-para-que-sirve`,
 `sistema-pos-colombia-como-elegir`, `sistema-pos-gratis-colombia-que-esperar`,
 `loyverse-alternativa-colombia-facturacion-dian`,
 `siigo-alegra-pos-comparacion-negocio-pequeno`,
@@ -138,3 +141,39 @@ sitio donde vive el número. Mantener ese patrón al escribir contenido nuevo �
     grep -rho 'href="/blog/[a-z0-9-]*' dist | sed 's|href="/blog/||' | sort -u > /tmp/links.txt
     ls dist/blog | sort > /tmp/pages.txt
     comm -23 /tmp/links.txt /tmp/pages.txt   # vacío = todo bien
+
+## 7. Una URL por intención de búsqueda
+
+En oct. 2026 se consolidaron tres clusters donde varias URLs competían por la misma
+búsqueda (Search Console mostraba la misma consulta repartida entre dos o tres páginas,
+ninguna por encima de la posición 30):
+
+| Cluster | Herramienta (búsquedas "calcular / validar") | Única guía (búsquedas "qué es / cómo") | Absorbidos (ahora redirigen) |
+|---|---|---|---|
+| DV | `/calcular-digito-verificacion-nit` | `/blog/consultar-digito-de-verificacion-nit-rut` | `que-es-el-digito-de-verificacion-nit`, `digito-verificacion-excel-formula` |
+| POS | — | `/blog/que-es-un-pos-y-para-que-sirve` | `que-significa-pos-punto-de-venta` |
+| CUFE | `/validar-cufe-dian` (incluye "cómo saber si una factura es real") | `/blog/que-es-el-cufe-factura-electronica` (incluye CUDE y CUNE) | `diferencia-cufe-cune-cude`, `verificar-si-una-factura-es-real-dian` |
+
+`calcular-nit-desde-cedula` se quedó aparte: es otra intención ("cuál es mi NIT si soy
+persona natural") y rankeaba bien por su cuenta. `sistema-pos-colombia-como-elegir` es
+la página de "cómo elegir un POS"; la guía de "qué es un POS" ya no la persigue.
+
+**Antes de escribir un post nuevo:** buscar en Search Console (Rendimiento → Páginas)
+si ya hay una URL recibiendo impresiones para esa búsqueda. Si la hay, se amplía esa
+página en vez de crear otra.
+
+## 8. Reglas técnicas que no se negocian
+
+**Enlaces internos con barra final.** `/validar-cufe-dian/`, no `/validar-cufe-dian`.
+La URL canónica lleva barra (formato directory de GitHub Pages); sin barra, cada
+enlace pasa por un 301. `trailingSlash: "always"` en `astro.config.mjs` hace que
+`pnpm dev` dé 404 a un enlace sin barra: si algo no abre en dev, es eso.
+
+**No tocar title, H1 ni URL de una página que ya rankea, y nunca varias veces seguidas.**
+Cada cambio hace que Google vuelva a evaluar la página desde cero. En ago–sep 2026
+los títulos de las herramientas DV y CUFE cambiaron 3 veces en 9 días, justo cuando
+perdieron su top 10. Si hay que cambiar algo: un solo deploy con todo junto, y luego
+4–6 semanas sin tocarlo antes de juzgar el resultado en Search Console.
+
+**`updatedDate` solo para cambios de contenido reales**, no por corregir una errata.
+Google deja de confiar en `dateModified` si se mueve por cambios triviales.

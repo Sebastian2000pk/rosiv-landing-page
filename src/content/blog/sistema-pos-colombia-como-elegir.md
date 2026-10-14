@@ -38,7 +38,7 @@ El **documento equivalente POS** (el tiquete de siempre) sirve para ventas a con
 
 Pero tiene un límite importante: **no da derecho a descuento tributario al comprador.** Si te compra una empresa y te pide factura para descontar, el tiquete POS no le sirve.
 
-Tu sistema tiene que poder emitir **los dos**: el tiquete para la venta rápida y la factura electrónica cuando el cliente la pide, sin cambiar de aplicación. La diferencia completa está en [documento equivalente POS vs. factura electrónica](/blog/documento-equivalente-pos-vs-factura-electronica).
+Tu sistema tiene que poder emitir **los dos**: el tiquete para la venta rápida y la factura electrónica cuando el cliente la pide, sin cambiar de aplicación. La diferencia completa está en [documento equivalente POS vs. factura electrónica](/blog/documento-equivalente-pos-vs-factura-electronica/).
 
 ## 3. Los impuestos de aquí
 
@@ -46,7 +46,7 @@ Un POS genérico maneja "impuestos" como un porcentaje configurable. En Colombia
 
 Un restaurante puede estar cobrando **impoconsumo** en lugar de IVA, según su régimen — dos impuestos distintos, con tarifas distintas. Una tienda cobra IVA a unos productos y no a otros. Una peluquería tiene su propio caso. Si el sistema no distingue, terminas cobrando el impuesto equivocado — que es un error que se acumula silenciosamente hasta que alguien lo revisa.
 
-Si no tienes claro cuál te corresponde, revisa [IVA o impoconsumo: qué cobra mi negocio](/blog/iva-o-impoconsumo-que-cobra-mi-negocio).
+Si no tienes claro cuál te corresponde, revisa [IVA o impoconsumo: qué cobra mi negocio](/blog/iva-o-impoconsumo-que-cobra-mi-negocio/).
 
 ## 4. Que funcione sin internet
 
@@ -56,7 +56,7 @@ En una tienda de barrio, en una plaza de mercado, en un restaurante de pueblo, e
 
 La DIAN sí contempla esto: existe la figura de **facturación en contingencia**, que permite seguir vendiendo sin conexión y transmitir los documentos después. Pero la norma solo sirve si tu software está construido para operar offline.
 
-Antes de decidir, haz esta pregunta concreta al proveedor: *"¿puedo registrar una venta completa con el celular en modo avión?"*. Si la respuesta no es un sí claro, ya sabes qué pasa el día que se cae la señal. Más detalle en [qué hacer cuando el POS se queda sin internet](/blog/pos-offline-que-hacer-sin-internet).
+Antes de decidir, haz esta pregunta concreta al proveedor: *"¿puedo registrar una venta completa con el celular en modo avión?"*. Si la respuesta no es un sí claro, ya sabes qué pasa el día que se cae la señal. Más detalle en [qué hacer cuando el POS se queda sin internet](/blog/pos-offline-que-hacer-sin-internet/).
 
 ## 5. Que encaje con tu tipo de negocio
 
@@ -66,7 +66,7 @@ Antes de decidir, haz esta pregunta concreta al proveedor: *"¿puedo registrar u
 - **Restaurante:** control de mesas y comandas, impoconsumo, propina voluntaria, domicilios.
 - **Peluquería:** servicios más que productos, agenda, comisión por estilista.
 
-Un POS que trata todo como "producto genérico" te obliga a inventar rodeos para operar. Si tienes restaurante, revisa [control de mesas y comandas](/blog/control-de-mesas-y-comandas-restaurante) y [cuánto es el IVA de los restaurantes](/blog/cuanto-es-el-iva-de-los-restaurantes). Si tienes tienda, [el fiado que no te pagan](/blog/cliente-fiado-no-paga) es probablemente tu problema real.
+Un POS que trata todo como "producto genérico" te obliga a inventar rodeos para operar. Si tienes restaurante, revisa [control de mesas y comandas](/blog/control-de-mesas-y-comandas-restaurante/) y [cuánto es el IVA de los restaurantes](/blog/cuanto-es-el-iva-de-los-restaurantes/). Si tienes tienda, [el fiado que no te pagan](/blog/cliente-fiado-no-paga/) es probablemente tu problema real.
 
 ## La lista corta antes de decidir
 
@@ -86,4 +86,4 @@ Rosiv es un sistema POS hecho en Colombia, para negocios colombianos. Emite fact
 
 Funciona sin internet: sigues vendiendo con la señal caída y todo se sincroniza cuando vuelve. Y está pensado para tiendas, restaurantes familiares y peluquerías — con fiado, mesas y servicios contemplados desde el diseño, no como añadido.
 
-Puedes [probar Rosiv gratis](https://web.rosivhub.com), o si aún estás en la etapa de entender el concepto, empieza por [qué es un POS y cómo elegir uno](/blog/que-es-un-pos-y-para-que-sirve).
+Puedes [probar Rosiv gratis](https://web.rosivhub.com), o si aún estás en la etapa de entender el concepto, empieza por [qué es un POS y cómo elegir uno](/blog/que-es-un-pos-y-para-que-sirve/).

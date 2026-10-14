@@ -57,4 +57,4 @@ Si ya sientes que facturar te está quitando más tiempo del que debería, puede
 
 ---
 
-Si lo que estás evaluando es más amplio que el portal de la DIAN, mira [qué esperar de un sistema POS gratis en Colombia](/blog/sistema-pos-gratis-colombia-que-esperar): los tres modelos de "gratis" que existen y en cuál de ellos empieza el cobro.
+Si lo que estás evaluando es más amplio que el portal de la DIAN, mira [qué esperar de un sistema POS gratis en Colombia](/blog/sistema-pos-gratis-colombia-que-esperar/): los tres modelos de "gratis" que existen y en cuál de ellos empieza el cobro.

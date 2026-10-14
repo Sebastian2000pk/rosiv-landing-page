@@ -11,7 +11,7 @@ import "../styles/tool-page.css";
 const title = "¿Debo facturar electrónicamente? Test rápido DIAN 2026 | Rosiv";
 const description =
   "Responde 3 preguntas y descubre al instante si tu negocio está obligado a facturar electrónicamente ante la DIAN en 2026. Gratis, sin registrarte.";
-const path = "/debo-facturar-electronicamente";
+const path = "/debo-facturar-electronicamente/";
 
 const faqItems = [
   {
@@ -77,8 +77,7 @@ const jsonLd = [
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Rosiv", item: new URL("/", Astro.site).toString() },
-      { "@type": "ListItem", position: 2, name: "Blog", item: new URL("/blog", Astro.site).toString() },
-      { "@type": "ListItem", position: 3, name: "Test: ¿Debo facturar electrónicamente?", item: new URL(path, Astro.site).toString() },
+      { "@type": "ListItem", position: 2, name: "Test: ¿Debo facturar electrónicamente?", item: new URL(path, Astro.site).toString() },
     ],
   },
 ];
@@ -209,7 +208,7 @@ const jsonLd = [
         Estos topes se miden en UVT, no en pesos fijos, porque la UVT se
         actualiza cada año. Si quieres el valor exacto de la UVT vigente y
         cómo se traduce a pesos, revisa la
-        <a href="/blog/tabla-regimen-simple-tienda-restaurante">tabla de tarifas del Régimen Simple 2026</a>.
+        <a href="/blog/tabla-regimen-simple-tienda-restaurante/">tabla de tarifas del Régimen Simple 2026</a>.
       </p>
 
       <h3>Qué hacer si el test te dice que ya estás obligado</h3>
@@ -224,7 +223,7 @@ const jsonLd = [
 
   <ToolFaq items={faqItems} />
 
-  <ToolCrossLinks currentHref="/debo-facturar-electronicamente" />
+  <ToolCrossLinks currentHref="/debo-facturar-electronicamente/" />
 
   <ToolUpsell
     heading="¿Ya sabes que te toca facturar electrónicamente?"

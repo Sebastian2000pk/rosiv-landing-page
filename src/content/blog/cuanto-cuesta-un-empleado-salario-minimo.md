@@ -52,7 +52,7 @@ El resultado práctico, con números de 2026: **un empleado con salario mínimo 
 
 Al año, eso son unos **$32,6 millones** en el primer caso y **$35,4 millones** en el segundo. No es un detalle menor cuando estás decidiendo si puedes contratar a alguien o no.
 
-Si quieres el número exacto para tu caso, puedes sacarlo en la [calculadora de cuánto cuesta un empleado](/calcular-costo-empleado): escribes el salario y te da el costo real al mes y al año, con el desglose de cada concepto.
+Si quieres el número exacto para tu caso, puedes sacarlo en la [calculadora de cuánto cuesta un empleado](/calcular-costo-empleado/): escribes el salario y te da el costo real al mes y al año, con el desglose de cada concepto.
 
 ## La exoneración que explica esa diferencia de $237.000
 
@@ -80,7 +80,7 @@ Aquí está la conexión que muchos no hacen: **si tu costo de personal sube, tu
 
 Es especialmente fuerte en negocios de servicio, donde la mano de obra es una parte grande del costo:
 
-- En un **restaurante**, el personal de cocina y salón entra directo en el costo del plato. Lo explicamos en [cómo calcular el costo real de un plato](/blog/costo-real-de-un-plato-food-cost).
+- En un **restaurante**, el personal de cocina y salón entra directo en el costo del plato. Lo explicamos en [cómo calcular el costo real de un plato](/blog/costo-real-de-un-plato-food-cost/).
 - En una **peluquería**, la mano de obra es prácticamente todo el costo del servicio.
 - En una **tienda**, afecta el punto de equilibrio: necesitas vender más para cubrir el mismo gasto fijo.
 
@@ -90,9 +90,9 @@ El error clásico es subir todo un 20% "porque subió el mínimo". Eso puede esp
 
 Lo que sí funciona:
 
-1. **Recalcula tu punto de equilibrio con el nuevo costo fijo.** Si el gasto de nómina subió, el número de ventas que necesitas para no perder también subió. Puedes hacerlo en la [calculadora de punto de equilibrio](/calcular-punto-de-equilibrio).
-2. **Revisa producto por producto, no en bloque.** Algunos aguantan el aumento y otros no. La [calculadora de precio de venta y margen](/calcular-precio-venta-margen) te sirve para eso.
-3. **Si tienes restaurante, revisa aparte el tema de propinas.** No reemplaza salario y tiene reglas propias: lo explicamos en [propina voluntaria en restaurantes](/blog/propina-voluntaria-restaurante-colombia).
+1. **Recalcula tu punto de equilibrio con el nuevo costo fijo.** Si el gasto de nómina subió, el número de ventas que necesitas para no perder también subió. Puedes hacerlo en la [calculadora de punto de equilibrio](/calcular-punto-de-equilibrio/).
+2. **Revisa producto por producto, no en bloque.** Algunos aguantan el aumento y otros no. La [calculadora de precio de venta y margen](/calcular-precio-venta-margen/) te sirve para eso.
+3. **Si tienes restaurante, revisa aparte el tema de propinas.** No reemplaza salario y tiene reglas propias: lo explicamos en [propina voluntaria en restaurantes](/blog/propina-voluntaria-restaurante-colombia/).
 
 ## Cómo lo resuelve Rosiv
 

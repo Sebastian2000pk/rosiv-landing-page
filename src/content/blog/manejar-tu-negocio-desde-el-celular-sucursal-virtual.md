@@ -38,7 +38,7 @@ En concreto, tres cosas:
 
 **Consultar sin estar ahí.** Si la información está en la nube, puedes revisar las ventas del día desde tu casa mientras alguien más atiende.
 
-**Saber qué se está acabando.** El inventario deja de ser un conteo mental. Lo desarrollamos en [cómo saber qué productos se te agotan](/blog/como-saber-que-productos-se-agotan).
+**Saber qué se está acabando.** El inventario deja de ser un conteo mental. Lo desarrollamos en [cómo saber qué productos se te agotan](/blog/como-saber-que-productos-se-agotan/).
 
 ## El punto que casi nadie pregunta a tiempo: ¿y si no hay internet?
 
@@ -49,9 +49,9 @@ Hay una diferencia grande entre dos cosas que suenan parecido:
 - **Sistema en la nube que necesita internet para funcionar.** Si se cae la conexión, no puedes vender. La fila se detiene.
 - **Sistema que funciona offline y sincroniza después.** Si se cae la conexión, sigues vendiendo con normalidad y todo se sube solo cuando vuelve.
 
-En Colombia, con la conectividad real que hay en muchos barrios y pueblos, esa diferencia es la que decide si el sistema te sirve o te estorba. Lo explicamos a fondo en [qué hacer cuando tu POS se queda sin internet](/blog/pos-offline-que-hacer-sin-internet).
+En Colombia, con la conectividad real que hay en muchos barrios y pueblos, esa diferencia es la que decide si el sistema te sirve o te estorba. Lo explicamos a fondo en [qué hacer cuando tu POS se queda sin internet](/blog/pos-offline-que-hacer-sin-internet/).
 
-Y si te preocupa el lado de la DIAN mientras estás sin conexión, está resuelto: hay un mecanismo de contingencia tecnológica que lo contempla. Lo detallamos en [cómo seguir facturando sin internet](/blog/facturar-sin-internet-contingencia-dian).
+Y si te preocupa el lado de la DIAN mientras estás sin conexión, está resuelto: hay un mecanismo de contingencia tecnológica que lo contempla. Lo detallamos en [cómo seguir facturando sin internet](/blog/facturar-sin-internet-contingencia-dian/).
 
 ## Qué revisar antes de elegir un sistema
 

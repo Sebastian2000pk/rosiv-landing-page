@@ -2485,6 +2485,16 @@ html {
   margin: 2.5rem 0 1.5rem;
 }
 
+/* Fórmulas largas (p. ej. Excel): scroll dentro del bloque, no de la página */
+.blog-post-content pre {
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
 .blog-post-content table {
   width: 100%;
   border-collapse: collapse;

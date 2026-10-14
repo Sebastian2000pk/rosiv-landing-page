@@ -10,13 +10,13 @@ import "../styles/tool-page.css";
 const title = "Validar y Verificar CUFE de Factura Electrónica DIAN";
 const description =
   "Verifica y valida el CUFE de tu factura electrónica al instante y consúltala en el catálogo oficial de la DIAN. Herramienta gratis, sin registrarte.";
-const path = "/validar-cufe-dian";
+const path = "/validar-cufe-dian/";
 
 const faqItems = [
   {
     question: "¿Qué es el CUFE de una factura electrónica?",
     answer:
-      "El CUFE (Código Único de Factura Electrónica) es un código alfanumérico de 96 caracteres que la DIAN asocia a cada factura electrónica válida en Colombia. Sirve para confirmar que la factura fue reportada y autenticada ante la DIAN.",
+      "El CUFE (Código Único de Factura Electrónica) es un código de 96 caracteres que identifica a una sola factura electrónica de venta en Colombia. Lo calcula el sistema de facturación del emisor a partir de los datos de la factura, y una vez la DIAN la valida queda registrado y se puede consultar.",
   },
   {
     question: "¿Dónde encuentro el CUFE de una factura?",
@@ -26,17 +26,27 @@ const faqItems = [
   {
     question: "¿Cómo sé si una factura electrónica es válida ante la DIAN?",
     answer:
-      "Una factura es válida cuando su CUFE tiene el formato correcto (96 caracteres alfanuméricos) y al consultarlo en el catálogo oficial de la DIAN aparece registrado. Si el CUFE no existe en el catálogo, la factura podría estar mal generada o no haber sido reportada.",
+      "Cuando su CUFE tiene el formato correcto (96 caracteres), aparece registrado al consultarlo en el catálogo oficial de la DIAN y los datos que devuelve —emisor, valor, fecha y destinatario— coinciden con los de la factura que tienes. Si el CUFE existe pero los datos no coinciden, es una señal más grave que si no apareciera.",
   },
   {
     question: "¿El CUFE es lo mismo que el CUDE?",
     answer:
-      "No. El CUFE identifica facturas electrónicas de venta, mientras que el CUDE (Código Único de Documento Electrónico) identifica otros documentos electrónicos como notas crédito, notas débito o nómina electrónica. Ambos cumplen una función similar de trazabilidad, pero para tipos de documento distintos.",
+      "No. El CUFE identifica facturas electrónicas de venta; el CUDE (Código Único de Documento Electrónico) identifica otros documentos como notas crédito, notas débito y documentos soporte; y el CUNE identifica la nómina electrónica. Cumplen la misma función de trazabilidad, para tipos de documento distintos.",
   },
   {
     question: "¿Validar el CUFE y verificar el CUFE es lo mismo?",
     answer:
       "Sí, son el mismo proceso. 'Validar' y 'verificar' se usan indistintamente para referirse a confirmar que un CUFE tiene el formato correcto y que la factura asociada está registrada en el catálogo oficial de la DIAN. Esta herramienta hace ambas cosas: valida el formato al instante y te lleva directo a verificarlo en el portal de la DIAN.",
+  },
+  {
+    question: "¿Qué significa que una factura no aparezca al consultar el CUFE?",
+    answer:
+      "Puede ser un error al copiar el código, que la factura se haya emitido en contingencia y todavía no se haya transmitido a la DIAN, o que el documento no sea una factura electrónica válida. Antes de asumir lo peor, revisa que el CUFE esté completo y sin espacios, y si sigue sin aparecer, pregúntale al emisor.",
+  },
+  {
+    question: "¿Puedo verificar una factura que me emitieron hace meses?",
+    answer:
+      "Sí. El CUFE no vence ni cambia: una vez la factura queda validada, se puede consultar en cualquier momento después.",
   },
 ];
 
@@ -76,8 +86,7 @@ const jsonLd = [
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Rosiv", item: new URL("/", Astro.site).toString() },
-      { "@type": "ListItem", position: 2, name: "Blog", item: new URL("/blog", Astro.site).toString() },
-      { "@type": "ListItem", position: 3, name: "Validador de CUFE de factura electrónica DIAN", item: new URL(path, Astro.site).toString() },
+      { "@type": "ListItem", position: 2, name: "Validador de CUFE de factura electrónica DIAN", item: new URL(path, Astro.site).toString() },
     ],
   },
 ];
@@ -166,9 +175,11 @@ const jsonLd = [
       <h2>¿Qué es el CUFE y por qué deberías validarlo o verificarlo?</h2>
       <p>
         El <strong>CUFE (Código Único de Factura Electrónica)</strong> es un
-        código de 96 caracteres que la DIAN genera y asocia a cada factura
-        electrónica válida en Colombia. Funciona como una huella digital: si
-        alguien altera un solo dato de la factura, el CUFE ya no coincide.
+        código de 96 caracteres que identifica a una sola factura electrónica
+        de venta en Colombia. Lo calcula el sistema de facturación del emisor
+        con los datos exactos de la factura, y la DIAN lo deja registrado al
+        validarla. Funciona como una huella digital: si alguien altera un solo
+        dato de la factura, el CUFE ya no coincide.
       </p>
       <p>
         Validar el CUFE te sirve tanto si <strong>emites</strong> facturas
@@ -199,18 +210,50 @@ const jsonLd = [
         existe y está vigente siempre se hace en el
         <a href="https://catalogo-vpfe.dian.gov.co/User/SearchDocument" target="_blank" rel="noopener noreferrer">catálogo oficial de la DIAN</a>.
       </p>
+
+      <h3>Cómo saber si una factura electrónica es real</h3>
       <p>
-        Si quieres entender a fondo qué es este código y en qué se diferencia
-        del CUDE, lee la guía completa: <a href="/blog/que-es-el-cufe-factura-electronica">qué es el CUFE de una factura electrónica</a>.
-        Si además te aparece el término CUNE y no sabes si es lo mismo, lee
-        <a href="/blog/diferencia-cufe-cune-cude">CUFE, CUNE y CUDE: en qué se diferencian</a>.
+        Un PDF puede copiar el logo, el formato y hasta el número de una
+        factura, pero no puede traer un CUFE que la DIAN tenga registrado con
+        esos mismos datos. Cuando la consulta de la DIAN te devuelva el
+        documento, compara:
+      </p>
+      <ol class="tool-list">
+        <li><strong>El NIT del emisor:</strong> ¿es realmente quien te está cobrando?</li>
+        <li><strong>El valor total:</strong> ¿coincide con el de la factura que tienes?</li>
+        <li><strong>La fecha de emisión.</strong></li>
+        <li><strong>El adquiriente:</strong> ¿apareces tú o tu empresa como destinatario?</li>
+      </ol>
+      <p>
+        Desconfía si la factura no tiene CUFE ni código QR, si el CUFE no
+        aparece después de revisar que lo copiaste bien, o —lo más grave— si
+        el CUFE existe pero corresponde a otro valor, otra fecha u otro
+        emisor: significa que alguien tomó un CUFE real y armó otro documento
+        encima.
+      </p>
+
+      <h3>Si la factura no aparece: antes de asumir lo peor</h3>
+      <ul class="tool-list">
+        <li><strong>Error al copiar.</strong> El CUFE es largo; se pega incompleto o con un espacio de más. Escanear el QR evita el problema.</li>
+        <li><strong>Factura emitida en contingencia.</strong> Si el emisor estaba sin internet, pudo entregártela antes de transmitirla a la DIAN. Hay un plazo para hacerlo, así que una factura muy reciente puede no aparecer todavía.</li>
+        <li><strong>Es un documento equivalente, no una factura.</strong> Un tiquete POS no es una factura electrónica de venta y no lleva CUFE.</li>
+      </ul>
+      <p>
+        Si el código está bien copiado, pasó tiempo suficiente y el documento
+        dice ser factura electrónica de venta, pregúntale directamente al
+        emisor.
+      </p>
+      <p>
+        Si quieres entender a fondo qué es este código, quién lo genera y en
+        qué se diferencia del CUDE y el CUNE, lee la guía:
+        <a href="/blog/que-es-el-cufe-factura-electronica/">qué es el CUFE de una factura electrónica</a>.
       </p>
     </div>
   </section>
 
   <ToolFaq items={faqItems} />
 
-  <ToolCrossLinks currentHref="/validar-cufe-dian" />
+  <ToolCrossLinks currentHref="/validar-cufe-dian/" />
 
   <ToolUpsell
     heading="¿Te sirvió el validador?"

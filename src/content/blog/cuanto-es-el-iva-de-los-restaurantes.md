@@ -39,7 +39,7 @@ No es solo un cambio de número. Hay una diferencia práctica grande:
 
 Ese segundo punto es el que sorprende. Un restaurante en impoconsumo **asume el IVA de sus compras como un costo más**. Si compras carne, gas, empaques y equipos con IVA incluido, ese IVA no se recupera: entra directo a tu costo.
 
-Lo cual, dicho sea de paso, es una razón más para costear bien tus platos — ese IVA no recuperable ya está adentro de lo que te cuesta cada plato. Lo explicamos en [cómo calcular el costo real de un plato](/blog/costo-real-de-un-plato-food-cost).
+Lo cual, dicho sea de paso, es una razón más para costear bien tus platos — ese IVA no recuperable ya está adentro de lo que te cuesta cada plato. Lo explicamos en [cómo calcular el costo real de un plato](/blog/costo-real-de-un-plato-food-cost/).
 
 ## Los casos donde cambia
 
@@ -71,7 +71,7 @@ Las dos cosas traen problemas:
 
 Ese último punto descarta más sistemas de los que uno esperaría: si el POS solo maneja una tarifa global, no te va a servir el día que agregues cerveza a la carta.
 
-Si quieres ver la cuenta con números concretos, tenemos una [calculadora de impoconsumo e IVA para restaurantes](/calcular-impoconsumo-iva-restaurante).
+Si quieres ver la cuenta con números concretos, tenemos una [calculadora de impoconsumo e IVA para restaurantes](/calcular-impoconsumo-iva-restaurante/).
 
 ## Cómo lo resuelve Rosiv
 

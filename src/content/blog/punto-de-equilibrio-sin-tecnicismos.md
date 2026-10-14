@@ -49,9 +49,9 @@ Esto conecta directo con la pregunta de cuánto estás cobrando por lo que vende
 
 ## Calcula el tuyo
 
-Puedes hacer esta misma cuenta con los números reales de tu negocio en la [calculadora de punto de equilibrio](/calcular-punto-de-equilibrio): escribes tus gastos fijos, tu margen promedio y los días que abres, y te muestra tu meta diaria, semanal y mensual al instante — sin fórmulas que sacar a mano.
+Puedes hacer esta misma cuenta con los números reales de tu negocio en la [calculadora de punto de equilibrio](/calcular-punto-de-equilibrio/): escribes tus gastos fijos, tu margen promedio y los días que abres, y te muestra tu meta diaria, semanal y mensual al instante — sin fórmulas que sacar a mano.
 
-Este número también está directamente relacionado con por qué un negocio puede vender bien y aun así quedarse sin plata a fin de mes — si no has leído sobre eso, vale la pena revisar [por qué el flujo de caja, no las ventas bajas, es la causa más común de que un negocio pequeño cierre](/blog/flujo-de-caja-negocios-quiebran).
+Este número también está directamente relacionado con por qué un negocio puede vender bien y aun así quedarse sin plata a fin de mes — si no has leído sobre eso, vale la pena revisar [por qué el flujo de caja, no las ventas bajas, es la causa más común de que un negocio pequeño cierre](/blog/flujo-de-caja-negocios-quiebran/).
 
 ## Cómo lo resuelve Rosiv
 

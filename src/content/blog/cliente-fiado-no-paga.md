@@ -45,7 +45,7 @@ No es dejar de fiar — eso rompe la relación con el cliente y con el barrio. E
 
 ## Empieza a llevar la cuenta ahora mismo
 
-No necesitas esperar a resolverlo todo de una vez. Puedes empezar a reemplazar el cuaderno hoy con [control de fiados](/calculadora-control-de-fiados): registras cliente, monto y fecha, y te muestra un semáforo de quién debe más y quién lleva más tiempo sin pagar — pensada para abrirla cada día, no para usarla una sola vez.
+No necesitas esperar a resolverlo todo de una vez. Puedes empezar a reemplazar el cuaderno hoy con [control de fiados](/calculadora-control-de-fiados/): registras cliente, monto y fecha, y te muestra un semáforo de quién debe más y quién lleva más tiempo sin pagar — pensada para abrirla cada día, no para usarla una sola vez.
 
 ## Cómo ayuda Rosiv mientras tanto
 

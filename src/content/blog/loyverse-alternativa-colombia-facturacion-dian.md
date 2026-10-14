@@ -60,7 +60,7 @@ No todo negocio necesita facturar mañana. Loyverse tiene sentido si:
 
 Si estás en ese punto, úsalo. Solo ten claro que el día que llegue la obligación —o el primer cliente empresa que te pida factura— vas a tener que migrar, y migrar con inventario y clientes ya cargados es más incómodo que empezar en el sistema correcto.
 
-Para saber si ya estás obligado, revisa los [topes para facturar electrónicamente en 2026](/blog/topes-para-facturar-electronicamente). Si estás en Régimen Simple, la respuesta es sí sin importar cuánto vendas.
+Para saber si ya estás obligado, revisa los [topes para facturar electrónicamente en 2026](/blog/topes-para-facturar-electronicamente/). Si estás en Régimen Simple, la respuesta es sí sin importar cuánto vendas.
 
 ## Qué mirar en una alternativa
 
@@ -68,7 +68,7 @@ Si vas a cambiar, no cambies solo por "el que factura". Estas son las tres cosas
 
 **1. Que la factura salga de la misma venta.** No un módulo aparte, no una exportación. Cobras, y la factura electrónica se emite en ese mismo paso.
 
-**2. Que funcione sin internet.** Este es el que más se subestima. Un POS en la nube que no vende cuando se cae la señal es un POS que te deja parado en hora pico. Debe seguir registrando ventas offline y sincronizar solo cuando vuelve la conexión — la DIAN contempla esto como [facturación en contingencia](/blog/facturar-sin-internet-contingencia-dian).
+**2. Que funcione sin internet.** Este es el que más se subestima. Un POS en la nube que no vende cuando se cae la señal es un POS que te deja parado en hora pico. Debe seguir registrando ventas offline y sincronizar solo cuando vuelve la conexión — la DIAN contempla esto como [facturación en contingencia](/blog/facturar-sin-internet-contingencia-dian/).
 
 **3. Que el plan gratuito sea real.** Muchos "gratis" son pruebas con fecha de vencimiento. Verifica que puedas operar indefinidamente sin pagar mientras el negocio arranca.
 
@@ -78,4 +78,4 @@ Rosiv es un sistema POS colombiano que sí emite factura electrónica válida an
 
 Funciona sin internet: si se cae la señal, sigues vendiendo y todo se sincroniza cuando vuelve. Y tiene plan gratuito real para empezar, con la facturación electrónica DIAN incluida en el plan Starter.
 
-Si quieres entender primero qué debe tener un POS para tu tipo de negocio, lee [qué es un POS y cómo elegir uno](/blog/que-es-un-pos-y-para-que-sirve). Y si ya lo tienes claro, puedes [probar Rosiv gratis](https://web.rosivhub.com).
+Si quieres entender primero qué debe tener un POS para tu tipo de negocio, lee [qué es un POS y cómo elegir uno](/blog/que-es-un-pos-y-para-que-sirve/). Y si ya lo tienes claro, puedes [probar Rosiv gratis](https://web.rosivhub.com).

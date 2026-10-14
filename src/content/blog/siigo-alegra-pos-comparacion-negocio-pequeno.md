@@ -53,7 +53,7 @@ Siigo y Alegra son sistemas en la nube. Sin conexión, no operan. En una oficina
 
 Y no es un problema de comodidad. Es un problema de **no poder cobrar.** La fila está ahí, el cliente está ahí, y el sistema no responde.
 
-La DIAN contempla esta situación: existe la [facturación en contingencia](/blog/facturar-sin-internet-contingencia-dian), que permite seguir vendiendo sin conexión y transmitir después. Pero para aprovecharla, tu software tiene que estar construido para funcionar offline — no basta con que la norma lo permita. Lo explicamos en detalle en [qué hacer cuando el POS se queda sin internet](/blog/pos-offline-que-hacer-sin-internet).
+La DIAN contempla esta situación: existe la [facturación en contingencia](/blog/facturar-sin-internet-contingencia-dian/), que permite seguir vendiendo sin conexión y transmitir después. Pero para aprovecharla, tu software tiene que estar construido para funcionar offline — no basta con que la norma lo permita. Lo explicamos en detalle en [qué hacer cuando el POS se queda sin internet](/blog/pos-offline-que-hacer-sin-internet/).
 
 Antes de elegir cualquiera de estos sistemas, la pregunta honesta es: **¿qué pasa en mi negocio los días que se cae la señal?** Si la respuesta es "se para todo", ese es tu criterio principal, por encima del precio.
 
@@ -73,7 +73,7 @@ Esta es la confusión de fondo. Muchos negocios pequeños creen que necesitan so
 
 Para cumplir con la DIAN necesitas **emitir factura electrónica válida.** Eso lo hace cualquier software conectado al esquema de facturación electrónica de la DIAN, incluido un POS. No necesitas un plan contable para eso.
 
-Necesitas software contable cuando tienes que **llevar contabilidad** — que es una obligación distinta, que depende de tu régimen y tu tamaño. Si estás en Régimen Simple con un negocio pequeño, revisa la [tabla del Régimen Simple para tiendas y restaurantes](/blog/tabla-regimen-simple-tienda-restaurante) antes de asumir que necesitas la herramienta más completa.
+Necesitas software contable cuando tienes que **llevar contabilidad** — que es una obligación distinta, que depende de tu régimen y tu tamaño. Si estás en Régimen Simple con un negocio pequeño, revisa la [tabla del Régimen Simple para tiendas y restaurantes](/blog/tabla-regimen-simple-tienda-restaurante/) antes de asumir que necesitas la herramienta más completa.
 
 ## Cómo elegir en una frase
 

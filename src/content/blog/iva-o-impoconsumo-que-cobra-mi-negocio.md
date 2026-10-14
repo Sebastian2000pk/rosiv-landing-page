@@ -26,7 +26,7 @@ La mayoría de productos de primera necesidad —muchos alimentos básicos de la
 
 ## Si tienes un restaurante
 
-Aquí la tarifa más común no es el IVA, sino el **impuesto al consumo (impoconsumo) del 8%**, que aplica al servicio de alimentos y bebidas preparadas para consumo. El IVA del 19% solo entra en juego en casos específicos, como restaurantes que operan bajo franquicia. Si tienes dudas sobre tu caso exacto, puedes revisar la [calculadora de impoconsumo vs IVA para restaurantes](/calcular-impoconsumo-iva-restaurante), que compara las dos tarifas en segundos.
+Aquí la tarifa más común no es el IVA, sino el **impuesto al consumo (impoconsumo) del 8%**, que aplica al servicio de alimentos y bebidas preparadas para consumo. El IVA del 19% solo entra en juego en casos específicos, como restaurantes que operan bajo franquicia. Si tienes dudas sobre tu caso exacto, puedes revisar la [calculadora de impoconsumo vs IVA para restaurantes](/calcular-impoconsumo-iva-restaurante/), que compara las dos tarifas en segundos.
 
 ## Si tienes una peluquería o negocio de estética
 

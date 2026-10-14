@@ -65,7 +65,7 @@ Dos consecuencias, y la segunda suele doler antes que la primera:
 2. **¿Tus ingresos brutos del año pasan de $183.309.000 (3.500 UVT de 2026)?** → Si sí, te toca.
 3. **¿Ninguna de las dos?** → Probablemente no estás obligado todavía, pero vale confirmarlo con tu contador según tu actividad específica.
 
-Si quieres el chequeo rápido sin leerte la norma, tenemos un [test de 3 preguntas para saber si debes facturar electrónicamente](/debo-facturar-electronicamente).
+Si quieres el chequeo rápido sin leerte la norma, tenemos un [test de 3 preguntas para saber si debes facturar electrónicamente](/debo-facturar-electronicamente/).
 
 ## Lo que conviene hacer antes de que te toque
 

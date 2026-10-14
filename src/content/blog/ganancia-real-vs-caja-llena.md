@@ -36,7 +36,7 @@ El resultado es un negocio que se siente ocupado y móvil (mucha gente entrando,
 
 No hace falta llevar contabilidad completa para esto. Hace falta saber, para tus productos o servicios principales, cuánto te cuestan y cuánto estás cobrando por ellos — y calcular la diferencia real, no la que "se siente" a ojo.
 
-Si quieres hacer esa cuenta ahora mismo con tus propios números, usa la [calculadora de precio de venta y margen de ganancia](/calcular-precio-venta-margen): escribes cuánto te cuesta algo y cuánto quieres ganarte, en pesos, y te muestra el precio de venta y si ese margen es sano para tu tipo de negocio — tienda, restaurante o peluquería.
+Si quieres hacer esa cuenta ahora mismo con tus propios números, usa la [calculadora de precio de venta y margen de ganancia](/calcular-precio-venta-margen/): escribes cuánto te cuesta algo y cuánto quieres ganarte, en pesos, y te muestra el precio de venta y si ese margen es sano para tu tipo de negocio — tienda, restaurante o peluquería.
 
 ## Cómo lo resuelve Rosiv
 

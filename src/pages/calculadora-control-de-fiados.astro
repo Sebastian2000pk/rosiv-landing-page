@@ -9,7 +9,7 @@ import "../styles/tool-page.css";
 const title = "Control de fiados: ¿quién te debe y hace cuánto? | Rosiv";
 const description =
   "Reemplaza el cuaderno de fiados: registra a quién le fiaste, cuánto y desde cuándo. Semáforo de quién debe más y hace cuánto. Gratis.";
-const path = "/calculadora-control-de-fiados";
+const path = "/calculadora-control-de-fiados/";
 
 const faqItems = [
   {
@@ -70,8 +70,7 @@ const jsonLd = [
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Rosiv", item: new URL("/", Astro.site).toString() },
-      { "@type": "ListItem", position: 2, name: "Blog", item: new URL("/blog", Astro.site).toString() },
-      { "@type": "ListItem", position: 3, name: "Control de fiados", item: new URL(path, Astro.site).toString() },
+      { "@type": "ListItem", position: 2, name: "Control de fiados", item: new URL(path, Astro.site).toString() },
     ],
   },
 ];
@@ -199,7 +198,7 @@ const jsonLd = [
 
   <ToolFaq items={faqItems} />
 
-  <ToolCrossLinks currentHref="/calculadora-control-de-fiados" />
+  <ToolCrossLinks currentHref="/calculadora-control-de-fiados/" />
 
   <Footer />
 </Layout>

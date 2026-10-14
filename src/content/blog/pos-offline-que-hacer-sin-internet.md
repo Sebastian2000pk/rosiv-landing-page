@@ -45,7 +45,7 @@ Antes de elegir un sistema, pregunta o prueba:
 
 Esta es la duda que sigue siempre. La respuesta corta: puedes cobrar y entregarle el soporte al cliente en el momento — la venta no depende de que la DIAN valide en ese instante. Lo que queda pendiente es la transmisión del documento, que se completa cuando vuelve la conexión.
 
-La norma contempla este escenario como contingencia tecnológica, con un plazo de hasta 48 horas desde que se restablece el servicio. Lo explicamos en detalle en [cómo seguir facturando sin internet sin incumplirle a la DIAN](/blog/facturar-sin-internet-contingencia-dian).
+La norma contempla este escenario como contingencia tecnológica, con un plazo de hasta 48 horas desde que se restablece el servicio. Lo explicamos en detalle en [cómo seguir facturando sin internet sin incumplirle a la DIAN](/blog/facturar-sin-internet-contingencia-dian/).
 
 ## No es un "modo secundario", es una necesidad real en Colombia
 
@@ -59,4 +59,4 @@ Si te preocupa depender de una conexión inestable, puedes [probar Rosiv gratis]
 
 ---
 
-Si todavía estás eligiendo sistema, el modo offline debería ser uno de tus filtros principales. Los demás están en [qué debe cumplir un sistema POS en Colombia](/blog/sistema-pos-colombia-como-elegir).
+Si todavía estás eligiendo sistema, el modo offline debería ser uno de tus filtros principales. Los demás están en [qué debe cumplir un sistema POS en Colombia](/blog/sistema-pos-colombia-como-elegir/).

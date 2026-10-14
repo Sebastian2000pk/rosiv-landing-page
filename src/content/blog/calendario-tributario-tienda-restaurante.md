@@ -28,7 +28,7 @@ Este es el paso que la mayoría se salta, y es el que determina todo lo demás. 
 - **Régimen ordinario:** declaración de renta anual, más IVA según su periodicidad.
 - **No responsable de IVA:** no declara IVA, pero puede tener otras obligaciones.
 
-Si no sabes en cuál estás, está en tu RUT. Y si tienes restaurante, revisa además si eres responsable de impoconsumo — es un impuesto distinto al IVA, y lo explicamos en [cuánto es el IVA de los restaurantes](/blog/cuanto-es-el-iva-de-los-restaurantes).
+Si no sabes en cuál estás, está en tu RUT. Y si tienes restaurante, revisa además si eres responsable de impoconsumo — es un impuesto distinto al IVA, y lo explicamos en [cuánto es el IVA de los restaurantes](/blog/cuanto-es-el-iva-de-los-restaurantes/).
 
 ## Las tres fechas que de verdad importan en un negocio pequeño
 
@@ -52,7 +52,7 @@ Si tu restaurante cobra el 8% de impoconsumo, esos son tus cortes.
 
 Si estás en RST, durante el año pagas **anticipos bimestrales** y al final presentas **una declaración anual consolidada**. Es el régimen con menos fechas que perseguir, y esa es justamente su ventaja.
 
-Las tarifas exactas por rango están en [la tabla del Régimen Simple 2026 para tienda o restaurante](/blog/tabla-regimen-simple-tienda-restaurante).
+Las tarifas exactas por rango están en [la tabla del Régimen Simple 2026 para tienda o restaurante](/blog/tabla-regimen-simple-tienda-restaurante/).
 
 ## Declaración de renta 2026: cuándo te toca
 
@@ -70,7 +70,7 @@ Los casos típicos:
 
 - Llega el vencimiento del bimestre y toca reconstruir las ventas a mano, de un cuaderno o de la memoria.
 - El negocio creció durante el año y **cambió de rango en el Régimen Simple** sin que nadie se diera cuenta.
-- Se superó el tope para facturar electrónicamente y la obligación arrancó sin aviso. Lo explicamos en [topes para facturar electrónicamente en 2026](/blog/topes-para-facturar-electronicamente).
+- Se superó el tope para facturar electrónicamente y la obligación arrancó sin aviso. Lo explicamos en [topes para facturar electrónicamente en 2026](/blog/topes-para-facturar-electronicamente/).
 
 Ninguno de esos tres es un problema de calendario. Son problemas de no tener el dato a la mano.
 

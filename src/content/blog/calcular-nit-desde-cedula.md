@@ -20,13 +20,13 @@ Es una de las confusiones más comunes al empezar a facturar: "¿cómo calculo m
 
 Para una persona natural inscrita en el RUT, el NIT **no es un número nuevo o distinto**: es el mismo número de la cédula de ciudadanía. La DIAN no genera un identificador aparte para personas naturales — usa directamente el documento de identidad como base.
 
-Lo único que se le agrega es el **dígito de verificación (DV)**, un número adicional del 0 al 9 que confirma que el NIT (en este caso, tu cédula) está bien escrito. Por eso el NIT completo de una persona natural se ve así: `1020304050-6`, donde `1020304050` es la cédula y `6` es el dígito de verificación.
+Lo único que se le agrega es el **dígito de verificación (DV)**, un número adicional del 0 al 9 que confirma que el NIT (en este caso, tu cédula) está bien escrito. Por eso el NIT completo de una persona natural se ve así: `1020304050-8`, donde `1020304050` es la cédula y `8` es el dígito de verificación.
 
 ## Entonces, ¿qué es lo que sí se "calcula"?
 
 Solo el dígito de verificación. La DIAN usa una fórmula fija llamada módulo 11 sobre el número de tu cédula para obtener ese dígito extra. No es algo que tú elijas ni que cambie con el tiempo — siempre da el mismo resultado para el mismo número.
 
-Si necesitas ese dígito ahora mismo, puedes obtenerlo al instante con la [calculadora de dígito de verificación de Rosiv](/calcular-digito-verificacion-nit): escribes tu cédula y te devuelve el número completo, listo para copiar.
+Si necesitas ese dígito ahora mismo, puedes obtenerlo al instante con la [calculadora de dígito de verificación de Rosiv](/calcular-digito-verificacion-nit/): escribes tu cédula y te devuelve el número completo, listo para copiar.
 
 ## ¿Por qué existe esta confusión tan seguido?
 
@@ -39,7 +39,7 @@ Porque las empresas sí tienen un NIT distinto a cualquier documento de sus due�
 - Cuando un cliente o proveedor te pide tu "NIT completo" para una factura.
 - Cuando una factura sale rechazada por un error en el dígito de verificación.
 
-Si quieres entender a fondo cómo se calcula ese dígito y por qué la DIAN lo exige, lee la guía completa: [qué es el dígito de verificación del NIT](/blog/que-es-el-digito-de-verificacion-nit).
+Si quieres entender a fondo cómo se calcula ese dígito y por qué la DIAN lo exige, lee la guía completa: [dígito de verificación del NIT: qué es, dónde consultarlo y cómo calcularlo](/blog/consultar-digito-de-verificacion-nit-rut/).
 
 ## Cómo lo resuelve Rosiv
 

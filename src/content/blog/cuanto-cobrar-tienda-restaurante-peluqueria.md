@@ -44,7 +44,7 @@ El error más común: cobrar en función de lo que "se ve justo" para el cliente
 
 ## El mismo cálculo, tres negocios distintos
 
-Lo que cambia entre tienda, restaurante y peluquería no es la fórmula — es qué tan alto debe ser el margen para que ese negocio específico sea sano. Puedes hacer esta cuenta con tus propios números, en pesos y sin porcentajes que calcular a mano, en la [calculadora de precio de venta y margen de ganancia](/calcular-precio-venta-margen): eliges tu tipo de negocio, escribes el costo y cuánto quieres ganarte, y te muestra el precio sugerido y si ese margen es sano para lo que vendes.
+Lo que cambia entre tienda, restaurante y peluquería no es la fórmula — es qué tan alto debe ser el margen para que ese negocio específico sea sano. Puedes hacer esta cuenta con tus propios números, en pesos y sin porcentajes que calcular a mano, en la [calculadora de precio de venta y margen de ganancia](/calcular-precio-venta-margen/): eliges tu tipo de negocio, escribes el costo y cuánto quieres ganarte, y te muestra el precio sugerido y si ese margen es sano para lo que vendes.
 
 ## Cómo lo resuelve Rosiv
 

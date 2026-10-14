@@ -11,7 +11,7 @@ import "../styles/tool-page.css";
 const title = "Calculadora de punto de equilibrio: ¿cuánto tengo que vender? | Rosiv";
 const description =
   "Escribe tus gastos fijos y tu margen promedio. Calcula cuánto tienes que vender cada día para no perder plata y desde cuándo empiezas a ganar. Gratis.";
-const path = "/calcular-punto-de-equilibrio";
+const path = "/calcular-punto-de-equilibrio/";
 
 const faqItems = [
   {
@@ -77,8 +77,7 @@ const jsonLd = [
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Rosiv", item: new URL("/", Astro.site).toString() },
-      { "@type": "ListItem", position: 2, name: "Blog", item: new URL("/blog", Astro.site).toString() },
-      { "@type": "ListItem", position: 3, name: "Calculadora de punto de equilibrio", item: new URL(path, Astro.site).toString() },
+      { "@type": "ListItem", position: 2, name: "Calculadora de punto de equilibrio", item: new URL(path, Astro.site).toString() },
     ],
   },
 ];
@@ -243,14 +242,14 @@ const jsonLd = [
         <li>Si un día no llegaste a la meta, no significa que el negocio esté mal — significa que ese día en particular no cubrió su parte, y otro día con más venta lo compensa.</li>
         <li>Si casi nunca llegas a la meta, el problema no es "vender más" a secas — puede ser que tu margen esté muy bajo o que tus gastos fijos hayan subido sin que lo notaras.</li>
         <li>Vuelve a calcular cada vez que cambie un gasto fijo (sube el arriendo, entra un empleado nuevo) — tu meta diaria cambia con eso, aunque tú sigas vendiendo igual.</li>
-        <li>Súbele al margen (con la <a href="/calcular-precio-venta-margen">calculadora de precio de venta</a>) y verás que la meta diaria baja — a veces es más fácil ajustar precio que vender más unidades.</li>
+        <li>Súbele al margen (con la <a href="/calcular-precio-venta-margen/">calculadora de precio de venta</a>) y verás que la meta diaria baja — a veces es más fácil ajustar precio que vender más unidades.</li>
       </ul>
     </div>
   </section>
 
   <ToolFaq items={faqItems} />
 
-  <ToolCrossLinks currentHref="/calcular-punto-de-equilibrio" />
+  <ToolCrossLinks currentHref="/calcular-punto-de-equilibrio/" />
 
   <ToolUpsell
     heading="¿Te sirvió la calculadora?"

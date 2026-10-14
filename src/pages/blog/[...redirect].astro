@@ -1,28 +1,20 @@
 ---
+import { BLOG_REDIRECTS } from "../../data/blog-redirects.mjs";
+
 /**
- * Redirects de los slugs viejos que llevaban el año.
+ * Redirects de slugs viejos del blog (lista en src/data/blog-redirects.mjs).
  *
- * Los posts anuales (topes, régimen simple, calendario, salario mínimo) pasaron a
- * slugs sin año para no perder autoridad cada enero — ver MANTENIMIENTO-SEO.md.
  * GitHub Pages no soporta redirects 301 del servidor, así que se emite una página
- * con <link rel="canonical"> y meta refresh: Google consolida la señal en el
- * destino y el visitante llega igual.
- *
- * Se pueden borrar estas entradas cuando Search Console deje de reportar tráfico
- * a las URLs viejas (~6 meses).
+ * con <link rel="canonical"> y meta refresh instantáneo, que Google trata como
+ * redirect permanente: consolida la señal en el destino y el visitante llega igual.
+ * Sin noindex a propósito: mezclado con canonical, Google puede descartar la URL
+ * en vez de pasarle su señal al destino.
  */
 export function getStaticPaths() {
-  // Definido acá dentro: getStaticPaths se evalúa aislado del resto del frontmatter.
-  const REDIRECTS: Record<string, string> = {
-    "topes-para-facturar-electronicamente-2026": "/blog/topes-para-facturar-electronicamente",
-    "tabla-regimen-simple-tienda-restaurante-2026": "/blog/tabla-regimen-simple-tienda-restaurante",
-    "calendario-tributario-2026-tienda-restaurante": "/blog/calendario-tributario-tienda-restaurante",
-    "cuanto-cuesta-un-empleado-2026-salario-minimo": "/blog/cuanto-cuesta-un-empleado-salario-minimo",
-  };
-
-  return Object.entries(REDIRECTS).map(([from, to]) => ({
+  return Object.entries(BLOG_REDIRECTS).map(([from, to]) => ({
     params: { redirect: from },
-    props: { to },
+    // Con barra final: es la forma canónica del sitio (ver Layout.astro).
+    props: { to: to.endsWith("/") ? to : `${to}/` },
   }));
 }
 
@@ -35,7 +27,6 @@ const target = new URL(to, Astro.site).toString();
     <meta charset="utf-8" />
     <title>Redirigiendo…</title>
     <link rel="canonical" href={target} />
-    <meta name="robots" content="noindex, follow" />
     <meta http-equiv="refresh" content={`0; url=${to}`} />
   </head>
   <body>

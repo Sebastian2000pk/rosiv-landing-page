@@ -11,7 +11,7 @@ import "../styles/tool-page.css";
 const title = "Calculadora de Dígito de Verificación (DV) del NIT, RUT y Cédula";
 const description =
   "Calcula el DV (dígito de verificación) de un NIT, RUT o cédula con la fórmula oficial de la DIAN (módulo 11). Resultado al instante, gratis y sin registro.";
-const path = "/calcular-digito-verificacion-nit";
+const path = "/calcular-digito-verificacion-nit/";
 
 const faqItems = [
   {
@@ -82,8 +82,7 @@ const jsonLd = [
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Rosiv", item: new URL("/", Astro.site).toString() },
-      { "@type": "ListItem", position: 2, name: "Blog", item: new URL("/blog", Astro.site).toString() },
-      { "@type": "ListItem", position: 3, name: "Calculadora de dígito de verificación del NIT", item: new URL(path, Astro.site).toString() },
+      { "@type": "ListItem", position: 2, name: "Calculadora de dígito de verificación del NIT", item: new URL(path, Astro.site).toString() },
     ],
   },
 ];
@@ -215,10 +214,6 @@ const jsonLd = [
         <li>Cuando un proveedor o cliente te pide tu NIT completo con el DV.</li>
         <li>Cuando una factura te queda rechazada y necesitas confirmar que el número esté bien.</li>
       </ul>
-      <p>
-        Si quieres entender a fondo qué es este número y por qué existe, lee la
-        guía completa: <a href="/blog/que-es-el-digito-de-verificacion-nit">qué es el dígito de verificación del NIT</a>.
-      </p>
 
       <h3>DV del NIT y DV del RUT: es el mismo número</h3>
       <p>
@@ -237,22 +232,27 @@ const jsonLd = [
         por su peso, sumando y sacando el residuo de dividir entre 11. Es
         fácil equivocarse en el orden de los pesos o en la fórmula del
         residuo — si solo necesitas el número ya calculado, esta calculadora
-        te ahorra armar la hoja de cálculo. Si necesitas calcular el DV de
-        muchos NITs a la vez, lee la <a href="/blog/digito-verificacion-excel-formula">guía paso a paso de la fórmula en Excel</a>.
+        te ahorra armar la hoja de cálculo.
       </p>
       <p>
-        Si tienes cédula pero no sabes cómo se relaciona con tu NIT, lee <a href="/blog/calcular-nit-desde-cedula">cómo calcular tu NIT a partir de la cédula</a>.
+        Si necesitas el DV de muchos NITs a la vez, o el de un cliente cuyo
+        RUT no tienes, la <a href="/blog/consultar-digito-de-verificacion-nit-rut/">guía del dígito de verificación</a>
+        trae la fórmula lista para copiar en Excel, un ejemplo resuelto paso a
+        paso y dónde consultar el DV de un tercero.
+      </p>
+      <p>
+        Si tienes cédula pero no sabes cómo se relaciona con tu NIT, lee <a href="/blog/calcular-nit-desde-cedula/">cómo calcular tu NIT a partir de la cédula</a>.
       </p>
       <p>
         Si además de facturar bien quieres dejar de anotar las ventas a mano,
-        lee <a href="/blog/que-es-un-pos-y-para-que-sirve">qué es un POS</a> y qué debería tener uno pensado para tu tipo de negocio.
+        lee <a href="/blog/que-es-un-pos-y-para-que-sirve/">qué es un POS</a> y qué debería tener uno pensado para tu tipo de negocio.
       </p>
     </div>
   </section>
 
   <ToolFaq items={faqItems} />
 
-  <ToolCrossLinks currentHref="/calcular-digito-verificacion-nit" />
+  <ToolCrossLinks currentHref="/calcular-digito-verificacion-nit/" />
 
   <ToolUpsell
     heading="¿Te sirvió la calculadora?"

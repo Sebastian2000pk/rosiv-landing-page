@@ -64,7 +64,7 @@ Cuando sabes eso, tienes opciones reales: ajustar la porción, ajustar el precio
 
 No costees los 40 platos de la carta. Empieza por los cinco que más vendes — ahí está la mayoría de tu facturación. Si esos cinco están bien costeados y bien vendidos, arreglaste el 70% del problema.
 
-Y si quieres hacer la cuenta de precio y margen sin sacar la calculadora, puedes usar nuestra [calculadora de precio de venta y margen](/calcular-precio-venta-margen) — tiene modo restaurante con los rangos de margen sanos ya cargados.
+Y si quieres hacer la cuenta de precio y margen sin sacar la calculadora, puedes usar nuestra [calculadora de precio de venta y margen](/calcular-precio-venta-margen/) — tiene modo restaurante con los rangos de margen sanos ya cargados.
 
 ## Cómo lo resuelve Rosiv
 

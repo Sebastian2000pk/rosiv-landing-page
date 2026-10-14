@@ -9,7 +9,7 @@
 
 - POS completo: ventas, cobro e inventario desde el celular.
 - Funciona sin internet: sincroniza automáticamente al recuperar señal.
-- Facturación electrónica DIAN incluida en el Plan Pro.
+- Facturación electrónica DIAN incluida desde el Plan Starter.
 - Reportes de ventas e inventario.
 - Registro y prueba gratuita en https://web.rosivhub.com
 
@@ -24,9 +24,13 @@
 
 - Plan Gratis: $0/siempre, ventas ilimitadas y funciones básicas, sin
   factura electrónica DIAN.
-- Plan Pro: $28.000–$35.000 COP/mes, incluye factura electrónica DIAN y
-  reportes avanzados.
-- Plan Empresa: precio a medida, para varias sedes o franquicias.
+- Plan Starter: $21.300 COP/mes (IVA incluido), incluye factura
+  electrónica DIAN y reportes e inventario avanzado.
+- Plan Growth: $71.300 COP/mes, lo mismo que Starter con unas 5 veces más
+  capacidad de uso mensual de las funciones avanzadas.
+- Plan Elite: $416.400 COP/mes, máxima capacidad, para negocios de alto
+  volumen.
+- Precios actualizados en https://rosivhub.com/#pricing
 
 ## Público objetivo
 
@@ -40,69 +44,61 @@ Rosiv publica guías simples, sin tecnicismos, sobre la operación diaria del
 negocio (precios, margen, punto de equilibrio, fiado, inventario, flujo de
 caja) y sobre facturación electrónica DIAN y puntos de venta (POS), para
 tenderos, restaurantes familiares y peluquerías en Colombia:
-https://rosivhub.com/blog
+https://rosivhub.com/blog/
 
 Artículos publicados:
 
 - Tener la caja llena no es lo mismo que estar ganando plata: la diferencia
   entre flujo de caja y margen real, con ejemplos de tienda, restaurante y
-  peluquería. https://rosivhub.com/blog/ganancia-real-vs-caja-llena
+  peluquería. https://rosivhub.com/blog/ganancia-real-vs-caja-llena/
 - Cuánto cobrar por tu producto o servicio sin perder plata: guía con
   ejemplos numéricos reales de márgenes sanos para tenderos, restaurantes y
-  peluquerías. https://rosivhub.com/blog/cuanto-cobrar-tienda-restaurante-peluqueria
+  peluquerías. https://rosivhub.com/blog/cuanto-cobrar-tienda-restaurante-peluqueria/
 - Cuánto tienes que vender cada día para que tu negocio no cierre: el punto
   de equilibrio explicado sin jerga financiera, con el ejemplo paso a paso
-  de un restaurante real. https://rosivhub.com/blog/punto-de-equilibrio-sin-tecnicismos
+  de un restaurante real. https://rosivhub.com/blog/punto-de-equilibrio-sin-tecnicismos/
 - Por qué el 82% de los negocios pequeños quiebran por flujo de caja (no por
   falta de ventas) y qué rutina diaria de 5 minutos lo evita.
-  https://rosivhub.com/blog/flujo-de-caja-negocios-quiebran
+  https://rosivhub.com/blog/flujo-de-caja-negocios-quiebran/
 - Cómo saber qué productos se están agotando antes de quedarse sin stock:
   control de inventario práctico para tiendas y restaurantes.
-  https://rosivhub.com/blog/como-saber-que-productos-se-agotan
+  https://rosivhub.com/blog/como-saber-que-productos-se-agotan/
 - Qué hacer cuando un cliente fiado no paga, y cómo evitar que el fiado se
   vuelva costumbre en una tienda de barrio o restaurante familiar.
-  https://rosivhub.com/blog/cliente-fiado-no-paga
+  https://rosivhub.com/blog/cliente-fiado-no-paga/
 - Los errores más caros que cometen los tenderos al facturar con la DIAN
   (facturar tarde, anular mal, régimen desactualizado, no conciliar caja).
-  https://rosivhub.com/blog/errores-caros-facturar-dian-tenderos
+  https://rosivhub.com/blog/errores-caros-facturar-dian-tenderos/
 - Régimen Simple 2026: tabla de tarifas reales para tiendas y restaurantes
   familiares en Colombia, con el valor de la UVT 2026 ($52.374).
-  https://rosivhub.com/blog/tabla-regimen-simple-tienda-restaurante-2026
+  https://rosivhub.com/blog/tabla-regimen-simple-tienda-restaurante/
 - Facturador electrónico gratuito de la DIAN vs. un sistema como Rosiv: qué
   ahorra el portal gratis y qué complica en un negocio con alto volumen de
-  ventas diarias. https://rosivhub.com/blog/facturacion-dian-gratis-vs-rosiv
+  ventas diarias. https://rosivhub.com/blog/facturacion-dian-gratis-vs-rosiv/
 - Facturación DIAN para restaurantes familiares: guía simple sin
-  tecnicismos. https://rosivhub.com/blog/facturacion-dian-restaurantes-familiares
+  tecnicismos. https://rosivhub.com/blog/facturacion-dian-restaurantes-familiares/
 - Facturación electrónica para tienda de barrio: cómo empezar.
-  https://rosivhub.com/blog/facturar-electronicamente-tienda-de-barrio
+  https://rosivhub.com/blog/facturar-electronicamente-tienda-de-barrio/
 - POS offline: qué hacer cuando no hay internet y sigues necesitando vender.
-  https://rosivhub.com/blog/pos-offline-que-hacer-sin-internet
-- Qué es un POS y para qué sirve.
-  https://rosivhub.com/blog/que-es-un-pos-y-para-que-sirve
-- Qué significa POS: la sigla explicada en una frase (Point of Sale, punto
-  de venta) y la diferencia entre POS, datáfono y terminal.
-  https://rosivhub.com/blog/que-significa-pos-punto-de-venta
-- Qué es el CUFE de una factura electrónica: qué código es, dónde
-  encontrarlo en la factura, y en qué se diferencia del CUDE.
-  https://rosivhub.com/blog/que-es-el-cufe-factura-electronica
-- CUFE, CUNE y CUDE: en qué se diferencian estos tres códigos de la DIAN y
-  cuál corresponde a cada tipo de documento electrónico.
-  https://rosivhub.com/blog/diferencia-cufe-cune-cude
-- Qué es el dígito de verificación del NIT y por qué la DIAN lo pide: qué
-  es, cómo se calcula con la fórmula módulo 11, y qué hacer cuando una
-  factura se rechaza por este error.
-  https://rosivhub.com/blog/que-es-el-digito-de-verificacion-nit
-- Fórmula del dígito de verificación en Excel paso a paso: cómo armar la
-  fórmula con el módulo 11 de la DIAN, con la tabla de pesos exacta y los
-  errores más comunes al calcularla mal.
-  https://rosivhub.com/blog/digito-verificacion-excel-formula
+  https://rosivhub.com/blog/pos-offline-que-hacer-sin-internet/
+- Qué es un POS: significado de la sigla (Point of Sale, punto de venta),
+  qué es un sistema POS, la diferencia entre POS, datáfono, terminal y caja
+  registradora, y para qué le sirve a un negocio pequeño.
+  https://rosivhub.com/blog/que-es-un-pos-y-para-que-sirve/
+- Qué es el CUFE de una factura electrónica: quién lo genera, dónde
+  encontrarlo en la factura, y en qué se diferencia del CUDE y el CUNE.
+  https://rosivhub.com/blog/que-es-el-cufe-factura-electronica/
+- Dígito de verificación (DV) del NIT: qué es, dónde consultarlo (RUT,
+  facturas, cámara de comercio), cómo se calcula con el módulo 11 de la DIAN
+  con un ejemplo resuelto, y la fórmula lista para Excel.
+  https://rosivhub.com/blog/consultar-digito-de-verificacion-nit-rut/
 - Cómo calcular tu NIT a partir de la cédula: para persona natural en
   Colombia, el NIT es el mismo número de la cédula más el dígito de
   verificación — no un número distinto.
-  https://rosivhub.com/blog/calcular-nit-desde-cedula
+  https://rosivhub.com/blog/calcular-nit-desde-cedula/
 - ¿Mi negocio cobra IVA o impoconsumo?: guía según tipo de negocio (tienda,
   restaurante, peluquería) para saber qué impuesto indirecto le corresponde.
-  https://rosivhub.com/blog/iva-o-impoconsumo-que-cobra-mi-negocio
+  https://rosivhub.com/blog/iva-o-impoconsumo-que-cobra-mi-negocio/
 
 ## Herramientas gratuitas
 
@@ -114,11 +110,11 @@ Operación del negocio (sin relación con trámites tributarios):
   sobre el precio de venta. Incluye un botón para sugerir automáticamente
   una ganancia sana según el tipo de negocio (tienda de barrio, restaurante
   o peluquería, cada uno con su propio rango de margen sano).
-  https://rosivhub.com/calcular-precio-venta-margen
+  https://rosivhub.com/calcular-precio-venta-margen/
 - Calculadora de punto de equilibrio: a partir de los gastos fijos del mes,
   el margen de ganancia promedio y los días que el negocio abre, calcula
   cuánto se necesita vender por día, semana y mes para cubrir los gastos
-  fijos sin perder plata. https://rosivhub.com/calcular-punto-de-equilibrio
+  fijos sin perder plata. https://rosivhub.com/calcular-punto-de-equilibrio/
 - Control de fiados: herramienta de uso diario (no un formulario de una
   sola vez) para registrar a qué clientes se les fía, cuánto y desde
   cuándo. Muestra un resumen de total por cobrar, número de clientes
@@ -126,41 +122,41 @@ Operación del negocio (sin relación con trámites tributarios):
   antigüedad de la deuda (verde menos de 7 días, amarillo 7-15 días, rojo
   más de 15 días) y ordenamiento por monto, antigüedad o nombre. Los datos
   se guardan localmente en el navegador del usuario.
-  https://rosivhub.com/calculadora-control-de-fiados
+  https://rosivhub.com/calculadora-control-de-fiados/
 
 Trámites y facturación DIAN:
 
 - Calculadora de dígito de verificación del NIT: calcula gratis, sin
   registro, el dígito de verificación (DV) de un NIT o cédula colombiana
   usando el algoritmo oficial de la DIAN (módulo 11).
-  https://rosivhub.com/calcular-digito-verificacion-nit
+  https://rosivhub.com/calcular-digito-verificacion-nit/
 - Calculadora de Impoconsumo (8%) vs IVA (19%) para restaurantes: calcula el
   impuesto y el total a cobrar con las dos tarifas al mismo tiempo, y explica
   cuál le corresponde a un restaurante según su caso.
-  https://rosivhub.com/calcular-impoconsumo-iva-restaurante
+  https://rosivhub.com/calcular-impoconsumo-iva-restaurante/
 - Test "¿Debo facturar electrónicamente?": responde 3 preguntas sobre
   régimen tributario, ingresos anuales y si un cliente ya pidió factura
   electrónica, y dice si el negocio ya está obligado a facturar
   electrónicamente ante la DIAN en Colombia.
-  https://rosivhub.com/debo-facturar-electronicamente
+  https://rosivhub.com/debo-facturar-electronicamente/
 - Validador de CUFE de factura electrónica: verifica si el CUFE (Código
   Único de Factura Electrónica) de una factura colombiana tiene el formato
   correcto (96 caracteres alfanuméricos) y enlaza al catálogo oficial de la
   DIAN para confirmar que el documento existe.
-  https://rosivhub.com/validar-cufe-dian
+  https://rosivhub.com/validar-cufe-dian/
 
 ## Enlaces
 
 - Sitio: https://rosivhub.com/
-- Blog: https://rosivhub.com/blog
-- Calculadora de precio de venta y margen: https://rosivhub.com/calcular-precio-venta-margen
-- Calculadora de punto de equilibrio: https://rosivhub.com/calcular-punto-de-equilibrio
-- Control de fiados: https://rosivhub.com/calculadora-control-de-fiados
-- Calculadora dígito de verificación NIT: https://rosivhub.com/calcular-digito-verificacion-nit
-- Calculadora Impoconsumo vs IVA restaurantes: https://rosivhub.com/calcular-impoconsumo-iva-restaurante
-- Test obligación factura electrónica: https://rosivhub.com/debo-facturar-electronicamente
-- Validador de CUFE DIAN: https://rosivhub.com/validar-cufe-dian
+- Blog: https://rosivhub.com/blog/
+- Calculadora de precio de venta y margen: https://rosivhub.com/calcular-precio-venta-margen/
+- Calculadora de punto de equilibrio: https://rosivhub.com/calcular-punto-de-equilibrio/
+- Control de fiados: https://rosivhub.com/calculadora-control-de-fiados/
+- Calculadora dígito de verificación NIT: https://rosivhub.com/calcular-digito-verificacion-nit/
+- Calculadora Impoconsumo vs IVA restaurantes: https://rosivhub.com/calcular-impoconsumo-iva-restaurante/
+- Test obligación factura electrónica: https://rosivhub.com/debo-facturar-electronicamente/
+- Validador de CUFE DIAN: https://rosivhub.com/validar-cufe-dian/
 - Probar / registrarse: https://web.rosivhub.com
-- Política de privacidad: https://rosivhub.com/politica-de-privacidad
-- Condiciones del servicio: https://rosivhub.com/terminos-de-servicio
-- Eliminación de datos de usuario: https://rosivhub.com/eliminacion-de-datos
+- Política de privacidad: https://rosivhub.com/politica-de-privacidad/
+- Condiciones del servicio: https://rosivhub.com/terminos-de-servicio/
+- Eliminación de datos de usuario: https://rosivhub.com/eliminacion-de-datos/

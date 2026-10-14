@@ -6,27 +6,29 @@ interface ToolLink {
 }
 
 interface Props {
-  currentHref: string;
+  // Herramienta actual, que no se lista. En la home no se pasa: salen las 8.
+  currentHref?: string;
+  label?: string;
 }
 
 const ALL_TOOLS: ToolLink[] = [
-  { href: "/calcular-precio-venta-margen", icon: "fas fa-sack-dollar", label: "Precio de venta y margen de ganancia" },
-  { href: "/calcular-punto-de-equilibrio", icon: "fas fa-flag-checkered", label: "Punto de equilibrio: ¿cuánto vender?" },
-  { href: "/calcular-costo-empleado", icon: "fas fa-user-plus", label: "¿Cuánto cuesta un empleado?" },
-  { href: "/calculadora-control-de-fiados", icon: "fas fa-book", label: "Control de fiados: ¿quién te debe?" },
-  { href: "/calcular-digito-verificacion-nit", icon: "fas fa-calculator", label: "Dígito de verificación del NIT" },
-  { href: "/calcular-impoconsumo-iva-restaurante", icon: "fas fa-scale-balanced", label: "Impoconsumo vs IVA en restaurantes" },
-  { href: "/debo-facturar-electronicamente", icon: "fas fa-list-check", label: "¿Debo facturar electrónicamente?" },
-  { href: "/validar-cufe-dian", icon: "fas fa-shield-halved", label: "Validar CUFE de factura electrónica" },
+  { href: "/calcular-precio-venta-margen/", icon: "fas fa-sack-dollar", label: "Precio de venta y margen de ganancia" },
+  { href: "/calcular-punto-de-equilibrio/", icon: "fas fa-flag-checkered", label: "Punto de equilibrio: ¿cuánto vender?" },
+  { href: "/calcular-costo-empleado/", icon: "fas fa-user-plus", label: "¿Cuánto cuesta un empleado?" },
+  { href: "/calculadora-control-de-fiados/", icon: "fas fa-book", label: "Control de fiados: ¿quién te debe?" },
+  { href: "/calcular-digito-verificacion-nit/", icon: "fas fa-calculator", label: "Dígito de verificación del NIT" },
+  { href: "/calcular-impoconsumo-iva-restaurante/", icon: "fas fa-scale-balanced", label: "Impoconsumo vs IVA en restaurantes" },
+  { href: "/debo-facturar-electronicamente/", icon: "fas fa-list-check", label: "¿Debo facturar electrónicamente?" },
+  { href: "/validar-cufe-dian/", icon: "fas fa-shield-halved", label: "Validar CUFE de factura electrónica" },
 ];
 
-const { currentHref } = Astro.props;
+const { currentHref, label = "Otras herramientas gratis de Rosiv" } = Astro.props;
 const otherTools = ALL_TOOLS.filter((tool) => tool.href !== currentHref);
 ---
 
 <section class="tool-crosslinks">
-  <div class="container tool-explain-inner">
-    <p class="tool-crosslinks-label">Otras herramientas gratis de Rosiv</p>
+  <div class="container tool-crosslinks-inner">
+    <p class="tool-crosslinks-label">{label}</p>
     <div class="tool-crosslinks-grid">
       {
         otherTools.map((tool) => (
@@ -45,6 +47,11 @@ const otherTools = ALL_TOOLS.filter((tool) => tool.href !== currentHref);
   .tool-crosslinks {
     padding: 56px 0;
     background: var(--white);
+  }
+
+  .tool-crosslinks-inner {
+    max-width: 720px;
+    margin: 0 auto;
   }
 
   .tool-crosslinks-label {
