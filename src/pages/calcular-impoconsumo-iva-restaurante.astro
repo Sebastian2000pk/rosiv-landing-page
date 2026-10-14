@@ -10,14 +10,19 @@ import "../styles/tool-page.css";
 
 const title = "¿Impoconsumo 8% o IVA 19%? Calculadora para Restaurantes | Rosiv";
 const description =
-  "No cobres el impuesto equivocado. Descubre en segundos si tu restaurante debe cobrar impoconsumo (8%) o IVA (19%) y calcula el valor exacto. Gratis.";
+  "Escribe el valor de la cuenta y mira el total con impoconsumo (8%) y con IVA (19%) al mismo tiempo. Incluye cuándo aplica cada uno y quién no cobra ninguno. Gratis.";
 const path = "/calcular-impoconsumo-iva-restaurante/";
 
 const faqItems = [
   {
     question: "¿Mi restaurante cobra impoconsumo (8%) o IVA (19%)?",
     answer:
-      "La mayoría de restaurantes, bares y establecimientos que venden comida y bebidas preparadas para consumo cobran el impuesto al consumo del 8%. El IVA del 19% aplica cuando el negocio funciona bajo franquicia o cuando la venta no corresponde a servicio de restaurante como tal (por ejemplo, venta de productos empacados). Si tienes dudas sobre tu caso puntual, confírmalo con tu contador.",
+      "El servicio de restaurante, bar o cafetería no lleva IVA: lleva impuesto al consumo del 8%, pero solo si el negocio es responsable de ese impuesto. Una persona natural con máximo un local e ingresos del año anterior por debajo de 3.500 UVT no es responsable y no cobra ni el 8% ni el 19%. El IVA del 19% aplica a los restaurantes que operan bajo franquicia. Los productos que no hacen parte del servicio de restaurante (por ejemplo, mercancía empacada) siguen las reglas del IVA según el producto. Si tienes dudas sobre tu caso puntual, confírmalo con tu contador.",
+  },
+  {
+    question: "¿Un restaurante pequeño tiene que cobrar impoconsumo?",
+    answer:
+      "No siempre. Una persona natural no es responsable del impoconsumo si cumple dos condiciones a la vez: que en el año anterior sus ingresos brutos por la actividad hayan sido menores a 3.500 UVT y que tenga máximo un establecimiento. En ese caso no debe cobrar el 8%. Las sociedades (SAS, Ltda) sí son responsables siempre.",
   },
   {
     question: "¿La propina cuenta para calcular el impoconsumo?",
@@ -27,12 +32,12 @@ const faqItems = [
   {
     question: "¿Un restaurante puede cobrar impoconsumo e IVA al mismo tiempo?",
     answer:
-      "No sobre el mismo producto. Un restaurante que solo presta el servicio de alimentos y bebidas preparadas cobra impoconsumo del 8% y no IVA. Si el mismo negocio vende también otros productos que no son parte del servicio de restaurante (por ejemplo, mercancía empacada para llevar), esos ítems sí pueden estar gravados con IVA del 19% en vez de impoconsumo.",
+      "No sobre el mismo producto. Un restaurante responsable de impoconsumo cobra el 8% sobre el servicio de alimentos y bebidas preparadas, y no IVA. Si el mismo negocio vende también otros productos que no son parte del servicio de restaurante (por ejemplo, mercancía empacada), esos ítems pueden estar gravados con IVA en vez de impoconsumo.",
   },
   {
     question: "¿Qué pasa si cobro el impuesto equivocado en mi restaurante?",
     answer:
-      "Si facturas con la tarifa equivocada, la DIAN puede rechazar tus reportes o generar diferencias en tu declaración de impuestos. Es importante confirmar con tu contador cuál tarifa aplica a tu negocio específico y configurarla bien en tu sistema de facturación desde el inicio.",
+      "Si facturas con la tarifa equivocada, tus declaraciones quedan con diferencias que luego toca corregir, y si cobras un impuesto que no te corresponde le estás cobrando de más al cliente. Es importante confirmar con tu contador si eres responsable y cuál tarifa aplica a tu negocio antes de empezar a facturar.",
   },
 ];
 
@@ -93,7 +98,8 @@ const jsonLd = [
         </h1>
         <p class="tool-hero-subtitle">
           Escribe el valor de la cuenta y mira el total con las dos tarifas
-          al mismo tiempo. Sin registrarte.
+          al mismo tiempo. Sin registrarte. La calculadora no decide cuál te
+          toca: eso lo explicamos abajo.
         </p>
 
         <div class="tool-card ic-calculator" role="group" aria-labelledby="ic-calc-label">
@@ -116,29 +122,32 @@ const jsonLd = [
 
           <div class="ic-versus">
             <div id="ic-card-8" class="ic-rate-card ic-rate-card--suggested">
-              <span class="ic-rate-tag">Lo más común en restaurantes</span>
+              <span class="ic-rate-tag">Restaurante responsable</span>
               <span class="ic-rate-pct">8%</span>
               <span class="ic-rate-name">Impoconsumo</span>
               <span class="ic-rate-total" id="ic-total-8">$0</span>
               <span class="ic-rate-hint">Total a cobrar</span>
             </div>
             <div id="ic-card-19" class="ic-rate-card">
-              <span class="ic-rate-tag ic-rate-tag--muted">Franquicias y otros casos</span>
+              <span class="ic-rate-tag ic-rate-tag--muted">Restaurante bajo franquicia</span>
               <span class="ic-rate-pct">19%</span>
               <span class="ic-rate-name">IVA</span>
               <span class="ic-rate-total" id="ic-total-19">$0</span>
               <span class="ic-rate-hint">Total a cobrar</span>
             </div>
           </div>
+          <p class="ic-note">
+            Si eres persona natural, con un solo local e ingresos del año anterior por debajo de 3.500 UVT, no eres responsable del impoconsumo: no cobras ninguna de las dos tarifas.
+          </p>
         </div>
       </div>
 
       <ToolSidePanel
-        eyebrow="Después de saber tu tarifa"
-        heading="Ya sabes qué impuesto cobrar. Esto es lo que sigue:"
+        eyebrow="Después de comparar"
+        heading="Ya viste la diferencia. Esto es lo que sigue:"
         items={[
-          { label: "Tarifa correcta identificada", done: true },
-          { label: "Configurarla en tu sistema de ventas" },
+          { label: "Comparar las dos tarifas", done: true },
+          { label: "Confirmar con tu contador cuál te aplica" },
           { label: "Facturar electrónicamente sin errores" },
           { label: "Reportar a la DIAN sin sustos" },
         ]}
@@ -150,19 +159,37 @@ const jsonLd = [
     <div class="container tool-explain-inner">
       <h2>¿Impoconsumo o IVA? Cómo saber cuál te corresponde</h2>
       <p>
-        En Colombia, los restaurantes, bares, cafeterías y negocios que
-        prestan servicio de alimentos y bebidas preparadas para consumo
-        generalmente cobran el <strong>impuesto al consumo (impoconsumo) del
-        8%</strong>, no el IVA del 19%. Es uno de los errores más comunes al
-        facturar: muchos negocios nuevos cobran IVA por costumbre, cuando en
-        realidad les corresponde impoconsumo.
+        En Colombia, el servicio de restaurantes, bares, cafeterías y
+        negocios de alimentos y bebidas preparadas no lleva IVA del 19%: lleva
+        <strong>impuesto al consumo (impoconsumo) del 8%</strong>. Es uno de
+        los errores más comunes al facturar: muchos negocios nuevos cobran IVA
+        por costumbre, cuando lo que corresponde es impoconsumo.
+      </p>
+
+      <h3>Primero: ¿eres responsable del impoconsumo?</h3>
+      <p>
+        No todo restaurante cobra el 8%. Una <strong>persona natural no es
+        responsable del impoconsumo</strong> si cumple las dos condiciones a
+        la vez: que en el año anterior sus ingresos brutos por la actividad
+        hayan sido menores a <strong>3.500 UVT</strong> y que tenga
+        <strong>máximo un establecimiento</strong>. Ese es el caso de muchos
+        restaurantes familiares, y en ese caso no se cobra ni el 8% ni el
+        19%. Las sociedades (SAS, Ltda, SA) sí son responsables siempre.
       </p>
       <p>
-        El <strong>IVA del 19%</strong> sí aplica en casos como restaurantes
-        que operan bajo franquicia, o cuando el negocio vende productos que no
-        hacen parte del servicio de restaurante (por ejemplo, mercancía
-        empacada). Si tu negocio combina servicio de mesa con venta de otros
-        productos, es posible que factures con las dos tarifas según el ítem.
+        Si estás en el Régimen Simple y eres responsable, el 8% se cobra igual
+        en la factura y se paga con los anticipos del Simple. El valor de la
+        UVT y las tarifas están en la <a href="/blog/tabla-regimen-simple-tienda-restaurante/">tabla del Régimen Simple</a>.
+      </p>
+
+      <h3>Cuándo aplica el IVA del 19%</h3>
+      <p>
+        El <strong>IVA del 19%</strong> aplica a los restaurantes que operan
+        <strong>bajo franquicia</strong>: la ley los saca del impoconsumo. Y
+        si tu negocio vende productos que no hacen parte del servicio de
+        restaurante (por ejemplo, mercancía empacada), esos productos siguen
+        las reglas del IVA según cada uno, así que puedes terminar
+        facturando con tarifas distintas según el ítem.
       </p>
 
       <h3>La propina nunca entra en la base del impuesto</h3>
@@ -193,10 +220,10 @@ const jsonLd = [
 
   <ToolUpsell
     heading="¿Te sirvió la calculadora?"
-    body="Configurar bien tu tarifa es solo el primer paso. Rosiv aplica el impuesto correcto automáticamente en cada venta y genera tu factura electrónica DIAN sin que tengas que calcular nada a mano."
+    body="Saber qué impuesto te toca es solo el primer paso. Rosiv registra cada venta y emite tu factura electrónica DIAN desde la misma venta, para que tengas al día cuánto vendes cuando llegue la hora de declarar."
     features={[
       { icon: "fas fa-file-invoice-dollar", label: "Factura electrónica DIAN incluida" },
-      { icon: "fas fa-percent", label: "Impoconsumo o IVA preconfigurado" },
+      { icon: "fas fa-chart-line", label: "Reportes de ventas al día" },
       { icon: "fas fa-bolt", label: "Cobra en segundos desde el celular" },
     ]}
   />
@@ -334,6 +361,13 @@ const jsonLd = [
     min-height: 2.2em;
     display: flex;
     align-items: center;
+  }
+
+  .ic-note {
+    font-size: 0.82rem;
+    color: var(--gray-600);
+    margin-top: 0.9rem;
+    line-height: 1.45;
   }
 
   .ic-rate-tag--muted {

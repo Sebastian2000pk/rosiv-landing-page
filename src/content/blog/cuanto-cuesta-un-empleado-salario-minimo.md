@@ -2,10 +2,11 @@
 title: "Salario Mínimo 2026: Cuánto Cuesta Realmente un Empleado"
 description: "El salario mínimo 2026 es $1.750.905, pero eso no es lo que te cuesta un empleado. La cuenta completa con auxilio de transporte, prestaciones y seguridad social."
 pubDate: 2026-09-05
+updatedDate: 2026-10-14
 keywords: "salario minimo 2026, salario mínimo 2026 Colombia, cuanto cuesta un empleado 2026, auxilio de transporte 2026, costo real de un empleado Colombia, prestaciones sociales 2026"
 faq:
   - question: "¿Cuál es el salario mínimo en Colombia para 2026?"
-    answer: "El salario mínimo legal mensual vigente para 2026 es de $1.750.905, fijado por el Decreto 1469 de 2025. Representa un aumento cercano al 23% frente a los $1.423.500 que regían en 2025."
+    answer: "El salario mínimo legal mensual vigente para 2026 es de $1.750.905, fijado por el Decreto 1469 de 2025. Representa un aumento cercano al 23% frente a los $1.423.500 que regían en 2025. El Consejo de Estado suspendió ese decreto en febrero de 2026, pero el Gobierno mantuvo el mismo valor con el Decreto 0159 de 2026 y en julio de 2026 la suspensión fue revocada, así que el valor nunca cambió."
   - question: "¿Cuánto es el auxilio de transporte en 2026?"
     answer: "El auxilio de transporte para 2026 es de $249.095 mensuales, fijado por el Decreto 1470 de 2025. Lo reciben los trabajadores que devengan hasta 2 salarios mínimos, es decir, hasta $3.501.810 al mes."
   - question: "¿Cuánto le cuesta realmente un empleado a un negocio pequeño?"
@@ -28,6 +29,8 @@ Pero si tienes un negocio y estás pensando en contratar a alguien, ese número 
 | Auxilio de transporte | $249.095 | $200.000 |
 
 El salario mínimo lo fijó el **Decreto 1469 de 2025**, con un aumento cercano al 23%. El auxilio de transporte lo fijó el **Decreto 1470 de 2025**, con un aumento cercano al 24,5%.
+
+**¿Y la suspensión del salario mínimo?** El 12 de febrero de 2026 el Consejo de Estado suspendió provisionalmente el Decreto 1469 y le ordenó al Gobierno fijar el salario de forma transitoria. El Gobierno expidió el **Decreto 0159 de 2026**, que dejó exactamente el mismo valor: $1.750.905. En julio de 2026 el Consejo de Estado revocó la suspensión y el Decreto 1469 volvió a regir. En la práctica, **el salario mínimo de 2026 nunca cambió** y los pagos hechos con ese valor son válidos. La demanda de nulidad sigue en curso, y el auxilio de transporte no estuvo incluido en la suspensión.
 
 Sumados, dan **$2.000.000** exactos para quien devenga el mínimo y tiene derecho al auxilio.
 
@@ -104,4 +107,4 @@ Puedes [empezar gratis con Rosiv](https://web.rosivhub.com).
 
 *Este contenido es informativo y no reemplaza asesoría laboral o contable. Los porcentajes de aportes, parafiscales y prestaciones dependen del tipo de empleador, del nivel de riesgo de la actividad y de la normativa vigente; confirma la liquidación exacta con tu contador antes de contratar.*
 
-*Fuentes: Decreto 1469 de 2025 (salario mínimo 2026) y Decreto 1470 de 2025 (auxilio de transporte 2026).*
+*Fuentes: Decreto 1469 de 2025 (salario mínimo 2026), Decreto 0159 de 2026 (salario mínimo transitorio tras la suspensión provisional del Consejo de Estado), y Decreto 1470 de 2025 (auxilio de transporte 2026).*
