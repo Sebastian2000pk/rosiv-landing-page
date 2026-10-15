@@ -601,6 +601,15 @@ body {
   margin: 0 auto;
 }
 
+/* Enlaces dentro del texto de las secciones de la home (hacia las landings
+   por tipo de negocio): se ven como enlace sin romper el subtítulo. */
+.section-subtitle a {
+  color: var(--primary-purple);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
