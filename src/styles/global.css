@@ -1562,6 +1562,33 @@ body {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
+.btn-download-windows {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-md);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-download-windows:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.btn-download-windows .download-version {
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
 .download-whatsapp-link {
   display: inline-flex;
   align-items: center;
